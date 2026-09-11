@@ -1,0 +1,548 @@
+[
+  {
+    "id": "hunza-explorer-7d",
+    "name": "Hunza & Karakoram Highway Explorer",
+    "type": "EXPLORER",
+    "destinationId": "hunza-valley",
+    "destinationName": "Hunza Valley, Pakistan",
+    "duration": "7 Days / 6 Nights",
+    "durationDays": 7,
+    "difficulty": "Moderate",
+    "travelStyle": "Explorer (Active Cultural & Mountain Trek)",
+    "accommodation": "Heritage Alpine Guesthouses & Glamping Tents",
+    "meals": "Full Board (Authentic Hunza Farm-to-Table & Trail Rations)",
+    "activities": ["Baltit & Altit Fort Exploration", "Ultar Meadow Glacier Hike", "Attabad Lake Boating", "Hussaini Suspension Bridge Crossing"],
+    "guide": "Certified Local Karakoram High-Altitude Guide",
+    "transport": "Dedicated 4x4 Mountain Jeep (Chauffeur-Driven)",
+    "price": 890,
+    "originalPrice": 1050,
+    "discountPercent": 15,
+    "badge": "Popular Value",
+    "overview": "A 7-day immersion through the ancient mountain kingdom of Hunza. Designed for adventurous travelers who wish to experience the crown jewels of Gilgit-Baltistan without sacrificing authenticity.",
+    "highlights": [
+      "Sunset over Rakaposhi and Ladyfinger Peak from Eagle's Nest (Duikar)",
+      "Crossing the legendary wooden slats of the Hussaini Suspension Bridge",
+      "Traditional home-cooked feast with a Wakhi family in Gulmit"
+    ],
+    "itineraryDays": [
+      {
+        "day": 1,
+        "title": "Islamabad to Gilgit / Chilas via Karakoram Highway",
+        "details": "Fly to Gilgit or scenic road drive through Babusar Pass with views of Nanga Parbat.",
+        "stay": "Gilgit River Lodge",
+        "meals": "Dinner Included"
+      },
+      {
+        "day": 2,
+        "title": "Gilgit to Karimabad (Central Hunza)",
+        "details": "Drive north along the roaring Hunza River. Stop at the Rakaposhi Viewpoint (7,788m) for traditional tea.",
+        "stay": "Hunza Heritage Inn",
+        "meals": "Breakfast & Dinner"
+      },
+      {
+        "day": 3,
+        "title": "Altit & Baltit Forts + Eagle's Nest Sunset",
+        "details": "Walk through ancient stone alleys, tour UNESCO-restored forts, and catch golden hour at Duikar.",
+        "stay": "Hunza Heritage Inn",
+        "meals": "Full Board"
+      },
+      {
+        "day": 4,
+        "title": "Attabad Lake & Passu Cones",
+        "details": "Cross through mountain tunnels to Attabad Lake for a boat tour. Continue past Passu Cathedral needles.",
+        "stay": "Passu Glacier Lodge",
+        "meals": "Full Board"
+      },
+      {
+        "day": 5,
+        "title": "Batura Glacier Day Trek & Hussaini Bridge",
+        "details": "Trek on the lateral moraine of Batura Glacier, one of the world's longest. Cross suspension bridge.",
+        "stay": "Passu Glacier Lodge",
+        "meals": "Full Board"
+      },
+      {
+        "day": 6,
+        "title": "Khunjerab Pass (China Border at 4,693m)",
+        "details": "Ascend to the world's highest paved border in Khunjerab National Park. Spot Himalayan ibex and marmots.",
+        "stay": "Karimabad Mountain Lodge",
+        "meals": "Full Board"
+      },
+      {
+        "day": 7,
+        "title": "Return to Gilgit & Flight to Islamabad",
+        "details": "Transfer to Gilgit Airport for onward flight, taking in aerial views of K2 and Nanga Parbat.",
+        "stay": "Expedition Concludes",
+        "meals": "Breakfast"
+      }
+    ],
+    "included": [
+      "All 4x4 Expedition Jeep ground transportation with private driver",
+      "6 nights twin-share accommodation in certified alpine lodges",
+      "All meals (Breakfast, Lunch, Dinner) specified in itinerary",
+      "Experienced local English/Urdu speaking mountain guide",
+      "All entry permits, fort entrance tickets, and National Park fees",
+      "Emergency medical kit and satellite messenger support"
+    ],
+    "notIncluded": [
+      "International airfare to/from Islamabad",
+      "Personal trekking gear and clothing",
+      "Travel and high-altitude medical evacuation insurance",
+      "Personal tips for guides and drivers"
+    ],
+    "preparationAdvice": "Prepare for temperature shifts ranging from +25°C in afternoon valleys to near freezing at high passes. Pack layered fleece and waterproof windbreaker."
+  },
+  {
+    "id": "baltoro-k2-pro-18d",
+    "name": "K2 Base Camp & Concordia Expedition Pro",
+    "type": "EXPEDITION PRO",
+    "destinationId": "skardu-baltoro",
+    "destinationName": "Skardu & Baltoro, Pakistan",
+    "duration": "18 Days / 17 Nights",
+    "durationDays": 18,
+    "difficulty": "Challenging / Technical Trek",
+    "travelStyle": "Expedition Pro (High Glacial Wilderness)",
+    "accommodation": "Expedition Geodesic Dome Tents + Shigar Heritage Hotel",
+    "meals": "Full Expedition Catering (Fresh meat, dal, high-calorie mountain chef provisions)",
+    "activities": ["Baltoro Glacier Moraine Trek", "Concordia 360° Amphitheater", "K2 Base Camp Memorial Visit", "Broad Peak Base Camp Walk"],
+    "guide": "Senior UIAGM / Certified High-Altitude Karakoram Expedition Leader",
+    "transport": "4x4 Mountain Jeeps + Dedicated Balti Porter Logistics",
+    "price": 2750,
+    "originalPrice": 3100,
+    "discountPercent": 11,
+    "badge": "Ultimate Bucket List",
+    "overview": "The holy grail of global trekking. A true high-altitude expedition walking 120km along the Baltoro glacier to Concordia, sleeping surrounded by four 8,000-meter giants: K2, Broad Peak, Gasherbrum I and II.",
+    "highlights": [
+      "Standing in Concordia, the 'Throne Room of the Mountain Gods'",
+      "Reaching K2 Base Camp (5,150m) and the Art Gilkey Memorial",
+      "Witnessing the sheer 1,000m granite walls of Trango Towers and Cathedral"
+    ],
+    "itineraryDays": [
+      {
+        "day": 1,
+        "title": "Arrival in Islamabad & Briefing at Alpine Club of Pakistan",
+        "details": "Expedition equipment check, permit sign-offs, and team welcome dinner.",
+        "stay": "Islamabad Diplomatic Hotel",
+        "meals": "Dinner"
+      },
+      {
+        "day": 2,
+        "title": "Spectacular Flight to Skardu (2,228m)",
+        "details": "Fly past Nanga Parbat into the rugged Baltistan valley.",
+        "stay": "Shigar Fort Resort",
+        "meals": "Full Board"
+      },
+      {
+        "day": 3,
+        "title": "Acclimatization & Final Porter Distribution in Skardu",
+        "details": "Walk to Kharpocho Fort, finalize 25kg porter loads, and test satellite gear.",
+        "stay": "Shigar Fort Resort",
+        "meals": "Full Board"
+      },
+      {
+        "day": 4,
+        "title": "4x4 Jeep to Askole (The Last Village)",
+        "details": "Drive through the Braldu River gorge on narrow rocky ledges to the trailhead at Askole (3,040m).",
+        "stay": "Askole Camp",
+        "meals": "Full Board"
+      },
+      {
+        "day": 5,
+        "title": "Trek Askole to Korofon (3,100m)",
+        "details": "First day on foot crossing the Biafo Glacier snout.",
+        "stay": "Korofon Camp",
+        "meals": "Full Board"
+      },
+      {
+        "day": 6,
+        "title": "Korofon to Jhola (3,200m)",
+        "details": "Follow the roaring Dumordo river; cross the wire suspension bridge.",
+        "stay": "Jhola Camp",
+        "meals": "Full Board"
+      },
+      {
+        "day": 7,
+        "title": "Jhola to Paiju (3,450m)",
+        "details": "Trek through willow groves to Paiju camp, with first glimpses of the Trango Towers.",
+        "stay": "Paiju Camp",
+        "meals": "Full Board"
+      },
+      {
+        "day": 8,
+        "title": "Rest & Acclimatization Day at Paiju",
+        "details": "Porters bake traditional flatbread; climbers take an altitude hike up Paiju Peak ridge.",
+        "stay": "Paiju Camp",
+        "meals": "Full Board"
+      },
+      {
+        "day": 9,
+        "title": "Paiju onto the Baltoro Glacier to Khoburtse (3,930m)",
+        "details": "Step onto the massive rock-covered snout of the Baltoro Glacier.",
+        "stay": "Khoburtse Camp",
+        "meals": "Full Board"
+      },
+      {
+        "day": 10,
+        "title": "Khoburtse to Urdukas (4,050m)",
+        "details": "Camp on high grassy cliffs directly facing the jaw-dropping Great Trango Towers.",
+        "stay": "Urdukas Camp",
+        "meals": "Full Board"
+      },
+      {
+        "day": 11,
+        "title": "Urdukas to Goro II (4,300m)",
+        "details": "Trek onto white glacier ice surrounded by Masherbrum (7,821m) and Muztagh Tower.",
+        "stay": "Goro II Camp (On Ice)",
+        "meals": "Full Board"
+      },
+      {
+        "day": 12,
+        "title": "Goro II to Concordia (4,691m)",
+        "details": "Enter the majestic amphitheater. Unrestricted 360-degree views of K2, Broad Peak, and Gasherbrums.",
+        "stay": "Concordia Base Camp",
+        "meals": "Full Board"
+      },
+      {
+        "day": 13,
+        "title": "Day Trek to K2 Base Camp (5,150m) & Broad Peak BC",
+        "details": "Walk along the Godwin-Austen glacier to touch the foot of the Savage Mountain and visit the Gilkey Memorial.",
+        "stay": "Concordia Base Camp",
+        "meals": "Full Board"
+      },
+      {
+        "day": 14,
+        "title": "Descent Concordia to Goro I",
+        "details": "Begin rapid descent down the center of the Baltoro moraine.",
+        "stay": "Goro I Camp",
+        "meals": "Full Board"
+      },
+      {
+        "day": 15,
+        "title": "Goro I to Bardumal / Paiju",
+        "details": "Covering big mileage as thicker oxygen fuels energy levels.",
+        "stay": "Paiju Camp",
+        "meals": "Full Board"
+      },
+      {
+        "day": 16,
+        "title": "Paiju to Askole Trailhead",
+        "details": "Final day on trail; celebratory Balti feast with the expedition porters.",
+        "stay": "Askole Camp",
+        "meals": "Celebration Dinner"
+      },
+      {
+        "day": 17,
+        "title": "4x4 Jeep Askole to Skardu",
+        "details": "Hot showers and well-earned comfortable beds in Skardu.",
+        "stay": "Skardu Serena Hotel",
+        "meals": "Full Board"
+      },
+      {
+        "day": 18,
+        "title": "Flight Skardu to Islamabad",
+        "details": "Debriefing, flight home or onward extension.",
+        "stay": "Expedition Concludes",
+        "meals": "Breakfast"
+      }
+    ],
+    "included": [
+      "All Central Karakoram National Park permits and government royalty fees",
+      "Professional high-altitude expedition chef and kitchen crew",
+      "Full porterage (up to 18kg personal gear per client)",
+      "Mountain Hardwear / The North Face 4-season 2-person tents",
+      "Dining tent with gas heater, chairs, tables, and solar charging station",
+      "Portable Gamow hyperbaric chamber and medical oxygen cylinders",
+      "Garmin inReach satellite tracker and emergency beacon"
+    ],
+    "notIncluded": [
+      "International flights",
+      "Personal mountaineering / trekking equipment (sleeping bag -20°C, boots)",
+      "Helicopter rescue deposit/insurance (mandatory through Askari Aviation)",
+      "Porter and guide tips ($150-$200 customary pooled amount)"
+    ],
+    "preparationAdvice": "Rigorous cardiovascular training required (trail running, stairmaster with weighted pack 15kg for 4 months prior). Must be comfortable walking 6-8 hours daily on broken glacier moraine."
+  },
+  {
+    "id": "fairy-meadows-comfort-5d",
+    "name": "Nanga Parbat & Fairy Meadows Comfort Retreat",
+    "type": "COMFORT",
+    "destinationId": "fairy-meadows",
+    "destinationName": "Fairy Meadows, Pakistan",
+    "duration": "5 Days / 4 Nights",
+    "durationDays": 5,
+    "difficulty": "Moderate",
+    "travelStyle": "Comfort (Alpine Wooden Chalets & Scenic Day Treks)",
+    "accommodation": "Cozy Pine Alpine Chalets with Wood Stoves",
+    "meals": "Hearty Alpine Farm Meals & Hot Kashmiri Tea",
+    "activities": ["Beyal Camp Viewpoint Hike", "Nanga Parbat Glacier Moraine Walk", "Stargazing at 3,300m", "Raikot Jeep Track Experience"],
+    "guide": "Experienced Mountain Guide & Wildlife Naturalist",
+    "transport": "Private AC Van + 4x4 Mountain Jeep",
+    "price": 750,
+    "originalPrice": 880,
+    "discountPercent": 15,
+    "badge": "Scenic Favorite",
+    "overview": "Immerse yourself in one of the world's most romantic mountain views. Rest in fragrant cedar wood cabins with direct glass views of the shimmering Raikot Glacier and the monumental ice walls of Nanga Parbat.",
+    "highlights": [
+      "Panoramic views of the 8,126m summit from your private cabin balcony",
+      "Day trek to Beyal Camp through enchanted pine and birch woodlands",
+      "Cozy evenings beside wood-burning cast iron stoves with mountain tales"
+    ],
+    "itineraryDays": [
+      {
+        "day": 1,
+        "title": "Islamabad to Raikot Bridge",
+        "details": "Scenic drive along the Karakoram Highway to Raikot Bridge on the Indus River.",
+        "stay": "Raikot Riverside Chalets",
+        "meals": "Dinner"
+      },
+      {
+        "day": 2,
+        "title": "Raikot Jeep Track & Hike to Fairy Meadows (3,300m)",
+        "details": "Mountain jeep to Tattu village; scenic 3-hour hike through pine forests to the meadows.",
+        "stay": "Raikot Sarai Pine Chalets",
+        "meals": "Full Board"
+      },
+      {
+        "day": 3,
+        "title": "Day Trek to Beyal Camp & Nanga Parbat Viewpoint",
+        "details": "Walk along the glacier edge to Beyal Camp (3,500m) with up-close views of hanging seracs.",
+        "stay": "Raikot Sarai Pine Chalets",
+        "meals": "Full Board"
+      },
+      {
+        "day": 4,
+        "title": "Fairy Meadows Exploration & Reflection Lake",
+        "details": "Photography at the natural reflection pool, forest walks, and cultural village tea.",
+        "stay": "Raikot Sarai Pine Chalets",
+        "meals": "Full Board"
+      },
+      {
+        "day": 5,
+        "title": "Descent to Tattu, Jeep to Raikot, Return Transit",
+        "details": "Hike down to Tattu, transfer to AC vehicle, and journey to Gilgit or Islamabad.",
+        "stay": "Expedition Concludes",
+        "meals": "Breakfast & Lunch"
+      }
+    ],
+    "included": [
+      "Round-trip private 4x4 mountain jeep from Raikot Bridge to Tattu village",
+      "Horses / porters to carry luggage up the trail so you hike with only a daypack",
+      "3 nights in deluxe private pine chalets with attached modern bathrooms",
+      "All meals cooked fresh on site by expert local mountain cooks",
+      "Professional guide and local escort"
+    ],
+    "notIncluded": [
+      "Personal riding horses (optional for hiking portions)",
+      "Alcohol and carbonated beverages",
+      "Tips for local jeep drivers and porters"
+    ],
+    "preparationAdvice": "Easy to moderate fitness required. Good broken-in hiking boots and walking poles make the 3-hour forest ascent effortless."
+  },
+  {
+    "id": "gilgit-baltistan-grand-premium-12d",
+    "name": "The Grand Karakoram & Gilgit-Baltistan Luxury Odyssey",
+    "type": "PREMIUM",
+    "destinationId": "hunza-valley",
+    "destinationName": "Hunza, Skardu & Deosai, Pakistan",
+    "duration": "12 Days / 11 Nights",
+    "durationDays": 12,
+    "difficulty": "Moderate",
+    "travelStyle": "Premium (Luxury Heritage Palaces, Private Chauffeurs & Flights)",
+    "accommodation": "Serena Heritage Forts (Shigar & Khaplu) & Luxury Domes at Attabad Lake",
+    "meals": "Fine Mountain Dining & Traditional Royal Feasts",
+    "activities": ["Deosai Plains Wildlife Safari", "Attabad Lake Private Speedboat", "Altit Royal Garden Tea", "Shigar Ancient Fort Tour"],
+    "guide": "Senior Historian & Certified Mountain Naturalist",
+    "transport": "Luxury Prado / Land Cruiser with Domestic Mountain Flights",
+    "price": 3450,
+    "originalPrice": 3900,
+    "discountPercent": 12,
+    "badge": "Signature Luxury",
+    "overview": "The ultimate luxury expedition through northern Pakistan. Stay in restored 400-year-old royal Tibetan/Balti palaces, cruise turquoise glacial waters in private speedboats, and cross the flower-carpeted Deosai high plateau.",
+    "highlights": [
+      "Staying in the royal suites of the 400-year-old Shigar Fort and Khaplu Palace",
+      "Private luxury glamping suspended over the turquoise waters of Attabad Lake",
+      "Spotting Himalayan Brown Bears across the endless emerald rolling plains of Deosai"
+    ],
+    "itineraryDays": [
+      {
+        "day": 1,
+        "title": "VIP Arrival in Islamabad & The Monal Welcome Dinner",
+        "details": "Private executive transfer, briefing, dinner overlooking the Margalla Hills.",
+        "stay": "Islamabad Serena Hotel",
+        "meals": "Welcome Dinner"
+      },
+      {
+        "day": 2,
+        "title": "Scenic Mountain Flight to Gilgit & Transfer to Hunza",
+        "details": "Breathtaking flight over the Himalayas. Drive to Karimabad in luxury Prado.",
+        "stay": "Hunza Serena Inn",
+        "meals": "Full Board"
+      },
+      {
+        "day": 3,
+        "title": "Royal Heritage of Hunza: Baltit & Altit Palaces",
+        "details": "Private access tours with royal historians; tea in the queen's apricot orchards.",
+        "stay": "Hunza Serena Inn",
+        "meals": "Full Board"
+      },
+      {
+        "day": 4,
+        "title": "Attabad Lake VIP Glamping & Passu Cathedral",
+        "details": "Private catamaran on Attabad; check into heated geodesic lakeview dome.",
+        "stay": "Luxus Grand Attabad Dome",
+        "meals": "Full Board"
+      },
+      {
+        "day": 5,
+        "title": "Khunjerab Roof of the World Safari",
+        "details": "Excursion to the 4,693m China border with gourmet high-altitude heated picnic.",
+        "stay": "Luxus Grand Attabad Dome",
+        "meals": "Full Board"
+      },
+      {
+        "day": 6,
+        "title": "Scenic Highway Transit to Skardu",
+        "details": "Drive through the dramatic Indus-Gilgit river confluence into Baltistan.",
+        "stay": "Serena Shigar Fort (Royal Palace)",
+        "meals": "Full Board"
+      },
+      {
+        "day": 7,
+        "title": "Shigar & Cold Desert Sunset Safari",
+        "details": "Explore 400-year-old Tibetan woodwork; sunset over the white sand dunes of Sarfaranga.",
+        "stay": "Serena Shigar Fort",
+        "meals": "Full Board"
+      },
+      {
+        "day": 8,
+        "title": "Khaplu Palace & Chaqchan Mosque",
+        "details": "Drive to the lush valley of Khaplu; visit the 14th-century wooden mosque.",
+        "stay": "Serena Khaplu Palace",
+        "meals": "Full Board"
+      },
+      {
+        "day": 9,
+        "title": "Deosai Plateau & Sheosar Lake Expedition",
+        "details": "Ascend to 4,114m in 4x4 Land Cruisers; picnic on the shores of crystal Sheosar Lake.",
+        "stay": "Deosai Glamping Camp / Serena Shigar",
+        "meals": "Full Board"
+      },
+      {
+        "day": 10,
+        "title": "Shangrila Resort & Upper Kachura Lake",
+        "details": "Relax by the heart-shaped lake; private boat ride on Upper Kachura.",
+        "stay": "Shangrila Resort Skardu",
+        "meals": "Full Board"
+      },
+      {
+        "day": 11,
+        "title": "Flight Skardu to Islamabad",
+        "details": "Aerial flight over the Karakoram; luxury farewell dinner in Islamabad.",
+        "stay": "Islamabad Serena Hotel",
+        "meals": "Full Board"
+      },
+      {
+        "day": 12,
+        "title": "Homeward Flight Transfers",
+        "details": "VIP executive airport transfer for your international connection.",
+        "stay": "Expedition Concludes",
+        "meals": "Breakfast"
+      }
+    ],
+    "included": [
+      "All luxury accommodations (5-star hotels & boutique heritage forts)",
+      "All domestic air tickets (Islamabad-Gilgit and Skardu-Islamabad)",
+      "Dedicated air-conditioned Toyota Prado / Land Cruiser with experienced chauffeur",
+      "All fine dining meals including chef-prepared regional specialties",
+      "Dedicated private lead guide, heritage historian, and concierge service",
+      "All VIP admissions, boat rentals, and National Park permits"
+    ],
+    "notIncluded": [
+      "International business/economy airfare",
+      "Personal spa treatments and premium alcoholic beverages",
+      "Personal travel insurance"
+    ],
+    "preparationAdvice": "Relaxed physical requirement. Suitable for travelers of all ages seeking deep cultural intimacy and majestic alpine views in supreme comfort."
+  },
+  {
+    "id": "mont-blanc-classic-6d",
+    "name": "Mont Blanc Summit Classic Alpine Ascent",
+    "type": "EXPEDITION PRO",
+    "destinationId": "chamonix-mont-blanc",
+    "destinationName": "Chamonix, France",
+    "duration": "6 Days / 5 Nights",
+    "durationDays": 6,
+    "difficulty": "Technical Alpine / High Fitness",
+    "travelStyle": "Expedition Pro (Classic Guided Alpinism)",
+    "accommodation": "Chamonix Chalet & High Alpine Refuges (Tete Rousse & Gouter)",
+    "meals": "French Savoyard Alpine Hut Dinners & Energy Packs",
+    "activities": ["Glacier Ice Training & Crampon School", "Aiguille du Gouter Scramble", "Summit Push at 4,808m", "Mer de Glace Descent"],
+    "guide": "Certified IFMGA / UIAGM Mountain Guide (1:2 Client-Guide Ratio)",
+    "transport": "Chamonix Valley Cable Cars & Mont Blanc Tramway",
+    "price": 2400,
+    "originalPrice": 2650,
+    "discountPercent": 10,
+    "badge": "Alps Crown",
+    "overview": "Tackle the highest peak in Western Europe. Includes 3 days of acclimatization and technical ice axe/crampon refresher training followed by a 3-day summit window via the historic Gouter Route.",
+    "highlights": [
+      "Standing on the highest summit of the Alps at 4,808 meters",
+      "Tackling the famous Bosses Ridge knife-edge snow crest",
+      "Sunrise over the French, Italian, and Swiss Alps simultaneously"
+    ],
+    "itineraryDays": [
+      {
+        "day": 1,
+        "title": "Rendezvous in Chamonix & Technical Gear Check",
+        "details": "Meet your UIAGM guide, fit technical crampons, harness, and mountaineering boots.",
+        "stay": "Chamonix Alpine Chalet",
+        "meals": "Dinner"
+      },
+      {
+        "day": 2,
+        "title": "Acclimatization & Glacier Training (Torino Hut / Valle Blanche)",
+        "details": "Practice French 10-point cramponing, ice axe arrest, and moving together on rope.",
+        "stay": "Torino Alpine Refuge",
+        "meals": "Full Board"
+      },
+      {
+        "day": 3,
+        "title": "Aiguille du Tour Ascent (Acclimatization Summit)",
+        "details": "Climb to 3,540m over mixed rock and snow; return to Chamonix for rest.",
+        "stay": "Chamonix Alpine Chalet",
+        "meals": "Breakfast & Lunch"
+      },
+      {
+        "day": 4,
+        "title": "Nid d'Aigle to Tete Rousse Refuge (3,167m)",
+        "details": "Take the Mont Blanc Tramway; hike up to the refuge beneath the Grand Couloir.",
+        "stay": "Refuge de Tete Rousse",
+        "meals": "Full Board"
+      },
+      {
+        "day": 5,
+        "title": "Grand Couloir, Gouter Ridge & Summit Push (4,808m)",
+        "details": "Cross the Couloir at dawn, scramble the Gouter Ridge, push past the Vallot hut to the summit crest.",
+        "stay": "Refuge du Gouter",
+        "meals": "Full Board"
+      },
+      {
+        "day": 6,
+        "title": "Descent to Chamonix & Celebratory Dinner",
+        "details": "Descend the ridge early, catch the tramway back to Les Houches, and celebrate in Chamonix.",
+        "stay": "Chamonix Alpine Chalet",
+        "meals": "Celebration Dinner"
+      }
+    ],
+    "included": [
+      "Certified IFMGA / UIAGM Mountain Guide for all 6 days (strict 1:2 ratio on summit push)",
+      "All high-mountain refuge overnight fees with half-board (breakfast & dinner)",
+      "All cable cars, mountain trains (Aiguille du Midi, Tramway du Mont Blanc)",
+      "Group technical safety equipment (ropes, carabiners, ice screws, first aid)"
+    ],
+    "notIncluded": [
+      "Personal mountaineering gear rental (stiff boots, crampons, ice axe, harness)",
+      "Chamonix hotel nights outside the package",
+      "Lunches and trail energy bars"
+    ],
+    "preparationAdvice": "Prior crampon experience highly recommended. Must be capable of continuous 8-10 hour aerobic exertion with 1,200m elevation gain in thin air."
+  }
+]

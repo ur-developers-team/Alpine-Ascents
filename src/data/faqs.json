@@ -1,0 +1,38 @@
+[
+  {
+    "id": "faq-1",
+    "category": "High Altitude & Safety",
+    "question": "What is the mandatory acclimatization schedule for Karakoram expeditions?",
+    "answer": "Our high-altitude itineraries strictly enforce international UIAA medical protocols: maximum 500m net sleeping elevation gain per 24 hours above 3,000m, with mandatory rest days every 1,000m. Every team is equipped with portable pulse oximeters, hyperbaric Gamow bags, and supplemental medical oxygen."
+  },
+  {
+    "id": "faq-2",
+    "category": "Permits & Visas",
+    "question": "What permits are required for trekking to K2 Base Camp and Concordia?",
+    "answer": "Travelers require a Pakistan Mountaineering/Trekking Visa, a Central Karakoram National Park (CKNP) entry pass, and an official licensed guide accompaniment mandated by the Alpine Club of Pakistan and the Ministry of Tourism. We handle all paperwork directly with the Department of Tourist Services."
+  },
+  {
+    "id": "faq-3",
+    "category": "Gear & Equipment",
+    "question": "Can I rent technical mountaineering gear in Skardu or Gilgit?",
+    "answer": "Yes. Our base depots in Skardu and Karimabad stock certified high-altitude 800-fill down parkas, B3 double mountaineering boots, steel crampons, harnesses, and ice axes. However, we advise all climbers to bring their own broken-in boots and technical personal layers."
+  },
+  {
+    "id": "faq-4",
+    "category": "Physical Fitness",
+    "question": "What physical preparation is needed for the 18-day K2 Base Camp trek?",
+    "answer": "We recommend a minimum of 4 to 6 months of targeted aerobic conditioning (stairmaster with 12-15kg weighted backpack, trail running, incline lunges) and multi-day hiking endurance. Climbers should be comfortable walking 6 to 8 hours daily over uneven, shifting glacial moraine."
+  },
+  {
+    "id": "faq-5",
+    "category": "Pricing & Booking",
+    "question": "Are the prices shown on the website final commercial bookings?",
+    "answer": "No. All prices displayed on Alpine Ascents represent transparent demonstration and planning estimates. Because we operate without a live commercial transaction backend, submitting a trip request generates an official manifest dossier without charging any credit card or financial fee."
+  },
+  {
+    "id": "faq-6",
+    "category": "Emergency Evacuation",
+    "question": "How do emergency helicopter rescues work in northern Pakistan?",
+    "answer": "High-altitude medical evacuations are operated by Askari Aviation using military-grade high-altitude helicopters (Ecureuil AS350 B3e). All international participants must hold travel insurance covering helicopter evacuation up to 6,000m without elevation exclusions."
+  }
+]

@@ -1,0 +1,139 @@
+.summit-360-section {
+  padding: 6rem 0;
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.summit-360-container {
+  position: relative;
+  width: 100%;
+  height: 540px;
+  background: #070c14;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.summit-360-canvas-box {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+.summit-360-canvas-box:active {
+  cursor: grabbing;
+}
+
+.summit-360-hud-top {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.summit-360-selector-bar {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.summit-360-btn {
+  background: rgba(11, 17, 30, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.summit-360-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--text-primary);
+}
+
+.summit-360-btn.active {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: #0b111e;
+}
+
+.summit-360-controls-bottom {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.summit-360-control-btn {
+  background: rgba(11, 17, 30, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.summit-360-control-btn:hover,
+.summit-360-control-btn.active {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: #0b111e;
+}
+
+.summit-360-legend {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 10;
+  background: rgba(11, 17, 30, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 1.1rem;
+  pointer-events: none;
+}
+
+.summit-360-legend span {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+.summit-360-legend strong {
+  font-size: 0.88rem;
+  color: var(--accent-gold);
+}
+
+@media (max-width: 768px) {
+  .summit-360-container {
+    height: 400px;
+  }
+  .summit-360-selector-bar {
+    top: auto;
+    bottom: 4.5rem;
+    left: 1rem;
+    right: 1rem;
+  }
+  .summit-360-legend {
+    display: none;
+  }
+}

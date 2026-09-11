@@ -1,0 +1,94 @@
+.animated-river-wrap {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  overflow: hidden;
+  margin: 2rem 0;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, rgba(7, 12, 18, 0.6) 0%, rgba(11, 17, 30, 0.9) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.river-label-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1.25rem;
+  z-index: 10;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-gold);
+  background: rgba(11, 17, 30, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  pointer-events: none;
+}
+
+.river-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #38bdf8;
+  animation: pulse 2s infinite;
+}
+
+.river-svg-canvas {
+  width: 200%;
+  height: 100%;
+  display: block;
+}
+
+.river-wave-layer {
+  will-change: transform;
+}
+
+.river-wave-deep {
+  animation: waveFlow 18s linear infinite;
+  opacity: 0.85;
+}
+
+.river-wave-mid {
+  animation: waveFlow 12s linear infinite reverse;
+  opacity: 0.65;
+}
+
+.river-wave-crest {
+  animation: waveFlow 8s linear infinite;
+  opacity: 0.5;
+}
+
+.river-bank-silhouette {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: linear-gradient(0deg, rgba(11, 17, 30, 0.95) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+@keyframes waveFlow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .animated-river-wrap {
+    height: 110px;
+    margin: 1.25rem 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .river-wave-layer {
+    animation: none !important;
+  }
+}

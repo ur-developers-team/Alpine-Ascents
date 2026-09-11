@@ -1,0 +1,38 @@
+[
+  {
+    "id": "eco-cleanup-8000m",
+    "title": "Autonomous Drone Waste Retrieval at 8,000m",
+    "category": "Environmental Conservation",
+    "date": "2025 - 2026",
+    "summary": "Heavy-lift electric cargo drones tested on Everest and K2 to fly down discarded oxygen cylinders, broken tents, and ropes from Camp 1 and Camp 2, eliminating hazardous porter carries through lethal icefalls.",
+    "impact": "Reduces human transit through the Khumbu and Bottleneck icefall zones by over 40% while sanitizing high-altitude slopes.",
+    "badge": "Eco-Innovation"
+  },
+  {
+    "id": "aerogel-thermal-suits",
+    "title": "Graphene & Aerogel Ultra-Insulation Expedition Suits",
+    "category": "Gear Technology",
+    "date": "2026 Season",
+    "summary": "NASA-derived silica aerogel composite fibers woven into 900-fill down suits. Provides unmatched thermal retention at -50°C with 35% less bulk and zero moisture-clogging failure during continuous sweat cycles.",
+    "impact": "Drastically decreases frostbite incidence and improves movement agility across technical vertical ice pitches.",
+    "badge": "Material Science"
+  },
+  {
+    "id": "biometric-satellite-telemetry",
+    "title": "Real-Time SpO2 & ECG Satellite Telemetry for High Altitude",
+    "category": "Medical & Safety",
+    "date": "Active Rollout",
+    "summary": "Smart chest straps and wrist sensors transmitting pulse oximetry, heart rate variability, and core body temperature via low-earth orbit Iridium satellites directly to base camp medical physicians.",
+    "impact": "Permits early identification of HAPE and HACE onset 12 hours before clinical manifestation, prompting timely descent orders.",
+    "badge": "Medical Tech"
+  },
+  {
+    "id": "pakistan-sustainable-regulations",
+    "title": "Strict Ecological WAG Bag Protocols Mandated in Karakoram",
+    "category": "Policy & Ethics",
+    "date": "2026 Mandate",
+    "summary": "Alpine Club of Pakistan and Gilgit-Baltistan Department of Tourism mandate strict sealable bio-degradable human waste pack-out systems (WAG bags) for all climbers venturing beyond Concordia.",
+    "impact": "Preserves pristine glacial freshwater sources feeding millions of downstream Indus basin residents.",
+    "badge": "Environmental Policy"
+  }
+]

@@ -1,0 +1,118 @@
+.mountain-finder-section {
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.mountain-controls-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.mountain-controls-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.mountain-slider-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mountain-slider-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.mountain-slider {
+  width: 100%;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.mountain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 1.75rem;
+}
+
+.mountain-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.mountain-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.mountain-card-media {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.mountain-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.mountain-card:hover .mountain-card-img {
+  transform: scale(1.06);
+}
+
+.mountain-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.mountain-compare-btn-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .mountain-controls-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .mountain-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .mountain-controls-card {
+    padding: 1.25rem 1rem;
+  }
+  .mountain-card-media {
+    height: 190px;
+  }
+  .mountain-card-body {
+    padding: 1.15rem;
+  }
+}

@@ -1,0 +1,35 @@
+[
+  {
+    "id": "food-hunza-local",
+    "region": "Hunza Valley",
+    "cuisineType": "Traditional Hunzakut Organic Cuisine",
+    "breakfast": "Giyaling (Whole-grain buckwheat crepes served with pure warm apricot kernel oil and fresh mulberry jam) + Tumuro mountain herbal tea.",
+    "lunch": "Chapshuro (Crispy baked bread crust stuffed with minced beef/yak, fresh coriander, onions, and mountain black cumin).",
+    "dinner": "Dawdo (Steaming nourishing noodle soup with sun-dried meat, dough ribbons, garlic, and wild mountain herbs) + Hunza Apricot Walnut Tart.",
+    "altitudeBenefit": "High in healthy monounsaturated fatty acids and antioxidants, proven to accelerate blood oxygen carriage and maintain steady thermogenesis.",
+    "dietaryOptions": ["Vegetarian Variations Available", "Organic Dairy", "Gluten-Sensitive Substitutions on Request"],
+    "inclusionStatus": "Included in all Hunza Explorer & Premium Packages"
+  },
+  {
+    "id": "food-baltistan-concordia",
+    "region": "Baltistan & Baltoro Glacier",
+    "cuisineType": "High-Altitude Expedition Catering",
+    "breakfast": "Hot porridge with golden raisins and honey, fried eggs, fresh baked chapatti bread, coffee/tea with powdered milk.",
+    "lunch": "Trail energy packs: almonds, walnuts, dried apricots, canned tuna/sardines, processed cheddar cheese, chocolate wafers.",
+    "dinner": "Balti Marzan (Millet dough dumplings served in a pool of hot desi ghee), fresh goat/yak curry, yellow dal, steamed basmati rice, and hot custard.",
+    "altitudeBenefit": "Designed by our base camp chefs to deliver 4,200 to 4,800 daily calories to prevent muscle catabolism during heavy glacier load-carrying.",
+    "dietaryOptions": ["Vegetarian Dal Bhat Option Daily", "Halal Certified", "High Carb Focus"],
+    "inclusionStatus": "Full Board included in K2 Base Camp & Expedition Pro Packages"
+  },
+  {
+    "id": "food-alps-savoyard",
+    "region": "Chamonix & European Alps",
+    "cuisineType": "Savoyard High-Alpine Alpine Cuisine",
+    "breakfast": "French crusty baguette with salted butter, fruit preserves, muesli with yogurt, espresso or cafe au lait.",
+    "lunch": "Smoked saucisson, Beaufort and Comte alpine cheeses, dried figs, sourdough bread on the trail.",
+    "dinner": "Tartiflette (Gratin of potatoes, lardons, and molten Reblochon cheese) or traditional Gruyere fondue, followed by warm tarte aux myrtilles (blueberry tart).",
+    "altitudeBenefit": "Dense fats and slow-burning carbohydrates ideal for shivering alpine bivouacs and pre-dawn summit attempts.",
+    "dietaryOptions": ["Vegetarian Fondue Available", "Lactose-Free Substitutions Available"],
+    "inclusionStatus": "Half-board dinner & breakfast included in Mont Blanc hut stays"
+  }
+]

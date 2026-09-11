@@ -1,0 +1,74 @@
+[
+  {
+    "year": "1786",
+    "event": "First Ascent of Mont Blanc",
+    "climbers": "Jacques Balmat & Michel-Gabriel Paccard",
+    "elevation": "4,808m",
+    "region": "Chamonix, Alps (France/Italy)",
+    "significance": "Universally recognized as the birth of modern mountaineering, breaking centuries of mythological terror regarding high peaks.",
+    "icon": "mountain"
+  },
+  {
+    "year": "1865",
+    "event": "First Ascent of the Matterhorn",
+    "climbers": "Edward Whymper, Michel Croz, Lord Francis Douglas, Charles Hudson, Douglas Hadow, Peter Taugwalder Sr. & Jr.",
+    "elevation": "4,478m",
+    "region": "Pennine Alps (Switzerland/Italy)",
+    "significance": "Marked the conclusion of the Golden Age of Alpinism, celebrated for triumph and sobered by tragic descent when a rope snapped.",
+    "icon": "flag"
+  },
+  {
+    "year": "1950",
+    "event": "First Ascent of an 8,000m Peak (Annapurna I)",
+    "climbers": "Maurice Herzog & Louis Lachenal",
+    "elevation": "8,091m",
+    "region": "Himalayas (Nepal)",
+    "significance": "The first time human beings stood on the summit of an eight-thousander, accomplished without supplemental bottled oxygen.",
+    "icon": "compass"
+  },
+  {
+    "year": "1953",
+    "event": "First Ascent of Mount Everest",
+    "climbers": "Sir Edmund Hillary & Tenzing Norgay",
+    "elevation": "8,848m",
+    "region": "Mahalangur Himal (Nepal/Tibet)",
+    "significance": "Reaching the highest point on Earth along the Southeast Ridge via the South Col and Hillary Step.",
+    "icon": "award"
+  },
+  {
+    "year": "1954",
+    "event": "First Ascent of K2 (The Savage Mountain)",
+    "climbers": "Achille Compagnoni & Lino Lacedelli (Supported by Walter Bonatti & Amir Mehdi)",
+    "elevation": "8,611m",
+    "region": "Karakoram (Gilgit-Baltistan, Pakistan)",
+    "significance": "Conquest of Earth's second-highest and notoriously steepest, most lethal peak via the Abruzzi Spur.",
+    "icon": "shield"
+  },
+  {
+    "year": "1978",
+    "event": "First Ascent of Everest Without Supplemental Oxygen",
+    "climbers": "Reinhold Messner & Peter Habeler",
+    "elevation": "8,848m",
+    "region": "Himalayas (Nepal/Tibet)",
+    "significance": "Proved physiological feasibility of human respiration in the Death Zone without bottled oxygen, rewriting medical assumptions.",
+    "icon": "wind"
+  },
+  {
+    "year": "1986",
+    "event": "First Human to Climb All 14 Eight-Thousanders",
+    "climbers": "Reinhold Messner",
+    "elevation": "8,000m+ Crown",
+    "region": "Himalayas & Karakoram",
+    "significance": "Messner completed all 14 peaks over 8,000m entirely without supplemental oxygen and largely in pure alpine style.",
+    "icon": "award"
+  },
+  {
+    "year": "2021",
+    "event": "Historic First Winter Ascent of K2",
+    "climbers": "Nirmal Purja, Mingma G, Gelje Sherpa, Mingma David Sherpa & Team",
+    "elevation": "8,611m",
+    "region": "Karakoram (Gilgit-Baltistan, Pakistan)",
+    "significance": "Solved the 'Last Great Problem of High Altitude Mountaineering' under -60°C conditions, standing on the summit while singing the Nepali anthem.",
+    "icon": "snowflake"
+  }
+]

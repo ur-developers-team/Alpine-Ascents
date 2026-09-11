@@ -1,0 +1,63 @@
+[
+  {
+    "id": "route-k2-baltoro",
+    "name": "Baltoro Glacier to K2 Base Camp & Concordia",
+    "mountain": "K2 (8,611m)",
+    "region": "Karakoram, Gilgit-Baltistan",
+    "totalDistance": "124 km (Round Trip)",
+    "elevationGain": "+2,110m Net Gain",
+    "maxAltitude": "5,150m (K2 Base Camp)",
+    "overallDifficulty": "Strenuous Glacial Trek",
+    "description": "The world's premier high-altitude glacial trek tracing the roaring Braldu river, ascending the rocky lateral moraine of the Baltoro Glacier, culminating at the colossal junction of Concordia.",
+    "waypoints": [
+      { "stage": "Askole (Trailhead)", "distanceKm": 0, "altitudeM": 3040, "difficulty": "Moderate", "terrain": "Dry Valley / Riverbed", "camp": "Askole Village Camp" },
+      { "stage": "Jhola Camp", "distanceKm": 20, "altitudeM": 3200, "difficulty": "Moderate", "terrain": "River Scree & Wire Bridge", "camp": "Jhola Campsite" },
+      { "stage": "Paiju Camp", "distanceKm": 42, "altitudeM": 3450, "difficulty": "Moderate", "terrain": "Sandy Terraces & Willow Groves", "camp": "Paiju Oasis Camp" },
+      { "stage": "Khoburtse", "distanceKm": 56, "altitudeM": 3930, "difficulty": "Challenging", "terrain": "Glacier Snout / Rocky Moraine", "camp": "Khoburtse Ledge" },
+      { "stage": "Urdukas", "distanceKm": 64, "altitudeM": 4050, "difficulty": "Challenging", "terrain": "Granite Boulder Terraces", "camp": "Urdukas High Camp" },
+      { "stage": "Goro II", "distanceKm": 76, "altitudeM": 4300, "difficulty": "High", "terrain": "White Glacial Ice & Crevasses", "camp": "Goro II (On Glacier)" },
+      { "stage": "Concordia Amphitheater", "distanceKm": 88, "altitudeM": 4691, "difficulty": "High", "terrain": "Glacier Junction under K2 & Broad Peak", "camp": "Concordia Camp" },
+      { "stage": "K2 Base Camp & Gilkey Memorial", "distanceKm": 98, "altitudeM": 5150, "difficulty": "Extreme", "terrain": "Godwin-Austen Glacial Ice", "camp": "K2 Base Camp Apex" }
+    ]
+  },
+  {
+    "id": "route-mont-blanc-gouter",
+    "name": "Mont Blanc Summit via Gouter Ridge",
+    "mountain": "Mont Blanc (4,808m)",
+    "region": "Chamonix, French Alps",
+    "totalDistance": "24 km",
+    "elevationGain": "+2,436m Net Gain",
+    "maxAltitude": "4,808m (Summit)",
+    "overallDifficulty": "Technical Alpine (PD/AD)",
+    "description": "The classic voie normale to Western Europe's highest crest. Ascends from the tramway terminus through the hazardous Grand Couloir to the high Gouter refuge and the exposed Bosses snow ridge.",
+    "waypoints": [
+      { "stage": "Nid d'Aigle (Tram Terminus)", "distanceKm": 0, "altitudeM": 2372, "difficulty": "Moderate", "terrain": "Alpine Pasture & Scree Trail", "camp": "Tram Station" },
+      { "stage": "Tete Rousse Refuge", "distanceKm": 4.5, "altitudeM": 3167, "difficulty": "Challenging", "terrain": "Glacial Moraine & Snow Slopes", "camp": "Refuge de Tete Rousse" },
+      { "stage": "Grand Couloir Crossing", "distanceKm": 5.5, "altitudeM": 3340, "difficulty": "High Hazard", "terrain": "Active Rockfall Gully", "camp": "Transit Point (No Camping)" },
+      { "stage": "Refuge du Gouter", "distanceKm": 7.2, "altitudeM": 3835, "difficulty": "Advanced", "terrain": "Steep Class 3-4 Rock Scramble", "camp": "Gouter Alpine Refuge" },
+      { "stage": "Dome du Gouter", "distanceKm": 9.5, "altitudeM": 4304, "difficulty": "High", "terrain": "Wind-Scoured Glacier Snow Dome", "camp": "Transit Point" },
+      { "stage": "Vallot Emergency Shelter", "distanceKm": 10.8, "altitudeM": 4362, "difficulty": "High", "terrain": "High Altitude Glacial Saddle", "camp": "Emergency Survival Bivouac" },
+      { "stage": "Bosses Ridge Arête", "distanceKm": 11.5, "altitudeM": 4550, "difficulty": "Extreme Exposure", "terrain": "Knife-Edge Razor Snow Ridge", "camp": "Rope Team Transit" },
+      { "stage": "Mont Blanc Summit", "distanceKm": 12.0, "altitudeM": 4808, "difficulty": "Apex", "terrain": "High Snowy Dome", "camp": "Summit Crest" }
+    ]
+  },
+  {
+    "id": "route-fairy-meadows-nanga",
+    "name": "Raikot to Fairy Meadows & Nanga Parbat BC",
+    "mountain": "Nanga Parbat (8,126m)",
+    "region": "Diamir, Gilgit-Baltistan",
+    "totalDistance": "26 km",
+    "elevationGain": "+1,800m Net Gain",
+    "maxAltitude": "3,967m (Base Camp)",
+    "overallDifficulty": "Moderate to Strenuous",
+    "description": "An iconic journey from the desert gorge of the Indus River up into enchanted pine woodlands and sub-alpine pastures, confronting the sheer 4,600m vertical rise of Nanga Parbat's Raikot face.",
+    "waypoints": [
+      { "stage": "Raikot Bridge (KKH)", "distanceKm": 0, "altitudeM": 1100, "difficulty": "Easy", "terrain": "Indus River Valley Gorge", "camp": "Riverside Motel" },
+      { "stage": "Tattu Village Trailhead", "distanceKm": 12, "altitudeM": 2600, "difficulty": "Adrenaline", "terrain": "Cliffside Mountain Jeep Track", "camp": "Jeep Stop Point" },
+      { "stage": "Fairy Meadows Pastures", "distanceKm": 17, "altitudeM": 3300, "difficulty": "Moderate", "terrain": "Cedar & Pine Forest Trail", "camp": "Raikot Sarai Chalets" },
+      { "stage": "Beyal Camp", "distanceKm": 21, "altitudeM": 3500, "difficulty": "Moderate", "terrain": "Glacier Rim & Birch Woodlands", "camp": "Beyal Alpine Shelters" },
+      { "stage": "Raikot Glacier Viewpoint", "distanceKm": 24, "altitudeM": 3750, "difficulty": "Challenging", "terrain": "Lateral Moraine Ridge", "camp": "Day Viewpoint" },
+      { "stage": "Nanga Parbat Base Camp", "distanceKm": 26, "altitudeM": 3967, "difficulty": "High", "terrain": "Glacial Icefall Edge under 8,126m Face", "camp": "Base Camp Monument" }
+    ]
+  }
+]

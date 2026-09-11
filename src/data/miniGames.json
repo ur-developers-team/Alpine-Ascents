@@ -1,0 +1,118 @@
+[
+  {
+    "id": "hazard-avalanche",
+    "title": "Wind Slab Avalanche Release",
+    "hazardType": "Avalanche",
+    "altitude": "6,800m (Camp 3 Slopes)",
+    "timeLimitSec": 5,
+    "prompt": "A sharp 'whumpf' sound cracks across the 38° snow slope 50 meters above you! A 1-meter wind slab fractures and begins accelerating directly downhill toward your rope team.",
+    "options": [
+      {
+        "id": "opt-1",
+        "text": "Shout 'AVALANCHE!', traverse hard horizontally toward the rock rib out of the flow path, and anchor into the fixed line.",
+        "isCorrect": true,
+        "feedback": "Flawless alpine reflex! Getting out of the central avalanche track onto flanking rock ribs is the single highest-probability survival action."
+      },
+      {
+        "id": "opt-2",
+        "text": "Drop your ice axe, turn around, and try to outrun the powder avalanche straight downhill.",
+        "isCorrect": false,
+        "feedback": "Fatal mistake! Slab avalanches accelerate to 130+ km/h in seconds. You cannot outrun sliding snow downhill."
+      },
+      {
+        "id": "opt-3",
+        "text": "Lay flat on your back and take a photo of the cloud.",
+        "isCorrect": false,
+        "feedback": "Inconceivable response. The crushing weight of tumbling snowpack will bury you under multiple tons of dense ice."
+      }
+    ],
+    "protocol": "Always assess slope angle (30°-45° is prime avalanche terrain) and carry active 457 kHz transceivers."
+  },
+  {
+    "id": "hazard-rockfall",
+    "title": "Couloir Rockfall Shower",
+    "hazardType": "Rockfall",
+    "altitude": "3,400m (Grand Couloir Transit)",
+    "timeLimitSec": 4,
+    "prompt": "Midday sun has softened thermal permafrost. A bowling-ball-sized granite rock dislodges from the ridge above and bounds down the snow gully, whistling straight toward your position!",
+    "options": [
+      {
+        "id": "opt-1",
+        "text": "Press tightly against the uphill rock wall, protect your head under your helmet brim, keep eyes upward to track the trajectory, and step aside.",
+        "isCorrect": true,
+        "feedback": "Textbook technique! Tracking the falling rock with your helmet brim shielded allows precise micro-dodging while hugging protective rock geometry."
+      },
+      {
+        "id": "opt-2",
+        "text": "Look straight down at your boots, freeze in the middle of the couloir, and shout for help.",
+        "isCorrect": false,
+        "feedback": "Deadly error. If you look down, you expose the back of your neck and cannot dodge the ricocheting boulder."
+      },
+      {
+        "id": "opt-3",
+        "text": "Try to catch the rock with your climbing mittens.",
+        "isCorrect": false,
+        "feedback": "Disastrous! A 10kg boulder falling at 90 km/h carries the kinetic energy of a speeding automobile."
+      }
+    ],
+    "protocol": "Cross dangerous couloirs before sunrise when freezing temperatures lock loose stone securely in glacial ice."
+  },
+  {
+    "id": "hazard-whiteout",
+    "title": "Sudden High-Altitude Whiteout",
+    "hazardType": "Weather & Disorientation",
+    "altitude": "7,800m (The South Col Traverse)",
+    "timeLimitSec": 6,
+    "prompt": "Dense glacial cloud envelops the ridge in under 60 seconds. Ambient light becomes uniform milky white. Horizon, ground, and footsteps vanish. Wind shrieks at 75 km/h.",
+    "options": [
+      {
+        "id": "opt-1",
+        "text": "Halt immediately, anchor into the snow with ice axes/wands, check GPS waypoint bearing or altimeter, and rope up rather than wandering blindly.",
+        "isCorrect": true,
+        "feedback": "Life-saving decision! Blind walking in whiteouts is the primary cause of climbers stepping off blind cornice edges into the void."
+      },
+      {
+        "id": "opt-2",
+        "text": "Sprint forward as fast as possible hoping to stumble onto camp before the cold sets in.",
+        "isCorrect": false,
+        "feedback": "Catastrophic! Without visual references, you cannot distinguish between a gradual snow slope and a 2,000m sheer precipice."
+      },
+      {
+        "id": "opt-3",
+        "text": "Take off your goggles to see if bare eyes can penetrate the fog.",
+        "isCorrect": false,
+        "feedback": "Severe hazard! Wind-driven ice crystals will cause corneal abrasions and severe snow-blindness in minutes."
+      }
+    ],
+    "protocol": "Mark ascent routes with high-visibility bamboo wands and register compass back-bearings at every major turn."
+  },
+  {
+    "id": "hazard-crevasse",
+    "title": "Snow Bridge Crevasse Breach",
+    "hazardType": "Glacial Crevasse",
+    "altitude": "5,400m (Khumbu / Baltoro Upper Basin)",
+    "timeLimitSec": 5,
+    "prompt": "As you step across an innocent-looking snow expanse, the snow bridge crumbles under your right foot! Your leg dangles over an inky, bottomless blue void 40 meters deep.",
+    "options": [
+      {
+        "id": "opt-1",
+        "text": "Shout 'CREVASSE!', immediately distribute body weight flat onto the snow, drive ice axe pick into solid firn, and await rope team belay tension.",
+        "isCorrect": true,
+        "feedback": "Perfect arrest! Prone body position spreads ground pressure across a wide surface area while the pick anchors your mass."
+      },
+      {
+        "id": "opt-2",
+        "text": "Kick your other foot wildly downward to see if there is a ledge to stand on.",
+        "isCorrect": false,
+        "feedback": "Fatal move! Kicking collapses the remaining snow bridge roof, pulling both you and loose snow deeper into the chasm."
+      },
+      {
+        "id": "opt-3",
+        "text": "Unclip from the rope so you don't drag your partner down.",
+        "isCorrect": false,
+        "feedback": "Absolute disaster! The safety rope tied into your harness is your sole lifeline preventing a free fall into glacier ice."
+      }
+    ],
+    "protocol": "Always travel roped on glaciated terrain with 15-meter intervals and prusik friction loops pre-rigged on your harness."
+  }
+]

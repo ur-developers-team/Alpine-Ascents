@@ -1,0 +1,42 @@
+[
+  {
+    "id": "test-1",
+    "climber": "Julian Vance",
+    "country": "United Kingdom",
+    "expedition": "K2 Base Camp & Concordia Trek",
+    "year": "Summer 2025",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80",
+    "quote": "Standing in Concordia at dawn with K2, Broad Peak, and Gasherbrum IV gleaming in 360-degree panoramic glory was the most humbling experience of my life. The Balti kitchen crew cooked warm, nourishing feasts on glacial ice that rivaled Michelin restaurants.",
+    "rating": 5
+  },
+  {
+    "id": "test-2",
+    "climber": "Dr. Sarah Al-Mansoor",
+    "country": "United Arab Emirates",
+    "expedition": "Hunza & Passu Cones Explorer",
+    "year": "Autumn 2025",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+    "quote": "The contrast between the electric turquoise water of Attabad Lake and the vertical granite cathedrals of Passu is beyond imagination. Alpine Ascents handled every permit, vehicle, and lodge with military precision and immense warmth.",
+    "rating": 5
+  },
+  {
+    "id": "test-3",
+    "climber": "Marco De Luca",
+    "country": "Italy (CAI Member)",
+    "expedition": "Mont Blanc Summit Classic",
+    "year": "July 2025",
+    "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80",
+    "quote": "As an Italian alpinist, crossing the Bosses ridge at sunrise to touch the summit of Mont Blanc with a 1:2 guide ratio was pure mountain perfection. The safety protocols through the Grand Couloir were impeccably timed.",
+    "rating": 5
+  },
+  {
+    "id": "test-4",
+    "climber": "Ayesha & Bilal Tariq",
+    "country": "Karachi, Pakistan",
+    "expedition": "Fairy Meadows & Nanga Parbat Retreat",
+    "year": "June 2025",
+    "avatar": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=300&q=80",
+    "quote": "Departing from Karachi and waking up 48 hours later in a cedar wood cabin with wood stoves directly beneath the 8,126m Raikot wall of Nanga Parbat felt like stepping into an enchanted dream world.",
+    "rating": 5
+  }
+]

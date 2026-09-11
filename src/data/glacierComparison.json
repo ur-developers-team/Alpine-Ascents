@@ -1,0 +1,28 @@
+[
+  {
+    "id": "baltoro-glacier-retreat",
+    "title": "Baltoro Glacier: 1920 vs 2024",
+    "location": "Central Karakoram, Gilgit-Baltistan",
+    "coordinates": "35.7333° N, 76.4167° E",
+    "beforeYear": "1920 (Duke of Abruzzi Survey)",
+    "afterYear": "2024 (Modern Satellite & Drone)",
+    "beforeImage": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+    "afterImage": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    "caption": "A century of glacial ice loss and lateral moraine expansion along the legendary Baltoro Highway.",
+    "observation": "Historical black-and-white photogrammetry compared to modern high-resolution imaging demonstrates significant thinning of the ice snout and increasing formation of supraglacial melt lakes.",
+    "climateNote": "The Karakoram anomaly historically maintained stable ice mass due to intense winter precipitation, but recent accelerated warming has triggered rapid melting below 4,200m."
+  },
+  {
+    "id": "passu-glacier-recession",
+    "title": "Passu Glacier & Cathedral Spire Recession",
+    "location": "Upper Hunza, Gilgit-Baltistan",
+    "coordinates": "36.4833° N, 74.8833° E",
+    "beforeYear": "1985 (Early KKH Survey)",
+    "afterYear": "2025 (Current Glacial Monitoring)",
+    "beforeImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "afterImage": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
+    "caption": "Retreat of the Passu White Glacier snout and expansion of the glacial moraine basin near the Karakoram Highway.",
+    "observation": "The glacier terminus has retreated over 700 meters upstream from the original gravel outwash plain, altering local meltwater irrigation channels relied upon by Passu village farmers.",
+    "climateNote": "Alpine Ascents practices strict Leave No Trace guidelines to minimize black carbon deposition that accelerates ice ablation."
+  }
+]

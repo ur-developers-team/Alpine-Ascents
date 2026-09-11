@@ -1,0 +1,62 @@
+[
+  {
+    "id": "geodesic-tent",
+    "name": "4-Season Geodesic Expedition Tent",
+    "altitudeRange": "4,000m - 8,000m",
+    "weight": "3.8kg - 5.5kg",
+    "windResistance": "Up to 130 km/h (Cat 1 hurricane)",
+    "description": "Engineered with intersecting DAC featherlight aluminum poles forming geodesic triangles that disperse wind shear and shed heavy snow loads without buckling.",
+    "features": [
+      "Heavy-duty ripstop nylon flysheet with silicone elastomer coating",
+      "Expedition snow flaps to weigh down borders with snow blocks",
+      "Dual vestibules for cooking during howling blizzards",
+      "Internal hanging loops for drying gloves and headlamps"
+    ],
+    "idealUse": "Base Camps, Advanced Base Camps (ABC), and high-altitude col camps."
+  },
+  {
+    "id": "bivy-sack",
+    "name": "Emergency & Alpine Bivouac (Bivy) Sack",
+    "altitudeRange": "All Elevations",
+    "weight": "250g - 650g",
+    "windResistance": "Windproof & waterproof barrier",
+    "description": "A single-person ultralight shell slipped directly over a sleeping bag and pad. Indispensable for fast-and-light alpine ascents or unexpected open-air bivouacs on narrow mountain ledges.",
+    "features": [
+      "Breathable waterproof eVent or GORE-TEX top fabric",
+      "Coated waterproof bathtub floor resisting puncture on sharp scree",
+      "Wire-stiffened face mesh to keep fabric off face during blizzards",
+      "Packs down to the size of an 800ml water bottle"
+    ],
+    "idealUse": "Single-push alpine climbs, emergency overnighting, ledge bivouacs."
+  },
+  {
+    "id": "snow-cave",
+    "name": "Excavated Snow Cave & Igloo",
+    "altitudeRange": "Glaciated slopes / High snowfields",
+    "weight": "0kg (Crafted on site)",
+    "windResistance": "Virtually 100% immune to outer wind",
+    "description": "Excavated into a deep, consolidated snowdrift on a 30°-45° slope. The internal temperature hovers around 0°C (32°F) even when outside temperatures plummet to -45°C with 150 km/h winds.",
+    "features": [
+      "T-shaped low entrance tunnel acting as a cold-air sink",
+      "Sleeping platform raised above the doorway to trap rising metabolic body heat",
+      "Domed ceiling smoothed out to prevent dripping meltwater",
+      "Critical ventilation hole poked through the roof using a ski pole or probe"
+    ],
+    "idealUse": "Storm survival shelter, arctic traverses, extended high winter camps."
+  },
+  {
+    "id": "alpine-huts",
+    "name": "High Alpine Huts & Refuges",
+    "altitudeRange": "2,000m - 4,000m",
+    "weight": "Fixed Architectural Structures",
+    "windResistance": "Engineered reinforced timber/steel/stone",
+    "description": "Perched on knife-edge ridges and glacier moraines (e.g., Gouter Hut on Mont Blanc, Solvay Hut on the Matterhorn, Concordia Hut in Karakoram). Provides bunks, hot meals, and communication hubs.",
+    "features": [
+      "Drying rooms for soaked gear and double mountaineering boots",
+      "Emergency high-altitude radio and solar power generators",
+      "Communal dining serving hearty alpine carb meals",
+      "Dormitory bunks equipped with heavy wool duvets"
+    ],
+    "idealUse": "European Alps climbing stages, Karakoram acclimatization waypoints."
+  }
+]

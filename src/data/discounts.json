@@ -1,0 +1,35 @@
+[
+  {
+    "id": "early-bird-2027",
+    "code": "SUMMIT15",
+    "title": "Early Bird Karakoram Season",
+    "discount": "15% OFF",
+    "discountPercent": 15,
+    "eligibility": "Book 90+ days prior to expedition departure",
+    "description": "Secure your team permits and preferred high-altitude guide slots early for our 2026/2027 Karakoram and Himalayan season.",
+    "applicablePackages": ["All Packages", "K2 Base Camp", "Hunza Explorer", "Fairy Meadows Comfort"],
+    "badge": "Early Booking"
+  },
+  {
+    "id": "group-adventure",
+    "code": "ROPE-TEAM4",
+    "title": "Rope Team Group Special",
+    "discount": "20% OFF",
+    "discountPercent": 20,
+    "eligibility": "Groups of 4 climbers or more",
+    "description": "Form your own rope team. When four or more climbers register for the same expedition, enjoy shared porter logistics and group rates.",
+    "applicablePackages": ["Expedition Pro & Comfort Tiers"],
+    "badge": "Group Rate"
+  },
+  {
+    "id": "autumn-gilgit",
+    "code": "GOLDEN-HUNZA",
+    "title": "Autumn Golden Foliage Special",
+    "discount": "10% OFF",
+    "discountPercent": 10,
+    "eligibility": "Departures in September & October",
+    "description": "Experience the legendary golden yellow apricot and poplar foliage across Hunza, Nagar, and Skardu under crisp, stable blue skies.",
+    "applicablePackages": ["Hunza Explorer", "Gilgit-Baltistan Grand Luxury"],
+    "badge": "Seasonal Special"
+  }
+]

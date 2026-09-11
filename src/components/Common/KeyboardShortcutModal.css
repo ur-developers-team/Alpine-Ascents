@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Keyboard Shortcut Help Modal Styles
+   ========================================================================== */
+
+.shortcut-modal-card {
+  background: rgba(13, 21, 32, 0.98);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 580px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(56, 189, 248, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  animation: slideUp 0.25s ease-out;
+}
+
+.shortcut-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: rgba(14, 26, 43, 0.85);
+  border-bottom: 1px solid var(--border);
+}
+
+.shortcut-header h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.shortcut-body {
+  padding: 24px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.shortcut-section-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.shortcut-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.shortcut-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: rgba(7, 12, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.shortcut-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.shortcut-keys {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.shortcut-kbd {
+  display: inline-block;
+  padding: 3px 8px;
+  background: rgba(20, 32, 48, 0.95);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  color: var(--accent-light);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "city-pkg-karachi-north",
+    "originCity": "Karachi",
+    "destination": "Hunza & Skardu, Gilgit-Baltistan",
+    "title": "Karachi Sea-to-Summit Grand Karakoram Odyssey",
+    "duration": "10 Days / 9 Nights",
+    "transport": "Return Jet Flights (KHI → ISB/KDU) + 4x4 Land Cruiser",
+    "accommodation": "Serena Shigar Fort & Hunza Glacier Chalets",
+    "startingPrice": 1450,
+    "highlights": [
+      "Express transition from Arabian Sea coast directly into 5,000m Karakoram basins",
+      "Full logistics including airport executive transfers and domestic flight handling",
+      "Sunset over Passu Cathedral and camel safari across Sarfaranga Cold Desert"
+    ],
+    "description": "Designed specifically for coastal travelers seeking a seamless, hassle-free transition to the highest mountain ranges without exhausting 30-hour road journeys."
+  },
+  {
+    "id": "city-pkg-islamabad-hunza",
+    "originCity": "Islamabad",
+    "destination": "Hunza Valley & Khunjerab Pass",
+    "title": "Islamabad to Hunza Karakoram Highway Expedition",
+    "duration": "7 Days / 6 Nights",
+    "transport": "Private Chauffeur-Driven 4x4 Revo / Prado",
+    "accommodation": "Boutique Terraced Guesthouses & Glamping Domes",
+    "startingPrice": 850,
+    "highlights": [
+      "Scenic overland drive through Babusar Pass (4,173m) and Raikot gorge",
+      "Boat navigation on Attabad Lake and crossing the Hussaini suspension bridge",
+      "Excursion to the world's highest international border crossing at Khunjerab (4,693m)"
+    ],
+    "description": "The quintessential capital-to-Karakoram journey. Depart directly from your residence or hotel in Islamabad for the world's most dramatic highway journey."
+  },
+  {
+    "id": "city-pkg-lahore-skardu",
+    "originCity": "Lahore",
+    "destination": "Skardu & Deosai National Park",
+    "title": "Lahore to Baltistan & The Land of Giants Expedition",
+    "duration": "8 Days / 7 Nights",
+    "transport": "Direct Chartered Flights / Motorway + AC Luxury Coaster",
+    "accommodation": "Historic Shigar Palace & Shangrila Resort Chalets",
+    "startingPrice": 1180,
+    "highlights": [
+      "Direct flight option over Nanga Parbat landing in the high bowl of Skardu",
+      "4x4 safari across the emerald wilderness of Deosai Plateau spotting Himalayan Brown Bears",
+      "Traditional Balti feasts and stargazing beneath the granite spires of Trango"
+    ],
+    "description": "A curated high-altitude retreat tailored for travelers from Punjab seeking cool mountain breezes, royal Tibetan palace architecture, and glacial lakes."
+  },
+  {
+    "id": "city-pkg-peshawar-chitral",
+    "originCity": "Peshawar",
+    "destination": "Chitral, Kalash & Tirich Mir Foothills",
+    "title": "Peshawar to Hindu Kush & Kalash Cultural Trail",
+    "duration": "6 Days / 5 Nights",
+    "transport": "Swat Expressway & Lowari 4x4 Mountain Vehicles",
+    "accommodation": "Ayun Heritage Mountain Retreat & Pine Log Cabins",
+    "startingPrice": 690,
+    "highlights": [
+      "Transit through the historic Malakand pass and 10.4km Lowari mountain tunnel",
+      "Cultural immersion with the indigenous Kalash community in Bumburet Valley",
+      "Panoramic views of Tirich Mir (7,708m), the monarch of the Hindu Kush"
+    ],
+    "description": "A deep heritage and mountain journey originating in ancient Peshawar, venturing into the remote valleys of northwestern Pakistan."
+  },
+  {
+    "id": "city-pkg-abbottabad-escape",
+    "originCity": "Abbottabad",
+    "destination": "Nathiagali, Thandiani & Kaghan High Ridge",
+    "title": "Abbottabad Alpine Galiyat & Pine Ridge Trek",
+    "duration": "4 Days / 3 Nights",
+    "transport": "Mountain 4x4 Vehicle / Mini Bus",
+    "accommodation": "Pine Forest Alpine Chalets with Wood Stoves",
+    "startingPrice": 380,
+    "highlights": [
+      "Pipeline Track walk through dense silver fir and horse chestnut forests",
+      "Ascent of Miranjani Peak (2,992m) with views stretching to Nanga Parbat on clear days",
+      "Wildflower photography and bonfire nights at Thandiani ridge"
+    ],
+    "description": "An accessible, short-duration mountain trekking retreat beginning in the pine-scented hills of Abbottabad."
+  },
+  {
+    "id": "city-pkg-quetta-balochistan",
+    "originCity": "Quetta",
+    "destination": "Ziarat Juniper Valley & Pir Ghaib Canyons",
+    "title": "Quetta to Ancient Juniper Wilderness & Canyons",
+    "duration": "4 Days / 3 Nights",
+    "transport": "Heavy-Duty 4x4 Land Cruiser Fleet",
+    "accommodation": "Ziarat Alpine Timber Cabins & Wilderness Tents",
+    "startingPrice": 420,
+    "highlights": [
+      "Walking among 3,000-year-old high-altitude juniper trees (Ziarat National Heritage)",
+      "Canyon hiking through Moola Chook and turquoise desert waterfalls",
+      "Authentic mountain shepherd cuisine and campfire poetry under dark desert skies"
+    ],
+    "description": "Explore the untamed arid alpine geography of western Pakistan, where ancient juniper ecosystems meet dramatic limestone canyons."
+  }
+]

@@ -1,0 +1,32 @@
+.mini-games-section {
+  background: var(--bg-tertiary, #0b111e);
+  border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  position: relative;
+  overflow: hidden;
+}
+
+.games-nav-tab-bar {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.games-panes-wrapper {
+  animation: fadeIn 300ms ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .games-nav-tab-bar {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+}

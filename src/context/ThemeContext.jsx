@@ -1,0 +1,81 @@
+import React, { createContext, useContext, useState, useEffect } from 'react';
+
+const ThemeContext = createContext();
+
+export const THEMES = [
+  {
+    id: 'summit-night',
+    name: 'Summit Night',
+    tagline: 'Nocturnal Glacier & Slate',
+    accent: '#38bdf8',
+    bg: '#070c12',
+    description: 'High-altitude nocturnal atmosphere with obsidian rock and luminescent ice-blue highlights.'
+  },
+  {
+    id: 'alpine-day',
+    name: 'Alpine Day',
+    tagline: 'Clean Glacial Editorial',
+    accent: '#0284c7',
+    bg: '#f8fafc',
+    description: 'Pristine bright mountain atmosphere with crisp granite textures and editorial typography.'
+  },
+  {
+    id: 'expedition',
+    name: 'Expedition',
+    tagline: 'Earthy Adventure & Brass',
+    accent: '#d97706',
+    bg: '#141812',
+    description: 'Rugged expedition canvas, olive stone, weathered parchment, and brass compass accents.'
+  },
+  {
+    id: 'himalayan',
+    name: 'Himalayan',
+    tagline: 'Prayer Flag Saffron & Lapis',
+    accent: '#f59e0b',
+    bg: '#0f1422',
+    description: 'Rich royal blue and prayer-flag saffron inspired by ancient high Himalayan peaks.'
+  }
+];
+
+export function ThemeProvider({ children }) {
+  const [theme, setTheme] = useState(() => {
+    try {
+      const saved = localStorage.getItem('alpine_theme');
+      if (saved && THEMES.some(t => t.id === saved)) {
+        return saved;
+      }
+    } catch {
+      // fallback
+    }
+    return 'summit-night';
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('alpine_theme', theme);
+    } catch (e) {
+      console.warn('Could not save theme preference', e);
+    }
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  const changeTheme = (themeId) => {
+    if (THEMES.some(t => t.id === themeId)) {
+      setTheme(themeId);
+    }
+  };
+
+  return (
+    <ThemeContext.Provider value={{ theme, changeTheme, themes: THEMES }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+export function useTheme() {
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return context;
+}

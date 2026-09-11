@@ -1,0 +1,183 @@
+.knowledge-section {
+  position: relative;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.knowledge-tab-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+/* History Timeline */
+.timeline-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 2rem;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 7px;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-node {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-node::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: -2rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg-card-solid);
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.timeline-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.timeline-card:hover {
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* Techniques Cards */
+.techniques-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
+.technique-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+}
+
+.technique-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+  font-size: 0.88rem;
+}
+
+.technique-step-item {
+  display: flex;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.step-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  color: var(--accent);
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Hazards Grid */
+.hazards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+}
+
+.hazard-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.hazard-card.high-alert {
+  border-color: rgba(244, 63, 94, 0.3);
+}
+
+/* Records Grid */
+.records-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.record-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.75rem;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.record-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+@media (max-width: 640px) {
+  .timeline-container {
+    padding-left: 1.5rem;
+  }
+  .timeline-container::before {
+    left: 5px;
+  }
+  .timeline-node::before {
+    left: -1.5rem;
+    width: 13px;
+    height: 13px;
+  }
+  .timeline-card {
+    padding: 1.15rem 1rem;
+  }
+  .techniques-grid,
+  .hazards-grid,
+  .records-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .technique-card,
+  .hazard-card {
+    padding: 1.25rem 1rem;
+  }
+  .knowledge-tab-bar {
+    gap: 0.35rem;
+    margin-bottom: 1.75rem;
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "scenes": {
+    "hero": {
+      "id": "hero",
+      "name": "Karakoram Apex",
+      "mountainLine": {
+        "enabled": true,
+        "drawDuration": 1.8,
+        "strokeColor": "#d4af37",
+        "strokeWidth": 2
+      },
+      "clouds": {
+        "enabled": true,
+        "driftSpeed": 45,
+        "opacity": 0.4,
+        "density": "subtle"
+      },
+      "fog": {
+        "enabled": true,
+        "flowSpeed": 25,
+        "opacity": 0.25
+      },
+      "parallax": {
+        "skyFactor": 0.05,
+        "cloudsFactor": 0.15,
+        "distantPeaksFactor": 0.28,
+        "midPeaksFactor": 0.45,
+        "foregroundFactor": 0.7
+      }
+    },
+    "hunza": {
+      "id": "hunza",
+      "name": "Hunza Valley & Passu Glacier",
+      "river": {
+        "enabled": true,
+        "name": "Hunza River (Glacial Turquoise)",
+        "speed": 1.2,
+        "intensity": "flowing",
+        "gradientStart": "#06b6d4",
+        "gradientEnd": "#0284c7",
+        "accentGlaze": "#38bdf8",
+        "waveCount": 3
+      },
+      "clouds": {
+        "enabled": true,
+        "driftSpeed": 35,
+        "opacity": 0.35,
+        "density": "airy"
+      },
+      "fog": {
+        "enabled": true,
+        "flowSpeed": 20,
+        "opacity": 0.3
+      }
+    },
+    "skardu": {
+      "id": "skardu",
+      "name": "Skardu & Indus River Basin",
+      "river": {
+        "enabled": true,
+        "name": "Indus River Gorge (Deep Glacial Blue)",
+        "speed": 1.0,
+        "intensity": "steady",
+        "gradientStart": "#0284c7",
+        "gradientEnd": "#1e3a8a",
+        "accentGlaze": "#60a5fa",
+        "waveCount": 3
+      },
+      "clouds": {
+        "enabled": true,
+        "driftSpeed": 40,
+        "opacity": 0.4,
+        "density": "highland"
+      },
+      "fog": {
+        "enabled": true,
+        "flowSpeed": 22,
+        "opacity": 0.2
+      }
+    },
+    "baltoro": {
+      "id": "baltoro",
+      "name": "Baltoro Glacier & Braldu River",
+      "river": {
+        "enabled": true,
+        "name": "Braldu Meltwater Torrent",
+        "speed": 1.6,
+        "intensity": "rapid",
+        "gradientStart": "#0ea5e9",
+        "gradientEnd": "#0369a1",
+        "accentGlaze": "#bae6fd",
+        "waveCount": 4
+      },
+      "clouds": {
+        "enabled": true,
+        "driftSpeed": 28,
+        "opacity": 0.5,
+        "density": "dense"
+      },
+      "fog": {
+        "enabled": true,
+        "flowSpeed": 18,
+        "opacity": 0.4
+      }
+    }
+  },
+  "cursor": {
+    "enabled": true,
+    "snowParticleRate": 15,
+    "particleLifetimeMs": 900,
+    "maxParticles": 30
+  }
+}

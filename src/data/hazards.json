@@ -1,0 +1,64 @@
+[
+  {
+    "id": "ams-hape-hace",
+    "title": "High Altitude Illness (AMS, HAPE, HACE)",
+    "severity": "Life-Threatening / Medical Emergency",
+    "category": "Physiological Hazard",
+    "symptoms": [
+      "AMS: Throbbing headache, nausea, insomnia, dizziness, fatigue (Lake Louise Score > 3).",
+      "HAPE (High Altitude Pulmonary Edema): Pink frothy sputum, rattling cough, extreme breathlessness at rest, blue lips.",
+      "HACE (High Altitude Cerebral Edema): Ataxia (inability to walk heel-to-toe), confusion, hallucinations, coma."
+    ],
+    "immediateAction": "DESCENT IS MANDATORY. Descend immediately minimum 500m-1,000m. Administer supplemental oxygen, portable hyperbaric bag (Gamow bag), Dexamethasone (HACE), Nifedipine (HAPE).",
+    "prevention": "Ascend no more than 300m-500m sleeping elevation gain per 24 hours above 3,000m. Drink 4-5 liters of water daily. Take rest days."
+  },
+  {
+    "id": "avalanches",
+    "title": "Snowpack Avalanches (Slab & Loose Powder)",
+    "severity": "Catastrophic Impact Hazard",
+    "category": "Terrain / Environmental",
+    "symptoms": [
+      "Recent avalanche activity on similar aspects within 24-48 hours.",
+      "Sudden whumpfing sounds or shooting cracks propagating across the snow surface.",
+      "Rapid temperature rise, rain on snow, or heavy wind loading on lee slopes (30°-45° angles)."
+    ],
+    "immediateAction": "Yell 'Avalanche!' Attempt to ski or sprint off the slab edge. Drop heavy gear. Deploy avalanche airbag pack. Fight to stay on top using backstroke swimming motions. Cup hands over mouth and nose as motion stops to create an air pocket.",
+    "prevention": "Carry Beacon, Shovel, and Probe on EVERY party member. Dig snow profile pits; evaluate shear layer compression tests (ECT/CT). Travel one-at-a-time across suspect bowls."
+  },
+  {
+    "id": "seracs-icefalls",
+    "title": "Serac Collapse & Glacial Icefalls",
+    "severity": "Unpredictable Gravity Hazard",
+    "category": "Glaciological",
+    "symptoms": [
+      "Towering columns of blue glacial ice teetering above valleys (e.g., Khumbu Icefall, Bottleneck on K2).",
+      "Seracs move and collapse purely due to gravity and thermal creep, without human triggering."
+    ],
+    "immediateAction": "Run laterally away from the fall line. Seek shelter behind large bedrock ridges or deep crevasse lips.",
+    "prevention": "Traverse under serac hazard zones during the coldest hours of the night (2:00 AM - 5:00 AM) when ice is frozen solid. Never linger or stop for breaks in the fall shadow."
+  },
+  {
+    "id": "crevasses",
+    "title": "Hidden Glacial Crevasses",
+    "severity": "High Falling Hazard",
+    "category": "Glaciological",
+    "symptoms": [
+      "Subtle depressions or sagging lines across smooth white snow bridges.",
+      "Faint discoloration in snow indicating thin roof over empty abyss."
+    ],
+    "immediateAction": "Rope team immediately drops into self-arrest posture, digging ice axes and boots to arrest the fallen member.",
+    "prevention": "Always travel roped on glaciated terrain with 12m-15m spacing, pre-tied butterfly knots to catch on crevasse lips, and prusik friction loops ready on harnesses."
+  },
+  {
+    "id": "frostbite-hypothermia",
+    "title": "Frostbite & Systemic Hypothermia",
+    "severity": "Permanent Tissue Damage & Death",
+    "category": "Cold Climate Injury",
+    "symptoms": [
+      "Frostnip/Frostbite: Numbness, loss of sensation, pale waxy white or greyish-yellow skin, hardening of tissue, blistering upon thawing.",
+      "Hypothermia: Violent shivering progressing to 'the umbles' (fumbling, mumbling, stumbling), paradoxical undressing, apathy, cardiac arrest."
+    ],
+    "immediateAction": "Re-warm victim in windproof dry layers. DO NOT rub frozen tissue with snow or dry heat. Immerse in warm water (37-39°C) only if there is NO chance of refreezing during evacuation.",
+    "prevention": "Never allow boots or gloves to remain soaked with sweat. Keep core body warm with 800+ fill power down. Consume high-calorie fats and warm fluids continuously."
+  }
+]

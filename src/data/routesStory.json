@@ -1,0 +1,181 @@
+{
+  "title": "K2: The Savage Summit Odyssey",
+  "startSceneId": "scene-base-camp",
+  "scenes": {
+    "scene-base-camp": {
+      "id": "scene-base-camp",
+      "stage": "Concordia & K2 Base Camp (5,150m)",
+      "altitude": "5,150m",
+      "story": "You stand on the Godwin-Austen glacier staring at the colossal pyramid of K2. Barometric pressure is dropping. The meteorological forecast reveals a narrow 36-hour summit weather window in three days, followed by a fierce jet-stream blizzard. Two climbing routes present themselves.",
+      "choices": [
+        {
+          "text": "Option A: Abruzzi Spur (Classic Route) — Technical, steep, heavily fixed, but exposed to bottleneck seracs.",
+          "nextSceneId": "scene-abruzzi-spur",
+          "strategy": "Classic Technical Progression"
+        },
+        {
+          "text": "Option B: Česen / Basque Route — Steeper direct ridge, cleaner rock line, less objective serac hazard, but much more physically punishing.",
+          "nextSceneId": "scene-cesen-ridge",
+          "strategy": "High-Stamina Alpine Direct"
+        }
+      ]
+    },
+    "scene-abruzzi-spur": {
+      "id": "scene-abruzzi-spur",
+      "stage": "House's Chimney & Black Pyramid (6,700m)",
+      "altitude": "6,700m",
+      "story": "You arrive beneath House's Chimney, a 100-foot vertical fracture in sheer gneiss rock at 6,700m. Frost coating makes handholds slick. Above it looms the formidable Black Pyramid. The climbing team ahead is moving slowly, and dark lenticular clouds are forming over Broad Peak.",
+      "choices": [
+        {
+          "text": "Climb steadily with mechanical ascender (jumar), establish high camp at 7,300m, and conserve thermal energy.",
+          "nextSceneId": "scene-camp-4-shoulder",
+          "strategy": "Paced Conservative Ascent"
+        },
+        {
+          "text": "Push through the night in a continuous 16-hour push to bypass the crowded camps and reach Camp 4 ahead of the weather.",
+          "nextSceneId": "scene-exhaustion-warning",
+          "strategy": "Aggressive Speed Run"
+        }
+      ]
+    },
+    "scene-cesen-ridge": {
+      "id": "scene-cesen-ridge",
+      "stage": "The Česen Pillar (7,000m)",
+      "altitude": "7,000m",
+      "story": "The Česen Ridge rises at a sustained 55° angle. You are soloing sections of mixed ice and loose rock in sheer exposure with 3,000 meters of empty air dropping to the glacier below. Your heart is pounding at 155 bpm.",
+      "choices": [
+        {
+          "text": "Set up a lightweight single-skin bivouac tent on a carved snow ledge and melt snow for hydration.",
+          "nextSceneId": "scene-camp-4-shoulder",
+          "strategy": "Strategic Acclimatization"
+        },
+        {
+          "text": "Skip sleep, drink chilled water, and keep climbing directly toward the Shoulder.",
+          "nextSceneId": "scene-dehydration-crisis",
+          "strategy": "Risky Non-Stop Push"
+        }
+      ]
+    },
+    "scene-exhaustion-warning": {
+      "id": "scene-exhaustion-warning",
+      "stage": "Upper Black Pyramid (7,200m)",
+      "altitude": "7,200m",
+      "story": "After 14 hours of non-stop climbing without rest, your quad muscles cramp severely and your fingers lose feeling. The cold has penetrated your outer gloves.",
+      "choices": [
+        {
+          "text": "Recognize the warning signs of exhaustion, take 300mg ibuprofen, bivouac immediately, and rehydrate.",
+          "nextSceneId": "scene-camp-4-shoulder",
+          "strategy": "Smart Recovery"
+        },
+        {
+          "text": "Ignore the cramps and force yourself to keep climbing in the dark.",
+          "nextSceneId": "ending-evacuation",
+          "strategy": "Stubborn Hubris"
+        }
+      ]
+    },
+    "scene-dehydration-crisis": {
+      "id": "scene-dehydration-crisis",
+      "stage": "Below the Shoulder (7,600m)",
+      "altitude": "7,600m",
+      "story": "Your throat feels like sandpaper and your blood has thickened in the sub-zero dry air. You are dizzy and hallucinating shadows on the snow.",
+      "choices": [
+        {
+          "text": "Stop, light the hanging MSR stove, and drink 2 liters of hot electrolyte broth before proceeding.",
+          "nextSceneId": "scene-camp-4-shoulder",
+          "strategy": "Vital Physiological Rescue"
+        },
+        {
+          "text": "Keep moving blindly without fluids.",
+          "nextSceneId": "ending-evacuation",
+          "strategy": "Critical Collapse"
+        }
+      ]
+    },
+    "scene-camp-4-shoulder": {
+      "id": "scene-camp-4-shoulder",
+      "stage": "Camp 4: The Death Zone (7,900m)",
+      "altitude": "7,900m",
+      "story": "You are at Camp 4 on the broad shoulder of K2. Atmospheric oxygen is only one-third of sea-level value. It is 11:30 PM. The sky is crystal clear and stars glitter with eerie brilliance. Above you towers the notorious Bottleneck Couloir, crowned by a 100-meter-tall overhang of glacial ice.",
+      "choices": [
+        {
+          "text": "Initiate summit push now (Midnight Alpine Start) to traverse the Bottleneck under freezing night temperatures when the serac is most stable.",
+          "nextSceneId": "scene-bottleneck-traverse",
+          "strategy": "Classic Midnight Launch"
+        },
+        {
+          "text": "Wait until 6:00 AM so you can climb the dangerous Bottleneck in warm daylight.",
+          "nextSceneId": "scene-bottleneck-delayed",
+          "strategy": "Daylight Launch"
+        }
+      ]
+    },
+    "scene-bottleneck-delayed": {
+      "id": "scene-bottleneck-delayed",
+      "stage": "The Bottleneck under Morning Sun (8,250m)",
+      "altitude": "8,250m",
+      "story": "As the morning sun strikes the colossal hanging serac, thermal expansion causes cracks to echo through the ice. Small chunks of hard ice plummet down the 60° gully. You realize climbing underneath in midday warmth is suicidal.",
+      "choices": [
+        {
+          "text": "Make the courageous and mature alpinist decision to turn back safely to Camp 4.",
+          "nextSceneId": "ending-prudent-descent",
+          "strategy": "Honor in Living to Climb Another Day"
+        },
+        {
+          "text": "Sprint blindly under the creaking ice cliff.",
+          "nextSceneId": "ending-near-miss",
+          "strategy": "Reckless Gamble"
+        }
+      ]
+    },
+    "scene-bottleneck-traverse": {
+      "id": "scene-bottleneck-traverse",
+      "stage": "The Bottleneck & Traverse (8,300m)",
+      "altitude": "8,300m",
+      "story": "In pitch darkness under the beam of your headlamp, you front-point across the 60-degree blue ice wall directly beneath the frozen giant. Your crampon picks bite with crisp, reassuring thuds. You reach the treacherous technical traverse leftward onto the summit snowfield.",
+      "choices": [
+        {
+          "text": "Clip double carabiners into the fixed line, execute precise footwork, and push up the final summit ridge.",
+          "nextSceneId": "ending-summit-triumph",
+          "strategy": "Master Technical Execution"
+        }
+      ]
+    },
+    "ending-summit-triumph": {
+      "id": "ending-summit-triumph",
+      "isEnding": true,
+      "outcome": "VICTORY",
+      "title": "Summit Glory: Atop The Savage Mountain (8,611m)",
+      "story": "At 7:45 AM, you take your final breathless steps onto the narrow crest of K2. Below you, the curvature of the Earth is visible. Gasherbrum, Broad Peak, and the sea of Karakoram glaciers stretch into China and Pakistan. You stood on the summit of the world's most demanding peak with impeccable judgment and alpine discipline.",
+      "score": 100,
+      "badge": "Summit Champion"
+    },
+    "ending-prudent-descent": {
+      "id": "ending-prudent-descent",
+      "isEnding": true,
+      "outcome": "WISDOM",
+      "title": "The Prudent Turnaround: Living Alpinist Legend",
+      "story": "You turned back at 8,250m when conditions deteriorated. Ed Viesturs famously said: 'Getting to the top is optional. Getting down is mandatory.' You returned safely to Base Camp with all toes intact and the deep respect of your fellow climbers. K2 will be here for another expedition.",
+      "score": 85,
+      "badge": "Mountain Scholar"
+    },
+    "ending-evacuation": {
+      "id": "ending-evacuation",
+      "isEnding": true,
+      "outcome": "EVACUATION",
+      "title": "Emergency Glacial Rescue",
+      "story": "Exhaustion and acute mountain sickness overtook your team. Your Sherpa guides and military helicopter pilots executed an emergency long-line rescue from Camp 2. A humbling lesson in listening to your body and respecting high-altitude physiology.",
+      "score": 45,
+      "badge": "Safety Sentinel"
+    },
+    "ending-near-miss": {
+      "id": "ending-near-miss",
+      "isEnding": true,
+      "outcome": "NEAR MISS",
+      "title": "Narrow Escape at the Bottleneck",
+      "story": "A falling ice block severed your fixed rope by inches. Shaken by the close call, you retreated to Camp 4 in high wind. You survived, carrying a newfound reverence for the raw, untamable power of the Karakoram.",
+      "score": 60,
+      "badge": "Survival Instinct"
+    }
+  }
+}

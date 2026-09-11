@@ -1,0 +1,164 @@
+{
+  "sherpaProfile": {
+    "name": "Ang Tenzing Sherpa",
+    "callsign": "Ask Sherpa",
+    "role": "Lead High-Altitude Mountain Guide & Expedition Sirdar",
+    "welcomeMessage": "Namaste, Explorer 👋\n\nI'm Sherpa, your Alpine Ascents virtual mountain guide.\n\nI can help you explore mountains, discover destinations, compare expeditions, understand climbing difficulty, find videos, check equipment and navigate the website.\n\nWhere would you like to begin?",
+    "bio": "Namaste, Explorer 👋\n\nI'm Sherpa, your Alpine Ascents virtual mountain guide.\n\nI can help you explore mountains, discover destinations, compare expeditions, understand climbing difficulty, find videos, check equipment and navigate the website.\n\nWhere would you like to begin?",
+    "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+  },
+  "quickSuggestions": [
+    "Explore K2",
+    "Beginner Mountains",
+    "Compare Peaks",
+    "Packing Checklist",
+    "Watch Videos",
+    "Explore Pakistan",
+    "Plan a Trip"
+  ],
+  "intents": [
+    {
+      "intent": "greeting",
+      "patterns": ["hi", "hello", "hey", "namaste", "salam", "morning", "who are you", "start", "welcome"],
+      "response": "Namaste, Explorer! I am your Alpine Ascents virtual mountain guide. Ready to explore eight-thousanders, discover Gilgit-Baltistan, or prepare technical gear?",
+      "suggestions": ["Explore K2", "Beginner Mountains", "Plan a Trip"]
+    },
+    {
+      "intent": "mountain_info",
+      "patterns": ["k2", "savage mountain", "everest", "nanga parbat", "broad peak", "rakaposhi", "passu", "mountain", "peak", "summit", "altitude", "elevation", "eight-thousander"],
+      "response": "The Karakoram and Himalayas host Earth's most formidable giants, including K2 (8,611m), Mount Everest (8,848m), and Nanga Parbat (8,126m). Each demands distinct ice ropecraft and acclimatization profiles.",
+      "action": { "type": "scroll", "target": "#mountain-finder", "label": "Explore Peak Directory" },
+      "suggestions": ["Explore K2", "Compare Peaks", "Show Altitude Converter"]
+    },
+    {
+      "intent": "destination_info",
+      "patterns": ["destination", "place", "hunza", "skardu", "gilgit", "concordia", "baltoro", "fairy meadows", "attabad", "passu cones", "deosai", "pakistan", "chamonix"],
+      "response": "From the granite towers of Skardu and the turquoise waters of Attabad Lake in Hunza, to the legendary Concordia amphitheater, our destinations provide world-class climbing and cultural heritage.",
+      "action": { "type": "scroll", "target": "#places", "label": "Explore Destination Gateways" },
+      "suggestions": ["Explore Pakistan", "Where is Hunza Valley?", "Skardu Gateway"]
+    },
+    {
+      "intent": "expedition_search",
+      "patterns": ["expedition", "expeditions", "climb trip", "trekking", "summit push", "climbing tour", "k2 expedition"],
+      "response": "We organize certified high-altitude ascents led by UIAGM/IFMGA guides, complete with fixed-line rigging, oxygen logistics, satellite comms, and base camp chefs.",
+      "action": { "type": "scroll", "target": "#packages", "label": "View Featured Expeditions" },
+      "suggestions": ["Plan a Trip", "Check Seasonal Discounts"]
+    },
+    {
+      "intent": "package_search",
+      "patterns": ["package", "packages", "booking", "itinerary", "price", "cost", "how much", "all-inclusive"],
+      "response": "We provide all-inclusive expedition packages with domestic flights, 4x4 transport, permits, porterage, high-altitude nutrition, and rescue evacuation insurance.",
+      "action": { "type": "scroll", "target": "#packages", "label": "Browse Expedition Packages" },
+      "suggestions": ["Plan a Trip", "Compare Packages"]
+    },
+    {
+      "intent": "difficulty_question",
+      "patterns": ["difficulty", "how hard", "grade", "technical challenge", "easy", "difficult", "extreme", "moderate"],
+      "response": "Our climbs are graded in 4 distinct tiers: Easy (trekking trails below 3,500m), Moderate (scrambles with basic crampon work), Difficult (sustained 50° mixed ice/rock above 6,000m), and Extreme (Death Zone summits requiring supplementary O2 and fixed-line autonomy).",
+      "action": { "type": "scroll", "target": "#alpine-tools", "label": "Inspect Mountain Difficulty Matrix" },
+      "suggestions": ["Beginner Mountains", "Compare Peaks"]
+    },
+    {
+      "intent": "comparison",
+      "patterns": ["compare", "comparison", "difference between", "vs", "k2 vs everest", "harder peak"],
+      "response": "While Mount Everest is 237m taller, K2 is steeper, storms are more volatile in the Karakoram, and objective rockfall hazards are vastly higher. Inspect our multi-axis radar chart for side-by-side telemetry.",
+      "action": { "type": "scroll", "target": "#alpine-tools", "label": "Open Radar Summit Comparison" },
+      "suggestions": ["Compare Peaks", "Explore K2"]
+    },
+    {
+      "intent": "equipment",
+      "patterns": ["gear", "equipment", "pack", "crampons", "boots", "jacket", "rope", "helmet", "ice axe", "what to bring", "packing"],
+      "response": "Essential alpine gear includes 800-fill down parkas, double/triple boots, 12-point chromoly crampons, technical ice axes, UIAA helmets, and 457 kHz avalanche transceivers.",
+      "action": { "type": "scroll", "target": "#equipment", "label": "Open Equipment Checklist" },
+      "suggestions": ["Packing Checklist", "Play Pack Your Gear Game"]
+    },
+    {
+      "intent": "safety",
+      "patterns": ["safety", "acclimatization", "altitude sickness", "ams", "hace", "hape", "gamow bag", "oxygen"],
+      "response": "High-altitude safety mandates ascending no more than 300-500m per day above 3,000m, scheduled rest days, hydration (4-5L/day), pulse oximeter monitoring, and emergency descent protocols.",
+      "action": { "type": "scroll", "target": "#knowledge", "label": "Review Alpine Safety Knowledge" },
+      "suggestions": ["Take Safety Quiz", "Hazard Guidelines"]
+    },
+    {
+      "intent": "hazard",
+      "patterns": ["hazard", "hazards", "avalanche", "rockfall", "crevasse", "serac", "bottleneck", "frostbite", "hypothermia"],
+      "response": "Major objective alpine hazards include wind-slab avalanches, collapsing seracs (such as K2's Bottleneck), hidden crevasse bridges, and sudden blizzard whiteouts.",
+      "action": { "type": "scroll", "target": "#mini-games-hub", "label": "Play Hazard Reflex Challenge" },
+      "suggestions": ["Take Safety Quiz", "Packing Checklist"]
+    },
+    {
+      "intent": "history",
+      "patterns": ["history", "timeline", "first ascent", "george mallory", "achille compagnoni", "lino lacedelli", "edmund hillary", "tenzing norgay", "1954"],
+      "response": "Mountaineering history spans from Balmat and Paccard's 1786 ascent of Mont Blanc, to the 1953 Everest triumph and the historic 1954 Italian ascent of K2. Explore our interactive horizontal chronology!",
+      "action": { "type": "scroll", "target": "#knowledge", "label": "Open Interactive Timeline" },
+      "suggestions": ["First 8,000m Summit", "K2 1954 Expedition"]
+    },
+    {
+      "intent": "video_search",
+      "patterns": ["video", "videos", "film", "films", "documentary", "watch", "cinema", "4k"],
+      "response": "Our Expedition Cinema features playable 4K documentary footage, aerial traverses over K2 and Hunza, and technical masterclasses from certified IFMGA guides.",
+      "action": { "type": "scroll", "target": "#videos", "label": "Go to Expedition Cinema" },
+      "suggestions": ["Watch Videos", "Watch K2 Film"]
+    },
+    {
+      "intent": "gallery_navigation",
+      "patterns": ["gallery", "photos", "photography", "pictures", "images", "wallpaper"],
+      "response": "Explore our high-resolution photography gallery showcasing Concordia starry skies, granite pinnacles, glacier crevasses, and Karakoram base camps.",
+      "action": { "type": "scroll", "target": "#gallery", "label": "Open Photography Gallery" },
+      "suggestions": ["Watch Videos", "Explore K2"]
+    },
+    {
+      "intent": "weather_request",
+      "patterns": ["weather", "temperature", "forecast", "wind", "wind speed", "conditions", "storm", "live weather"],
+      "response": "We provide live meteorological telemetry from Open-Meteo for K2, Everest, Nanga Parbat, Broad Peak, and Mont Blanc, including summit temperature, wind shear velocity, and sunrise/sunset times.",
+      "action": { "type": "scroll", "target": "#weather", "label": "Check Live Peak Weather" },
+      "suggestions": ["Check K2 Wind Speed", "Best Climbing Season"]
+    },
+    {
+      "intent": "club_search",
+      "patterns": ["club", "clubs", "organization", "alpine club", "uiaa", "acp", "ifmga"],
+      "response": "We collaborate with the Alpine Club of Pakistan (ACP), UIAA, the British Mountaineering Council (BMC), and French Alpine Club (CAF) to promote responsible mountaineering.",
+      "action": { "type": "scroll", "target": "#clubs", "label": "View Mountaineering Clubs" },
+      "suggestions": ["View Safety Guidelines", "Explore Expeditions"]
+    },
+    {
+      "intent": "route_search",
+      "patterns": ["route", "routes", "abruzzi", "cesen", "south col", "bottleneck", "house chimney", "black pyramid"],
+      "response": "Major classic routes include the Abruzzi Spur and Česen Ridge on K2, the Southeast Ridge on Everest, and the Kinshofer Route on Nanga Parbat.",
+      "action": { "type": "scroll", "target": "#route-3d", "label": "Inspect 3D Peak & Routes" },
+      "suggestions": ["Play Choose Your Route Game", "Explore K2"]
+    },
+    {
+      "intent": "site_navigation",
+      "patterns": ["navigation", "navigate", "menu", "sections", "where is", "take me to", "show me", "open"],
+      "response": "I can transport you anywhere across Alpine Ascents. Which section would you like to visit?",
+      "action": { "type": "scroll", "target": "#expeditions", "label": "Jump to Expeditions" },
+      "suggestions": ["Take me to Expeditions", "Open Gallery", "Watch Videos", "Open My Profile"]
+    },
+    {
+      "intent": "recommendation",
+      "patterns": ["recommend", "recommendation", "suggest", "what should i climb", "where should i go", "best peak"],
+      "response": "For first-timers: Fairy Meadows & Hunza Valley. For seasoned trekkers: K2 Base Camp & Gondogoro La. For technical alpinists: Spantik (7,027m) or Mont Blanc. Try our interactive Expedition Advisor below!",
+      "action": { "type": "scroll", "target": "#expedition-advisor", "label": "Launch Expedition Advisor" },
+      "suggestions": ["Beginner Mountains", "Plan a Trip"]
+    },
+    {
+      "intent": "help",
+      "patterns": ["help", "guide me", "how to use", "shortcuts", "hotkeys"],
+      "response": "You can press Ctrl+K for Global Search, press ? for keyboard shortcuts, toggle between Dark/Light/Expedition themes, track summit progress with the climber HUD, or ask me any question!",
+      "suggestions": ["Explore K2", "Packing Checklist", "Watch Videos"]
+    },
+    {
+      "intent": "farewell",
+      "patterns": ["bye", "goodbye", "thank you", "thanks", "shukriya", "see you", "cheers"],
+      "response": "May the winds stay favorable and your ropes remain secure. Tread lightly and respect the sacred peaks. Call on me anytime, Explorer!",
+      "suggestions": ["Explore K2", "Watch Videos"]
+    },
+    {
+      "intent": "unknown",
+      "patterns": [],
+      "response": "That is an intriguing mountaineering inquiry. As an alpine guide, I can provide beta on mountains, destinations, packages, gear requirements, safety protocols, live summit weather, or navigate you anywhere on Alpine Ascents.",
+      "suggestions": ["Explore K2", "Beginner Mountains", "Packing Checklist", "Watch Videos", "Plan a Trip"]
+    }
+  ]
+}

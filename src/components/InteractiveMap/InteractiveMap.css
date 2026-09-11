@@ -1,0 +1,75 @@
+.map-section {
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.map-container-wrapper {
+  position: relative;
+  height: 580px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+}
+
+.map-controls-overlay {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.map-filter-pills {
+  display: flex;
+  gap: 0.4rem;
+  background: var(--bg-card-solid);
+  padding: 0.4rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+}
+
+.map-geo-panel {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 500;
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(12px);
+  max-width: 320px;
+}
+
+@media (max-width: 768px) {
+  .map-container-wrapper {
+    height: 420px;
+  }
+  .map-geo-panel {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .map-container-wrapper {
+    height: 360px;
+    border-radius: 12px;
+  }
+  .map-controls-overlay {
+    top: 0.6rem;
+    left: 0.6rem;
+    right: 0.6rem;
+  }
+  .map-filter-pills {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.35rem;
+    gap: 0.3rem;
+  }
+}

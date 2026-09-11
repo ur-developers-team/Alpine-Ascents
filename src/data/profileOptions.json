@@ -1,0 +1,140 @@
+{
+  "explorerLevels": [
+    {
+      "level": 1,
+      "title": "Trail Beginner",
+      "minScore": 0,
+      "badge": "Base Camp Hiker",
+      "perk": "Access to beginner trail profiles & equipment checklist."
+    },
+    {
+      "level": 2,
+      "title": "Mountain Explorer",
+      "minScore": 25,
+      "badge": "Pass Navigator",
+      "perk": "Unlocks 3D mountain summits & route elevation profiles."
+    },
+    {
+      "level": 3,
+      "title": "Alpine Adventurer",
+      "minScore": 50,
+      "badge": "Glacier Scout",
+      "perk": "Unlocks Death Zone pace challenge & Before/After glacier slider."
+    },
+    {
+      "level": 4,
+      "title": "Expedition Specialist",
+      "minScore": 75,
+      "badge": "Ridge Pioneer",
+      "perk": "Unlocks custom expedition builder discounts & technical ropecraft beta."
+    },
+    {
+      "level": 5,
+      "title": "Summit Master",
+      "minScore": 100,
+      "badge": "8,000m Apex Legend",
+      "perk": "Unlocks verified Summit Explorer Certificate export."
+    }
+  ],
+  "passportStamps": [
+    {
+      "id": "stamp-hunza",
+      "location": "Hunza Valley",
+      "region": "Gilgit-Baltistan",
+      "elevation": "2,438m",
+      "dateEstablished": "Ancient Silk Road",
+      "stampSeal": "HUNZA VALLEY · KARAKORAM CITADEL",
+      "tag": "Turquoise Waters & Forts"
+    },
+    {
+      "id": "stamp-skardu",
+      "location": "Skardu Gateway",
+      "region": "Baltistan",
+      "elevation": "2,228m",
+      "dateEstablished": "Gateway to Giants",
+      "stampSeal": "SKARDU GATEWAY · BALTORO TRAILHEAD",
+      "tag": "Cold Desert & Great Peaks"
+    },
+    {
+      "id": "stamp-gilgit",
+      "location": "Gilgit Hub",
+      "region": "Northern Pakistan",
+      "elevation": "1,500m",
+      "dateEstablished": "Mountain Crossroads",
+      "stampSeal": "GILGIT HUB · THREE RANGES JUNCTION",
+      "tag": "Karakoram, Himalaya & Hindu Kush"
+    },
+    {
+      "id": "stamp-k2",
+      "location": "K2 Base Camp",
+      "region": "Godwin-Austen Glacier",
+      "elevation": "5,150m",
+      "dateEstablished": "1856 Survey",
+      "stampSeal": "K2 SAVAGE PEAK · CONCORDIA APEX",
+      "tag": "Earth's Fiercest Summit"
+    },
+    {
+      "id": "stamp-everest",
+      "location": "Everest Base Camp",
+      "region": "Mahalangur Himal",
+      "elevation": "5,364m",
+      "dateEstablished": "1953 Summit",
+      "stampSeal": "MT EVEREST · SAGARMATHA ROOF",
+      "tag": "Pinnacle of Earth"
+    },
+    {
+      "id": "stamp-murree",
+      "location": "Murree Foothills",
+      "region": "Pir Panjal Range",
+      "elevation": "2,291m",
+      "dateEstablished": "1851 Hill Station",
+      "stampSeal": "MURREE FOOTHILLS · CLOUD RIDGES",
+      "tag": "Pine Forests & Snow Escapes"
+    },
+    {
+      "id": "stamp-abbottabad",
+      "location": "Abbottabad Ridge",
+      "region": "Hazara Valley",
+      "elevation": "1,256m",
+      "dateEstablished": "1853 Gateway",
+      "stampSeal": "ABBOTTABAD · HAZARA GATEWAY",
+      "tag": "Staging Post to Karakoram Highway"
+    },
+    {
+      "id": "stamp-quetta",
+      "location": "Quetta Chiltan",
+      "region": "Chiltan & Zarghun",
+      "elevation": "1,680m",
+      "dateEstablished": "Fruit Garden Citadel",
+      "stampSeal": "QUETTA VALLEY · CHILTAN PEAKS",
+      "tag": "Rugged Juniper Mountain Trails"
+    },
+    {
+      "id": "stamp-peshawar",
+      "location": "Peshawar Pass",
+      "region": "Khyber Gateway",
+      "elevation": "359m",
+      "dateEstablished": "Ancient Caravan Route",
+      "stampSeal": "PESHAWAR · HINDU KUSH ACCESS",
+      "tag": "Historic Frontier Expedition Base"
+    },
+    {
+      "id": "stamp-karachi",
+      "location": "Karachi Coastal Port",
+      "region": "Arabian Sea Gateway",
+      "elevation": "8m",
+      "dateEstablished": "Sea Level Zero Marker",
+      "stampSeal": "KARACHI PORT · SEA LEVEL DEPARTURE",
+      "tag": "South-North Expedition Logistics"
+    },
+    {
+      "id": "stamp-balochistan",
+      "location": "Balochistan Canyons",
+      "region": "Makran Coastal Range",
+      "elevation": "850m",
+      "dateEstablished": "Garr Rugged Plateaus",
+      "stampSeal": "BALOCHISTAN · PRINCESS OF HOPE",
+      "tag": "Ancient Gorges & Mud Volcanoes"
+    }
+  ]
+}

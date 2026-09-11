@@ -1,0 +1,315 @@
+.dashboard-modal {
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 980px;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.25s ease forwards;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.dashboard-user-hero {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.dashboard-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.dashboard-user-details h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+}
+
+.dashboard-user-details p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.dashboard-nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 2rem;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.dashboard-tab-btn {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.dashboard-tab-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.dashboard-tab-btn.active {
+  color: var(--text-inverse);
+  background: var(--accent);
+  box-shadow: 0 2px 8px var(--accent-glow);
+}
+
+.dashboard-body {
+  padding: 2rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.dashboard-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.pref-card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.trip-card-item {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.trip-card-item:hover {
+  border-color: var(--accent);
+}
+
+/* ==========================================================================
+   Climber Passport & Explorer Levels
+   ========================================================================== */
+.passport-level-banner {
+  background: linear-gradient(135deg, rgba(14, 26, 43, 0.95), rgba(7, 12, 18, 0.98));
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  padding: 18px 24px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.passport-level-info h4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.passport-level-progress-wrap {
+  min-width: 240px;
+  flex: 1;
+}
+
+.passport-progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 6px;
+}
+
+.passport-progress-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.passport-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #38bdf8, #10b981);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.passport-stamps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.passport-stamp-card {
+  position: relative;
+  background: rgba(13, 21, 32, 0.6);
+  border: 2px dashed rgba(56, 189, 248, 0.35);
+  border-radius: 14px;
+  padding: 18px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.passport-stamp-card:hover {
+  transform: translateY(-4px) rotate(1deg);
+  border-color: var(--accent);
+  background: rgba(56, 189, 248, 0.08);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4), 0 0 16px rgba(56, 189, 248, 0.2);
+}
+
+.passport-stamp-card.stamped {
+  border-style: solid;
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.06);
+}
+
+.stamp-seal-circle {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  color: var(--accent);
+  background: rgba(56, 189, 248, 0.1);
+  transition: all 0.2s;
+}
+
+.passport-stamp-card.stamped .stamp-seal-circle {
+  border-color: #10b981;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.stamp-location-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.stamp-region-text {
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 6px;
+}
+
+.stamp-elevation-tag {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: 'Space Mono', monospace;
+  margin-bottom: 8px;
+}
+
+.stamp-status-tag {
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.stamp-status-tag.verified {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.stamp-status-tag.pending {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Header Export Controls */
+.dashboard-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.export-btn-outline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.export-btn-outline:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--accent);
+  color: var(--accent-light);
+}
+
+/* Print Optimization */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .dashboard-modal, .dashboard-modal * {
+    visibility: visible;
+  }
+  .dashboard-modal {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    box-shadow: none;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .dashboard-header-actions, .modal-close-btn, .dashboard-nav-tabs {
+    display: none !important;
+  }
+}
+

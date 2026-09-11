@@ -1,0 +1,121 @@
+.mountain-scene-wrap {
+  position: relative;
+  width: 100%;
+  padding: 5rem 0 3rem;
+  background: radial-gradient(circle at 50% 10%, #0d1a2d 0%, var(--bg-primary) 100%);
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mountain-scene-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.scene-layers-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-xl);
+  background: #070c14;
+}
+
+.scene-sky-box {
+  position: relative;
+  height: 380px;
+  background: linear-gradient(180deg, #091322 0%, #172a45 45%, #2a4365 75%, #1e293b 100%);
+  overflow: hidden;
+}
+
+.scene-cloud-drift {
+  position: absolute;
+  top: 15%;
+  left: -20%;
+  width: 140%;
+  height: 120px;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.12) 0%, transparent 70%);
+  filter: blur(20px);
+  animation: cloudPass 40s linear infinite;
+}
+
+.scene-peaks-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 240px;
+  z-index: 2;
+}
+
+.scene-forest-layer {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 3;
+}
+
+.scene-forest-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.scene-river-container {
+  position: relative;
+  z-index: 4;
+  margin-top: -30px;
+  padding: 0 1rem;
+}
+
+.scene-valley-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  position: relative;
+  z-index: 5;
+}
+
+.scene-stat-cell {
+  text-align: center;
+}
+
+.scene-stat-cell span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.scene-stat-cell strong {
+  font-size: 1.1rem;
+  font-family: var(--font-heading);
+  color: var(--accent-gold);
+}
+
+@keyframes cloudPass {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(40%); }
+}
+
+@media (max-width: 768px) {
+  .scene-sky-box {
+    height: 280px;
+  }
+  .scene-valley-stats {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}

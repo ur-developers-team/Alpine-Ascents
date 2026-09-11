@@ -1,0 +1,35 @@
+[
+  {
+    "id": "winter-k2-2021",
+    "title": "K2 Winter 2021: Brotherhood at -60°C",
+    "leadClimber": "Nirmal Purja & Mingma G with 8 Brothers",
+    "peak": "K2 (8,611m)",
+    "region": "Gilgit-Baltistan, Pakistan",
+    "duration": "42 Days",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+    "story": "For over four decades, winter K2 had repelled every single human attempt with ferocious jet stream winds exceeding 200 km/h and frostbiting temperatures. In January 2021, two independent Nepali teams joined forces on the Abruzzi Spur. Fixing ropes in hurricane conditions, they pushed through the Bottleneck. In an act of unparalleled mountaineering solidarity, they halted just 10 meters before the summit point so all 10 climbers could step onto the crest together shoulder-to-shoulder, singing their national anthem.",
+    "highlights": ["Zero summit fatalities", "First ever winter ascent in history", "Symbol of international mountaineering unity"]
+  },
+  {
+    "id": "ali-sadpara-legacy",
+    "title": "The Lion of the Karakoram: Muhammad Ali Sadpara",
+    "leadClimber": "Muhammad Ali Sadpara (Sadpara Village, Skardu)",
+    "peak": "Nanga Parbat & K2",
+    "region": "Gilgit-Baltistan, Pakistan",
+    "duration": "Lifetime Dedicated to High Summits",
+    "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1200&q=80",
+    "story": "Starting his life as a humble high-altitude porter carrying heavy loads along the Baltoro glacier, Ali Sadpara rose through sheer athletic brilliance and infectious optimism to become Pakistan's most revered high-altitude climber. In February 2016, alongside Alex Txikon and Simone Moro, he accomplished the first-ever winter ascent of Nanga Parbat (8,126m), cementing his status in world mountaineering lore.",
+    "highlights": ["First winter ascent of Nanga Parbat", "8 eight-thousanders summited", "Inspiration for hundreds of Balti and Hunza youths"]
+  },
+  {
+    "id": "women-of-k2",
+    "title": "High Altitude Pioneers: Pakistani Women on K2",
+    "leadClimber": "Samina Baig & Naila Kiani",
+    "peak": "K2 (8,611m)",
+    "region": "Gilgit-Baltistan, Pakistan",
+    "duration": "July 2022 Season",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    "story": "On July 22, 2022, within hours of each other, Samina Baig (from Shimshal Valley, Hunza) and Naila Kiani made history as the first Pakistani women to stand on top of K2. Traversing the technical House's Chimney and the perilous hanging serac of the Bottleneck, their triumphs inspired women across South Asia and fundamentally redefined female representation in elite high-altitude mountaineering.",
+    "highlights": ["First Pakistani women on K2", "Both summited within 3 hours", "Advocacy for youth and girls' education in mountain regions"]
+  }
+]

@@ -1,0 +1,60 @@
+[
+  {
+    "id": "self-arrest",
+    "name": "Ice Axe Self-Arrest",
+    "category": "Emergency Survival",
+    "difficulty": "Critical Skill",
+    "description": "The foundational emergency technique to stop an uncontrolled slide down a snow or ice slope before hitting rocks, cliffs, or crevasses.",
+    "steps": [
+      "Instantly call out 'Falling!' to alert rope team members to drop into arrest stance.",
+      "Roll onto your stomach facing the slope with head pointing uphill.",
+      "Plant the ice axe pick into the snow near your uphill shoulder with both hands on the shaft and adze/pick.",
+      "Drive weight onto the chest directly over the pick to forcefully bite into the hard snowpack.",
+      "Kick toes into the snow if wearing boots; KEEP CRAMPON POINTS OFF THE SNOW to prevent flipping backwards if crampons catch."
+    ],
+    "goldenRule": "Execute within 0.5 seconds before falling velocity accelerates beyond human arrest threshold."
+  },
+  {
+    "id": "crampon-techniques",
+    "name": "Crampon Techniques (French vs Front-Pointing)",
+    "category": "Glacier & Ice Travel",
+    "difficulty": "Core Technique",
+    "description": "Efficient footwork methods to conserve calf muscle energy while maintaining maximum traction on steep frozen surfaces.",
+    "steps": [
+      "Piolet-Canne (Cane Position): Ice axe held in uphill hand used as walking stick on low-angle slopes (up to 30°).",
+      "French Technique (Flat-Footing / 10-Point): Flex ankles so all 10 base crampon points remain flat on snow/ice simultaneously on moderate slopes (30°-50°).",
+      "Piolet-Panne (Cross-Body): Ice axe adze pressed across the chest while traversing steep crust.",
+      "Front-Pointing (German Style): On vertical ice (>50°), drive the two horizontal or vertical front points directly into the ice with calves dropped level to minimize burn."
+    ],
+    "goldenRule": "Walk with feet shoulder-width apart in a wide 'cowboy' stance to avoid snagging crampon points on pant cuffs."
+  },
+  {
+    "id": "crevasse-rescue",
+    "name": "Crevasse Rescue: 3:1 Z-Pulley Haul System",
+    "category": "Glacier Safety",
+    "difficulty": "Advanced Technical",
+    "description": "A mechanical advantage hauling system assembled using prusik cords, carabiners, and pulleys to hoist a fallen climber out of a glacial abyss.",
+    "steps": [
+      "Arrest the initial fall and establish a bombproof snow picket or deadman anchor.",
+      "Transfer the fallen climber's load off your harness and onto the snow anchor using a friction hitch (Prusik / Machard).",
+      "Approach the crevasse lip with safety backup, pad the snow lip with an ice axe or backpack to prevent the rope from cutting deep trenches.",
+      "Attach a directional pulley to the anchor line and a hauling prusik onto the climber's rope strands.",
+      "Reeve the rope back through the hauling pulley creating a 3:1 mechanical advantage ('Z-Rig') requiring one-third the manual hauling effort."
+    ],
+    "goldenRule": "Always pad the crevasse lip before hauling; unpadded ropes slice through firn ice like cheese wire, locking the haul system."
+  },
+  {
+    "id": "belaying-anchors",
+    "name": "High-Altitude Snow & Ice Anchors",
+    "category": "Ropework & Rigging",
+    "difficulty": "Intermediate / Advanced",
+    "description": "Constructing solid load-bearing anchor points in variable snow and alpine ice conditions.",
+    "steps": [
+      "Ice Screws: Drive 16-22cm chromoly ice screws at a positive 100° angle into dense blue/green water ice.",
+      "Snow Pickets: Drive aluminum T-section pickets vertically at 70° relative to fall line in firm snow, or bury horizontally as a 'Deadman' anchor in soft firn.",
+      "T-Slot (Deadman): Bury a snow shovel, ice axe, or stuff sack filled with snow 50cm-1m deep, tied off with a clove hitch.",
+      "V-Thread (Abalakov): Bore two intersecting 22cm ice screw holes to form an ice tunnel for zero-hardware rappelling."
+    ],
+    "goldenRule": "Test all snow anchors with progressive bodyweight bounces before committing full expedition load."
+  }
+]

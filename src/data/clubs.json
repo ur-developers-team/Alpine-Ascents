@@ -1,0 +1,68 @@
+[
+  {
+    "id": "acp",
+    "name": "Alpine Club of Pakistan (ACP)",
+    "country": "Pakistan",
+    "city": "Islamabad / Gilgit",
+    "founded": "1974",
+    "coordinates": [33.7294, 73.0931],
+    "website": "https://alpineclub.org.pk",
+    "role": "National governing body for mountaineering, rock climbing, and adventure sports in Pakistan. Oversees Karakoram peak permits, porter welfare regulations, and rescue operations.",
+    "membership": "Over 2,500 Pakistani and international alpinists"
+  },
+  {
+    "id": "alpine-club-uk",
+    "name": "The Alpine Club (UK)",
+    "country": "United Kingdom",
+    "city": "London",
+    "founded": "1857",
+    "coordinates": [51.5237, -0.0815],
+    "website": "https://www.alpine-club.org.uk",
+    "role": "The world's first mountaineering club, founded in London. Played the preeminent role in the Golden Age of Alpinism, pioneer Himalayan expeditions, and publishes the renowned Alpine Journal.",
+    "membership": "Over 1,400 active international expeditioners"
+  },
+  {
+    "id": "aac",
+    "name": "American Alpine Club (AAC)",
+    "country": "United States",
+    "city": "Golden, Colorado",
+    "founded": "1902",
+    "coordinates": [39.7555, -105.2211],
+    "website": "https://americanalpineclub.org",
+    "role": "Pioneering North American climbing organization championing conservation, climbing access, global rescue insurance, and publishing the American Alpine Journal (AAJ) and Accidents in North American Climbing.",
+    "membership": "Over 25,000 climbers nationwide"
+  },
+  {
+    "id": "uiaa",
+    "name": "International Climbing and Mountaineering Federation (UIAA)",
+    "country": "International / Switzerland",
+    "city": "Bern",
+    "founded": "1932",
+    "coordinates": [46.9480, 7.4474],
+    "website": "https://theuiaa.org",
+    "role": "The supreme international governing federation representing millions of mountaineers worldwide. Establishes universal safety standards for ropes, helmets, carabiners, and avalanche beacons.",
+    "membership": "Over 90 member federations across 6 continents"
+  },
+  {
+    "id": "caf",
+    "name": "Club Alpin Français (FFCAM)",
+    "country": "France",
+    "city": "Paris / Chamonix",
+    "founded": "1874",
+    "coordinates": [48.8566, 2.3522],
+    "website": "https://www.ffcam.fr",
+    "role": "Manages over 120 high-altitude mountain refuges across the Mont Blanc massif, Écrins, and Pyrenees, leading safety instruction and environmental preservation.",
+    "membership": "Over 100,000 members"
+  },
+  {
+    "id": "cai",
+    "name": "Club Alpino Italiano (CAI)",
+    "country": "Italy",
+    "city": "Milan / Turin",
+    "founded": "1863",
+    "coordinates": [45.4642, 9.1900],
+    "website": "https://www.cai.it",
+    "role": "Organized the historic 1954 expedition that conquered K2; maintains 700+ alpine shelters and thousands of kilometers of marked alpine trails.",
+    "membership": "Over 320,000 members"
+  }
+]

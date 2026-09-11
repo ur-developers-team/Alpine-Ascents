@@ -1,0 +1,123 @@
+/* ==========================================================================
+   Altitude Scroll Indicator
+   Expedition Elevation Tracker along the Viewport
+   ========================================================================== */
+
+.altitude-scroll-hud {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 1040;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px 10px 12px;
+  background: linear-gradient(135deg, rgba(13, 21, 32, 0.94), rgba(7, 12, 18, 0.98));
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 999px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), 0 0 18px rgba(56, 189, 248, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.altitude-scroll-hud:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 24px rgba(56, 189, 248, 0.35);
+  transform: translateY(-2px);
+}
+
+.altitude-scroll-hud.summit-active {
+  border-color: #10b981;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4), 0 0 20px #10b981;
+  animation: summitGlowPulse 2s infinite;
+}
+
+@keyframes summitGlowPulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.4); }
+  50% { box-shadow: 0 0 28px rgba(16, 185, 129, 0.8); }
+}
+
+.altitude-hud-icon-wrap {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1.5px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+
+.altitude-scroll-hud.summit-active .altitude-hud-icon-wrap {
+  border-color: #10b981;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.2);
+}
+
+.altitude-hud-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.altitude-hud-elevation {
+  font-size: 0.88rem;
+  font-weight: 800;
+  font-family: 'Space Mono', monospace;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.altitude-hud-camp {
+  font-size: 0.68rem;
+  color: var(--accent);
+  font-family: 'Space Mono', monospace;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+.altitude-scroll-hud.summit-active .altitude-hud-camp {
+  color: #10b981;
+}
+
+/* Vertical Elevation Progress Bar inside HUD */
+.altitude-hud-mini-bar {
+  width: 4px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.altitude-hud-mini-fill {
+  width: 100%;
+  background: linear-gradient(0deg, #38bdf8, #10b981);
+  border-radius: 2px;
+  transition: height 0.15s ease-out;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+  .altitude-scroll-hud {
+    bottom: 18px;
+    left: 18px;
+    padding: 6px 12px 6px 8px;
+    gap: 8px;
+  }
+  .altitude-hud-icon-wrap {
+    width: 28px;
+    height: 28px;
+  }
+  .altitude-hud-elevation {
+    font-size: 0.78rem;
+  }
+  .altitude-hud-camp {
+    font-size: 0.62rem;
+  }
+}

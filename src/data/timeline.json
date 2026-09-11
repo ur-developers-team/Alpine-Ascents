@@ -1,0 +1,122 @@
+[
+  {
+    "id": "tl-1786",
+    "year": 1786,
+    "era": "1780s",
+    "title": "Birth of Modern Alpinism: Mont Blanc",
+    "climbers": "Jacques Balmat & Michel-Gabriel Paccard",
+    "elevation": "4,808m",
+    "region": "Chamonix Massif, French/Italian Alps",
+    "image": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80",
+    "summary": "Universally recognized as the inception of modern mountaineering, dispelling centuries of medieval superstition that high peaks were inhabited by demons.",
+    "milestoneType": "Genesis"
+  },
+  {
+    "id": "tl-1865",
+    "year": 1865,
+    "era": "1860s",
+    "title": "Conquest of the Matterhorn",
+    "climbers": "Edward Whymper & 6-man team",
+    "elevation": "4,478m",
+    "region": "Pennine Alps, Switzerland/Italy",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+    "summary": "Concluded the Victorian 'Golden Age of Alpinism'. Triumph was overshadowed by tragedy when a snapped Manila hemp rope sent four climbers falling 1,400 meters.",
+    "milestoneType": "Golden Age"
+  },
+  {
+    "id": "tl-1924",
+    "year": 1924,
+    "era": "1920s",
+    "title": "Everest Reconnaissance & The Mallory Enigma",
+    "climbers": "George Mallory & Andrew Irvine",
+    "elevation": "8,600m+ Est.",
+    "region": "North Col, Tibet/Nepal",
+    "image": "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?auto=format&fit=crop&w=800&q=80",
+    "summary": "Last sighted 'going strong for the top' near the Second Step clad in tweed jackets and rudimentary oxygen sets, sparking the enduring question of mountaineering history.",
+    "milestoneType": "Exploration"
+  },
+  {
+    "id": "tl-1950",
+    "year": 1950,
+    "era": "1950s",
+    "title": "First 8,000m Summit: Annapurna I",
+    "climbers": "Maurice Herzog & Louis Lachenal",
+    "elevation": "8,091m",
+    "region": "Gandaki Zone, Nepal Himalayas",
+    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    "summary": "The first human footsteps on an eight-thousander, accomplished without bottled oxygen. Herzog famously declared: 'There are other Annapurnas in the lives of men.'",
+    "milestoneType": "8,000m Barrier"
+  },
+  {
+    "id": "tl-1953",
+    "year": 1953,
+    "era": "1950s",
+    "title": "First Summit of Mount Everest",
+    "climbers": "Sir Edmund Hillary & Tenzing Norgay",
+    "elevation": "8,848m",
+    "region": "Mahalangur Himal, Nepal/Tibet",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+    "summary": "Standing atop the planet's highest pinnacle at 11:30 AM on May 29 via the South Col and Hillary Step, securing immortal global acclaim.",
+    "milestoneType": "Pinnacle"
+  },
+  {
+    "id": "tl-1954",
+    "year": 1954,
+    "era": "1950s",
+    "title": "First Ascent of K2 (The Savage Mountain)",
+    "climbers": "Achille Compagnoni & Lino Lacedelli (with Walter Bonatti & Amir Mehdi)",
+    "elevation": "8,611m",
+    "region": "Karakoram Range, Gilgit-Baltistan, Pakistan",
+    "image": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=800&q=80",
+    "summary": "Conquered Earth's steepest giant via the Abruzzi Spur after Walter Bonatti and Hunza high-altitude porter Amir Mehdi survived an open bivouac at 8,100m.",
+    "milestoneType": "Karakoram Legend"
+  },
+  {
+    "id": "tl-1978",
+    "year": 1978,
+    "era": "1970s",
+    "title": "Everest Without Bottled Oxygen",
+    "climbers": "Reinhold Messner & Peter Habeler",
+    "elevation": "8,848m",
+    "region": "Mahalangur Himal, Nepal",
+    "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=80",
+    "summary": "Shattered scientific dogma by proving human respiration is physiologically possible in the Death Zone without artificial supplemental oxygen.",
+    "milestoneType": "Human Feat"
+  },
+  {
+    "id": "tl-1986",
+    "year": 1986,
+    "era": "1980s",
+    "title": "The First Crown of All 14 Eight-Thousanders",
+    "climbers": "Reinhold Messner",
+    "elevation": "14 x 8,000m+",
+    "region": "Himalayas & Karakoram",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80",
+    "summary": "Messner completed all 14 summits over sixteen years, pioneering pure alpine style, lightweight gear, and zero supplemental oxygen.",
+    "milestoneType": "Grand Slam"
+  },
+  {
+    "id": "tl-2021",
+    "year": 2021,
+    "era": "2020s",
+    "title": "Historic First Winter Ascent of K2",
+    "climbers": "10-Climber All-Nepali Team (Led by Nirmal Purja & Mingma G)",
+    "elevation": "8,611m",
+    "region": "Karakoram, Gilgit-Baltistan",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80",
+    "summary": "Solved the 'Last Great Problem' of world mountaineering at -60°C and hurricane gusts, stepping onto the summit together arm-in-arm.",
+    "milestoneType": "Winter Triumph"
+  },
+  {
+    "id": "tl-2024",
+    "year": 2024,
+    "era": "2020s",
+    "title": "Youngest to Summit All 14 Peaks: Nima Rinji",
+    "climbers": "Nima Rinji Sherpa (Age 18)",
+    "elevation": "14 x 8,000m+",
+    "region": "Shishapangma, Tibet",
+    "image": "https://images.unsplash.com/photo-1533240332313-0db49b459ad6?auto=format&fit=crop&w=800&q=80",
+    "summary": "Completed the full 14 Eight-Thousanders crown at just 18 years old, ushering in the modern era of next-generation Himalayan high-altitude athletes.",
+    "milestoneType": "Modern Generation"
+  }
+]

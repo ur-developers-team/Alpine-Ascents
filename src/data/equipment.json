@@ -1,0 +1,149 @@
+[
+  {
+    "id": "eq-1",
+    "name": "Hard Shell Jacket (GORE-TEX Pro 3-Layer)",
+    "category": "Clothing & Layers",
+    "importance": "Mandatory",
+    "description": "Fully taped seams, helmet-compatible hood, pit zips for ventilation during steep uphill skinning or climbing."
+  },
+  {
+    "id": "eq-2",
+    "name": "800+ Fill Power Down Expedition Parka",
+    "category": "Clothing & Layers",
+    "importance": "Mandatory",
+    "description": "Box-wall baffle construction with water-resistant down for sub-zero summit pushes and windy ridge bivouacs."
+  },
+  {
+    "id": "eq-3",
+    "name": "Mid-Layer Polartec Grid Fleece / Active Synthetic",
+    "category": "Clothing & Layers",
+    "importance": "Essential",
+    "description": "Breathable moisture-wicking layer providing active warmth during rigorous ascents."
+  },
+  {
+    "id": "eq-4",
+    "name": "Merino Wool Thermal Base Layer (Top & Bottom)",
+    "category": "Clothing & Layers",
+    "importance": "Mandatory",
+    "description": "Natural odor resistance, superior thermoregulation even when damp from exertion."
+  },
+  {
+    "id": "eq-5",
+    "name": "Double Mountaineering Boots (B3 Rated)",
+    "category": "Footwear & Traction",
+    "importance": "Mandatory",
+    "description": "Rigid vibram sole for front-pointing with insulated removable inner bootie preventing frostbite up to 6,500m."
+  },
+  {
+    "id": "eq-6",
+    "name": "Steel 12-Point Crampons with Anti-Balling Plates",
+    "category": "Footwear & Traction",
+    "importance": "Mandatory",
+    "description": "Step-in automatic wire bails fitted precisely to B3 boot welts; latex anti-snow plates prevent lethal snow clogging."
+  },
+  {
+    "id": "eq-7",
+    "name": "Glacier High-Gaiters (Breathable Cordura)",
+    "category": "Footwear & Traction",
+    "importance": "Essential",
+    "description": "Protects against deep post-holing in wet snow and guards calves against sharp crampon point tears."
+  },
+  {
+    "id": "eq-8",
+    "name": "Satellite Two-Way Communicator (Garmin inReach)",
+    "category": "Navigation & Comms",
+    "importance": "Mandatory",
+    "description": "Global Iridium satellite SOS capability with 100% pole-to-pole coverage, tracking breadcrumbs, and two-way SMS."
+  },
+  {
+    "id": "eq-9",
+    "name": "High-Precision Altimeter Barometer Compass (ABC Watch)",
+    "category": "Navigation & Comms",
+    "importance": "Essential",
+    "description": "Tracks sudden barometric drops signaling incoming storm fronts; recalibrate daily at known elevation markers."
+  },
+  {
+    "id": "eq-10",
+    "name": "Waterproof Topographic Maps (1:25,000 / 1:50,000) & Compass",
+    "category": "Navigation & Comms",
+    "importance": "Mandatory",
+    "description": "Fail-safe analog navigation when extreme sub-zero cold kills lithium-ion batteries."
+  },
+  {
+    "id": "eq-11",
+    "name": "4-Season Expedition Sleeping Bag (-20°C to -35°C Rating)",
+    "category": "Camping & Shelter",
+    "importance": "Mandatory",
+    "description": "Hydrophobic goose down with water-repellent Pertex shell; integrated hood and draft collar."
+  },
+  {
+    "id": "eq-12",
+    "name": "Dual Sleeping Pad System (Inflatable R-Value > 4.5 + Closed-Cell Foam)",
+    "category": "Camping & Shelter",
+    "importance": "Mandatory",
+    "description": "Prevents conductive heat loss to frozen glacier ice; closed-cell foam acts as insurance against punctures."
+  },
+  {
+    "id": "eq-13",
+    "name": "White Gas / Multi-Fuel Stove with Windscreen",
+    "category": "Camping & Shelter",
+    "importance": "Mandatory",
+    "description": "Burns kerosene, white gas, or unleaded fuel efficiently at high altitudes and sub-zero temperatures where canister gas fails."
+  },
+  {
+    "id": "eq-14",
+    "name": "Mountaineering Ice Axe (Classic Curved Pick)",
+    "category": "Safety & Climbing Hardware",
+    "importance": "Mandatory",
+    "description": "T-rated steel pick for self-arrest and step cutting; adze for chopping bucket seats in hard firn."
+  },
+  {
+    "id": "eq-15",
+    "name": "Climbing Harness with Adjustable Leg Loops",
+    "category": "Safety & Climbing Hardware",
+    "importance": "Mandatory",
+    "description": "Fits easily over bulky down pants; dedicated ice clipper slots and reinforced tie-in points."
+  },
+  {
+    "id": "eq-16",
+    "name": "CE Certified Mountaineering Helmet",
+    "category": "Safety & Climbing Hardware",
+    "importance": "Mandatory",
+    "description": "Protects against falling rock, ice chunks, and head impact during slip-and-fall incidents."
+  },
+  {
+    "id": "eq-17",
+    "name": "Glacier Travel Kit (Crevasse Rescue Ropes, Prusiks, Pulleys, Ice Screws)",
+    "category": "Safety & Climbing Hardware",
+    "importance": "Mandatory",
+    "description": "Two 6mm prusik loops, Tibloc/Micro Traxion, 120cm Dyneema sling, 2 screwgate carabiners, 19cm ice screw."
+  },
+  {
+    "id": "eq-18",
+    "name": "Insulated 1-Liter Wide-Mouth Water Bottles with Parka Sleeves",
+    "category": "Nutrition & Hydration",
+    "importance": "Mandatory",
+    "description": "Nalgene bottles stored inside thermal foam sleeves; wide mouth prevents mouth opening from freezing shut."
+  },
+  {
+    "id": "eq-19",
+    "name": "High-Calorie Electrolyte Tablets & Energy Gels",
+    "category": "Nutrition & Hydration",
+    "importance": "Essential",
+    "description": "Combats altitude dehydration and replaces sodium, potassium, and magnesium lost through rapid breathing."
+  },
+  {
+    "id": "eq-20",
+    "name": "Glacier Sunglasses (Category 4 Protection with Side Shields)",
+    "category": "Personal & First Aid",
+    "importance": "Mandatory",
+    "description": "Transmits only 3-8% visible light; blocks 100% harmful UV rays to prevent devastating snow blindness."
+  },
+  {
+    "id": "eq-21",
+    "name": "High-Altitude Medical Kit (Diamox, Dexamethasone, Nifedipine, Painkillers)",
+    "category": "Personal & First Aid",
+    "importance": "Mandatory",
+    "description": "Prescription altitude medication carried in accessible pack pocket with dosage chart."
+  }
+]

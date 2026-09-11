@@ -1,0 +1,186 @@
+.builder-section {
+  position: relative;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+}
+
+.builder-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.builder-header {
+  padding: 2.5rem 2.5rem 1.5rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Step Progress Indicator */
+.builder-steps-nav {
+  display: flex;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-tertiary);
+  scrollbar-width: none;
+}
+
+.builder-steps-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.builder-step-tab {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.9rem 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  background: transparent;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.builder-step-tab.active {
+  background: var(--bg-card-solid);
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+}
+
+.builder-step-tab.completed {
+  color: #10b981;
+}
+
+.builder-step-num {
+  font-weight: 700;
+  font-size: 0.65rem;
+}
+
+/* Main Interactive Grid */
+.builder-content-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  min-height: 520px;
+}
+
+.builder-step-pane {
+  padding: 2.5rem;
+  overflow-y: auto;
+}
+
+.builder-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.builder-option-card {
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-tertiary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.builder-option-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.builder-option-card.selected {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+.builder-option-card h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+.builder-option-card p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.builder-option-price {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 700;
+  margin-top: 0.75rem;
+}
+
+/* Live Dynamic Price Summary Pane */
+.builder-summary-pane {
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.summary-calc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  font-size: 0.88rem;
+}
+
+.summary-calc-row {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+}
+
+.summary-calc-row.total {
+  border-top: 1px solid var(--border);
+  padding-top: 0.85rem;
+  margin-top: 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.summary-save-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 960px) {
+  .builder-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .builder-summary-pane {
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+}

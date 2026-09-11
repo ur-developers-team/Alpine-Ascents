@@ -1,0 +1,44 @@
+[
+  {
+    "id": "alpine-style",
+    "name": "Alpine Style",
+    "badge": "The Purest Form",
+    "speed": "Fast & Continuous (1-5 Days)",
+    "support": "Self-Contained / Unassisted",
+    "oxygen": "Never Used",
+    "fixedRopes": "Zero (Climbing in Single Push)",
+    "camps": "Single carry; bivouacs on the move",
+    "description": "Climbing the mountain in a continuous single push from base to summit and back, carrying all food, fuel, and shelter on your back. No pre-established camps, no fixed ropes, no supplemental oxygen. Favors speed, minimal exposure time, and supreme technical elegance.",
+    "pros": ["Minimal exposure to objective hazards (avalanches, seracs)", "No environmental litter left on slopes", "Ultimate test of athletic endurance and skill"],
+    "cons": ["Zero margin of safety if trapped by sudden storms", "Carrying heavy technical packs on vertical pitches", "Requires elite physical conditioning"],
+    "representativeClimbers": "Reinhold Messner, Steve House, Ueli Steck, Voytek Kurtyka"
+  },
+  {
+    "id": "expedition-style",
+    "name": "Expedition (Siege) Style",
+    "badge": "Traditional High-Altitude",
+    "speed": "Systematic & Methodical (4-8 Weeks)",
+    "support": "High Porter / Guide Ratio",
+    "oxygen": "Common in Death Zone (>8,000m)",
+    "fixedRopes": "Extensive (Kilometers of line from Base to High Camps)",
+    "camps": "Chain of established camps (Camp 1, 2, 3, 4)",
+    "description": "A methodical military-style siege of a peak. Climbers establish a fortified Base Camp, ferry supplies up and down to acclimatize ('climb high, sleep low'), establish fixed ropes across technical passages, and wait for a stable weather window for the final summit push.",
+    "pros": ["Higher summit success probability for commercial clients", "Stocked camps with safety caches, medical oxygen, and food", "Fixed ropes reduce slip-and-fall fatalities on descent"],
+    "cons": ["Protracted exposure to glacier movement and rockfall", "Significant ecological footprint (tents, ropes, waste)", "Heavily dependent on high-altitude support teams"],
+    "representativeClimbers": "Traditional Himalayan & Karakoram expedition teams"
+  },
+  {
+    "id": "capsule-style",
+    "name": "Capsule Style",
+    "badge": "Big Wall & Mixed Technical",
+    "speed": "Intermediate (1-2 Weeks)",
+    "support": "Independent Small Team (2-4 Climbers)",
+    "oxygen": "Rarely Used",
+    "fixedRopes": "Limited (1-2 pitches above current camp)",
+    "camps": "Portaledges or snow ledges moved upward as a pod",
+    "description": "A hybrid method predominantly used on enormous vertical granite spires (e.g. Trango Towers, Patagonia). A small team establishes a 'capsule' camp on a high ledge or hanging portaledge, climbs 200-300 meters above it fixing short lines, then hoists the entire camp upward to start the next block.",
+    "pros": ["Enables ascents of extreme vertical rock faces in adverse weather", "Balances safety with lightweight independence", "Low reliance on large external teams"],
+    "cons": ["Physically punishing hauling of 60kg haul bags on vertical terrain", "Confinement to small hanging ledges during multi-day blizzards", "Slow vertical progress"],
+    "representativeClimbers": "Big wall climbers in Karakoram and Patagonia"
+  }
+]

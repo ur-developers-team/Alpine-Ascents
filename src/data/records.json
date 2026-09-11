@@ -1,0 +1,56 @@
+[
+  {
+    "id": "14-peaks-fastest",
+    "title": "Fastest Ascent of All 14 Eight-Thousanders",
+    "holder": "Kristin Harila & Tenjen (Lama) Sherpa",
+    "recordTime": "92 Days (3 Months 1 Day)",
+    "year": "2023",
+    "details": "Shattered all historical records by scaling all 14 peaks above 8,000m across Nepal, Pakistan, and Tibet in under three months.",
+    "category": "Speed & Endurance"
+  },
+  {
+    "id": "oxygenless-14-peaks",
+    "title": "First to Summit All 14 Without Bottled O2",
+    "holder": "Reinhold Messner",
+    "recordTime": "16 Years (1970 - 1986)",
+    "year": "1986",
+    "details": "Completed the entire 14x8000m crown in pure alpine and lightweight styles without supplemental oxygen tanks.",
+    "category": "Purity & Human Feat"
+  },
+  {
+    "id": "k2-winter-first",
+    "title": "First Winter Ascent of K2",
+    "holder": "10-Climber All-Nepali Team (Led by Nirmal Purja & Mingma G)",
+    "recordTime": "January 16, 2021",
+    "year": "2021",
+    "details": "Conquered Earth's most dangerous mountain in winter at -60°C and hurricane winds, halting 10 meters below the summit to step on top together as a team.",
+    "category": "Winter Ascents"
+  },
+  {
+    "id": "everest-most-summits",
+    "title": "Most Summits of Mount Everest",
+    "holder": "Kami Rita Sherpa",
+    "recordTime": "30 Summits",
+    "year": "2024",
+    "details": "Known as the 'Everest Man', guiding international teams safely for over three decades across the Khumbu Icefall and Southeast Ridge.",
+    "category": "Career Dedication"
+  },
+  {
+    "id": "youngest-14-peaks",
+    "title": "Youngest Climber on All 14 Eight-Thousanders",
+    "holder": "Nima Rinji Sherpa",
+    "recordTime": "18 Years Old",
+    "year": "2024",
+    "details": "Completed all 14 summits at age 18, representing the next generation of visionary Himalayan high-altitude athletes.",
+    "category": "Next Generation"
+  },
+  {
+    "id": "pakistan-high-altitude-legend",
+    "title": "National Hero of the Karakoram: Ali Sadpara",
+    "holder": "Muhammad Ali Sadpara (Pakistan)",
+    "recordTime": "8 of 14 Summited (Winter Nanga Parbat First)",
+    "year": "2016 (Winter Nanga Parbat)",
+    "details": "First human to summit Nanga Parbat in winter (alongside Alex Txikon & Simone Moro); celebrated globally for humbleness, super-human strength, and proud representation of Gilgit-Baltistan.",
+    "category": "Karakoram Legend"
+  }
+]

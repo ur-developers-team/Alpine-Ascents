@@ -1,0 +1,572 @@
+/* ==========================================================================
+   ALPINE ASCENTS — PROFESSIONAL RESPONSIVE NAVBAR & HEADER
+   ========================================================================== */
+
+/* 1. Full-Width Outer Header (Sticky, Zero Layout Shift) */
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 74px;
+  z-index: 1000;
+  background: rgba(11, 17, 30, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  box-sizing: border-box;
+  transition: height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar.scrolled {
+  height: 68px;
+  background: rgba(11, 17, 30, 0.96);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* 2. Responsive Inner Container (Fluid with max-width limit) */
+.navbar-container {
+  width: min(100% - clamp(24px, 4vw, 56px), 1440px);
+  height: 100%;
+  margin-inline: auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(12px, 1.8vw, 28px);
+  box-sizing: border-box;
+}
+
+/* 3. Brand Logo (Controlled Width, Vertical Centering, Zero Clipping) */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.navbar-logo-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.navbar-brand:hover .navbar-logo-icon {
+  background: var(--accent-gold);
+  color: #0b111e;
+  transform: scale(1.05);
+}
+
+.navbar-brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.15;
+}
+
+.navbar-brand-title {
+  font-family: var(--font-heading);
+  font-size: clamp(0.92rem, 1vw, 1.08rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.navbar-brand-tagline,
+.navbar-brand-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.54rem, 0.6vw, 0.64rem);
+  font-weight: 500;
+  color: var(--accent-gold);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  line-height: 1;
+  margin-top: 3px;
+  opacity: 0.95;
+}
+
+/* 4. Desktop Navigation (Center, Flexible, Never Overflows) */
+.navbar-desktop-nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.navbar-nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: clamp(8px, 1.1vw, 18px);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-nav-item {
+  position: relative;
+  display: inline-flex;
+}
+
+.navbar-nav-link {
+  font-family: var(--font-body);
+  font-size: clamp(12.5px, 0.85vw, 14.5px);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.35rem 0;
+  position: relative;
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+}
+
+.navbar-nav-link:hover,
+.navbar-nav-link.active {
+  color: var(--accent-gold);
+}
+
+.navbar-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent-gold);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-nav-link:hover::after,
+.navbar-nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* 5. Action Icons & CTA Area */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(5px, 0.7vw, 9px);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.nav-action-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.nav-action-pill-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.nav-action-icon-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.nav-action-icon-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  transform: translateY(-1px);
+}
+
+.nav-badge-bubble {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  border: 2px solid var(--bg-primary);
+}
+
+.navbar-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: clamp(0.74rem, 0.8vw, 0.82rem);
+  padding: clamp(0.42rem, 0.5vw, 0.5rem) clamp(0.75rem, 0.9vw, 1.1rem);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* 6. Hamburger Menu Button */
+.navbar-hamburger-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.navbar-hamburger-btn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+/* 7. Mobile Drawer Backdrop */
+.mobile-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-drawer-backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 8. Mobile Drawer Panel */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(85vw, 360px);
+  height: 100vh;
+  height: 100dvh;
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border-color);
+  box-shadow: var(--shadow-xl);
+  z-index: 1200;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+[dir="rtl"] .mobile-drawer {
+  right: auto;
+  left: 0;
+  border-left: none;
+  border-right: 1px solid var(--border-color);
+  transform: translateX(-100%);
+}
+
+.mobile-drawer.open {
+  transform: translateX(0);
+}
+
+.mobile-drawer-inner {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.25rem;
+}
+
+.mobile-drawer-close {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.mobile-drawer-close:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.mobile-drawer-utilities {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-visitor-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+.mobile-nav-block {
+  flex: 1;
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mobile-nav-item {
+  width: 100%;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+[dir="rtl"] .mobile-nav-link {
+  text-align: right;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  background: rgba(212, 175, 55, 0.08);
+  color: var(--accent-gold);
+}
+
+.mobile-nav-arrow {
+  color: var(--text-muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.mobile-nav-link:hover .mobile-nav-arrow {
+  color: var(--accent-gold);
+  transform: translate(2px, -2px);
+}
+
+.mobile-drawer-footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mobile-quick-actions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.mobile-action-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.mobile-cta-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 0.8rem;
+}
+
+/* ==========================================================================
+   SMART RESPONSIVE BREAKPOINTS (Zero clipping at any viewport width)
+   ========================================================================== */
+
+/* 1. Intermediate Laptop Adaptations (1180px - 1320px) */
+@media (max-width: 1320px) {
+  .navbar-container {
+    gap: 12px;
+  }
+  .navbar-nav-list {
+    gap: clamp(6px, 0.8vw, 12px);
+  }
+  .navbar-nav-link {
+    font-size: 13px;
+  }
+}
+
+/* 2. Switch to Hamburger at 1180px (When desktop row would start cramping) */
+@media (max-width: 1180px) {
+  .navbar-desktop-nav {
+    display: none !important;
+  }
+  .navbar-cta {
+    display: none !important;
+  }
+  .navbar-hamburger-btn {
+    display: flex !important;
+  }
+  .navbar-brand {
+    width: auto;
+  }
+}
+
+/* 3. Tablet Refinements (< 900px) */
+@media (max-width: 900px) {
+  .nav-profile-btn {
+    display: none !important;
+  }
+}
+
+/* 4. Mobile Refinements (< 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    height: 64px;
+  }
+  .navbar.scrolled {
+    height: 64px;
+  }
+  .navbar-brand {
+    width: auto;
+  }
+  .navbar-brand-title {
+    font-size: 0.92rem;
+  }
+  .navbar-brand-tagline,
+  .navbar-brand-subtitle {
+    font-size: 0.5rem;
+  }
+  .navbar-logo-icon {
+    width: 28px;
+    height: 28px;
+  }
+  .navbar-logo-icon svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* 5. Small Mobile Refinements (< 540px) */
+@media (max-width: 540px) {
+  .ambient-audio-widget {
+    display: none !important;
+  }
+  .nav-voice-btn {
+    display: none !important;
+  }
+}
+
+/* 6. Narrow Mobile Refinements (< 420px) */
+@media (max-width: 420px) {
+  .navbar-container {
+    width: calc(100% - 16px);
+  }
+  .nav-action-pill-btn {
+    display: none !important;
+  }
+  .navbar-actions {
+    gap: 4px;
+  }
+}
+
+/* 7. Extra Narrow Mobile (< 360px) */
+@media (max-width: 360px) {
+  .navbar-container {
+    width: 100%;
+    padding-inline: 6px;
+  }
+  .navbar-brand-tagline,
+  .navbar-brand-subtitle {
+    display: none !important;
+  }
+  .navbar-brand-title {
+    font-size: 0.82rem;
+  }
+  .nav-action-icon-btn {
+    width: 30px;
+    height: 30px;
+  }
+  .navbar-actions {
+    gap: 3px;
+  }
+  .navbar-logo-icon {
+    width: 24px;
+    height: 24px;
+  }
+}

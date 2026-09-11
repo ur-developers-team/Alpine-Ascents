@@ -1,0 +1,47 @@
+{
+  "id": "next-peak-poll",
+  "question": "Which Legendary Apex Would You Summit Next?",
+  "subtitle": "Cast your vote alongside global alpinists exploring the Alpine Ascents platform.",
+  "options": [
+    {
+      "id": "k2",
+      "mountain": "K2 (Godwin-Austen)",
+      "elevation": "8,611m",
+      "region": "Karakoram, Pakistan",
+      "tag": "Savage Mountain",
+      "initialVotes": 1420
+    },
+    {
+      "id": "everest",
+      "mountain": "Mount Everest (Sagarmatha)",
+      "elevation": "8,848.86m",
+      "region": "Mahalangur Himal, Nepal/Tibet",
+      "tag": "Pinnacle of Earth",
+      "initialVotes": 1845
+    },
+    {
+      "id": "nanga-parbat",
+      "mountain": "Nanga Parbat (Diamir)",
+      "elevation": "8,126m",
+      "region": "Western Himalaya, Pakistan",
+      "tag": "The Killer Mountain",
+      "initialVotes": 978
+    },
+    {
+      "id": "broad-peak",
+      "mountain": "Broad Peak (Falchan Kangri)",
+      "elevation": "8,051m",
+      "region": "Karakoram, Pakistan",
+      "tag": "Glacial Giant",
+      "initialVotes": 612
+    },
+    {
+      "id": "trango-towers",
+      "mountain": "Great Trango Tower",
+      "elevation": "6,286m",
+      "region": "Baltoro Muztagh, Pakistan",
+      "tag": "World's Greatest Vertical Wall",
+      "initialVotes": 785
+    }
+  ]
+}

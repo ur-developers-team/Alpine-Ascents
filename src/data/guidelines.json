@@ -1,0 +1,67 @@
+[
+  {
+    "id": "lnt-principles",
+    "title": "Leave No Trace (LNT) for High Alpine Environments",
+    "category": "Environmental Stewardship",
+    "principles": [
+      {
+        "name": "Plan Ahead & Prepare",
+        "detail": "Understand local climate windows, regulations, and pack emergency rations to avoid hazardous foraging or abandoning equipment."
+      },
+      {
+        "name": "Travel & Camp on Durable Surfaces",
+        "detail": "Camp on established glacier snowfields, rock ledges, or bare gravel; never pitch tents on fragile alpine tundra or wildflower mats."
+      },
+      {
+        "name": "Pack Out Everything You Pack In",
+        "detail": "Every candy wrapper, freeze-dried foil pouch, micro-trash, tape scrap, and human waste bag must be carried back to base camp."
+      },
+      {
+        "name": "Respect Mountain Wildlife",
+        "detail": "Maintain distance from snow leopards, Himalayan ibex, markhor, and golden eagles. Store all rations in airtight bear/animal resistant containers."
+      }
+    ]
+  },
+  {
+    "id": "acclimatization-protocol",
+    "title": "Golden Rules of High-Altitude Acclimatization",
+    "category": "Physiology & Survival",
+    "principles": [
+      {
+        "name": "Climb High, Sleep Low",
+        "detail": "Trek or climb 500m-800m higher during daytime carries, then return to a lower camp elevation to sleep."
+      },
+      {
+        "name": "The 500m Sleeping Rule",
+        "detail": "Above 3,000m (10,000ft), limit daily net gain in sleeping elevation to no more than 300m - 500m per 24-hour cycle."
+      },
+      {
+        "name": "Rest Days Every 1,000m",
+        "detail": "Schedule a dedicated non-travel rest day for every 1,000m of net vertical altitude gain."
+      },
+      {
+        "name": "Hydration is Oxygenation",
+        "detail": "Consume a minimum of 4 to 5 liters of electrolyte-fortified warm fluids daily to compensate for hyperventilation and extreme dry air."
+      }
+    ]
+  },
+  {
+    "id": "emergency-sos",
+    "title": "Alpine Emergency & SOS Signalling",
+    "category": "Rescue Protocols",
+    "principles": [
+      {
+        "name": "The Alpine Distress Signal",
+        "detail": "Emit 6 blasts on a whistle or 6 light flashes per minute at equal intervals, pause for 1 minute, then repeat. Response signal is 3 blasts/flashes per minute."
+      },
+      {
+        "name": "Helicopter LZ Marking (Karakoram / Himalayas)",
+        "detail": "Form a human 'Y' (Yes - Need Pick Up) with arms raised overhead; lay a large high-vis orange tarp secured with heavy boulders into the wind direction."
+      },
+      {
+        "name": "Satellite Two-Way Communicator SOS",
+        "detail": "Trigger SOS on Garmin inReach / ZOLEO; remain at exact GPS coordinates; transmit victim vitals, conscious status, and exact medical symptoms."
+      }
+    ]
+  }
+]

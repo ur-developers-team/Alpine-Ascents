@@ -1,0 +1,180 @@
+.glacier-section {
+  background: var(--bg-secondary, #0f172a);
+  border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+}
+
+.glacier-selector-row {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.glacier-comparison-box {
+  background: var(--bg-tertiary, #0b111e);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.glacier-telemetry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.glacier-coords-tag {
+  font-size: 0.7rem;
+  font-family: var(--font-mono, monospace);
+  color: var(--accent, #d4af37);
+  background: rgba(212, 175, 55, 0.12);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 0.4rem;
+}
+
+.glacier-box-title {
+  font-size: 1.35rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.glacier-box-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary, #cbd5e1);
+}
+
+.glacier-hint-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--accent, #d4af37);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+}
+
+/* Draggable Frame */
+.glacier-slider-frame {
+  position: relative;
+  width: 100%;
+  height: 460px;
+  border-radius: 12px;
+  overflow: hidden;
+  user-select: none;
+  cursor: ew-resize;
+  margin-bottom: 1.5rem;
+}
+
+.glacier-img-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.glacier-clip-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.glacier-year-badge {
+  position: absolute;
+  top: 1rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.before-badge {
+  left: 1rem;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  color: #d4af37;
+}
+
+.after-badge {
+  right: 1rem;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  color: #38bdf8;
+}
+
+.glacier-divider-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.divider-handle-grip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #d4af37;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.glacier-scientific-footer {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1rem;
+}
+
+.glacier-obs-card,
+.glacier-climate-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--text-secondary, #cbd5e1);
+}
+
+.glacier-obs-card strong {
+  color: #fff;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 768px) {
+  .glacier-slider-frame {
+    height: 300px;
+  }
+  .glacier-scientific-footer {
+    grid-template-columns: 1fr;
+  }
+}

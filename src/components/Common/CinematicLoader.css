@@ -1,0 +1,132 @@
+.cinematic-loader-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 99999;
+  background: radial-gradient(circle at 50% 40%, #0d1726 0%, #050910 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: all;
+  user-select: none;
+}
+
+.cinematic-loader-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-mountain-svg {
+  width: 160px;
+  height: 110px;
+  margin-bottom: 1.5rem;
+  overflow: visible;
+}
+
+.mountain-draw-path {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: drawMountainLine 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.mountain-glow-apex {
+  opacity: 0;
+  animation: apexGlowFade 0.6s ease 0.9s forwards;
+}
+
+.loader-brand-block {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: brandReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+.loader-brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: var(--text-primary);
+  margin: 0 0 0.4rem;
+  line-height: 1;
+}
+
+.loader-brand-tagline {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.loader-progress-track {
+  width: 140px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  margin-top: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.loader-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent-gold);
+  border-radius: 999px;
+  animation: progressFill 1.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes drawMountainLine {
+  0% {
+    stroke-dashoffset: 600;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes apexGlowFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes brandReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progressFill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-loader-overlay {
+    display: none !important;
+  }
+}

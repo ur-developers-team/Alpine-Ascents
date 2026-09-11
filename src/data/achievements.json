@@ -1,0 +1,74 @@
+[
+  {
+    "id": "summit_champion",
+    "name": "Summit Champion",
+    "description": "Explored all facets of the Alpine Ascents platform and achieved 100% summit climb elevation.",
+    "icon": "Trophy",
+    "tier": "Platinum",
+    "category": "Summit Milestone"
+  },
+  {
+    "id": "gear_specialist",
+    "name": "Master of Rucksack Rigging",
+    "description": "Packed an authentic high-altitude expedition pack without carrying unnecessary dead weight.",
+    "icon": "Briefcase",
+    "tier": "Gold",
+    "category": "Preparation"
+  },
+  {
+    "id": "hazard_survivor",
+    "name": "Alpine Reflex Master",
+    "description": "Reacted within seconds to save your rope team in the Avalanche & Hazard Simulation.",
+    "icon": "AlertTriangle",
+    "tier": "Gold",
+    "category": "Safety"
+  },
+  {
+    "id": "route_master",
+    "name": "Karakoram Route Pioneer",
+    "description": "Navigated the branching K2 interactive route story to a successful summit outcome.",
+    "icon": "Compass",
+    "tier": "Gold",
+    "category": "Exploration"
+  },
+  {
+    "id": "glacier_guardian",
+    "name": "Glacier Sentinel",
+    "description": "Analyzed a century of Karakoram glacier retreat using the interactive environmental slider.",
+    "icon": "Eye",
+    "tier": "Silver",
+    "category": "Stewardship"
+  },
+  {
+    "id": "voice_navigator",
+    "name": "Acoustic Alpinist",
+    "description": "Used natural voice commands to explore Alpine Ascents hands-free.",
+    "icon": "Mic",
+    "tier": "Silver",
+    "category": "Technology"
+  },
+  {
+    "id": "quiz_ace",
+    "name": "Alpine Safety Ace",
+    "description": "Passed the high-altitude mountaineering safety and ethics quiz with a score of 80% or higher.",
+    "icon": "Award",
+    "tier": "Gold",
+    "category": "Knowledge"
+  },
+  {
+    "id": "expedition_architect",
+    "name": "Expedition Architect",
+    "description": "Configured a customized high-altitude journey using the interactive Expedition Builder.",
+    "icon": "Sparkles",
+    "tier": "Gold",
+    "category": "Planning"
+  },
+  {
+    "id": "route_scout",
+    "name": "Topographic Scout",
+    "description": "Explored 3D mountain summits and analyzed route elevation profiles across Baltoro or Mont Blanc.",
+    "icon": "TrendingUp",
+    "tier": "Bronze",
+    "category": "Exploration"
+  }
+]

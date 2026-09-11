@@ -1,0 +1,56 @@
+[
+  {
+    "id": "home",
+    "label": "Home",
+    "labelUrdu": "مرکز",
+    "path": "#"
+  },
+  {
+    "id": "expeditions",
+    "label": "Expeditions",
+    "labelUrdu": "مہمات",
+    "path": "#expeditions"
+  },
+  {
+    "id": "places",
+    "label": "Places",
+    "labelUrdu": "مقامات",
+    "path": "#places"
+  },
+  {
+    "id": "mountains",
+    "label": "Mountains",
+    "labelUrdu": "چوٹیاں",
+    "path": "#mountain-finder"
+  },
+  {
+    "id": "experiences",
+    "label": "Experiences",
+    "labelUrdu": "تجربات",
+    "path": "#experiences"
+  },
+  {
+    "id": "guides",
+    "label": "Guides",
+    "labelUrdu": "رہنما",
+    "path": "#guides"
+  },
+  {
+    "id": "journal",
+    "label": "Journal",
+    "labelUrdu": "جرنل",
+    "path": "#journal"
+  },
+  {
+    "id": "gallery",
+    "label": "Gallery",
+    "labelUrdu": "گیلری",
+    "path": "#gallery"
+  },
+  {
+    "id": "about",
+    "label": "About",
+    "labelUrdu": "تعارف",
+    "path": "#knowledge"
+  }
+]

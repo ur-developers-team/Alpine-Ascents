@@ -1,0 +1,70 @@
+[
+  {
+    "id": "trans-kkh-jeep",
+    "route": "Islamabad to Gilgit / Hunza via Karakoram Highway (KKH)",
+    "startingLocation": "Islamabad (Capital)",
+    "destination": "Karimabad, Hunza",
+    "transportType": "Private 4x4 Toyota Land Cruiser / Hilux Revo",
+    "duration": "14 - 16 Hours (Or 2-day relaxed transit via Babusar Pass)",
+    "distance": "580 km",
+    "highlights": [
+      "Traversing the 'Eighth Wonder of the World' carved through vertical granite canyons",
+      "Crossing the 4,173m Babusar Pass with dramatic panoramas of Kaghan Valley",
+      "The exact junction of three mighty mountain ranges: Himalayas, Karakoram, and Hindu Kush",
+      "Rakaposhi Viewpoint roadside rest stop with direct view of 7,788m ice wall"
+    ],
+    "comfortLevel": "Rugged Luxury",
+    "vehicleSpecs": "Snorkel intake, dual-shock off-road suspension, air-conditioned, satellite phone equipped"
+  },
+  {
+    "id": "trans-mountain-flight-skardu",
+    "route": "Islamabad to Skardu Mountain Scenic Flight",
+    "startingLocation": "Islamabad International Airport (ISB)",
+    "destination": "Skardu International Airport (KDU)",
+    "transportType": "Commercial Airbus A320 / ATR Turboprop (PIA / AirSial)",
+    "duration": "55 Minutes",
+    "distance": "320 km (Aerial)",
+    "highlights": [
+      "One of the world's top 3 most breathtaking commercial flights",
+      "Right-side window seats offer wing-tip views of Nanga Parbat's 8,126m icy wall",
+      "Direct aerial vantage over the serpentine Indus River gorge winding into Baltistan",
+      "Landing in an alpine valley encircled by 5,000-meter sand-and-rock ramparts"
+    ],
+    "comfortLevel": "Express Scenic Air",
+    "vehicleSpecs": "Pressurized cabin, weather-dependent VFR visual flight protocol"
+  },
+  {
+    "id": "trans-heli-charter-k2",
+    "route": "Skardu to Concordia / K2 Base Camp Helicopter Charter",
+    "startingLocation": "Skardu Air Base",
+    "destination": "Concordia Glacier Landing Zone",
+    "transportType": "Military-Grade Eurocopter AS350 B3e (Écureuil) / Mi-17",
+    "duration": "45 Minutes",
+    "distance": "120 km",
+    "highlights": [
+      "Soaring directly between the vertical granite spires of Trango Towers and Cathedral",
+      "Gliding over the 63km length of the Baltoro Glacier moraine in minutes",
+      "Touchdown on the snow at 4,700m directly beneath K2's Abruzzi ridge",
+      "Zero days of strenuous trekking for VIP reconnaissance or medical evacuations"
+    ],
+    "comfortLevel": "Ultimate High-Altitude Charter",
+    "vehicleSpecs": "High-altitude turbine ceiling tested to 8,848m, oxygen masks on board"
+  },
+  {
+    "id": "trans-chamonix-tramway",
+    "route": "Saint-Gervais to Nid d'Aigle (Mont Blanc Tramway)",
+    "startingLocation": "Saint-Gervais-les-Bains, France",
+    "destination": "Nid d'Aigle (2,372m)",
+    "transportType": "Historic Cogwheel Alpine Tramway (TMB)",
+    "duration": "1 Hour 15 Minutes",
+    "distance": "12.4 km",
+    "highlights": [
+      "Operating since 1909, France's highest mountain railway",
+      "Climbs through alpine pastures, larch forests, and rock tunnels",
+      "Stops at the foot of the Bionnassay Glacier moraine",
+      "Traditional mountaineering staging point for the classic Gouter route on Mont Blanc"
+    ],
+    "comfortLevel": "Classic Alpine Heritage",
+    "vehicleSpecs": "Rack-and-pinion electric train cars with large alpine sightseeing windows"
+  }
+]

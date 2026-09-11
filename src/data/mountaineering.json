@@ -1,0 +1,43 @@
+{
+  "overview": {
+    "title": "The Art & Science of Mountaineering",
+    "tagline": "Beyond Limits. Above the Clouds.",
+    "definition": "Mountaineering, or alpinism, is the sport, craft, and art of climbing mountains. Unlike standard trekking, it encompasses technical travel over snow, glaciers, steep rock, and ice in harsh, high-altitude environments where self-reliance, physical stamina, and objective hazard management are paramount.",
+    "corePillars": [
+      {
+        "title": "Technical Competence",
+        "description": "Mastery of rope work, anchor building, ice axe and crampon mechanics, glacier rescue systems, and route finding in pathless terrain."
+      },
+      {
+        "title": "Physiological Endurance & Acclimatization",
+        "description": "Understanding high-altitude physiology, oxygen deprivation, metabolic pacing, and the biological necessity of step-wise acclimatization."
+      },
+      {
+        "title": "Meteorological & Terrain Acumen",
+        "description": "Reading isobaric maps, predicting localized katabatic windstorms, evaluating snowpack avalanche stability, and anticipating rock/ice fall."
+      },
+      {
+        "title": "Ethical Stewardship",
+        "description": "Adhering to clean climbing, Leave No Trace (LNT), respect for indigenous mountain communities, and leaving summits unmarked."
+      }
+    ]
+  },
+  "ethics": [
+    {
+      "principle": "Clean Climbing & Unaltered Rock",
+      "summary": "Minimize the use of permanent pitons and bolts; employ removable active and passive protection (cams, nuts, ice screws)."
+    },
+    {
+      "principle": "Respect for Mountain Custodians",
+      "summary": "Fair pay, proper gear, high-altitude insurance, and equal respect for local porters, High Altitude Helpers, and Sherpa guides."
+    },
+    {
+      "principle": "Leave No Waste in the Death Zone",
+      "summary": "Complete pack-out of oxygen canisters, human waste, fixed ropes, and camp remnants from high camps."
+    },
+    {
+      "principle": "The Right of Retreat",
+      "summary": "Summits are optional; returning home safely is mandatory. Prioritizing human life over any summit objective."
+    }
+  ]
+}

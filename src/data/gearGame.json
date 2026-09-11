@@ -1,0 +1,142 @@
+[
+  {
+    "id": "gear-rope",
+    "name": "Dry-Treated Dynamic Climbing Rope (60m, 9.2mm)",
+    "category": "Technical Rigging",
+    "weightKg": 3.4,
+    "isEssential": true,
+    "icon": "Cable",
+    "hint": "Crucial for glacier crevasses, fixed lines, and steep ridge protection.",
+    "educationalNote": "Dry-treatment prevents ice saturation at sub-zero temperatures, retaining tensile elasticity."
+  },
+  {
+    "id": "gear-harness",
+    "name": "Alpine Bod Mountaineering Harness",
+    "category": "Technical Rigging",
+    "weightKg": 0.45,
+    "isEssential": true,
+    "icon": "ShieldCheck",
+    "hint": "Ultralight, opens with gloves on, accommodates crampons without stepping through.",
+    "educationalNote": "Minimalist alpine harnesses feature ice-clipper slots and quick-release leg loops for high-camp ease."
+  },
+  {
+    "id": "gear-iceaxe",
+    "name": "Technical Ice Axe / Hybrid Piolet (55cm)",
+    "category": "Ice & Snow Hardware",
+    "weightKg": 0.52,
+    "isEssential": true,
+    "icon": "Compass",
+    "hint": "Essential for self-arrest on 50° hard-pack ice and cutting emergency steps.",
+    "educationalNote": "The pick must bite securely into blue ice; reverse curve geometry aids steep couloir ascents."
+  },
+  {
+    "id": "gear-crampons",
+    "name": "12-Point Steel Automatic Crampons",
+    "category": "Ice & Snow Hardware",
+    "weightKg": 0.98,
+    "isEssential": true,
+    "icon": "Zap",
+    "hint": "Provides biting traction on blue glacier ice, sérac walls, and wind-scoured ridges.",
+    "educationalNote": "Steel front points bite reliably into hard water ice; include anti-balling plates to prevent snow accumulation."
+  },
+  {
+    "id": "gear-helmet",
+    "name": "UIAA-Certified High-Impact Climbing Helmet",
+    "category": "Personal Protection",
+    "weightKg": 0.28,
+    "isEssential": true,
+    "icon": "HardHat",
+    "hint": "Protects against falling rock shards and ice chunks released by warming sun or climbing teams above.",
+    "educationalNote": "Rockfall in couloirs accelerates at lethal velocity; a certified helmet is non-negotiable from the bergschrund onward."
+  },
+  {
+    "id": "gear-down-suit",
+    "name": "8,000m Goose Down Expedition Parka / Suit (-40°C)",
+    "category": "Thermal Defense",
+    "weightKg": 1.65,
+    "isEssential": true,
+    "icon": "ThermometerSnowflake",
+    "hint": "Shields against deadly wind-chill on the summit push where jet stream winds plunge temperatures past -45°C.",
+    "educationalNote": "800+ fill power down with a Gore-Tex Windstopper shell prevents hypothermia during forced bivouacs."
+  },
+  {
+    "id": "gear-headlamp",
+    "name": "Cold-Resistant LED Headlamp (450 Lumens + Spare Lithium Cells)",
+    "category": "Navigation & Lighting",
+    "weightKg": 0.18,
+    "isEssential": true,
+    "icon": "SunMedium",
+    "hint": "Required for midnight summit departures (alpine starts) to beat afternoon warming and avalanche cycles.",
+    "educationalNote": "Standard alkaline batteries freeze dead at -15°C; always pack lithium cells inside internal jacket pockets."
+  },
+  {
+    "id": "gear-firstaid",
+    "name": "High-Altitude Trauma & Diamox Medical Kit",
+    "category": "Emergency & Medical",
+    "weightKg": 0.75,
+    "isEssential": true,
+    "icon": "HeartPulse",
+    "hint": "Contains Dexamethasone, Acetazolamide (Diamox), pressure bandages, SAM splint, and blister hydrocolloids.",
+    "educationalNote": "Prompt administration of Dexamethasone buys critical hours for descent during acute High Altitude Cerebral Edema (HACE)."
+  },
+  {
+    "id": "gear-goggles",
+    "name": "Glacier Sunglasses (Category 4 Protection) + Whiteout Goggles",
+    "category": "Personal Protection",
+    "weightKg": 0.22,
+    "isEssential": true,
+    "icon": "Eye",
+    "hint": "Snow reflects up to 85% of blinding solar ultraviolet rays, causing debilitating photokeratitis (snow blindness).",
+    "educationalNote": "Leather side-shields block peripheral glare; Category 4 lenses transmit only 3-8% visible light."
+  },
+  {
+    "id": "gear-avalanche-beacon",
+    "name": "3-Antenna Digital Avalanche Transceiver & Carbon Probe",
+    "category": "Avalanche Safety",
+    "weightKg": 0.65,
+    "isEssential": true,
+    "icon": "Radio",
+    "hint": "Emits 457 kHz radio pulses to pinpoint buried companions within the critical 15-minute survival window.",
+    "educationalNote": "Always switch to transmit mode at Base Camp; never pack beacon next to metallic phones or magnets."
+  },
+  {
+    "id": "gear-flipflops",
+    "name": "Beach Flip Flops",
+    "category": "Dead Weight",
+    "weightKg": 0.35,
+    "isEssential": false,
+    "icon": "Footprints",
+    "hint": "Completely useless on glacial moraines, frostbite hazard at sub-zero temperatures.",
+    "educationalNote": "Uninsulated rubber provides zero thermal barrier; frostbite will occur within minutes of snow contact."
+  },
+  {
+    "id": "gear-heavy-books",
+    "name": "Hardcover Encyclopedia Set (3 Volumes)",
+    "category": "Dead Weight",
+    "weightKg": 5.2,
+    "isEssential": false,
+    "icon": "Book",
+    "hint": "Heavy dead weight that exhausts your leg muscles and oxygen supply for zero survival utility.",
+    "educationalNote": "At 7,000m, every extra kilogram feels like 10kg. Alpinists cut toothbrushes in half to save mere grams."
+  },
+  {
+    "id": "gear-cotton-hoodie",
+    "name": "Heavy 100% Cotton Lifestyle Hoodie",
+    "category": "Dead Weight",
+    "weightKg": 0.95,
+    "isEssential": false,
+    "icon": "Shirt",
+    "hint": "Cotton holds moisture like a sponge ('Cotton Kills'). It freezes rigid in high wind, causing rapid hypothermia.",
+    "educationalNote": "Use only Merino wool or technical synthetic grid fleece that wicks sweat away from the skin."
+  },
+  {
+    "id": "gear-umbrella",
+    "name": "Decorative Rain Umbrella",
+    "category": "Dead Weight",
+    "weightKg": 0.6,
+    "isEssential": false,
+    "icon": "Umbrella",
+    "hint": "High-altitude 70 km/h summit squalls will invert and rip an umbrella apart in 3 seconds.",
+    "educationalNote": "Expedition hardshell jackets with helmet-compatible wire-brim hoods provide true waterproof wind protection."
+  }
+]

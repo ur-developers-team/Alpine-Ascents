@@ -1,0 +1,152 @@
+.dest-explorer-section {
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.dest-filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 2rem;
+}
+
+.dest-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.dest-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-md);
+}
+
+.dest-card-media {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.dest-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.dest-card:hover .dest-card-img {
+  transform: scale(1.08);
+}
+
+.dest-card-badges {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 0.4rem;
+  z-index: 2;
+}
+
+.dest-card-save {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+}
+
+.dest-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.dest-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.dest-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+.dest-card-price {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+/* Detail Modal Styles */
+.dest-detail-hero {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+}
+
+.dest-detail-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dest-detail-body {
+  padding: 2.5rem;
+}
+
+.dest-detail-section-block {
+  margin-bottom: 2rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.dest-detail-section-block:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 640px) {
+  .dest-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .dest-card-media {
+    height: 190px;
+  }
+  .dest-card-body {
+    padding: 1.15rem;
+  }
+  .dest-detail-hero {
+    height: 220px;
+  }
+  .dest-detail-body {
+    padding: 1.25rem 1rem;
+  }
+  .dest-filter-bar {
+    gap: 0.35rem;
+    margin-bottom: 1.75rem;
+  }
+}

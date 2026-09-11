@@ -1,0 +1,74 @@
+[
+  {
+    "id": "gal-1",
+    "title": "Passu Cones Cathedral",
+    "category": "Mountains",
+    "location": "Upper Hunza, Gilgit-Baltistan",
+    "altitude": "6,106m",
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+    "caption": "The serrated granite cathedrals of Passu Tupopdan rising dramatically above the Karakoram Highway."
+  },
+  {
+    "id": "gal-2",
+    "title": "Turquoise Waters of Attabad Lake",
+    "category": "Lakes",
+    "location": "Gojal, Hunza Valley",
+    "altitude": "2,438m",
+    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "caption": "Vibrant turquoise waters framed by massive sheer Karakoram canyon walls."
+  },
+  {
+    "id": "gal-3",
+    "title": "Concordia: The Throne Room of the Mountain Gods",
+    "category": "Expeditions",
+    "location": "Baltoro Glacier, Skardu",
+    "altitude": "4,691m",
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+    "caption": "The convergence of the Baltoro and Godwin-Austen glaciers with K2, Broad Peak, and Gasherbrum IV in 360° view."
+  },
+  {
+    "id": "gal-4",
+    "title": "Night Above the Clouds at Fairy Meadows",
+    "category": "Camping",
+    "location": "Raikot Glacier, Nanga Parbat",
+    "altitude": "3,300m",
+    "image": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
+    "caption": "Expedition camp illuminated under the Milky Way directly beneath the massive Raikot Face of Nanga Parbat."
+  },
+  {
+    "id": "gal-5",
+    "title": "High Altitude Porter Navigating Baltoro Moraine",
+    "category": "Guides",
+    "location": "Baltoro Glacier, Pakistan",
+    "altitude": "4,200m",
+    "image": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?auto=format&fit=crop&w=1200&q=80",
+    "caption": "Resilient Balti mountain guides and porters crossing lateral crevasses with 25kg expedition loads."
+  },
+  {
+    "id": "gal-6",
+    "title": "The Infinite Silence of Deosai Plains",
+    "category": "Landscapes",
+    "location": "Skardu / Astore Plateau",
+    "altitude": "4,114m",
+    "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1200&q=80",
+    "caption": "The second highest alpine plateau on Earth, blossoming with wildflowers under crystal blue alpine skies."
+  },
+  {
+    "id": "gal-7",
+    "title": "Traditional Balti Hospitality & Music",
+    "category": "Culture",
+    "location": "Shigar Valley, Baltistan",
+    "altitude": "2,226m",
+    "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80",
+    "caption": "Centuries-old stone architecture and warm mountain hospitality welcoming weary climbers returning from summits."
+  },
+  {
+    "id": "gal-8",
+    "title": "The Razor Edge of the Matterhorn Hornli Ridge",
+    "category": "Mountains",
+    "location": "Zermatt, Swiss Alps",
+    "altitude": "4,478m",
+    "image": "https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=1200&q=80",
+    "caption": "Dramatic view of the iconic pyramid peak illuminated by golden alpine sunrise."
+  }
+]

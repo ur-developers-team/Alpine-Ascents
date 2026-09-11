@@ -1,0 +1,210 @@
+{
+  "en": {
+    "nav": {
+      "brand": "ALPINE ASCENTS",
+      "tagline": "Beyond Limits. Above the Clouds.",
+      "places": "Destinations & Hubs",
+      "cityPackages": "City Packages",
+      "expeditions": "Expeditions",
+      "mountains": "Peak Directory",
+      "routes3d": "3D Topo & Routes",
+      "weather": "Live Weather",
+      "knowledge": "Alpine Academy",
+      "quiz": "Safety Quiz",
+      "faq": "FAQ",
+      "bookTrip": "Plan Expedition",
+      "searchPlaceholder": "Search summits, routes, guides, gear...",
+      "wishlist": "Wishlist",
+      "profile": "Profile & Badges",
+      "langSwitch": "اردو"
+    },
+    "hero": {
+      "eyebrow": "PREMIER HIGH-ALTITUDE MOUNTAINEERING & EXPEDITIONS",
+      "titleLine1": "BEYOND LIMITS.",
+      "titleLine2": "ABOVE THE CLOUDS.",
+      "subtitle": "World-class alpine expeditions across the Karakoram, Himalayas, Hindu Kush, and international seven summits. Guided by certified UIAGM/IFMGA leaders.",
+      "exploreBtn": "Explore Expeditions",
+      "buildBtn": "Build Custom Itinerary",
+      "statPeaks": "14+",
+      "statPeaksLabel": "Eight-Thousanders & 7 Summits",
+      "statGuides": "100%",
+      "statGuidesLabel": "Certified Alpine Leadership",
+      "statSafety": "99.4%",
+      "statSafetyLabel": "Safety & Evac Readiness"
+    },
+    "places": {
+      "badge": "EXPEDITION HUBS & REGIONS",
+      "title": "Pakistan Gateways & Global Ranges",
+      "subtitle": "From coastal Karachi and cultural Lahore to the granite citadels of Gilgit-Baltistan and global continents.",
+      "tabAll": "All Gateways",
+      "tabPakistan": "Pakistan Hubs",
+      "tabGB": "Gilgit-Baltistan",
+      "tabGlobal": "Global Ranges",
+      "viewDetails": "Explore Gateway",
+      "originPackages": "Direct Expeditions from this Hub"
+    },
+    "cityPackages": {
+      "badge": "SEAMLESS DEPARTURES",
+      "title": "City-to-Mountain Expeditions",
+      "subtitle": "End-to-end expedition packages departing directly from major Pakistani cities with curated flights, 4x4 transfers, permits, and porter logistics."
+    },
+    "routes3d": {
+      "badge": "TOPOGRAPHIC INTELLIGENCE",
+      "title": "Interactive 3D Peak & Route Profile",
+      "subtitle": "Rotate and inspect high-altitude topography in real-time WebGL, and analyze route waypoint elevation profiles.",
+      "selectRoute": "Select Route",
+      "rotateNotice": "Click and drag to rotate the 3D peak in real-time. Scroll to zoom."
+    },
+    "weather": {
+      "badge": "METEOROLOGICAL TELEMETRY",
+      "title": "Live Alpine Peak Weather",
+      "subtitle": "Real-time atmospheric telemetry, summit winds, barometric pressure, and temperature data powered by Open-Meteo REST API.",
+      "liveApi": "LIVE API TELEMETRY",
+      "cachedFallback": "HISTORICAL TELEMETRY FALLBACK",
+      "temp": "Temperature",
+      "wind": "Wind Speed",
+      "windDir": "Wind Direction",
+      "pressure": "Pressure",
+      "forecast": "Summit Conditions"
+    },
+    "quiz": {
+      "badge": "ALPINE ACCREDITATION",
+      "title": "High-Altitude Safety & Ethics Quiz",
+      "subtitle": "Test your mountain survival knowledge, crevasse safety protocols, and alpine ethics to earn your official Alpine Safety Ace badge.",
+      "openQuiz": "Take the Alpine Safety Quiz",
+      "scoreLabel": "Your Score",
+      "passNotice": "Outstanding! You earned the Alpine Safety Ace badge.",
+      "failNotice": "Review alpine safety principles and try again to unlock your badge.",
+      "nextQuestion": "Next Question",
+      "finishQuiz": "Complete Quiz",
+      "retake": "Retake Quiz"
+    },
+    "faq": {
+      "badge": "CLARITY & TRANSPARENCY",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about high-altitude permits, acclimatization schedules, rescue insurance, and fitness prerequisites."
+    },
+    "testimonials": {
+      "badge": "EXPEDITION MEMOIRS",
+      "title": "Words from the Summits",
+      "subtitle": "First-hand accounts and verified reflections from climbers and adventurers who conquered limits with Alpine Ascents."
+    },
+    "common": {
+      "altitude": "Altitude",
+      "duration": "Duration",
+      "difficulty": "Difficulty",
+      "season": "Best Season",
+      "basePrice": "Starting From",
+      "close": "Close",
+      "bookNow": "Reserve Expedition",
+      "saveWishlist": "Save to Wishlist",
+      "saved": "Saved",
+      "learnMore": "Learn More",
+      "viewAll": "View All"
+    }
+  },
+  "ur": {
+    "nav": {
+      "brand": "الپائن اسینٹس",
+      "tagline": "حدود سے پرے، بادلوں سے بلند",
+      "places": "مقامات اور مراکز",
+      "cityPackages": "شہری پیکجز",
+      "expeditions": "مہمات",
+      "mountains": "پہاڑی فہرست",
+      "routes3d": "تھری ڈی راستے",
+      "weather": "براہ راست موسم",
+      "knowledge": "الپائن اکیڈمی",
+      "quiz": "حفاظتی کوئز",
+      "faq": "اکثر پوچھے گئے سوالات",
+      "bookTrip": "منصوبہ بنائیں",
+      "searchPlaceholder": "چوٹیاں، راستے، رہنما یا سازوسامان تلاش کریں...",
+      "wishlist": "پسندیدہ",
+      "profile": "پروفائل اور بیجز",
+      "langSwitch": "English"
+    },
+    "hero": {
+      "eyebrow": "اعلیٰ ترین بین الاقوامی کوہ پیمائی اور مہم جوئی",
+      "titleLine1": "حدود سے پرے،",
+      "titleLine2": "بادلوں سے بلند۔",
+      "subtitle": "قراقرم، ہمالیہ، ہندوکش اور عالمی چوٹیوں پر پیشہ ورانہ مہمات۔ مستند بین الاقوامی گائیڈز کی زیر نگرانی۔",
+      "exploreBtn": "مہمات دریافت کریں",
+      "buildBtn": "اپنی مرضی کی مہم بنائیں",
+      "statPeaks": "14+",
+      "statPeaksLabel": "آٹھ ہزاری چوٹیاں و عالمی سمٹس",
+      "statGuides": "100%",
+      "statGuidesLabel": "مستند الپائن لیڈرشپ",
+      "statSafety": "99.4%",
+      "statSafetyLabel": "حفاظتی و انخلاء تیاری"
+    },
+    "places": {
+      "badge": "مہماتی مراکز اور خطے",
+      "title": "پاکستانی مراکز اور عالمی سلسلے",
+      "subtitle": "ساحلی کراچی اور ثقافتی لاہور سے گلگت بلتستان کے گرینائٹ قلعوں اور عالمی چوٹیوں تک۔",
+      "tabAll": "تمام مراکز",
+      "tabPakistan": "پاکستانی شہر",
+      "tabGB": "گلگت بلتستان",
+      "tabGlobal": "عالمی سلسلے",
+      "viewDetails": "تفصیلات دیکھیں",
+      "originPackages": "اس شہر سے براہ راست روانگی"
+    },
+    "cityPackages": {
+      "badge": "شہر سے پہاڑ تک",
+      "title": "شہری مہماتی پیکجز",
+      "subtitle": "پاکستان کے بڑے شہروں سے پروازوں، فور بائی فور جیپوں اور باربرداری کے ساتھ مکمل مہماتی سہولیات۔"
+    },
+    "routes3d": {
+      "badge": "ٹوپوگرافک انٹیلی جنس",
+      "title": "تھری ڈی ماڈل اور روٹ پروفائل",
+      "subtitle": "ویب جی ایل کی مدد سے تھری ڈی چوٹی گھمائیں اور راستوں کی بلندی کے نقشے کا جائزہ لیں۔",
+      "selectRoute": "راستہ منتخب کریں",
+      "rotateNotice": "چوٹی کو گھمانے کے لیے ماؤس کلک کر کے گھمائیں۔ زوم کے لیے سکرول کریں۔"
+    },
+    "weather": {
+      "badge": "موسمیاتی ٹیلی میٹری",
+      "title": "چوٹیوں کا براہ راست موسم",
+      "subtitle": "اوپن میٹیو اے پی آئی سے لائیو درجہ حرارت، ہوا کی رفتار اور فضائی دباؤ کے تازہ ترین اعداد و شمار۔",
+      "liveApi": "براہ راست موسمیاتی ڈیٹا",
+      "cachedFallback": "محفوظ شدہ موسمیاتی ریکارڈ",
+      "temp": "درجہ حرارت",
+      "wind": "ہوا کی رفتار",
+      "windDir": "ہوا کا رخ",
+      "pressure": "فضائی دباؤ",
+      "forecast": "موسم کی کیفیت"
+    },
+    "quiz": {
+      "badge": "الپائن سرٹیفیکیشن",
+      "title": "پہاڑی حفاظت اور اخلاقیات کوئز",
+      "subtitle": "الپائن سیفٹی ایس بیج حاصل کرنے کے لیے بقاء اور گلیشیر کے حفاظتی اصولوں کا امتحان دیں۔",
+      "openQuiz": "سیفٹی کوئز شروع کریں",
+      "scoreLabel": "آپ کا اسکور",
+      "passNotice": "مبارک ہو! آپ نے الپائن سیفٹی ایس بیج حاصل کر لیا۔",
+      "failNotice": "حفاظتی رہنما خطوط دوبارہ پڑھیں اور دوبارہ کوشش کریں۔",
+      "nextQuestion": "اگلا سوال",
+      "finishQuiz": "کوئز مکمل کریں",
+      "retake": "دوبارہ کوشش کریں"
+    },
+    "faq": {
+      "badge": "شفافیت اور معلومات",
+      "title": "اکثر پوچھے جانے والے سوالات",
+      "subtitle": "پرمٹ، بلندی سے ہم آہنگی، انخلاء انشورنس اور جسمانی تیاری سے متعلق تمام اہم جوابات۔"
+    },
+    "testimonials": {
+      "badge": "مہماتی یادداشتیں",
+      "title": "چوٹیوں سے حاصل شدہ تاثرات",
+      "subtitle": "ان جانبازوں کے سچے تاثرات جنہوں نے الپائن اسینٹس کے ہمراہ بلند ترین بلندیوں کو فتح کیا۔"
+    },
+    "common": {
+      "altitude": "بلندی",
+      "duration": "مدت",
+      "difficulty": "مشکل کی سطح",
+      "season": "بہترین موسم",
+      "basePrice": "ابتدائی قیمت",
+      "close": "بند کریں",
+      "bookNow": "سیٹ بک کریں",
+      "saveWishlist": "پسندیدہ میں شامل کریں",
+      "saved": "محفوظ ہو گیا",
+      "learnMore": "مزید جانیں",
+      "viewAll": "سب دیکھیں"
+    }
+  }
+}

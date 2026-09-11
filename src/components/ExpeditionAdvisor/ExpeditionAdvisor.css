@@ -1,0 +1,90 @@
+.advisor-section {
+  position: relative;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.advisor-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 3rem;
+  box-shadow: var(--shadow-lg);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.advisor-question-box {
+  margin-bottom: 2rem;
+}
+
+.advisor-question-box h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.advisor-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.advisor-opt-btn {
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-align: left;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.advisor-opt-btn:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.advisor-opt-btn.active {
+  background: var(--accent-subtle);
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.advisor-matches-box {
+  animation: fadeIn 0.3s ease;
+}
+
+.advisor-match-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  gap: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.advisor-match-card:hover {
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .advisor-card {
+    padding: 1.75rem;
+  }
+  .advisor-match-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

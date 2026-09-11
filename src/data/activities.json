@@ -1,0 +1,50 @@
+[
+  {
+    "id": "act-glacier-trek",
+    "name": "Glacier Trekking & Moraine Traverses",
+    "icon": "compass",
+    "difficulty": "Moderate to Strenuous",
+    "description": "Navigate lateral moraines, ice séracs, and white ice highways with microspikes or crampons under expert guidance.",
+    "equipment": "Trekking poles, gaiters, glacier sunglasses, insulated footwear"
+  },
+  {
+    "id": "act-ice-climbing",
+    "name": "Waterfall Ice & Glacial Serac Climbing",
+    "icon": "shield",
+    "difficulty": "Advanced Technical",
+    "description": "Wield dual technical ice tools and front-point crampons up glistening vertical blue ice falls.",
+    "equipment": "Technical ice axes, B3 boots, crampons, ice screws, helmet, harness"
+  },
+  {
+    "id": "act-astrophotography",
+    "name": "Alpine Astrophotography & Milky Way Nights",
+    "icon": "star",
+    "difficulty": "Easy to Moderate",
+    "description": "Zero light pollution at 3,000m - 5,000m yields crystalline captures of the galactic core arching over snow-capped peaks.",
+    "equipment": "Tripod, wide-angle f/2.8 lens, intervalometer, hand warmers"
+  },
+  {
+    "id": "act-cultural-heritage",
+    "name": "Silk Road Castles & High Mountain Forts",
+    "icon": "landmark",
+    "difficulty": "Easy",
+    "description": "Explore 900-year-old Tibetan and Wakhi timber fortifications, Buddhist petroglyphs, and local artisan markets.",
+    "equipment": "Comfortable walking shoes, respectful attire, notebook"
+  },
+  {
+    "id": "act-glamping-camping",
+    "name": "Wilderness Expedition High Camping",
+    "icon": "tent",
+    "difficulty": "Moderate",
+    "description": "Sleep in 4-season geodesic mountain tents or heated lakeview glamping domes with hot water bottles and fresh chef meals.",
+    "equipment": "-15°C down sleeping bag, insulated sleeping mat, headlamp"
+  },
+  {
+    "id": "act-wildlife-tracking",
+    "name": "High Alpine Wildlife Safaris",
+    "icon": "eye",
+    "difficulty": "Moderate",
+    "description": "Spot elusive Himalayan brown bears on Deosai Plateau, golden eagles over Khunjerab, and Himalayan ibex on scree cliffs.",
+    "equipment": "Spotting scope (20-60x), binoculars, telephoto camera lens, silent clothing"
+  }
+]

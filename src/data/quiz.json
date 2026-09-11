@@ -1,0 +1,67 @@
+[
+  {
+    "id": "q1",
+    "category": "Altitude Sickness",
+    "question": "What is the primary and most critical rule when a climber displays early symptoms of High Altitude Pulmonary Edema (HAPE) or Cerebral Edema (HACE)?",
+    "options": [
+      "Increase physical exertion to stimulate blood circulation",
+      "Immediate descent of at least 500–1000 meters accompanied by a companion",
+      "Wait at current camp for 48 hours for acclimatization",
+      "Consume caffeinated drinks and continue with a lightened pack"
+    ],
+    "correctIndex": 1,
+    "explanation": "Immediate descent is the only definitive lifesaving treatment for severe altitude sickness (HAPE/HACE). Supplementary oxygen and hyperbaric bags (Gamow bags) are temporary measures while arranging descent."
+  },
+  {
+    "id": "q2",
+    "category": "Environmental Ethics",
+    "question": "Under the internationally recognized 'Leave No Trace' principles in alpine zones above 5000m, how should human waste and packaging be handled?",
+    "options": [
+      "Bury waste under glacial snowpack",
+      "Burn packaging in camp cookfires",
+      "Pack out all solid waste, trash, and discarded gear using clean waste bags (WAG bags)",
+      "Deposit trash inside deep crevasses away from trails"
+    ],
+    "correctIndex": 2,
+    "explanation": "Glacial ice preserves waste rather than decomposing it, contaminating downstream drinking water. Climbers are strictly required to pack out all waste, food wrappers, and human waste via WAG bags."
+  },
+  {
+    "id": "q3",
+    "category": "Crevasse & Glacier Safety",
+    "question": "When roped up for glacial travel across snow-covered terrain, what is the standard recommended spacing between climbers on a three-person team?",
+    "options": [
+      "2 to 3 meters",
+      "8 to 12 meters with brake knots tied along the rope",
+      "25 to 30 meters with no knots to allow fast running",
+      "Spacing is unnecessary as long as all hold carabiners"
+    ],
+    "correctIndex": 1,
+    "explanation": "8 to 12 meters of spacing between climbers ensures that if one breaks through a snow bridge, the others have sufficient distance and time to arrest the fall, assisted by prusik loops and friction brake knots."
+  },
+  {
+    "id": "q4",
+    "category": "Weather Judgment",
+    "question": "A rapid drop in barometric pressure accompanied by lens-shaped (lenticular) clouds over high peaks indicates which impending hazard?",
+    "options": [
+      "Stable thermal winds and ideal summit conditions",
+      "Severe gale-force jet stream winds and an oncoming blizzard/cyclonic front",
+      "Immediate clearing of all fog and rising summit temperatures",
+      "Subsurface permafrost thaw"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lenticular clouds over summits are clear signatures of extreme high-altitude wind shear (often >100 km/h) and rapid barometric drops signal impending storm systems requiring immediate abort or descent."
+  },
+  {
+    "id": "q5",
+    "category": "Hydration & Nutrition",
+    "question": "At high altitudes (>4,500m), why is daily fluid intake of 4 to 5 liters strongly advised for mountaineers?",
+    "options": [
+      "High altitude causes heavy respiratory water loss from hyperventilation in arid air and thickens blood",
+      "Water prevents ultraviolet ray skin burn",
+      "It eliminates the need to consume calorie-dense carbohydrates",
+      "It guarantees immunity against hypothermia"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cold alpine air is extremely dry, and hyperventilation to capture oxygen causes massive respiratory water loss. Dehydration thickens blood, drastically increasing risks of frostbite, stroke, and AMS."
+  }
+]

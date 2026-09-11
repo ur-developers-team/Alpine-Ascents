@@ -1,0 +1,71 @@
+.alpine-cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.alpine-cursor-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-gold);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.08s ease-out;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+.alpine-cursor-ring {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              height 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              background-color 0.25s ease,
+              opacity 0.2s ease;
+}
+
+.alpine-cursor-ring.hovered {
+  width: 48px;
+  height: 48px;
+  border-color: var(--accent-gold);
+  background: rgba(212, 175, 55, 0.08);
+  box-shadow: 0 0 14px var(--accent-glow);
+}
+
+.alpine-snow-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 40%, rgba(255, 255, 255, 0.2) 100%);
+  pointer-events: none;
+  animation: snowDriftFade 0.9s cubic-bezier(0.2, 0.8, 0.4, 1) forwards;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes snowDriftFade {
+  0% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--dx, 0px)), calc(-50% + var(--dy, 24px))) scale(0.3);
+  }
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .alpine-cursor-container {
+    display: none !important;
+  }
+}

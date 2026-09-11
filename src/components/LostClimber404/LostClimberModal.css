@@ -1,0 +1,183 @@
+/* ==========================================================================
+   Lost Climber 404 Rescue Mini-Game Styles
+   ========================================================================== */
+
+.lost-climber-modal-card {
+  background: rgba(13, 21, 32, 0.98);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 580px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(239, 68, 68, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  animation: slideUp 0.3s ease-out;
+}
+
+.lost-climber-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: rgba(26, 14, 18, 0.9);
+  border-bottom: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.lost-climber-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #f87171;
+  font-family: 'Space Mono', monospace;
+}
+
+.lost-climber-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lost-climber-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.lost-climber-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 440px;
+  margin-bottom: 1.25rem;
+}
+
+.lost-climber-stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.lost-stat-pill {
+  font-size: 0.78rem;
+  font-family: 'Space Mono', monospace;
+  color: var(--text-muted);
+}
+
+.lost-stat-pill strong {
+  color: var(--text-primary);
+}
+
+/* 7x7 Glacier Grid */
+.glacier-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 44px);
+  grid-template-rows: repeat(7, 44px);
+  gap: 6px;
+  background: rgba(7, 12, 18, 0.9);
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.glacier-cell {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(20, 32, 48, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.glacier-cell.climber {
+  background: rgba(56, 189, 248, 0.35);
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+  animation: climberPulse 1s infinite alternate;
+}
+
+@keyframes climberPulse {
+  from { transform: scale(0.95); }
+  to { transform: scale(1.05); }
+}
+
+.glacier-cell.camp {
+  background: rgba(16, 185, 129, 0.3);
+  border-color: #10b981;
+  box-shadow: 0 0 10px #10b981;
+}
+
+.glacier-cell.crevasse {
+  background: rgba(239, 68, 68, 0.25);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.glacier-cell.flare {
+  background: rgba(245, 158, 11, 0.25);
+  border-color: rgba(245, 158, 11, 0.5);
+}
+
+/* On-Screen D-Pad for Touch/Mobile */
+.dpad-container {
+  display: grid;
+  grid-template-columns: repeat(3, 42px);
+  grid-template-rows: repeat(2, 42px);
+  gap: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.dpad-btn {
+  width: 42px;
+  height: 42px;
+  background: rgba(20, 32, 48, 0.9);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 8px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.dpad-btn:hover:not(:disabled) {
+  background: var(--accent);
+  color: #070c12;
+}
+
+/* Action Footer */
+.lost-climber-footer {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .glacier-grid {
+    grid-template-columns: repeat(7, 34px);
+    grid-template-rows: repeat(7, 34px);
+    gap: 4px;
+    padding: 8px;
+  }
+  .glacier-cell {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+}
