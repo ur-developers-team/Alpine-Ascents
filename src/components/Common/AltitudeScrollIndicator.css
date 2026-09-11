@@ -5,17 +5,17 @@
 
 .altitude-scroll-hud {
   position: fixed;
-  bottom: 24px;
-  left: 24px;
+  bottom: calc(112px + env(safe-area-inset-bottom, 0px));
+  left: max(24px, env(safe-area-inset-left, 0px));
   z-index: 1040;
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 10px 16px 10px 12px;
-  background: linear-gradient(135deg, rgba(13, 21, 32, 0.94), rgba(7, 12, 18, 0.98));
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border);
   border-radius: 999px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), 0 0 18px rgba(56, 189, 248, 0.2);
+  box-shadow: var(--shadow-md), 0 0 18px var(--accent-glow);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   cursor: pointer;
@@ -102,22 +102,9 @@
   transition: height 0.15s ease-out;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 640px) {
+/* Tablet & Mobile Responsiveness: Hide to avoid HUD collision */
+@media (max-width: 768px) {
   .altitude-scroll-hud {
-    bottom: 18px;
-    left: 18px;
-    padding: 6px 12px 6px 8px;
-    gap: 8px;
-  }
-  .altitude-hud-icon-wrap {
-    width: 28px;
-    height: 28px;
-  }
-  .altitude-hud-elevation {
-    font-size: 0.78rem;
-  }
-  .altitude-hud-camp {
-    font-size: 0.62rem;
+    display: none !important;
   }
 }

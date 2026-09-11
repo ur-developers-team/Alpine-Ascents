@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Mountain, Search, Heart, User, Compass, Menu, X, ArrowUpRight, Globe, Award } from 'lucide-react';
+import { Mountain, Search, Heart, User, Compass, Menu, X, ArrowUpRight, Globe, Award, Palette } from 'lucide-react';
 import { useWishlist } from '../../context/WishlistContext';
 import { useUserProfile } from '../../context/UserProfileContext';
 import { useLanguage } from '../../context/LanguageContext';
@@ -149,8 +149,8 @@ export default function Navbar({
               <span>{language === 'en' ? 'اردو' : 'EN'}</span>
             </button>
 
-            {/* Compact Atmosphere Theme Switcher */}
-            <ThemeSwitcher compact={true} />
+            {/* Adaptive Atmosphere Theme Switcher (Full on desktop, compact on tablet/mobile) */}
+            <ThemeSwitcher compact={false} />
 
             {/* Optional Ambient Mountain Wind Sound (User Opt-in) */}
             <AmbientAudioPlayer />
@@ -248,7 +248,7 @@ export default function Navbar({
             </button>
           </div>
 
-          {/* Quick Utility Row: Visitor telemetry, Language, Theme */}
+          {/* Quick Utility Row: Visitor telemetry, Language */}
           <div className="mobile-drawer-utilities">
             <div className="mobile-visitor-pill" title="Live Explorers Online">
               <span className="visitor-pulse-dot" />
@@ -258,11 +258,21 @@ export default function Navbar({
             <button
               className="nav-action-pill-btn"
               onClick={toggleLanguage}
-              style={{ padding: '0.35rem 0.75rem' }}
+              style={{ padding: '0.4rem 0.85rem' }}
+              aria-label="Switch language"
             >
               <Globe size={13} />
               <span>{language === 'en' ? 'اردو' : 'English'}</span>
             </button>
+          </div>
+
+          {/* Dedicated Accessible Mobile Theme Switcher (Requirement 20) */}
+          <div className="mobile-drawer-theme-section">
+            <div className="mobile-drawer-section-label">
+              <Palette size={13} color="var(--accent)" />
+              <span>{language === 'ur' ? 'ماحول اور تھیم منتخب کریں' : 'ATMOSPHERE & THEME'}</span>
+            </div>
+            <ThemeSwitcher inline={true} />
           </div>
 
           {/* Navigation Links from JSON */}

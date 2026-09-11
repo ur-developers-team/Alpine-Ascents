@@ -44,6 +44,10 @@ export function ThemeProvider({ children }) {
       if (saved && THEMES.some(t => t.id === saved)) {
         return saved;
       }
+      // System Theme Support (Requirement 29)
+      if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        return 'alpine-day';
+      }
     } catch {
       // fallback
     }
@@ -59,14 +63,39 @@ export function ThemeProvider({ children }) {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
+  // System Theme change listener when user hasn't explicitly set a custom theme in this session
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia) return;
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+    const handleSystemChange = (e) => {
+      try {
+        const saved = localStorage.getItem('alpine_theme');
+        if (!saved) {
+          setTheme(e.matches ? 'alpine-day' : 'summit-night');
+        }
+      } catch {
+        // ignore
+      }
+    };
+    mediaQuery.addEventListener('change', handleSystemChange);
+    return () => mediaQuery.removeEventListener('change', handleSystemChange);
+  }, []);
+
   const changeTheme = (themeId) => {
     if (THEMES.some(t => t.id === themeId)) {
       setTheme(themeId);
     }
   };
 
+  const toggleTheme = () => {
+    // Quick toggle between primary dark (summit-night) and light (alpine-day)
+    setTheme(prev => (prev === 'alpine-day' ? 'summit-night' : 'alpine-day'));
+  };
+
+  const currentTheme = THEMES.find(t => t.id === theme) || THEMES[0];
+
   return (
-    <ThemeContext.Provider value={{ theme, changeTheme, themes: THEMES }}>
+    <ThemeContext.Provider value={{ theme, currentTheme, changeTheme, toggleTheme, themes: THEMES }}>
       {children}
     </ThemeContext.Provider>
   );

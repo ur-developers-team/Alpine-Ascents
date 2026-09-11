@@ -9,12 +9,13 @@
   left: 0;
   width: 100%;
   max-width: 100%;
-  height: 74px;
+  height: calc(74px + env(safe-area-inset-top, 0px));
+  padding-top: env(safe-area-inset-top, 0px);
   z-index: 1000;
-  background: rgba(11, 17, 30, 0.82);
+  background: var(--bg-glass);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid var(--border);
   box-sizing: border-box;
   transition: height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
               background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
@@ -23,10 +24,10 @@
 }
 
 .navbar.scrolled {
-  height: 68px;
-  background: rgba(11, 17, 30, 0.96);
+  height: calc(68px + env(safe-area-inset-top, 0px));
+  background: var(--bg-card-solid);
   border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-md);
 }
 
 /* 2. Responsive Inner Container (Fluid with max-width limit) */
@@ -319,6 +320,10 @@
   flex-direction: column;
   min-height: 100%;
   padding: 1.5rem;
+  padding-top: max(1.25rem, env(safe-area-inset-top));
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  padding-left: max(1.25rem, env(safe-area-inset-left));
+  padding-right: max(1.25rem, env(safe-area-inset-right));
   box-sizing: border-box;
 }
 
@@ -332,8 +337,8 @@
 }
 
 .mobile-drawer-close {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: var(--bg-tertiary);
   border: 1px solid var(--border-color);
@@ -355,21 +360,42 @@
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-drawer-theme-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-drawer-section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
 }
 
 .mobile-visitor-pill {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.3rem 0.65rem;
+  padding: 0.35rem 0.75rem;
   border-radius: 999px;
   background: var(--bg-tertiary);
   border: 1px solid var(--border-color);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--text-secondary);
 }
 

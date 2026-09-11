@@ -20,6 +20,7 @@
 }
 
 .pkg-card {
+  container-type: inline-size;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;

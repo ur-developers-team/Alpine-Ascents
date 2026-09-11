@@ -6,18 +6,18 @@
 /* Floating Launcher Button */
 .sherpa-floating-btn {
   position: fixed;
-  bottom: 56px;
-  right: 24px;
+  bottom: calc(52px + env(safe-area-inset-bottom, 0px));
+  right: max(20px, env(safe-area-inset-right, 0px));
   z-index: 1050;
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 10px 18px 10px 12px;
-  background: linear-gradient(135deg, rgba(14, 26, 43, 0.98), rgba(7, 12, 18, 0.99));
-  border: 1.5px solid rgba(56, 189, 248, 0.5);
+  background: var(--bg-card-solid);
+  border: 1.5px solid var(--accent);
   border-radius: 999px;
   color: var(--text-primary);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 22px rgba(56, 189, 248, 0.35);
+  box-shadow: var(--shadow-lg), 0 0 22px var(--accent-glow);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   backdrop-filter: blur(14px);
@@ -27,11 +27,11 @@
 
 @keyframes sherpaBreathingAura {
   0%, 100% {
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.65), 0 0 18px rgba(56, 189, 248, 0.35);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5), 0 0 18px var(--accent-glow);
     transform: translateY(0);
   }
   50% {
-    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.75), 0 0 32px rgba(56, 189, 248, 0.65);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6), 0 0 30px var(--accent-glow);
     transform: translateY(-3px);
   }
 }
@@ -39,7 +39,7 @@
 .sherpa-floating-btn:hover {
   transform: translateY(-4px) scale(1.04);
   border-color: var(--accent);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 34px rgba(56, 189, 248, 0.55);
+  box-shadow: var(--shadow-xl), 0 0 34px var(--accent-glow);
 }
 
 .sherpa-btn-avatar-wrap {
@@ -65,7 +65,7 @@
   width: 10px;
   height: 10px;
   background: #10b981;
-  border: 2px solid #070c12;
+  border: 2px solid var(--bg-card-solid);
   border-radius: 50%;
   box-shadow: 0 0 8px #10b981;
   animation: sherpaPulse 2s infinite;
@@ -93,22 +93,22 @@
 .sherpa-btn-subtitle {
   font-size: 0.7rem;
   color: var(--accent);
-  font-family: 'Space Mono', monospace;
+  font-family: var(--font-mono);
 }
 
 /* Chatbot Modal Container */
 .sherpa-chat-window {
   position: fixed;
-  bottom: 86px;
-  right: 24px;
+  bottom: calc(90px + env(safe-area-inset-bottom, 0px));
+  right: max(20px, env(safe-area-inset-right, 0px));
   width: 400px;
   max-width: calc(100vw - 32px);
   height: 600px;
-  max-height: calc(100vh - 120px);
-  background: linear-gradient(180deg, rgba(13, 21, 32, 0.98) 0%, rgba(7, 12, 18, 0.99) 100%);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  max-height: min(600px, calc(100dvh - 120px));
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border-hover);
   border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75), 0 0 30px rgba(56, 189, 248, 0.15);
+  box-shadow: var(--shadow-xl), 0 0 30px var(--accent-glow);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -141,8 +141,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 14px 18px;
-  background: rgba(14, 26, 43, 0.85);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
 }
 
 .sherpa-header-info {
@@ -255,8 +255,8 @@
 }
 
 .sherpa-message-row.bot .sherpa-message-bubble {
-  background: rgba(20, 32, 48, 0.95);
-  border: 1px solid rgba(56, 189, 248, 0.2);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
   color: var(--text-primary);
   border-bottom-left-radius: 4px;
 }
@@ -324,7 +324,8 @@
   align-items: center;
   gap: 4px;
   padding: 10px 14px;
-  background: rgba(20, 32, 48, 0.8);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
   border-radius: 12px;
   width: fit-content;
 }
@@ -348,8 +349,8 @@
 /* Quick Suggestions Chips */
 .sherpa-suggestions-bar {
   padding: 8px 16px;
-  background: rgba(10, 17, 26, 0.9);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
   display: flex;
   gap: 8px;
   overflow-x: auto;
@@ -382,8 +383,8 @@
 /* Input Bar */
 .sherpa-chat-input-bar {
   padding: 12px 16px;
-  background: rgba(14, 26, 43, 0.95);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -391,8 +392,8 @@
 
 .sherpa-input-field {
   flex: 1;
-  background: rgba(7, 12, 18, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 10px 14px;
   font-size: 0.85rem;
@@ -445,13 +446,13 @@
 /* Mini Mountain Result Card in Chat */
 .sherpa-mountain-mini-card {
   margin-top: 10px;
-  background: rgba(7, 12, 18, 0.95);
-  border: 1px solid rgba(56, 189, 248, 0.35);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+  box-shadow: var(--shadow-md);
 }
 
 .sherpa-mountain-mini-img {
@@ -508,8 +509,8 @@
 /* Mobile Responsiveness */
 @media (max-width: 640px) {
   .sherpa-floating-btn {
-    bottom: 48px;
-    right: 16px;
+    bottom: calc(44px + env(safe-area-inset-bottom, 0px));
+    right: max(12px, env(safe-area-inset-right, 0px));
     padding: 8px 14px 8px 10px;
   }
   .sherpa-chat-window {
@@ -517,9 +518,11 @@
     right: 0;
     left: 0;
     width: 100vw;
-    height: 80vh;
-    max-height: 85vh;
+    max-width: 100vw;
+    height: 82dvh;
+    max-height: 85dvh;
     border-radius: 20px 20px 0 0;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 }
 

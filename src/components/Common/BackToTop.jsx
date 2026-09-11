@@ -23,10 +23,10 @@ export default function BackToTop() {
       onClick={scrollToTop}
       style={{
         position: 'fixed',
-        bottom: '124px',
-        right: '25px',
-        width: '42px',
-        height: '42px',
+        bottom: 'calc(112px + env(safe-area-inset-bottom, 0px))',
+        right: 'max(20px, env(safe-area-inset-right, 0px))',
+        width: '44px',
+        height: '44px',
         borderRadius: '50%',
         backgroundColor: 'var(--bg-card-solid)',
         border: '1px solid var(--border)',
