@@ -1,0 +1,189 @@
+/* ==========================================================================
+   DISCOUNTS & SPECIAL EXPEDITION OFFERS — Horizontal Offer Strips
+   ========================================================================== */
+
+.discounts-section {
+  padding: 5rem 0;
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border);
+}
+
+.lucky-campaign-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  background: linear-gradient(135deg, rgba(2, 132, 199, 0.08) 0%, rgba(212, 175, 55, 0.12) 100%);
+  border: 1px solid rgba(2, 132, 199, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.lucky-banner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.lucky-banner-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 0.4rem 0;
+}
+
+.lucky-banner-sub {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.lucky-launch-btn {
+  white-space: nowrap;
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+/* Horizontal Offer Strips Stack (No Repetitive Small Cards) */
+.horizontal-offers-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.offer-horizontal-strip {
+  display: grid;
+  grid-template-columns: 180px 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  background: var(--bg-card-solid, #ffffff);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.offer-horizontal-strip:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent);
+}
+
+.strip-left-accent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.strip-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.strip-discount-val {
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.strip-main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.strip-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.strip-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.strip-eligibility {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-top: 0.25rem;
+}
+
+.strip-action-col {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.strip-code-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+}
+
+.strip-code-badge span {
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.strip-code-badge code {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  background: var(--bg-tertiary);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  border: 1px dashed var(--accent-gold);
+}
+
+.strip-claim-btn {
+  white-space: nowrap;
+  font-weight: 700;
+  padding: 0.55rem 1.15rem;
+}
+
+@media (max-width: 900px) {
+  .lucky-campaign-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.75rem;
+  }
+  .offer-horizontal-strip {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+  .strip-action-col {
+    justify-content: space-between;
+    width: 100%;
+  }
+}

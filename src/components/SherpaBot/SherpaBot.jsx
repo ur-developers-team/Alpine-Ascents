@@ -68,6 +68,93 @@ export default function SherpaBot() {
   const findIntentResponse = (rawInput) => {
     const text = rawInput.toLowerCase().trim();
 
+    // 0. Primary Master Prompt Direct Inquiries
+    if (text === 'find a destination' || text.includes('find a destination')) {
+      return {
+        response: "Explore our signature mountain domains across the Karakoram, Western Himalaya, and Hindu Kush. Each destination features verified seasonal windows, altitudes, and terrain profiles.",
+        action: { type: 'scroll', target: '#destinations', label: 'Explore Destinations' },
+        suggestions: ['Find a package', 'Build my trip', 'Compare mountains']
+      };
+    }
+    if (text === 'find a package' || text.includes('find a package')) {
+      return {
+        response: "Browse our curated expedition packages, from 5-day express valley treks to 21-day eight-thousander base camp sieges with UIAGM leadership and full logistics.",
+        action: { type: 'scroll', target: '#expeditions', label: 'Browse Packages' },
+        suggestions: ['Find family packages', 'Build my trip', 'Find a destination']
+      };
+    }
+    if (text === 'build my trip' || text.includes('build my trip')) {
+      return {
+        response: "Opening our interactive Expedition Studio. Customize your destination, days, travelers, shelter, gastronomy, and 4x4 logistics with live price estimation.",
+        action: { type: 'scroll', target: '#trip-builder', label: 'Open Trip Builder' },
+        suggestions: ['Find a package', 'Find a destination', 'Show mountain videos']
+      };
+    }
+    if (text === 'find family packages' || text.includes('find family packages') || (text.includes('family') && (text.includes('package') || text.includes('trip') || text.includes('best') || text.includes('children')))) {
+      return {
+        response: "Our Family Mountain Escapes are designed for multi-generational safety with gentle acclimatization, Serena royal fort stays, private 4x4 Prado vehicles, and pediatric guide support.",
+        action: { type: 'scroll', target: '#family-offers', label: 'View Family Escapes' },
+        suggestions: ['Find a destination', 'Find a package', 'Build my trip']
+      };
+    }
+    if (text === 'show mountain videos' || text.includes('show mountain videos')) {
+      return {
+        response: "Opening our 4K High-Altitude Documentary Cinema. Every documentary is fully playable with aerial footage, technical climbs, and valley journeys.",
+        action: { type: 'scroll', target: '#videos', label: 'Watch Mountain Videos' },
+        suggestions: ['Compare mountains', 'Find a package', 'Build my trip']
+      };
+    }
+    if (text === 'compare mountains' || text.includes('compare mountains')) {
+      return {
+        response: "Comparing the Earth's greatest pinnacles: K2 (8,611m), Nanga Parbat (8,126m), Broad Peak (8,051m), and Rakaposhi (7,788m). Review elevation profiles and technical difficulties.",
+        action: { type: 'scroll', target: '#mountains', label: 'Compare Mountains' },
+        suggestions: ['Find a destination', 'Show mountain videos', 'Build my trip']
+      };
+    }
+
+    if (text.includes('hunza') && (text.includes('trip') || text.includes('tour') || text.includes('package') || text.includes('show'))) {
+      return {
+        response: "Here are our premier Hunza expeditions, including the 7-day Autumn Photography Odyssey ($950) and 10-day Passu Cones & Batura Glacier Trek, featuring Attabad Lake boat cruises and 700-year-old Baltit Fort.",
+        action: { type: 'scroll', target: '#expeditions', label: 'View Hunza Expeditions' },
+        suggestions: ['Which package is best for family?', 'Where can I stay?', 'Show me videos of Skardu.']
+      };
+    }
+    if (text.includes('easiest') || text.includes('beginner') || (text.includes('which mountain') && text.includes('easy'))) {
+      return {
+        response: "Among our featured peaks, trekking summits like Rush Peak (5,098m) in Nagar or gentle acclimating ridges above Fairy Meadows offer majestic 8,000m panoramas without technical fixed ropes. For alpine training, Mont Blanc (4,808m) is guided at a 1:2 leader ratio.",
+        action: { type: 'scroll', target: '#mountains', label: 'Open Mountain Explorer' },
+        suggestions: ['Compare Peaks', 'Which package is best for family?', 'Build me a 5-day trip.']
+      };
+    }
+    if (text.includes('cheapest') || text.includes('lowest price') || text.includes('budget') || text.includes('most affordable')) {
+      return {
+        response: "Our most accessible expedition is the 'Swat Valley & Kalam Alpine Weekend' starting at $280, or the 'Hunza High-Value Explorer' starting at $450 with shared 4x4 jeeps, quality alpine guesthouses, and organic meals.",
+        action: { type: 'scroll', target: '#offers', label: 'Check Special Discounts & Offers' },
+        suggestions: ['Check Seasonal Discounts', 'Build me a 5-day trip.', 'Which package is best for family?']
+      };
+    }
+    if (text.includes('video') && (text.includes('skardu') || text.includes('baltistan') || text.includes('k2'))) {
+      return {
+        response: "Opening our 4K high-altitude video cinema archives featuring aerial footage of Skardu, Shigar Cold Desert, and the Baltoro Glacier gateway to K2.",
+        action: { type: 'scroll', target: '#videos', label: 'Watch Skardu & K2 Cinema' },
+        suggestions: ['Watch K2 Film', 'Show me Hunza trips.', 'Where can I stay?']
+      };
+    }
+    if (text.includes('5-day') || text.includes('5 day') || text.includes('short trip') || text.includes('weekend trip')) {
+      return {
+        response: "I have calibrated our 12-factor Expedition Builder to a 5-Day Express itinerary. You can customize your shelter, cuisine plan, 4x4 transport, and guide allocation with real-time transparent price estimation.",
+        action: { type: 'scroll', target: '#trip-builder', label: 'Open 5-Day Expedition Studio' },
+        suggestions: ['Where can I stay?', 'What is the cheapest package?', 'Which package is best for family?']
+      };
+    }
+    if (text.includes('where can i stay') || text.includes('where do we stay') || text.includes('where will you stay') || text.includes('accommodation') || text.includes('shelter')) {
+      return {
+        response: "We offer 5 distinct mountain accommodation tiers: Wilderness Base Camp Tents, 4-Season Geodesic Hurricane Domes, Stone Alpine Mountain Refuges, Heated Glacial Glamping Domes, and 400-Year-Old Royal Silk Road Fort Palaces (Serena Shigar/Khaplu).",
+        action: { type: 'scroll', target: '#experiences', label: 'Inspect Mountain Shelters' },
+        suggestions: ['What will you eat?', 'Build me a 5-day trip.', 'Which package is best for family?']
+      };
+    }
+
     // 1. Direct Site Navigation Commands
     if (text.includes('open gallery') || text.includes('show gallery') || text.includes('photos') || text.includes('pictures')) {
       return {
@@ -320,9 +407,9 @@ export default function SherpaBot() {
           </div>
           <div className="sherpa-btn-text">
             <span className="sherpa-btn-title">
-              <span className="sherpa-compass-icon" role="img" aria-label="compass">🧭</span> Ask Sherpa
+              <Compass size={14} color="var(--accent)" /> ASK SHERPA
             </span>
-            <span className="sherpa-btn-subtitle">AI Mountain Guide · Online</span>
+            <span className="sherpa-btn-subtitle">Expedition Assistant</span>
           </div>
         </button>
       )}
@@ -332,7 +419,7 @@ export default function SherpaBot() {
         <div
           className={`sherpa-chat-window ${isMinimized ? 'minimized' : ''}`}
           role="dialog"
-          aria-label="Ask Sherpa AI Mountain Guide"
+          aria-label="Alpine Sherpa Expedition Assistant"
         >
           {/* Header */}
           <div className="sherpa-chat-header">
@@ -347,10 +434,10 @@ export default function SherpaBot() {
               </div>
               <div className="sherpa-header-meta">
                 <h4>
-                  {chatbotData.sherpaProfile.name}
+                  Alpine Sherpa
                   <Sparkles size={13} color="var(--accent)" />
                 </h4>
-                <p>Virtual Mountain Guide · Basecamp Ready</p>
+                <p>Expedition Assistant · Telemetry Online</p>
               </div>
             </div>
 

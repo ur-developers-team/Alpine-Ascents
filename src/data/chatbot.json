@@ -8,13 +8,12 @@
     "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
   },
   "quickSuggestions": [
-    "Explore K2",
-    "Beginner Mountains",
-    "Compare Peaks",
-    "Packing Checklist",
-    "Watch Videos",
-    "Explore Pakistan",
-    "Plan a Trip"
+    "Find a destination",
+    "Find a package",
+    "Build my trip",
+    "Find family packages",
+    "Show mountain videos",
+    "Compare mountains"
   ],
   "intents": [
     {

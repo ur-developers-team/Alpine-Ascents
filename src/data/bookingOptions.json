@@ -1,0 +1,77 @@
+{
+  "destinations": [
+    { "id": "hunza", "name": "Hunza Valley", "region": "Karakoram", "altitude": "2,438m", "desc": "Ancient forts, Attabad Lake, Passu Cathedral" },
+    { "id": "skardu", "name": "Skardu & Shigar", "region": "Baltistan", "altitude": "2,228m", "desc": "Cold Desert dunes, lakes, and royal fort palaces" },
+    { "id": "gilgit", "name": "Gilgit & Bagrot", "region": "Silk Road Hub", "altitude": "1,500m", "desc": "Ancient river confluence and mountain gateways" },
+    { "id": "k2-region", "name": "K2 Region & Concordia", "region": "Central Karakoram", "altitude": "5,150m - 8,611m", "desc": "Throne room of mountain gods, Baltoro glacier" },
+    { "id": "nanga-parbat", "name": "Nanga Parbat Diamir", "region": "Western Himalaya", "altitude": "8,126m", "desc": "Dramatic sheer vertical rise and Diamir face" },
+    { "id": "fairy-meadows", "name": "Fairy Meadows", "region": "Western Himalaya", "altitude": "3,300m", "desc": "Lush pine meadow facing the Raikhot glacier" },
+    { "id": "deosai", "name": "Deosai National Park", "region": "Baltistan Plateau", "altitude": "4,114m", "desc": "Endless high plateau of wildflowers & brown bears" },
+    { "id": "naltar", "name": "Naltar Valley", "region": "Karakoram Pines", "altitude": "3,000m", "desc": "Emerald and cyan rainbow lakes, pine forests" },
+    { "id": "murree", "name": "Murree & Galiyat", "region": "Pir Panjal Range", "altitude": "2,291m", "desc": "Colonial hill stations and misty pine ridges" },
+    { "id": "swat", "name": "Swat Valley", "region": "Hindu Kush", "altitude": "2,000m", "desc": "Pine forests, Mahodand lake, green alpine hills" },
+    { "id": "kaghan", "name": "Kaghan & Babusar Top", "region": "Himalayan Foothills", "altitude": "4,173m", "desc": "Saif-ul-Malook lake and high scenic mountain pass" },
+    { "id": "other", "name": "Other Mountain Destinations", "region": "Bespoke Valley / Peak", "altitude": "Custom Elevation", "desc": "Bespoke mountain route planning to any valley or pass" }
+  ],
+  "travelTypes": [
+    { "id": "solo", "label": "Solo Adventurer", "desc": "Dedicated 1:1 certified guide and flexible private pace" },
+    { "id": "couple", "label": "Couple / Duo", "desc": "Romantic alpine retreats, private chalets, and scenic pacing" },
+    { "id": "family", "label": "Family with Children", "desc": "Paced kid-safe itineraries, comfortable heritage suites, gentle walks" },
+    { "id": "friends", "label": "Friends Squad", "desc": "High-energy shared 4x4 jeeps, camping, and active trekking" },
+    { "id": "group", "label": "Rope Team / Group (4+)", "desc": "Shared mountain logistics, expedition teamwork, group discounts" },
+    { "id": "corporate", "label": "Corporate / Executive", "desc": "Leadership retreats, luxury stays, and strategic workshops" }
+  ],
+  "experienceLevels": [
+    { "id": "beginner", "label": "Beginner", "desc": "First time in high mountains. Gentle walks and 4x4 vehicle safaris." },
+    { "id": "intermediate", "label": "Intermediate", "desc": "Comfortable with 4-6 hour day hikes up to 3,500m elevation." },
+    { "id": "advanced", "label": "Advanced Trekker", "desc": "Multi-day wilderness camping and glacial moraine traverses (4,500m+)." },
+    { "id": "professional", "label": "Technical Mountaineer", "desc": "Crampons, ice axe, fixed ropes, and high-altitude technical sieges." }
+  ],
+  "packageTypes": [
+    {
+      "id": "existing",
+      "label": "Curated Existing Package",
+      "badge": "Standard Itinerary",
+      "desc": "Select from our battle-tested, accredited signature routes with optimized acclimatization profiles."
+    },
+    {
+      "id": "custom",
+      "label": "Custom Bespoke Package",
+      "badge": "Tailored Dossier",
+      "desc": "Co-design a 100% custom expedition timeline, private guide allocation, and specialized logistics."
+    }
+  ],
+  "budgetRanges": [
+    { "id": "budget", "label": "$300 – $600 / person", "sub": "High-Value Explorer", "desc": "Quality alpine guesthouses, shared 4x4, authentic trail meals" },
+    { "id": "standard", "label": "$600 – $1,200 / person", "sub": "Comfort Alpine", "desc": "Boutique chalets, private 4x4, certified UIAGM/Local guide, full board" },
+    { "id": "luxury", "label": "$1,200 – $2,500 / person", "sub": "Luxury Heritage", "desc": "5-star Serena royal palace forts, luxury glamping domes, private chef" },
+    { "id": "unlimited", "label": "$2,500+ / person", "sub": "Expedition Pro / Heli", "desc": "Helicopter shuttles, 1:1 UIAGM guide, bespoke high-camp siege" }
+  ],
+  "foodOptions": [
+    { "id": "organic-local", "label": "Local Organic Mountain Fare", "desc": "Fresh apricots, yak butter teas, wholesome buckwheat and Balti soups" },
+    { "id": "standard-full", "label": "Standard Full-Board Expedition", "desc": "Nutritionally balanced high-calorie trail meals, soups, and breakfasts" },
+    { "id": "halal-gourmet", "label": "Halal Gourmet & Fine Dining", "desc": "Premium mountain dinners prepared fresh by trained expedition camp chefs" },
+    { "id": "vegetarian", "label": "Vegetarian / Plant-Based Vegan", "desc": "Fresh organic seasonal vegetables, lentils, dried fruits, and high-protein nuts" }
+  ],
+  "shelterOptions": [
+    { "id": "heritage-palace", "label": "Boutique Heritage Palaces", "desc": "Historic 400-year Serena royal fort chalets (Shigar / Khaplu / Altit)" },
+    { "id": "alpine-chalet", "label": "Comfort Alpine Lodges & Chalets", "desc": "Heated mountain chalets with private en-suite baths and panoramic valley views" },
+    { "id": "luxury-dome", "label": "Luxury Glamping Domes", "desc": "Insulated geodesic domes on scenic high ridges with starlight skylights" },
+    { "id": "wilderness-camp", "label": "Engineered Wilderness Camp Huts", "desc": "High-altitude 4-season geodesic mountain tents with heated dining mess" }
+  ],
+  "transportOptions": [
+    { "id": "private-prado", "label": "Private 4x4 Prado / Land Cruiser", "desc": "Air-conditioned luxury mountain SUV with experienced mountain chauffeur" },
+    { "id": "expedition-jeep", "label": "High-Clearance Expedition Jeep", "desc": "Rugged modified 4x4 purpose-built for Fairy Meadows & Deosai tracks" },
+    { "id": "coaster-van", "label": "Luxury AC Coaster (Groups)", "desc": "Comfortable air-conditioned coach ideal for family and team expeditions" },
+    { "id": "heli-charter", "label": "Helicopter Shuttle / Heli-Drop", "desc": "Private charter flights over the Karakoram giants for fast access" }
+  ],
+  "activityOptions": [
+    "Glacier Trekking",
+    "Summit Climbing",
+    "Dark-Sky Astrophotography",
+    "Ancient Silk Road Forts",
+    "Village & Orchard Walks",
+    "Wilderness Wildlife Tracking",
+    "High-Altitude Lake Boating"
+  ]
+}

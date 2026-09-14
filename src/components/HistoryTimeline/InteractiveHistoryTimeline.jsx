@@ -7,7 +7,7 @@ export default function InteractiveHistoryTimeline() {
   const [selectedEra, setSelectedEra] = useState('ALL');
   const scrollContainerRef = useRef(null);
 
-  const eras = ['ALL', '1780s', '1860s', '1920s', '1950s', '1970s', '1980s', '2020s'];
+  const eras = ['ALL', ...Array.from(new Set(timelineData.map(m => m.era).filter(Boolean)))];
 
   const filteredMilestones = timelineData.filter((m) => {
     return selectedEra === 'ALL' || m.era === selectedEra;

@@ -9,7 +9,6 @@ import { GamificationProvider } from './context/GamificationContext';
 // Animation & Interactive Atmosphere Components
 import CinematicLoader from './components/Common/CinematicLoader';
 import AlpineCursor from './components/Common/AlpineCursor';
-import MountainParallaxScene from './components/Landscape/MountainParallaxScene';
 import Summit360Viewer from './components/Summit360/Summit360Viewer';
 import ClimbSummitHUD from './components/Gamification/ClimbSummitHUD';
 import SummitCelebrationModal from './components/Gamification/SummitCelebrationModal';
@@ -20,40 +19,40 @@ import MiniGamesHub from './components/MiniGames/MiniGamesHub';
 import GlacierSlider from './components/GlacierComparison/GlacierSlider';
 import CommunityPoll from './components/CommunityPoll/CommunityPoll';
 
-// Core Components
+// Core Navigation & Hero
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
+import QuickSearchDock from './components/Hero/QuickSearchDock';
 import Ticker from './components/Ticker/Ticker';
-import PlacesExplorer from './components/Places/PlacesExplorer';
-import PackageExplorer from './components/PackageExplorer/PackageExplorer';
-import PackageDetailModal from './components/PackageExplorer/PackageDetailModal';
+
+// Explorers & World Sections
+import MountainExplorer from './components/Experiences/MountainExplorer';
+import ChooseYourExperience from './components/Experiences/ChooseYourExperience';
 import DestinationExplorer from './components/DestinationExplorer/DestinationExplorer';
 import DestinationDetailModal from './components/DestinationExplorer/DestinationDetailModal';
-import GilgitBaltistanSection from './components/GilgitBaltistan/GilgitBaltistanSection';
-import MountainFinder from './components/MountainFinder/MountainFinder';
-import MountainViewer3D from './components/Mountain3D/MountainViewer3D';
-import ElevationChart from './components/ElevationChart/ElevationChart';
-import LiveWeatherWidget from './components/WeatherWidget/LiveWeatherWidget';
-import AccommodationExplorer from './components/Accommodation/AccommodationExplorer';
-import FoodExperience from './components/FoodAndTransport/FoodExperience';
-import TransportExperience from './components/FoodAndTransport/TransportExperience';
-import ExpeditionBuilder from './components/ExpeditionBuilder/ExpeditionBuilder';
-import ExpeditionAdvisor from './components/ExpeditionAdvisor/ExpeditionAdvisor';
-import GuideDirectory from './components/Guides/GuideDirectory';
 import InteractiveMap from './components/InteractiveMap/InteractiveMap';
-import MountaineeringKnowledge from './components/MountaineeringKnowledge/MountaineeringKnowledge';
-import ClubExplorer from './components/Clubs/ClubExplorer';
-import LatestDevelopments from './components/Developments/LatestDevelopments';
+import PackageExplorer from './components/PackageExplorer/PackageExplorer';
+import PackageDetailModal from './components/PackageExplorer/PackageDetailModal';
+import MeetOurGuides from './components/Guides/MeetOurGuides';
+
+// Experiences, Offers & Builder
+import FamilyOffersSection from './components/FamilyOffers/FamilyOffersSection';
+import DiscountsSection from './components/Discounts/DiscountsSection';
+import ExpeditionBuilder from './components/ExpeditionBuilder/ExpeditionBuilder';
+import ExpeditionTimeline from './components/ExpeditionTimeline/ExpeditionTimeline';
+
+// Media, Guides & Scientific Platforms
+import WhyAlpineAscents from './components/WhyUs/WhyAlpineAscents';
 import SuccessStories from './components/Stories/SuccessStories';
 import DestinationVideo from './components/DestinationVideo/DestinationVideo';
 import JournalExplorer from './components/Journal/JournalExplorer';
-import EquipmentChecklist from './components/EquipmentChecklist/EquipmentChecklist';
-import DiscountsSection from './components/Discounts/DiscountsSection';
 import GalleryExplorer from './components/Gallery/GalleryExplorer';
-import TestimonialsCarousel from './components/Testimonials/TestimonialsCarousel';
-import FAQSection from './components/FAQSection/FAQSection';
+import FinalBookingCTA from './components/Common/FinalBookingCTA';
+import Footer from './components/Footer/Footer';
 
 // Modals & Floating Utilities
+import PlanYourExpeditionModal from './components/Common/PlanYourExpeditionModal';
+import LuckyDrawModal from './components/Common/LuckyDrawModal';
 import AlpineQuizModal from './components/AlpineQuiz/AlpineQuizModal';
 import GlobalSearchModal from './components/Search/GlobalSearchModal';
 import ProfileDashboard from './components/UserProfile/ProfileDashboard';
@@ -61,9 +60,6 @@ import WishlistModal from './components/Wishlist/WishlistModal';
 import TripRequestModal from './components/TripRequest/TripRequestModal';
 import ScrollProgress from './components/Common/ScrollProgress';
 import BackToTop from './components/Common/BackToTop';
-import Footer from './components/Footer/Footer';
-
-// Ultimate Master Upgrade Components
 import SherpaBot from './components/SherpaBot/SherpaBot';
 import AlpineToolsSuite from './components/Tools/AlpineToolsSuite';
 import AltitudeScrollIndicator from './components/Common/AltitudeScrollIndicator';
@@ -73,6 +69,8 @@ import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 
 export default function App() {
   // Modal states
+  const [planModalOpen, setPlanModalOpen] = useState(false);
+  const [luckyDrawModalOpen, setLuckyDrawModalOpen] = useState(false);
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [profileModalOpen, setProfileModalOpen] = useState(false);
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
@@ -92,6 +90,8 @@ export default function App() {
     onOpenHelp: () => setHelpModalOpen(true),
     onOpenLostClimber: () => setLostClimberModalOpen(true),
     onCloseAll: () => {
+      setPlanModalOpen(false);
+      setLuckyDrawModalOpen(false);
       setSearchModalOpen(false);
       setProfileModalOpen(false);
       setWishlistModalOpen(false);
@@ -105,7 +105,7 @@ export default function App() {
   });
 
   // Active section for navbar underline
-  const [activeSection, setActiveSection] = useState('expeditions');
+  const [activeSection, setActiveSection] = useState('destinations');
 
   // Listen for Ctrl+K shortcut globally
   useEffect(() => {
@@ -119,7 +119,7 @@ export default function App() {
     return () => window.removeEventListener('keydown', handleGlobalKeyDown);
   }, []);
 
-  // Scroll Reveal Observer (SRS Requirement 4)
+  // Scroll Reveal Observer
   useEffect(() => {
     const elements = document.querySelectorAll('.reveal-on-scroll, .section-header');
     if (!elements.length) return;
@@ -155,10 +155,10 @@ export default function App() {
     } else if (type === 'package') {
       setSelectedPackageModal(item);
     } else if (type === 'mountain') {
-      const el = document.querySelector('#mountain-finder');
+      const el = document.querySelector('#mountains') || document.querySelector('#experiences');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else if (type === 'guide') {
-      const el = document.querySelector('#guides');
+      const el = document.querySelector('#why-alpine-ascents') || document.querySelector('#guides');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
     } else if (type === 'article') {
       const el = document.querySelector('#journal');
@@ -173,29 +173,29 @@ export default function App() {
           <UserProfileProvider>
             <ToastProvider>
               <GamificationProvider>
-                {/* Cinematic First-Load Sequence (SRS Requirement 9) */}
+                {/* Cinematic First-Load Sequence */}
                 <CinematicLoader />
 
-                {/* Desktop Cursor Snow & Fog Particle System (SRS Requirement 3 & 8) */}
+                {/* Desktop Clean Cursor */}
                 <AlpineCursor />
 
-                {/* Scroll progress indicator line (SRS Requirement 10) */}
+                {/* Scroll progress indicator */}
                 <ScrollProgress />
 
                 {/* Vertical Altitude & Expedition Camps Scroll Indicator */}
                 <AltitudeScrollIndicator />
 
-                {/* Sticky Navigation Header with ambient audio, voice navigation & complete logo (SRS Requirement 33, 34, 40) */}
+                {/* Sticky Navigation Header with PLAN YOUR EXPEDITION CTA */}
                 <Navbar
                   onOpenSearch={() => setSearchModalOpen(true)}
                   onOpenWishlist={() => setWishlistModalOpen(true)}
                   onOpenProfile={() => setProfileModalOpen(true)}
-                  onOpenTripBuilder={() => handleOpenTripBuilder()}
+                  onOpenTripBuilder={() => setPlanModalOpen(true)}
                   onOpenQuiz={() => setQuizModalOpen(true)}
                   activeSection={activeSection}
                 />
 
-                {/* Interactive Summit Climb Progress HUD (SRS Requirement 3) */}
+                {/* Interactive Summit Climb Progress HUD (Discrete Collapsed Pill) */}
                 <ClimbSummitHUD
                   onOpenGames={() => {
                     const el = document.querySelector('#mini-games-hub');
@@ -204,198 +204,137 @@ export default function App() {
                 />
 
                 <main>
-                  {/* Cinematic Hero with Parallax & Animated Mountain Drawing (SRS Requirement 1, 5, 6, 49) */}
+                  {/* 1. HERO — Full-Bleed Video Background & Instant Booking CTA */}
                   <Hero
-                    onOpenTripBuilder={() => handleOpenTripBuilder()}
+                    onOpenPlanModal={() => setPlanModalOpen(true)}
                     onExploreClick={() => {
-                      const el = document.querySelector('#places');
+                      const el = document.querySelector('#destinations');
                       if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }}
                   />
 
-                  {/* Interactive Animated Mountain & Glacial River Scene (SRS Requirement 2, 14, 15) */}
-                  <MountainParallaxScene />
-
-                  {/* Dedicated Places Ecosystem (Pakistan Hubs, GB, Global Ranges & City Packages) */}
-                  <PlacesExplorer
-                    onRequestTrip={(title) => {
-                      handleRequestExpedition({
-                        name: title,
-                        destinationName: 'Northern Pakistan Hub',
-                        duration: 'Custom Itinerary',
-                        travelStyle: 'Comfort',
-                        guide: 'Lead Alpine Sirdar',
-                        price: 1250
-                      });
+                  {/* 2. QUICK BOOKING / EXPEDITION SEARCH DOCK */}
+                  <QuickSearchDock
+                    onOpenPlanModal={() => setPlanModalOpen(true)}
+                    onFilterExpeditions={(params) => {
+                      const el = document.querySelector('#expeditions');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }}
                   />
 
-                  {/* Featured Expeditions & Packages */}
-                  <PackageExplorer
-                    onSelectPackage={(pkg) => setSelectedPackageModal(pkg)}
-                    onOpenTripBuilder={(pkg) => handleOpenTripBuilder(pkg?.destinationId)}
-                  />
-
-                  {/* Live Mountain Weather & Sunrise/Sunset (Open-Meteo REST API) (SRS Requirement 16) */}
-                  <LiveWeatherWidget />
-
-                  {/* 3D Topographic Mountain Simulation (Three.js WebGL) */}
-                  <MountainViewer3D />
-
-                  {/* Interactive 360° Summit Panorama Viewer (SRS Requirement 21) */}
-                  <Summit360Viewer />
-
-                  {/* Interactive Route Elevation Profile (SVG Chart) */}
-                  <ElevationChart />
-
-                  {/* Destination Discovery */}
+                  {/* 3. DESTINATIONS STRIP / HORIZONTAL SHOWCASE */}
                   <DestinationExplorer
                     onSelectDestination={(dest) => setSelectedDestinationModal(dest)}
                     onOpenTripBuilder={(destId) => handleOpenTripBuilder(destId)}
                   />
 
-                  {/* Gilgit-Baltistan Flagship Experience */}
-                  <GilgitBaltistanSection
-                    onSelectDestination={(dest) => setSelectedDestinationModal(dest)}
-                    onOpenTripBuilder={() => handleOpenTripBuilder('hunza-valley')}
-                  />
-
-                  {/* Mountain Finder & Orographic Database */}
-                  <MountainFinder />
-
-                  {/* Scientific Expedition Instrumentation: Radar Matrix, Altitude Hypoxia & Geo-Distance */}
-                  <AlpineToolsSuite />
-
-                  {/* Experiences: Accommodation, Food & Transport */}
-                  <section id="experiences" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--border-color)' }}>
-                    <div className="site-container">
-                      <AccommodationExplorer />
-                      <FoodExperience />
-                      <TransportExperience />
-                    </div>
-                  </section>
-
-                  {/* Flagship: Build Your Own Expedition */}
-                  <ExpeditionBuilder
-                    onRequestExpedition={handleRequestExpedition}
-                  />
-
-                  {/* Interactive Recommendation Engine: Not Sure Where To Go? */}
-                  <ExpeditionAdvisor
-                    onSelectPackage={(pkg) => setSelectedPackageModal(pkg)}
-                    onSelectDestination={(dest) => setSelectedDestinationModal(dest)}
-                  />
-
-                  {/* High-Altitude Mini-Games Hub (Pack Your Gear, Oxygen Pace, Avalanche Reflex, Route Odyssey) */}
-                  <MiniGamesHub />
-
-                  {/* Mountain Experts & Guides */}
-                  <GuideDirectory
-                    onRequestGuide={(guide) => {
-                      handleRequestExpedition({
-                        name: `Guide Guided Expedition with ${guide.name}`,
-                        destinationName: guide.region,
-                        duration: 'Custom Duration',
-                        travelStyle: 'Expedition Pro',
-                        guide: guide.name,
-                        price: 1850
-                      });
+                  {/* 4. MOUNTAIN VISUAL SHOWCASE (Editorial / Asymmetric) */}
+                  <MountainExplorer
+                    onSelectMountain={(mountain) => {
+                      const el = document.querySelector('#expeditions');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
                     }}
+                    onSelectPackage={(pkg) => setSelectedPackageModal(pkg)}
                   />
 
-                  {/* Interactive Global Topography Map */}
+                  {/* 5. CHOOSE YOUR ADVENTURE (Category Strips) */}
+                  <ChooseYourExperience
+                    onSelectDestination={(dest) => setSelectedDestinationModal(dest)}
+                    onOpenTripBuilder={(destId) => handleOpenTripBuilder(destId)}
+                  />
+
+                  {/* 6. INTERACTIVE MAP (With telemetry & drawer) */}
                   <InteractiveMap
                     onSelectDestination={(dest) => setSelectedDestinationModal(dest)}
                   />
 
-                  {/* Mountaineering Knowledge Platform (SRS Educational Foundations) */}
-                  <MountaineeringKnowledge />
+                  {/* 7. FAMILY MOUNTAIN ESCAPES (Visual promotional section) */}
+                  <FamilyOffersSection
+                    onOpenPlanModal={() => setPlanModalOpen(true)}
+                  />
 
-                  {/* Environmental Glaciology: Before / After Comparison Slider (SRS Requirement 12) */}
-                  <GlacierSlider />
+                  {/* 8. SPECIAL EXPEDITION OFFERS (Horizontal offer rows) */}
+                  <DiscountsSection
+                    onOpenLuckyDraw={() => setLuckyDrawModalOpen(true)}
+                  />
 
-                  {/* Institutional Alpine Clubs */}
-                  <ClubExplorer />
-
-                  {/* Latest in the Mountains */}
-                  <LatestDevelopments />
-
-                  {/* Expedition Success Stories */}
-                  <SuccessStories />
-
-                  {/* Detailed Video Cinema & Archives (SRS Requirement 16, 17, 18) */}
+                  {/* 9. THE MOUNTAINS IN MOTION (Horizontal video reel + custom video player) */}
                   <DestinationVideo />
 
-                  {/* The Alpine Journal */}
+                  {/* 10. EXPEDITION PACKAGE EXPLORER (Large expandable rows / accordion style) */}
+                  <PackageExplorer
+                    onSelectPackage={(pkg) => setSelectedPackageModal(pkg)}
+                    onOpenTripBuilder={(destId) => handleOpenTripBuilder(destId)}
+                  />
+
+                  {/* 11. CUSTOM EXPEDITION BUILDER (Step-by-step custom flow) */}
+                  <ExpeditionBuilder
+                    onRequestExpedition={handleRequestExpedition}
+                  />
+
+                  {/* 12. MEET YOUR EXPEDITION TEAM (Editorial layout + drawer) */}
+                  <MeetOurGuides
+                    onOpenPlanModal={() => setPlanModalOpen(true)}
+                  />
+
+                  {/* 13. EXPEDITION TIMELINE (8-phase journey cycle) */}
+                  <ExpeditionTimeline
+                    onOpenPlanModal={() => setPlanModalOpen(true)}
+                  />
+
+                  {/* 14. FINAL BOOKING CTA SECTION (High-impact conversion strip) */}
+                  <FinalBookingCTA
+                    onOpenPlanModal={() => setPlanModalOpen(true)}
+                  />
+
+                  {/* Supporting Heritage, Safety & Storytelling Sections */}
+                  <WhyAlpineAscents
+                    onOpenPlanModal={() => setPlanModalOpen(true)}
+                  />
+                  <SuccessStories />
                   <JournalExplorer />
-
-                  {/* Equipment Readiness Checklist */}
-                  <EquipmentChecklist />
-
-                  {/* Seasonal Privileges & Offers */}
-                  <DiscountsSection />
-
-                  {/* High-Resolution Photography Gallery with Overhauled Lightbox (SRS Requirement 12 & 13) */}
                   <GalleryExplorer />
-
-                  {/* Testimonials Memoir Carousel */}
-                  <TestimonialsCarousel />
-
-                  {/* Community Summit Poll: Which Mountain Would You Climb Next? (SRS Requirement 13) */}
-                  <CommunityPoll />
-
-                  {/* Comprehensive FAQ Section */}
-                  <FAQSection />
                 </main>
 
                 {/* Multi-column Footer */}
                 <Footer
                   onOpenProfile={() => setProfileModalOpen(true)}
                   onOpenWishlist={() => setWishlistModalOpen(true)}
-                  onOpenTripBuilder={() => handleOpenTripBuilder()}
+                  onOpenTripBuilder={() => setPlanModalOpen(true)}
                 />
 
-                {/* Continuous Bottom Ticker (Date, Time, Geolocation Telemetry) */}
+                {/* Continuous Bottom Telemetry Ticker */}
                 <Ticker />
 
                 {/* Smooth Back to Top */}
                 <BackToTop />
 
-                {/* Alpine Safety Quiz Modal */}
-                <AlpineQuizModal
-                  isOpen={quizModalOpen}
-                  onClose={() => {
-                    setQuizModalOpen(false);
-                    setProfileModalOpen(true);
+                {/* MODALS */}
+                {/* 1. Dedicated 7-Step Plan Your Expedition Modal */}
+                <PlanYourExpeditionModal
+                  isOpen={planModalOpen}
+                  onClose={() => setPlanModalOpen(false)}
+                  onRequestManifest={(manifest) => {
+                    setPlanModalOpen(false);
+                    handleRequestExpedition(manifest);
+                  }}
+                  onOpenCustomBuilder={(destId) => {
+                    setPlanModalOpen(false);
+                    handleOpenTripBuilder(destId);
                   }}
                 />
 
-                {/* Summit 100% Celebration Modal (SRS Requirement 4) */}
-                <SummitCelebrationModal />
-
-                {/* Personalized Virtual Certificate Generator Modal (SRS Requirement 14) */}
-                <SummitCertificateModal />
-
-                {/* Global Overlays & Modals */}
-                <GlobalSearchModal
-                  isOpen={searchModalOpen}
-                  onClose={() => setSearchModalOpen(false)}
-                  onSelectItem={handleSearchSelectItem}
+                {/* 2. Interactive Lucky Draw Campaign Modal */}
+                <LuckyDrawModal
+                  isOpen={luckyDrawModalOpen}
+                  onClose={() => setLuckyDrawModalOpen(false)}
+                  onApplyReward={(prize) => {
+                    setLuckyDrawModalOpen(false);
+                    setPlanModalOpen(true);
+                  }}
                 />
 
-                <ProfileDashboard
-                  isOpen={profileModalOpen}
-                  onClose={() => setProfileModalOpen(false)}
-                  onSelectPackage={(pkg) => setSelectedPackageModal(pkg)}
-                  onSelectDestination={(dest) => setSelectedDestinationModal(dest)}
-                />
-
-                <WishlistModal
-                  isOpen={wishlistModalOpen}
-                  onClose={() => setWishlistModalOpen(false)}
-                  onSelectItem={handleSearchSelectItem}
-                />
-
+                {/* 3. Destination Detail Modal (With 10 Expandable Accordions) */}
                 <DestinationDetailModal
                   destination={selectedDestinationModal}
                   isOpen={!!selectedDestinationModal}
@@ -406,6 +345,7 @@ export default function App() {
                   }}
                 />
 
+                {/* 4. Package Detail Modal */}
                 <PackageDetailModal
                   pkg={selectedPackageModal}
                   isOpen={!!selectedPackageModal}
@@ -416,26 +356,62 @@ export default function App() {
                   }}
                 />
 
+                {/* 5. Official Trip Request Manifest Modal */}
                 <TripRequestModal
                   initialTrip={activeTripForRequest}
                   isOpen={tripRequestModalOpen}
                   onClose={() => setTripRequestModalOpen(false)}
                 />
 
-                {/* Keyboard Shortcuts Help Modal */}
+                {/* 6. Alpine Safety Quiz Modal */}
+                <AlpineQuizModal
+                  isOpen={quizModalOpen}
+                  onClose={() => {
+                    setQuizModalOpen(false);
+                    setProfileModalOpen(true);
+                  }}
+                />
+
+                {/* 7. Summit Celebration Modal & Virtual Certificate */}
+                <SummitCelebrationModal />
+                <SummitCertificateModal />
+
+                {/* 8. Global Search Modal */}
+                <GlobalSearchModal
+                  isOpen={searchModalOpen}
+                  onClose={() => setSearchModalOpen(false)}
+                  onSelectItem={handleSearchSelectItem}
+                />
+
+                {/* 9. Profile & Passport Dashboard */}
+                <ProfileDashboard
+                  isOpen={profileModalOpen}
+                  onClose={() => setProfileModalOpen(false)}
+                  onSelectPackage={(pkg) => setSelectedPackageModal(pkg)}
+                  onSelectDestination={(dest) => setSelectedDestinationModal(dest)}
+                />
+
+                {/* 10. Wishlist Modal */}
+                <WishlistModal
+                  isOpen={wishlistModalOpen}
+                  onClose={() => setWishlistModalOpen(false)}
+                  onSelectItem={handleSearchSelectItem}
+                />
+
+                {/* 11. Keyboard Shortcuts Help Modal */}
                 <KeyboardShortcutModal
                   isOpen={helpModalOpen}
                   onClose={() => setHelpModalOpen(false)}
                 />
 
-                {/* Lost Climber 404 Rescue Mini-Game Modal */}
+                {/* 12. Lost Climber Modal */}
                 <LostClimberModal
                   isOpen={lostClimberModalOpen}
                   onClose={() => setLostClimberModalOpen(false)}
                   onReturnHome={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 />
 
-                {/* Interactive Thematic Assistant & Intent Engine */}
+                {/* Floating Alpine Sherpa — Expedition Assistant */}
                 <SherpaBot />
               </GamificationProvider>
             </ToastProvider>

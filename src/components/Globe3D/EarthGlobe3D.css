@@ -1,0 +1,212 @@
+/* ==========================================================================
+   3D EARTH GLOBE — WebGL Interactive Telemetry Styles
+   ========================================================================== */
+
+.globe-section {
+  padding: 5rem 0;
+  background: var(--bg-primary);
+  position: relative;
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.globe-region-pills {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.globe-region-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.globe-region-btn:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.globe-region-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+.globe-stage-container {
+  position: relative;
+  background: radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.06) 0%, rgba(15, 23, 42, 0.02) 80%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  min-height: 560px;
+}
+
+.globe-canvas-wrap {
+  width: 100%;
+  height: 560px;
+  cursor: grab;
+}
+
+.globe-canvas-wrap:active {
+  cursor: grabbing;
+}
+
+/* Floating Selected Marker HUD */
+.globe-marker-card {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 310px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.35rem;
+  box-shadow: var(--shadow-lg);
+  z-index: 20;
+}
+
+[data-theme="summit-night"] .globe-marker-card {
+  background: rgba(13, 21, 32, 0.9);
+}
+
+.marker-card-badge-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.marker-region-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-gold);
+}
+
+.marker-alt-badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--accent);
+  background: var(--badge-bg);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.marker-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.45rem;
+}
+
+.marker-card-desc {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin-bottom: 0.85rem;
+}
+
+.marker-card-coords {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.74rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.marker-card-actions {
+  display: flex;
+}
+
+.marker-card-actions .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Controls */
+.globe-telemetry-controls {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.globe-ctrl-btn {
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+[data-theme="summit-night"] .globe-ctrl-btn {
+  background: rgba(13, 21, 32, 0.85);
+}
+
+.globe-ctrl-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.globe-instruction-hint {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .globe-marker-card {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: auto;
+    margin: 1rem;
+  }
+
+  .globe-canvas-wrap {
+    height: 420px;
+  }
+
+  .globe-stage-container {
+    min-height: 420px;
+  }
+
+  .globe-telemetry-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

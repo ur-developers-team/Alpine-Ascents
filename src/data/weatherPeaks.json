@@ -1,0 +1,97 @@
+[
+  {
+    "id": "k2",
+    "name": "K2 (Godwin-Austen)",
+    "elevation": "8,611m",
+    "range": "Karakoram, Pakistan",
+    "lat": 35.8814,
+    "lon": 76.5133,
+    "fallback": {
+      "temp": -28,
+      "windSpeed": 64,
+      "windDir": 290,
+      "pressure": 342,
+      "humidity": 78,
+      "condition": "High Wind Shear & Sub-Zero Jet Stream",
+      "code": 75,
+      "sunrise": "05:46 AM",
+      "sunset": "06:42 PM"
+    }
+  },
+  {
+    "id": "nanga-parbat",
+    "name": "Nanga Parbat",
+    "elevation": "8,126m",
+    "range": "Western Himalaya, Pakistan",
+    "lat": 35.2375,
+    "lon": 74.5891,
+    "fallback": {
+      "temp": -24,
+      "windSpeed": 48,
+      "windDir": 315,
+      "pressure": 365,
+      "humidity": 82,
+      "condition": "Rupal Face Thermal updrafts & Flurries",
+      "code": 71,
+      "sunrise": "05:51 AM",
+      "sunset": "06:44 PM"
+    }
+  },
+  {
+    "id": "broad-peak",
+    "name": "Broad Peak",
+    "elevation": "8,051m",
+    "range": "Karakoram, Pakistan",
+    "lat": 35.8117,
+    "lon": 76.565,
+    "fallback": {
+      "temp": -26,
+      "windSpeed": 52,
+      "windDir": 280,
+      "pressure": 368,
+      "humidity": 74,
+      "condition": "Glacial Katabatic Winds",
+      "code": 3,
+      "sunrise": "05:45 AM",
+      "sunset": "06:41 PM"
+    }
+  },
+  {
+    "id": "everest",
+    "name": "Mount Everest",
+    "elevation": "8,848m",
+    "range": "Mahalangur Himal, Nepal",
+    "lat": 27.9881,
+    "lon": 86.925,
+    "fallback": {
+      "temp": -31,
+      "windSpeed": 78,
+      "windDir": 270,
+      "pressure": 334,
+      "humidity": 68,
+      "condition": "South Col Jet Stream Squall",
+      "code": 85,
+      "sunrise": "05:38 AM",
+      "sunset": "06:12 PM"
+    }
+  },
+  {
+    "id": "mont-blanc",
+    "name": "Mont Blanc",
+    "elevation": "4,808m",
+    "range": "Graian Alps, France/Italy",
+    "lat": 45.8326,
+    "lon": 6.8652,
+    "fallback": {
+      "temp": -12,
+      "windSpeed": 32,
+      "windDir": 225,
+      "pressure": 575,
+      "humidity": 65,
+      "condition": "Goûter Ridge Clear Weather Window",
+      "code": 1,
+      "sunrise": "07:05 AM",
+      "sunset": "07:55 PM"
+    }
+  }
+]

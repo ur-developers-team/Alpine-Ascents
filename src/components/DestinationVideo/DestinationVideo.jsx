@@ -1,50 +1,58 @@
 import React, { useState } from 'react';
 import videosData from '../../data/videos.json';
-import VideoDetailModal from './VideoDetailModal';
-import { Film, Play, MapPin, Clock, Compass, Filter } from 'lucide-react';
+import {
+  Play, Film, MapPin, Clock, Shield, Compass, Sparkles, ChevronRight
+} from 'lucide-react';
+import VideoPlayerModal from './VideoPlayerModal';
 import './DestinationVideo.css';
 
 export default function DestinationVideo() {
   const [selectedCategory, setSelectedCategory] = useState('ALL');
-  const [activeModalVideo, setActiveModalVideo] = useState(null);
+  const [featuredVideoId, setFeaturedVideoId] = useState(videosData[0].id);
+
+  // Modal Player State
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalVideoIndex, setModalVideoIndex] = useState(0);
 
   const categories = [
     'ALL',
-    'Expedition Films',
-    'Destination Guides',
-    'Travel Guides',
-    'Mountain Stories',
-    'Climbing Techniques',
-    'Safety & Hazards',
-    'Gilgit-Baltistan',
-    'Base Camp Experiences'
+    ...Array.from(new Set(videosData.map(v => v.category).filter(Boolean)))
   ];
 
   const filteredVideos = selectedCategory === 'ALL'
     ? videosData
     : videosData.filter(v => v.category.toLowerCase() === selectedCategory.toLowerCase());
 
+  const featuredVideo = videosData.find(v => v.id === featuredVideoId) || filteredVideos[0] || videosData[0];
+
+  const handleOpenVideo = (videoItem) => {
+    const idx = videosData.findIndex(v => v.id === videoItem.id);
+    setModalVideoIndex(idx !== -1 ? idx : 0);
+    setFeaturedVideoId(videoItem.id);
+    setIsModalOpen(true);
+  };
+
   return (
-    <section id="videos" className="section video-section">
-      <div className="container">
-        {/* Section Header */}
+    <section id="videos" className="section video-cinema-section" aria-label="The Mountains in Motion">
+      <div className="site-container">
+        {/* Editorial Section Header */}
         <div className="section-header">
           <div className="section-eyebrow">
             <Film size={14} />
-            <span>EXPEDITION CINEMA & ARCHIVES</span>
+            <span>AUTHENTIC EXPEDITION CINEMATOGRAPHY</span>
           </div>
-          <h2 className="section-title">HIGH-ALTITUDE DOCUMENTARY CINEMA</h2>
+          <h2 className="section-title">THE MOUNTAINS IN MOTION</h2>
           <p className="section-subtitle">
-            Experience 4K aerial traverses, Technical ice climbing masterclasses, and Himalayan mountaineering stories captured across the Karakoram, Western Himalaya, and European Alps.
+            Authentic high-altitude visual expeditions across Pakistan's 8,000m peaks and hidden glacial valleys. Every film features real playable 4K footage and complete player telemetry.
           </p>
         </div>
 
         {/* Category Filter Pills */}
-        <div className="video-categories-row" role="tablist">
+        <div className="cinema-categories-row" role="tablist" aria-label="Video categories">
           {categories.map(cat => (
             <button
               key={cat}
-              className={`btn btn-sm ${selectedCategory === cat ? 'btn-primary' : 'btn-outline'}`}
+              className={`cinema-filter-pill ${selectedCategory === cat ? 'active' : ''}`}
               onClick={() => setSelectedCategory(cat)}
               role="tab"
               aria-selected={selectedCategory === cat}
@@ -54,55 +62,132 @@ export default function DestinationVideo() {
           ))}
         </div>
 
-        {/* Video Cards Grid */}
-        <div className="video-library-grid">
-          {filteredVideos.map(vid => (
-            <div
-              key={vid.id}
-              className="video-archive-card"
-              onClick={() => setActiveModalVideo(vid)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') setActiveModalVideo(vid);
-              }}
-              aria-label={`Watch ${vid.title}`}
-            >
-              <div className="video-thumbnail-wrap">
-                <img src={vid.poster} alt={vid.title} className="video-poster-img" />
-                <div className="video-play-hover-overlay">
-                  <div className="play-button-icon">
-                    <Play size={22} fill="#0b111e" color="#0b111e" />
-                  </div>
-                </div>
-                <div className="video-badge-duration">
-                  <Clock size={12} />
-                  <span>{vid.duration}</span>
-                </div>
-                <span className="video-badge-category">{vid.category}</span>
-              </div>
+        {/* The Cinema Master Stage (Editorial Preview Showcase) */}
+        <div className="cinema-master-stage">
+          {/* Featured Video Preview Hero (Clicking Opens Real Video Player Modal) */}
+          <div
+            className="cinema-preview-container"
+            onClick={() => handleOpenVideo(featuredVideo)}
+            role="button"
+            tabIndex={0}
+            aria-label={`Play ${featuredVideo.title}`}
+          >
+            <img
+              src={featuredVideo.poster}
+              alt={featuredVideo.title}
+              className="cinema-preview-poster-img"
+              loading="lazy"
+            />
+            <div className="cinema-preview-gradient" />
 
-              <div className="video-card-meta">
-                <div className="video-card-location">
-                  <MapPin size={13} color="var(--accent, #d4af37)" />
-                  <span>{vid.location}</span>
-                </div>
-                <h3 className="video-card-title">{vid.title}</h3>
-                <p className="video-card-desc">{vid.description}</p>
-                <div className="video-card-footer">
-                  <span className="watch-now-label">Watch Film →</span>
-                </div>
+            {/* Overlaid Play Interaction */}
+            <div className="cinema-center-play-overlay">
+              <div className="cinema-play-disc">
+                <Play size={36} fill="#ffffff" color="#ffffff" style={{ marginLeft: '4px' }} />
               </div>
+              <span className="cinema-play-prompt">▶ PLAY EXPEDITION FILM</span>
+              <span className="cinema-play-subtext">{featuredVideo.duration}s 4K Visual Footage • Click to Launch Player</span>
             </div>
-          ))}
+
+            {/* Top Corner Telemetry Badge */}
+            <div className="cinema-preview-top-badge">
+              <span className="badge-live-pulse" />
+              <span>REAL EXPEDITION FOOTAGE</span>
+            </div>
+
+            {/* Bottom Corner Duration Pill */}
+            <div className="cinema-preview-duration-badge">
+              <Clock size={12} />
+              <span>{featuredVideo.duration}s</span>
+            </div>
+          </div>
+
+          {/* Active Video Intel Dossier Bar */}
+          <div className="cinema-intel-bar">
+            <div className="cinema-intel-text">
+              <div className="cinema-meta-tag">
+                <span className="meta-category">{featuredVideo.category} ARCHIVE</span>
+                <span className="meta-sep">•</span>
+                <MapPin size={13} color="var(--accent)" />
+                <span className="meta-loc">{featuredVideo.location}</span>
+                <span className="meta-sep">•</span>
+                <Compass size={13} color="var(--accent)" />
+                <span className="meta-mountain">{featuredVideo.mountain}</span>
+                <span className="meta-sep">•</span>
+                <Clock size={13} color="var(--accent)" />
+                <span className="meta-duration">{featuredVideo.duration}s</span>
+              </div>
+              <h3 className="cinema-active-title">{featuredVideo.title}</h3>
+              <p className="cinema-active-desc">{featuredVideo.description}</p>
+            </div>
+
+            <div className="cinema-intel-cta-wrap">
+              <button
+                className="btn btn-primary cinema-play-cta-btn"
+                onClick={() => handleOpenVideo(featuredVideo)}
+              >
+                <Play size={16} fill="currentColor" />
+                <span>PLAY VIDEO</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Horizontal Cinematic Video Reel (10 Selectable Mountain Films) */}
+          <div className="cinema-reel-wrapper">
+            <div className="cinema-reel-header">
+              <span className="reel-eyebrow">
+                EXPEDITION CINEMA REEL ({filteredVideos.length} TITLES AVAILABLE) — CLICK TO PLAY:
+              </span>
+            </div>
+
+            <div className="cinema-horizontal-reel">
+              {filteredVideos.map(vid => {
+                const isSelected = vid.id === featuredVideo.id;
+                return (
+                  <div
+                    key={vid.id}
+                    className={`cinema-reel-thumbnail ${isSelected ? 'active' : ''}`}
+                    onClick={() => handleOpenVideo(vid)}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Play ${vid.title}`}
+                  >
+                    <div className="reel-thumb-img-wrap">
+                      <img
+                        src={vid.poster}
+                        alt={vid.title}
+                        className="reel-thumb-img"
+                        loading="lazy"
+                      />
+                      <div className="reel-thumb-overlay" />
+                      <div className="reel-thumb-play-icon">
+                        <Play size={16} fill="#ffffff" color="#ffffff" style={{ marginLeft: '2px' }} />
+                      </div>
+                      <span className="reel-thumb-duration">{vid.duration}s</span>
+                    </div>
+
+                    <div className="reel-thumb-info">
+                      <span className="reel-thumb-cat">{vid.category}</span>
+                      <h4 className="reel-thumb-title">{vid.title}</h4>
+                      <span className="reel-thumb-loc">{vid.location}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
-        {/* Video Cinema Modal */}
-        <VideoDetailModal
-          video={activeModalVideo}
-          isOpen={!!activeModalVideo}
-          onClose={() => setActiveModalVideo(null)}
-          onSelectVideo={setActiveModalVideo}
+        {/* Dedicated Fullscreen / Modal Real Video Viewer */}
+        <VideoPlayerModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          activeVideoIndex={modalVideoIndex}
+          videos={videosData}
+          onChangeVideo={(idx) => {
+            setModalVideoIndex(idx);
+            setFeaturedVideoId(videosData[idx].id);
+          }}
         />
       </div>
     </section>

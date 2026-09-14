@@ -1,491 +1,674 @@
 import React, { useState } from 'react';
 import { useUserProfile } from '../../context/UserProfileContext';
-import { Compass, Check, ArrowRight, ArrowLeft, Bookmark, Send, Sparkles, AlertCircle } from 'lucide-react';
+import {
+  Compass, Check, ArrowRight, Bookmark, Send,
+  Sparkles, AlertCircle, RotateCcw, Home, Utensils, Truck,
+  Mountain, Shield, ShieldCheck, DollarSign, Radio, CheckSquare,
+  Layers, ChevronRight, Eye
+} from 'lucide-react';
 import './ExpeditionBuilder.css';
 
-const DESTINATIONS = [
-  { id: 'gb-hunza', name: 'Hunza Valley & Passu', region: 'Gilgit-Baltistan', basePrice: 450, desc: 'Silk Road kingdom, ancient forts, Passu Cones' },
-  { id: 'gb-skardu-k2', name: 'Skardu & K2 Concordia', region: 'Gilgit-Baltistan', basePrice: 950, desc: 'Baltoro glacier siege, Trango Towers, K2 basecamp' },
-  { id: 'gb-fairy-meadows', name: 'Nanga Parbat & Fairy Meadows', region: 'Gilgit-Baltistan', basePrice: 420, desc: 'Raikot face, alpine pine cabins, Beyal glacier' },
-  { id: 'np-everest', name: 'Everest Base Camp & Khumbu', region: 'Himalayas, Nepal', basePrice: 850, desc: 'Sherpa teahouses, Tengboche monastery, Kala Patthar' },
-  { id: 'fr-mont-blanc', name: 'Mont Blanc & Chamonix', region: 'Alps, France/Italy', basePrice: 780, desc: 'Classic alpine crest, Gouter ridge, cable car skywalk' },
-  { id: 'ar-fitz-roy', name: 'Mount Fitz Roy & El Chaltén', region: 'Patagonia, Argentina', basePrice: 680, desc: 'Granite spires, glacial lagoons, roaring wind' }
-];
+import builderOptionsData from '../../data/builderOptions.json';
 
-const DURATIONS = [
-  { days: 7, label: '7 Days (Express Route)', multiplier: 1.0 },
-  { days: 12, label: '12 Days (Standard Acclimatization)', multiplier: 1.55 },
-  { days: 16, label: '16 Days (Deep Wilderness Push)', multiplier: 1.95 },
-  { days: 21, label: '21 Days (High Glacial Siege)', multiplier: 2.45 },
-  { days: 28, label: '28 Days (Full Summit Expedition)', multiplier: 3.1 }
-];
-
-const STYLES = [
-  { id: 'explorer', name: 'Explorer', priceAdd: 0, desc: 'Active, authentic, teahouses and lightweight trail camping.' },
-  { id: 'comfort', name: 'Comfort', priceAdd: 280, desc: 'Private wooden pine chalets, hot bucket showers, paced stages.' },
-  { id: 'premium', name: 'Premium', priceAdd: 650, desc: 'Restored royal forts, heated glamping domes, private chefs.' },
-  { id: 'expedition-pro', name: 'Expedition Pro', priceAdd: 520, desc: 'Technical high-altitude siege support, high porters, satellite tracking.' }
-];
-
-const GROUP_SIZES = [
-  { id: 'solo', label: 'Solo Climber', multiplier: 1.25, desc: 'Dedicated private guide and bespoke pace.' },
-  { id: 'small', label: '2 - 4 Climbers (Rope Team)', multiplier: 1.0, desc: 'Ideal balance of camaraderie and agility.' },
-  { id: 'medium', label: '5 - 8 Climbers', multiplier: 0.88, desc: 'Shared group porter logistics with 12% group discount.' },
-  { id: 'large', label: '9 - 12 Climbers', multiplier: 0.80, desc: 'Large expedition team with 20% team discount.' }
-];
-
-const ACTIVITIES = [
-  { id: 'glacier-trek', name: 'Glacier Trekking & Moraines', price: 120 },
-  { id: 'ice-climbing', name: 'Waterfall & Serac Ice Climbing', price: 240 },
-  { id: 'astrophotography', name: 'Alpine Astrophotography Night', price: 90 },
-  { id: 'cultural-tour', name: 'Ancient Silk Road Forts & Villages', price: 80 },
-  { id: 'high-camping', name: 'High-Altitude Wilderness Bivouac', price: 150 }
-];
-
-const ACCOMMODATIONS = [
-  { id: 'base-tents', name: '4-Season Geodesic Expedition Tents', price: 80, desc: 'Windproof Mountain Hardwear dome tents with warm mats.' },
-  { id: 'alpine-lodges', name: 'Authentic Alpine Guesthouses', price: 180, desc: 'Family-run mountain lodges with wood-stove dining.' },
-  { id: 'glamping-domes', name: 'Lakeview Heated Glamping Domes', price: 340, desc: 'Panoramic glass domes suspended over glacial waters.' },
-  { id: 'heritage-forts', name: '5-Star Royal Palace Forts (Serena)', price: 580, desc: 'Centuries-old Tibetan timber suites and royal gardens.' }
-];
-
-const TRANSPORTS = [
-  { id: '4x4-jeep', name: 'Private 4x4 Land Cruiser / Hilux', price: 220, desc: 'Chauffeur-driven with off-road suspension and snorkel.' },
-  { id: 'flight-jeep', name: 'Scenic Domestic Flight + 4x4 Jeep', price: 420, desc: 'Aerial flight over Nanga Parbat plus dedicated ground 4x4.' },
-  { id: 'heli-charter', name: 'Helicopter High-Altitude Shuttle', price: 1100, desc: 'Military-grade turbine helicopter transfer to high base camps.' }
-];
-
-const ADDONS = [
-  { id: 'private-guide', name: 'Dedicated UIAGM / Senior High Guide', price: 350 },
-  { id: 'sat-comms', name: 'Garmin inReach Satellite Emergency Kit', price: 95 },
-  { id: 'gear-rental', name: 'Full B3 Boots, Crampons & Ice Axe Rental', price: 180 },
-  { id: 'extra-day', name: 'Extra High Acclimatization Day & Night', price: 140 }
-];
+const {
+  destinations: DESTINATIONS,
+  durations: DURATIONS,
+  groupSizes: GROUP_SIZES,
+  shelters: SHELTERS,
+  foodPlans: FOOD_PLANS,
+  transports: TRANSPORTS,
+  guides: GUIDES,
+  activities: ACTIVITIES,
+  equipment: EQUIPMENT,
+  extras: EXTRAS
+} = builderOptionsData;
 
 export default function ExpeditionBuilder({ initialDestinationId, onRequestExpedition }) {
   const { saveTrip } = useUserProfile();
-  const [currentStep, setCurrentStep] = useState(1);
-  const [savedStatus, setSavedStatus] = useState(false);
 
-  // Configuration state
+  // State
   const [dest, setDest] = useState(DESTINATIONS.find(d => d.id === initialDestinationId) || DESTINATIONS[0]);
-  const [duration, setDuration] = useState(DURATIONS[0]);
-  const [style, setStyle] = useState(STYLES[0]);
+  const [duration, setDuration] = useState(DURATIONS[1]);
   const [groupSize, setGroupSize] = useState(GROUP_SIZES[1]);
-  const [selectedActivities, setSelectedActivities] = useState(['glacier-trek']);
-  const [accommodation, setAccommodation] = useState(ACCOMMODATIONS[0]);
-  const [transport, setTransport] = useState(TRANSPORTS[0]);
-  const [selectedAddons, setSelectedAddons] = useState(['sat-comms']);
+  const [shelter, setShelter] = useState(SHELTERS[1]);
+  const [food, setFood] = useState(FOOD_PLANS[2]);
+  const [transport, setTransport] = useState(TRANSPORTS[1]);
+  const [guide, setGuide] = useState(GUIDES[0]);
+  const [selectedActivities, setSelectedActivities] = useState(['glacier-trek', 'lake-boating']);
+  const [selectedEquipment, setSelectedEquipment] = useState(['gear-basic']);
+  const [selectedExtras, setSelectedExtras] = useState(['extra-sat-wifi']);
+  const [savedSuccess, setSavedSuccess] = useState(false);
 
-  // Dynamic Price Calculation
-  const baseCost = Math.round(dest.basePrice * duration.multiplier);
-  const styleCost = style.priceAdd;
-  const stayCost = accommodation.price;
-  const transportCost = transport.price;
-  const activitiesCost = selectedActivities.reduce((sum, actId) => {
-    const act = ACTIVITIES.find(a => a.id === actId);
-    return sum + (act ? act.price : 0);
+  // Math Formula: BASE PRICE + OPTIONS - DISCOUNT = ESTIMATED TOTAL
+  const basePrice = Math.round(dest.basePrice * duration.multiplier);
+  const shelterPrice = shelter.price;
+  const foodPrice = food.price;
+  const transportPrice = transport.price;
+  const guidePrice = guide.price;
+
+  const activitiesPrice = selectedActivities.reduce((sum, id) => {
+    const item = ACTIVITIES.find(a => a.id === id);
+    return sum + (item ? item.price : 0);
   }, 0);
-  const addonsCost = selectedAddons.reduce((sum, addId) => {
-    const add = ADDONS.find(a => a.id === addId);
-    return sum + (add ? add.price : 0);
+
+  const equipmentPrice = selectedEquipment.reduce((sum, id) => {
+    const item = EQUIPMENT.find(e => e.id === id);
+    return sum + (item ? item.price : 0);
   }, 0);
 
-  const rawTotal = (baseCost + styleCost + stayCost + transportCost + activitiesCost + addonsCost) * groupSize.multiplier;
-  const estimatedTotal = Math.round(rawTotal);
-  const originalEstimate = Math.round(rawTotal * 1.18);
-  const savings = originalEstimate - estimatedTotal;
+  const extrasPrice = selectedExtras.reduce((sum, id) => {
+    const item = EXTRAS.find(x => x.id === id);
+    return sum + (item ? item.price : 0);
+  }, 0);
 
+  const totalOptionsPrice = shelterPrice + foodPrice + transportPrice + guidePrice + activitiesPrice + equipmentPrice + extrasPrice;
+  const subtotalBeforeGroup = basePrice + totalOptionsPrice;
+  const adjustedPerPerson = Math.round(subtotalBeforeGroup * groupSize.multiplier);
+
+  // Seasonal privilege discount (10%)
+  const discountAmount = Math.round(adjustedPerPerson * 0.10);
+  const estimatedTotalPerPerson = adjustedPerPerson - discountAmount;
+  const estimatedTotalParty = estimatedTotalPerPerson * groupSize.count;
+
+  // Toggle Handlers
   const toggleActivity = (id) => {
     setSelectedActivities(prev =>
       prev.includes(id) ? prev.filter(a => a !== id) : [...prev, id]
     );
   };
 
-  const toggleAddon = (id) => {
-    setSelectedAddons(prev =>
-      prev.includes(id) ? prev.filter(a => a !== id) : [...prev, id]
+  const toggleEquipment = (id) => {
+    setSelectedEquipment(prev =>
+      prev.includes(id) ? prev.filter(e => e !== id) : [...prev, id]
     );
   };
 
-  const handleSaveTrip = () => {
+  const toggleExtra = (id) => {
+    setSelectedExtras(prev =>
+      prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]
+    );
+  };
+
+  const handleReset = () => {
+    setDest(DESTINATIONS[0]);
+    setDuration(DURATIONS[1]);
+    setGroupSize(GROUP_SIZES[1]);
+    setShelter(SHELTERS[1]);
+    setFood(FOOD_PLANS[2]);
+    setTransport(TRANSPORTS[1]);
+    setGuide(GUIDES[0]);
+    setSelectedActivities(['glacier-trek', 'lake-boating']);
+    setSelectedEquipment(['gear-basic']);
+    setSelectedExtras(['extra-sat-wifi']);
+    setSavedSuccess(false);
+  };
+
+  const handleSaveBlueprint = () => {
     const tripManifest = {
-      destination: dest.name,
+      id: `builder-${Date.now()}`,
+      name: `Custom ${dest.name} (${duration.days}D)`,
       destinationName: dest.name,
-      durationDays: duration.days,
       duration: `${duration.days} Days`,
-      travelStyle: style.name,
-      groupSize: groupSize.label,
-      accommodation: accommodation.name,
+      shelter: shelter.name,
+      foodPlan: food.name,
       transport: transport.name,
-      activities: selectedActivities.map(id => ACTIVITIES.find(a => a.id === id)?.name),
-      addons: selectedAddons.map(id => ADDONS.find(a => a.id === id)?.name),
-      estimatedTotal,
-      savings
+      guide: guide.name,
+      groupSize: groupSize.label,
+      basePrice,
+      optionsPrice: totalOptionsPrice,
+      discount: discountAmount,
+      price: estimatedTotalPerPerson,
+      estimatedTotal: estimatedTotalParty,
+      status: 'Custom Blueprint Saved'
     };
+
     saveTrip(tripManifest);
-    setSavedStatus(true);
-    setTimeout(() => setSavedStatus(false), 3500);
+    setSavedSuccess(true);
+    setTimeout(() => setSavedSuccess(false), 3000);
+    window.dispatchEvent(new CustomEvent('alpine-toast', {
+      detail: { message: '🏔 Custom Expedition Saved to My Alpine Passport!', type: 'success' }
+    }));
   };
 
-  const handleRequestClick = () => {
+  const handleBookExpedition = () => {
     const tripManifest = {
-      name: `${dest.name} Custom Expedition`,
+      name: `Custom Expedition: ${dest.name}`,
       destinationName: dest.name,
       duration: `${duration.days} Days`,
-      travelStyle: style.name,
-      groupSize: groupSize.label,
-      accommodation: accommodation.name,
+      travelStyle: shelter.name,
+      shelter: shelter.name,
+      foodPlan: food.name,
       transport: transport.name,
-      price: estimatedTotal,
-      type: style.name.toUpperCase()
+      guide: guide.name,
+      groupSize: groupSize.label,
+      price: estimatedTotalPerPerson,
+      estimatedTotal: estimatedTotalParty,
+      breakdown: {
+        basePrice,
+        optionsPrice: totalOptionsPrice,
+        discount: discountAmount,
+        total: estimatedTotalParty
+      }
     };
-    onRequestExpedition && onRequestExpedition(tripManifest);
-  };
 
-  const stepNames = [
-    'Destination', 'Duration', 'Travel Style', 'Group Size',
-    'Activities', 'Stay', 'Transport', 'Add-ons'
-  ];
+    if (onRequestExpedition) {
+      onRequestExpedition(tripManifest);
+    }
+  };
 
   return (
-    <section id="trip-builder" className="section builder-section">
-      <div className="container">
-        {/* Section Header */}
+    <section id="trip-builder" className="section builder-section" aria-label="Build Your Own Expedition">
+      <div className="site-container">
+        {/* Header */}
         <div className="section-header">
           <div className="section-eyebrow">
             <Compass size={14} />
-            <span>BESPOKE EXPEDITION ARCHITECT</span>
+            <span>BESPOKE ALPINE ARCHITECTURE</span>
           </div>
-          <h2 className="section-title">BUILD YOUR EXPEDITION</h2>
+          <h2 className="section-title">BUILD YOUR OWN EXPEDITION</h2>
           <p className="section-subtitle">
-            Configure your custom mountain journey step-by-step. Real-time cost estimates dynamically update with high-altitude safety requirements and group discounts.
+            Configure every dimension of your high-altitude journey — from shelter and food plans to 4x4 mountain vehicles, UIAGM guide ratios, and technical equipment.
           </p>
         </div>
 
-        <div className="builder-wrapper">
-          {/* Header */}
-          <div className="builder-header">
-            <div>
-              <span className="hud-tag" style={{ marginBottom: '0.35rem' }}>STEP 0{currentStep} OF 08</span>
-              <h3 style={{ fontSize: '1.4rem' }}>{stepNames[currentStep - 1]}</h3>
-            </div>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
-              {currentStep > 1 && (
-                <button className="btn btn-outline btn-sm" onClick={() => setCurrentStep(currentStep - 1)}>
-                  <ArrowLeft size={14} />
-                  <span>Previous</span>
-                </button>
-              )}
-              {currentStep < 8 ? (
-                <button className="btn btn-primary btn-sm" onClick={() => setCurrentStep(currentStep + 1)}>
-                  <span>Next Step</span>
-                  <ArrowRight size={14} />
-                </button>
-              ) : (
-                <button className="btn btn-primary btn-sm" onClick={handleRequestClick}>
-                  <Send size={14} />
-                  <span>Review Manifest</span>
-                </button>
-              )}
-            </div>
-          </div>
+        {/* 2-Column Builder Studio: Step-by-Step Horizontal Rows Left, Sticky Summary Right */}
+        <div className="builder-studio-grid">
+          {/* Main Steps Column */}
+          <div className="builder-steps-column">
 
-          {/* 8-Step Navigation Bar */}
-          <div className="builder-steps-nav" role="tablist">
-            {stepNames.map((name, idx) => {
-              const stepNum = idx + 1;
-              const isDone = stepNum < currentStep;
-              const isActive = stepNum === currentStep;
-              return (
-                <button
-                  key={name}
-                  className={`builder-step-tab ${isActive ? 'active' : ''} ${isDone ? 'completed' : ''}`}
-                  onClick={() => setCurrentStep(stepNum)}
-                  role="tab"
-                  aria-selected={isActive}
-                >
-                  <span className="builder-step-num">
-                    {isDone ? '✓ ' : ''}STEP 0{stepNum}
-                  </span>
-                  <span>{name}</span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Content Grid */}
-          <div className="builder-content-grid">
-            {/* Step Selection Pane */}
-            <div className="builder-step-pane">
-              {/* STEP 1: DESTINATION */}
-              {currentStep === 1 && (
+            {/* STEP 1: DESTINATION */}
+            <div className="builder-step-panel" id="step-destination">
+              <div className="step-panel-header">
+                <span className="step-index-badge">STEP 01</span>
                 <div>
-                  <h4>Select Your Primary Mountain Domain</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                    Choose the glaciated region for your base and approach route.
-                  </p>
-                  <div className="builder-options-grid">
-                    {DESTINATIONS.map(d => (
-                      <div
-                        key={d.id}
-                        className={`builder-option-card ${dest.id === d.id ? 'selected' : ''}`}
-                        onClick={() => setDest(d)}
-                      >
-                        <div>
-                          <span className="section-eyebrow" style={{ fontSize: '0.68rem', marginBottom: '0.2rem' }}>{d.region}</span>
-                          <h4>{d.name}</h4>
-                          <p>{d.desc}</p>
-                        </div>
-                        <div className="builder-option-price">From ${d.basePrice} Base</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* STEP 2: DURATION */}
-              {currentStep === 2 && (
-                <div>
-                  <h4>Select Expedition Length</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                    High-altitude safety mandates proper acclimatization pacing.
-                  </p>
-                  <div className="builder-options-grid">
-                    {DURATIONS.map(dur => (
-                      <div
-                        key={dur.days}
-                        className={`builder-option-card ${duration.days === dur.days ? 'selected' : ''}`}
-                        onClick={() => setDuration(dur)}
-                      >
-                        <h4>{dur.days} Days</h4>
-                        <p>{dur.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* STEP 3: TRAVEL STYLE */}
-              {currentStep === 3 && (
-                <div>
-                  <h4>Select Expedition Style & Comfort Tier</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                    Tailor the level of shelter, support personnel, and wilderness immersion.
-                  </p>
-                  <div className="builder-options-grid">
-                    {STYLES.map(s => (
-                      <div
-                        key={s.id}
-                        className={`builder-option-card ${style.id === s.id ? 'selected' : ''}`}
-                        onClick={() => setStyle(s)}
-                      >
-                        <div>
-                          <h4>{s.name}</h4>
-                          <p>{s.desc}</p>
-                        </div>
-                        <div className="builder-option-price">
-                          {s.priceAdd === 0 ? 'Standard Base' : `+$${s.priceAdd}`}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* STEP 4: GROUP SIZE */}
-              {currentStep === 4 && (
-                <div>
-                  <h4>Expedition Team Composition</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                    Larger rope teams benefit from shared logistical porter fees and group rates.
-                  </p>
-                  <div className="builder-options-grid">
-                    {GROUP_SIZES.map(g => (
-                      <div
-                        key={g.id}
-                        className={`builder-option-card ${groupSize.id === g.id ? 'selected' : ''}`}
-                        onClick={() => setGroupSize(g)}
-                      >
-                        <h4>{g.label}</h4>
-                        <p>{g.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* STEP 5: ACTIVITIES */}
-              {currentStep === 5 && (
-                <div>
-                  <h4>Included High-Altitude Activities</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                    Select specialized disciplines to include in your expedition manifest.
-                  </p>
-                  <div className="builder-options-grid">
-                    {ACTIVITIES.map(act => (
-                      <div
-                        key={act.id}
-                        className={`builder-option-card ${selectedActivities.includes(act.id) ? 'selected' : ''}`}
-                        onClick={() => toggleActivity(act.id)}
-                      >
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                          <h4>{act.name}</h4>
-                          {selectedActivities.includes(act.id) && <Check size={16} color="var(--accent)" />}
-                        </div>
-                        <div className="builder-option-price">+${act.price}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* STEP 6: ACCOMMODATION */}
-              {currentStep === 6 && (
-                <div>
-                  <h4>Shelter & Base Camp Infrastructure</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                    From geodesic high glacier tents to heated lakeside domes.
-                  </p>
-                  <div className="builder-options-grid">
-                    {ACCOMMODATIONS.map(acc => (
-                      <div
-                        key={acc.id}
-                        className={`builder-option-card ${accommodation.id === acc.id ? 'selected' : ''}`}
-                        onClick={() => setAccommodation(acc)}
-                      >
-                        <div>
-                          <h4>{acc.name}</h4>
-                          <p>{acc.desc}</p>
-                        </div>
-                        <div className="builder-option-price">+${acc.price}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* STEP 7: TRANSPORT */}
-              {currentStep === 7 && (
-                <div>
-                  <h4>Ground & Mountain Access Transport</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                    Choose your transit mode through rugged mountain gorges.
-                  </p>
-                  <div className="builder-options-grid">
-                    {TRANSPORTS.map(t => (
-                      <div
-                        key={t.id}
-                        className={`builder-option-card ${transport.id === t.id ? 'selected' : ''}`}
-                        onClick={() => setTransport(t)}
-                      >
-                        <div>
-                          <h4>{t.name}</h4>
-                          <p>{t.desc}</p>
-                        </div>
-                        <div className="builder-option-price">+${t.price}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* STEP 8: ADD-ONS */}
-              {currentStep === 8 && (
-                <div>
-                  <h4>High-Altitude Equipment & Safety Add-Ons</h4>
-                  <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
-                    Optional safety gear, professional guides, and communication units.
-                  </p>
-                  <div className="builder-options-grid">
-                    {ADDONS.map(add => (
-                      <div
-                        key={add.id}
-                        className={`builder-option-card ${selectedAddons.includes(add.id) ? 'selected' : ''}`}
-                        onClick={() => toggleAddon(add.id)}
-                      >
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                          <h4>{add.name}</h4>
-                          {selectedAddons.includes(add.id) && <Check size={16} color="var(--accent)" />}
-                        </div>
-                        <div className="builder-option-price">+${add.price}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Live Dynamic Price Summary Pane */}
-            <div className="builder-summary-pane">
-              <div>
-                <span className="section-eyebrow">ESTIMATED MANIFEST BREAKDOWN</span>
-                <h4 style={{ fontSize: '1.25rem', marginTop: '0.25rem' }}>{dest.name}</h4>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
-                  {duration.days} Days · {style.name} · {groupSize.label}
-                </div>
-
-                {/* Calculation List */}
-                <div className="summary-calc-list">
-                  <div className="summary-calc-row">
-                    <span>Base Approach Route</span>
-                    <span>${baseCost}</span>
-                  </div>
-                  <div className="summary-calc-row">
-                    <span>Style Tier ({style.name})</span>
-                    <span>+${styleCost}</span>
-                  </div>
-                  <div className="summary-calc-row">
-                    <span>Accommodation ({accommodation.name.split(' ')[0]})</span>
-                    <span>+${stayCost}</span>
-                  </div>
-                  <div className="summary-calc-row">
-                    <span>Transport Mode</span>
-                    <span>+${transportCost}</span>
-                  </div>
-                  <div className="summary-calc-row">
-                    <span>Activities ({selectedActivities.length})</span>
-                    <span>+${activitiesCost}</span>
-                  </div>
-                  <div className="summary-calc-row">
-                    <span>Add-ons ({selectedAddons.length})</span>
-                    <span>+${addonsCost}</span>
-                  </div>
-
-                  <div className="summary-calc-row total">
-                    <span>ESTIMATED TOTAL</span>
-                    <span style={{ color: 'var(--accent)' }}>${estimatedTotal}</span>
-                  </div>
-                </div>
-
-                {/* Savings Badge */}
-                <div className="summary-save-badge">
-                  <Sparkles size={14} />
-                  <span>YOU SAVE ${savings} WITH EARLY BIRD & TEAM RATE</span>
-                </div>
-
-                <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '0.85rem' }}>
-                  *Illustrative demo pricing for architectural showcase. No real booking/payment charges.
+                  <h3 className="step-heading">DESTINATION & LOGISTICS</h3>
+                  <p className="step-desc">Select your high mountain domain, itinerary duration, and expedition party size.</p>
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', marginTop: '1.5rem' }}>
+              {/* Destination Horizontal Selector Rows */}
+              <div className="builder-horizontal-selectors-stack">
+                {DESTINATIONS.map(d => {
+                  const isSelected = dest.id === d.id;
+                  return (
+                    <div
+                      key={d.id}
+                      className={`builder-selector-row ${isSelected ? 'is-selected' : ''}`}
+                      onClick={() => setDest(d)}
+                    >
+                      <div className="selector-radio">
+                        <div className={`radio-dot ${isSelected ? 'active' : ''}`} />
+                      </div>
+                      <div className="selector-info">
+                        <div className="selector-title-row">
+                          <span className="selector-name">{d.name}</span>
+                          <span className="selector-tag">{d.region}</span>
+                        </div>
+                        <p className="selector-desc">{d.desc}</p>
+                      </div>
+                      <div className="selector-price">
+                        <span className="p-label">Base Rate</span>
+                        <span className="p-val">${d.basePrice}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Duration & Party Row */}
+              <div className="builder-subcontrols-row">
+                <div className="subcontrol-col">
+                  <label>EXPEDITION DURATION</label>
+                  <select
+                    value={duration.days}
+                    onChange={(e) => {
+                      const found = DURATIONS.find(dur => dur.days === parseInt(e.target.value));
+                      if (found) setDuration(found);
+                    }}
+                    className="builder-select-field"
+                  >
+                    {DURATIONS.map(dur => (
+                      <option key={dur.days} value={dur.days}>{dur.label}</option>
+                    ))}
+                  </select>
+                </div>
+                <div className="subcontrol-col">
+                  <label>PARTY FORMAT & RATIO</label>
+                  <select
+                    value={groupSize.id}
+                    onChange={(e) => {
+                      const found = GROUP_SIZES.find(g => g.id === e.target.value);
+                      if (found) setGroupSize(found);
+                    }}
+                    className="builder-select-field"
+                  >
+                    {GROUP_SIZES.map(g => (
+                      <option key={g.id} value={g.id}>{g.label}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            {/* STEP 2: SHELTER */}
+            <div className="builder-step-panel" id="step-shelter">
+              <div className="step-panel-header">
+                <span className="step-index-badge">STEP 02</span>
+                <div>
+                  <h3 className="step-heading">WHERE WILL YOU SHELTER?</h3>
+                  <p className="step-desc">From rugged double-wall high bivouacs to heated panoramic luxury domes.</p>
+                </div>
+              </div>
+
+              <div className="builder-horizontal-selectors-stack">
+                {SHELTERS.map(s => {
+                  const isSelected = shelter.id === s.id;
+                  return (
+                    <div
+                      key={s.id}
+                      className={`builder-selector-row ${isSelected ? 'is-selected' : ''}`}
+                      onClick={() => setShelter(s)}
+                    >
+                      <div className="selector-radio">
+                        <div className={`radio-dot ${isSelected ? 'active' : ''}`} />
+                      </div>
+                      <div className="selector-info">
+                        <div className="selector-title-row">
+                          <span className="selector-name">{s.name}</span>
+                          <span className="selector-tier-tag">{s.tier} Tier</span>
+                        </div>
+                        <p className="selector-desc">{s.desc}</p>
+                      </div>
+                      <div className="selector-price">
+                        <span className="p-label">Tier Addition</span>
+                        <span className="p-val">+${s.price}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* STEP 3: FOOD */}
+            <div className="builder-step-panel" id="step-food">
+              <div className="step-panel-header">
+                <span className="step-index-badge">STEP 03</span>
+                <div>
+                  <h3 className="step-heading">EXPEDITION GASTRONOMY & NUTRITION</h3>
+                  <p className="step-desc">High-altitude metabolic energy requirements and regional artisan dining.</p>
+                </div>
+              </div>
+
+              <div className="builder-horizontal-selectors-stack">
+                {FOOD_PLANS.map(f => {
+                  const isSelected = food.id === f.id;
+                  return (
+                    <div
+                      key={f.id}
+                      className={`builder-selector-row ${isSelected ? 'is-selected' : ''}`}
+                      onClick={() => setFood(f)}
+                    >
+                      <div className="selector-radio">
+                        <div className={`radio-dot ${isSelected ? 'active' : ''}`} />
+                      </div>
+                      <div className="selector-info">
+                        <div className="selector-title-row">
+                          <span className="selector-name">{f.name}</span>
+                        </div>
+                        <p className="selector-desc">{f.desc}</p>
+                      </div>
+                      <div className="selector-price">
+                        <span className="p-label">Plan Cost</span>
+                        <span className="p-val">+${f.price}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* STEP 4: TRANSPORT */}
+            <div className="builder-step-panel" id="step-transport">
+              <div className="step-panel-header">
+                <span className="step-index-badge">STEP 04</span>
+                <div>
+                  <h3 className="step-heading">MOUNTAIN TRANSPORT & 4x4</h3>
+                  <p className="step-desc">Rugged off-road transit designed for high Karakoram mountain gorges.</p>
+                </div>
+              </div>
+
+              <div className="builder-horizontal-selectors-stack">
+                {TRANSPORTS.map(t => {
+                  const isSelected = transport.id === t.id;
+                  return (
+                    <div
+                      key={t.id}
+                      className={`builder-selector-row ${isSelected ? 'is-selected' : ''}`}
+                      onClick={() => setTransport(t)}
+                    >
+                      <div className="selector-radio">
+                        <div className={`radio-dot ${isSelected ? 'active' : ''}`} />
+                      </div>
+                      <div className="selector-info">
+                        <div className="selector-title-row">
+                          <span className="selector-name">{t.name}</span>
+                        </div>
+                        <p className="selector-desc">{t.desc}</p>
+                      </div>
+                      <div className="selector-price">
+                        <span className="p-label">Vehicle Rate</span>
+                        <span className="p-val">+${t.price}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* STEP 5: GUIDE */}
+            <div className="builder-step-panel" id="step-guide">
+              <div className="step-panel-header">
+                <span className="step-index-badge">STEP 05</span>
+                <div>
+                  <h3 className="step-heading">GUIDE & EXPEDITION LEADERSHIP</h3>
+                  <p className="step-desc">Accredited UIAGM international instructors and local high-altitude Sirdars.</p>
+                </div>
+              </div>
+
+              <div className="builder-horizontal-selectors-stack">
+                {GUIDES.map(g => {
+                  const isSelected = guide.id === g.id;
+                  return (
+                    <div
+                      key={g.id}
+                      className={`builder-selector-row ${isSelected ? 'is-selected' : ''}`}
+                      onClick={() => setGuide(g)}
+                    >
+                      <div className="selector-radio">
+                        <div className={`radio-dot ${isSelected ? 'active' : ''}`} />
+                      </div>
+                      <div className="selector-info">
+                        <div className="selector-title-row">
+                          <span className="selector-name">{g.name}</span>
+                        </div>
+                        <p className="selector-desc">{g.desc}</p>
+                      </div>
+                      <div className="selector-price">
+                        <span className="p-label">Guide Ratio</span>
+                        <span className="p-val">+${g.price}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* STEP 6: ACTIVITIES */}
+            <div className="builder-step-panel" id="step-activities">
+              <div className="step-panel-header">
+                <span className="step-index-badge">STEP 06</span>
+                <div>
+                  <h3 className="step-heading">ACTIVITIES & EXCURSIONS</h3>
+                  <p className="step-desc">Select optional excursions to incorporate into your day-by-day itinerary.</p>
+                </div>
+              </div>
+
+              <div className="builder-horizontal-selectors-stack">
+                {ACTIVITIES.map(a => {
+                  const isChecked = selectedActivities.includes(a.id);
+                  return (
+                    <div
+                      key={a.id}
+                      className={`builder-selector-row is-multi ${isChecked ? 'is-selected' : ''}`}
+                      onClick={() => toggleActivity(a.id)}
+                    >
+                      <div className="selector-checkbox">
+                        <div className={`checkbox-box ${isChecked ? 'active' : ''}`}>
+                          {isChecked && <Check size={12} />}
+                        </div>
+                      </div>
+                      <div className="selector-info">
+                        <span className="selector-name">{a.name}</span>
+                        <p className="selector-desc">{a.desc}</p>
+                      </div>
+                      <div className="selector-price">
+                        <span className="p-label">Activity</span>
+                        <span className="p-val">+${a.price}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* STEP 7: EQUIPMENT */}
+            <div className="builder-step-panel" id="step-equipment">
+              <div className="step-panel-header">
+                <span className="step-index-badge">STEP 07</span>
+                <div>
+                  <h3 className="step-heading">SPECIALIZED EQUIPMENT RENTALS</h3>
+                  <p className="step-desc">Safety gear, carbon-fiber trekking poles, satellite communication, and boots.</p>
+                </div>
+              </div>
+
+              <div className="builder-horizontal-selectors-stack">
+                {EQUIPMENT.map(e => {
+                  const isChecked = selectedEquipment.includes(e.id);
+                  return (
+                    <div
+                      key={e.id}
+                      className={`builder-selector-row is-multi ${isChecked ? 'is-selected' : ''}`}
+                      onClick={() => toggleEquipment(e.id)}
+                    >
+                      <div className="selector-checkbox">
+                        <div className={`checkbox-box ${isChecked ? 'active' : ''}`}>
+                          {isChecked && <Check size={12} />}
+                        </div>
+                      </div>
+                      <div className="selector-info">
+                        <span className="selector-name">{e.name}</span>
+                        <p className="selector-desc">{e.desc}</p>
+                      </div>
+                      <div className="selector-price">
+                        <span className="p-label">Rental</span>
+                        <span className="p-val">+${e.price}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* STEP 8: EXTRAS */}
+            <div className="builder-step-panel" id="step-extras">
+              <div className="step-panel-header">
+                <span className="step-index-badge">STEP 08</span>
+                <div>
+                  <h3 className="step-heading">EXPEDITION EXTRAS & LOGISTICAL PERMITS</h3>
+                  <p className="step-desc">Drone clearance, Starlink connectivity, supplemental oxygen, and personal porters.</p>
+                </div>
+              </div>
+
+              <div className="builder-horizontal-selectors-stack">
+                {EXTRAS.map(x => {
+                  const isChecked = selectedExtras.includes(x.id);
+                  return (
+                    <div
+                      key={x.id}
+                      className={`builder-selector-row is-multi ${isChecked ? 'is-selected' : ''}`}
+                      onClick={() => toggleExtra(x.id)}
+                    >
+                      <div className="selector-checkbox">
+                        <div className={`checkbox-box ${isChecked ? 'active' : ''}`}>
+                          {isChecked && <Check size={12} />}
+                        </div>
+                      </div>
+                      <div className="selector-info">
+                        <span className="selector-name">{x.name}</span>
+                        <p className="selector-desc">{x.desc}</p>
+                      </div>
+                      <div className="selector-price">
+                        <span className="p-label">Logistics</span>
+                        <span className="p-val">+${x.price}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* STEP 9: REVIEW */}
+            <div className="builder-step-panel" id="step-review">
+              <div className="step-panel-header">
+                <span className="step-index-badge">STEP 09</span>
+                <div>
+                  <h3 className="step-heading">REVIEW YOUR CUSTOM BLUEPRINT</h3>
+                  <p className="step-desc">Consolidated overview of all selected parameters before official submission.</p>
+                </div>
+              </div>
+
+              <div className="builder-review-matrix">
+                <div className="review-matrix-cell">
+                  <span className="r-label">DESTINATION:</span>
+                  <span className="r-val">{dest.name} ({duration.days} Days)</span>
+                </div>
+                <div className="review-matrix-cell">
+                  <span className="r-label">PARTY FORMAT:</span>
+                  <span className="r-val">{groupSize.label}</span>
+                </div>
+                <div className="review-matrix-cell">
+                  <span className="r-label">SHELTER TIER:</span>
+                  <span className="r-val">{shelter.name}</span>
+                </div>
+                <div className="review-matrix-cell">
+                  <span className="r-label">FOOD PLAN:</span>
+                  <span className="r-val">{food.name}</span>
+                </div>
+                <div className="review-matrix-cell">
+                  <span className="r-label">4x4 TRANSPORT:</span>
+                  <span className="r-val">{transport.name}</span>
+                </div>
+                <div className="review-matrix-cell">
+                  <span className="r-label">LEADERSHIP:</span>
+                  <span className="r-val">{guide.name}</span>
+                </div>
+                <div className="review-matrix-cell">
+                  <span className="r-label">ACTIVITIES SELECTED:</span>
+                  <span className="r-val">{selectedActivities.length} custom excursions</span>
+                </div>
+                <div className="review-matrix-cell">
+                  <span className="r-label">RENTAL & EXTRAS:</span>
+                  <span className="r-val">{selectedEquipment.length + selectedExtras.length} additional provisions</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Sticky Live Price Calculation Manifest (Requirement 13) */}
+          <div className="builder-sticky-summary-wrap">
+            <div className="builder-sticky-summary-card">
+              <div className="summary-header">
+                <span className="summary-eyebrow">DYNAMIC PRICE BREAKDOWN</span>
+                <h3 className="summary-title">{dest.name}</h3>
+                <div className="summary-subtitle">
+                  <span>{duration.days} Days</span>
+                  <span className="sep">•</span>
+                  <span>{groupSize.label}</span>
+                </div>
+              </div>
+
+              {/* Dynamic Formula Display */}
+              <div className="formula-callout-box">
+                <span className="formula-title">PRICING FORMULA</span>
+                <span className="formula-text">BASE PRICE + OPTIONS - DISCOUNT = ESTIMATED TOTAL</span>
+              </div>
+
+              {/* Itemized Calculation */}
+              <div className="summary-calc-list">
+                <div className="calc-row">
+                  <span className="calc-label">BASE PRICE ({duration.days}D Itinerary)</span>
+                  <span className="calc-val">${basePrice}</span>
+                </div>
+                <div className="calc-row">
+                  <span className="calc-label">+ Shelter: {shelter.tier}</span>
+                  <span className="calc-val">+${shelterPrice}</span>
+                </div>
+                <div className="calc-row">
+                  <span className="calc-label">+ Food: {food.name.split(' ')[0]}</span>
+                  <span className="calc-val">+${foodPrice}</span>
+                </div>
+                <div className="calc-row">
+                  <span className="calc-label">+ Transport: 4x4 Plan</span>
+                  <span className="calc-val">+${transportPrice}</span>
+                </div>
+                <div className="calc-row">
+                  <span className="calc-label">+ Guide Leadership</span>
+                  <span className="calc-val">+${guidePrice}</span>
+                </div>
+                <div className="calc-row">
+                  <span className="calc-label">+ Activities ({selectedActivities.length})</span>
+                  <span className="calc-val">+${activitiesPrice}</span>
+                </div>
+                <div className="calc-row">
+                  <span className="calc-label">+ Equipment & Extras ({selectedEquipment.length + selectedExtras.length})</span>
+                  <span className="calc-val">+${equipmentPrice + extrasPrice}</span>
+                </div>
+                <div className="calc-row discount-row">
+                  <span className="calc-label">- Seasonal Privilege (10%)</span>
+                  <span className="calc-val">-${discountAmount}</span>
+                </div>
+              </div>
+
+              {/* Total Calculation Display */}
+              <div className="summary-totals-display">
+                <div className="totals-line">
+                  <span className="total-lead">ESTIMATED PER CLIMBER:</span>
+                  <span className="total-amount">${estimatedTotalPerPerson.toLocaleString()} <small>USD</small></span>
+                </div>
+                <div className="totals-party-line">
+                  <span>Total Party Investment ({groupSize.count} pax):</span>
+                  <strong>${estimatedTotalParty.toLocaleString()} USD</strong>
+                </div>
+              </div>
+
+              {/* CTAs */}
+              <div className="summary-actions-stack">
                 <button
-                  className="btn btn-primary"
-                  onClick={handleRequestClick}
+                  className="btn btn-primary summary-book-btn"
+                  onClick={handleBookExpedition}
+                  id="btn-book-custom-expedition"
                 >
                   <Send size={16} />
-                  <span>REQUEST THIS EXPEDITION</span>
+                  <span>BOOK CUSTOM EXPEDITION</span>
                 </button>
 
-                <button
-                  className="btn btn-secondary"
-                  onClick={handleSaveTrip}
-                >
-                  <Bookmark size={16} />
-                  <span>{savedStatus ? '✓ SAVED TO YOUR PROFILE!' : 'SAVE THIS TRIP'}</span>
-                </button>
+                <div className="summary-sub-actions">
+                  <button
+                    className={`btn btn-secondary ${savedSuccess ? 'saved' : ''}`}
+                    onClick={handleSaveBlueprint}
+                  >
+                    <Bookmark size={14} />
+                    <span>{savedSuccess ? 'Saved to Passport!' : 'Save Blueprint'}</span>
+                  </button>
+
+                  <button
+                    className="btn btn-outline"
+                    onClick={handleReset}
+                    title="Reset builder to default"
+                  >
+                    <RotateCcw size={14} />
+                    <span>Reset</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Legal Disclaimer */}
+              <div className="summary-disclaimer">
+                <AlertCircle size={13} color="var(--accent-gold)" />
+                <span>
+                  *Preliminary Estimate: Permits, seasonal glacier conditions, and porter ratios are confirmed upon official expedition dossier review.
+                </span>
               </div>
             </div>
           </div>

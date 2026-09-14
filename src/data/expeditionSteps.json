@@ -1,0 +1,114 @@
+[
+  {
+    "step": 1,
+    "title": "DISCOVER",
+    "phase": "Inspiration & Topography",
+    "icon": "Compass",
+    "duration": "Week 1 - 2",
+    "summary": "Explore interactive satellite maps, 4K high-altitude video reels, and topographic dossiers.",
+    "details": "Immerse yourself in our Karakoram, Himalayan, and Hindu Kush topographic archives. Inspect 8,000m giants like K2, Nanga Parbat, and Broad Peak, or serene high-alpine glacial valleys like Hunza, Skardu, and Deosai.",
+    "protocols": [
+      "Topographical satellite route reconnaissance",
+      "High-altitude photography & documentary footage inspection",
+      "Target peak altitude profiling and difficulty grading"
+    ]
+  },
+  {
+    "step": 2,
+    "title": "CHOOSE",
+    "phase": "Expedition Selection",
+    "icon": "MapPin",
+    "duration": "Week 3 - 4",
+    "summary": "Select your mountain domain, seasonal weather window, elevation target, and route profile.",
+    "details": "Choose between high glacial siege domains (Baltoro/Concordia), peaceful apricot orchard valleys (Hunza/Nagar), or alpine meadows beneath 8,126m Killer Mountain (Fairy Meadows). Compare routes side-by-side.",
+    "protocols": [
+      "Seasonal Karakoram weather window validation (Summer vs Autumn)",
+      "Acclimatization curve vs time constraints matching",
+      "Trailhead access point selection (Askole, Raikot, or Karimabad)"
+    ]
+  },
+  {
+    "step": 3,
+    "title": "CUSTOMIZE",
+    "phase": "Bespoke Blueprint Architecture",
+    "icon": "Sliders",
+    "duration": "Week 4 - 5",
+    "summary": "Tailor shelter, cuisine plans, 4x4 mountain vehicles, satellite comms, and UIAGM guide ratios.",
+    "details": "Use our 9-step Expedition Builder to customize every dimension of your journey. Receive an immediate transparent investment estimate with applied group and early planning privileges.",
+    "protocols": [
+      "Shelter tier selection (Wilderness tents to royal fort palaces)",
+      "High-metabolism nutrition and dietary preference assignment",
+      "Dedicated UIAGM lead guide and personal porter allocation"
+    ]
+  },
+  {
+    "step": 4,
+    "title": "PREPARE",
+    "phase": "Physiology & Technical Clearance",
+    "icon": "CheckCircle2",
+    "duration": "Months 2 - 3 Before Departure",
+    "summary": "Complete physical conditioning, high-altitude gear fitting, and official mountaineering clearance.",
+    "details": "Receive your personalized official expedition dossier. Our medical advisors guide your Diamox acclimatization schedule, high-altitude gear checklist, and emergency evacuation insurance clearance.",
+    "protocols": [
+      "Zone-2 aerobic conditioning & high-altitude breathing regimens",
+      "B3 mountaineering double-boot fitting and crampon verification",
+      "Ministry of Tourism mountaineering permit processing & insurance"
+    ]
+  },
+  {
+    "step": 5,
+    "title": "TRAVEL",
+    "phase": "Transit & Mountain Approaches",
+    "icon": "Plane",
+    "duration": "Day 1 - 3",
+    "summary": "Arrive at Islamabad, transit scenic Karakoram gorges or board domestic mountain flights past Nanga Parbat.",
+    "details": "Meet your dedicated Alpine Ascents expedition liaison at Islamabad International Airport. Transfer via domestic mountain flight past Nanga Parbat or travel the engineering marvel of the Karakoram Highway.",
+    "protocols": [
+      "Airport reception and expedition duffel weighing (25kg porter limit)",
+      "Government liaison officer briefing & satellite transponder activation",
+      "Scenic flight or 4x4 convoy through Indus and Hunza river gorges"
+    ]
+  },
+  {
+    "step": 6,
+    "title": "EXPLORE",
+    "phase": "The High Wilderness Approach",
+    "icon": "Navigation",
+    "duration": "Day 4 - 10",
+    "summary": "Trek along ancient moraines, cross suspension bridges, and sleep beneath pristine dark skies.",
+    "details": "Step onto lateral glacier moraines. Traverse jaw-dropping gorges, view colossal granite spires like Trango Towers, and establish high camps with structured active rest rotations and daily vital checks.",
+    "protocols": [
+      "Paced daily trekking stages with 500m daily elevation ascent cap",
+      "Twice-daily pulse oximetry and acute mountain sickness logs",
+      "Evening hot culinary feasts prepared by mountain camp chefs"
+    ]
+  },
+  {
+    "step": 7,
+    "title": "ADVENTURE",
+    "phase": "The Apex Objective & Summit Push",
+    "icon": "Mountain",
+    "duration": "Day 11 - 18",
+    "summary": "Reach Concordia, touch K2 Base Camp, cross technical passes, or stand atop legendary alpine crests.",
+    "details": "Achieve your apex goal — standing in Concordia surrounded by four 8,000-meter giants, touching K2 Base Camp, or summiting an alpine peak with your UIAGM rope team.",
+    "protocols": [
+      "Alpine dawn alpine start under headlamp with certified rope teams",
+      "Technical ice and crampon navigation over glacial seracs",
+      "Apex summit celebration and high-resolution photographic archival"
+    ]
+  },
+  {
+    "step": 8,
+    "title": "RETURN",
+    "phase": "Safe Descent, Recovery & Legacy",
+    "icon": "RotateCcw",
+    "duration": "Day 19 - 22",
+    "summary": "Descend to valley comforts, celebrate with your local Balti team, and receive your verified summit dossier.",
+    "details": "Leave No Trace environmental clean-up. Descend to royal heritage palace suites, enjoy hot mineral springs in Shigar or Hunza, and celebrate with your faithful high-altitude porters before returning home.",
+    "protocols": [
+      "Porter appreciation ceremony, transparent gratuity distribution",
+      "Official summit certificate and Alpine Passport digital badge logging",
+      "Restorative hot spring baths and international flight connections"
+    ]
+  }
+]

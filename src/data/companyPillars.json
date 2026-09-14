@@ -1,0 +1,30 @@
+[
+  {
+    "id": "certified-guides",
+    "icon": "Award",
+    "stat": "100%",
+    "title": "Certified Mountain Guides",
+    "desc": "UIAGM/IFMGA international guides paired with elite local Balti and Hunzakut Sirdars."
+  },
+  {
+    "id": "safety-evacuation",
+    "icon": "ShieldCheck",
+    "stat": "99.4%",
+    "title": "Safety & Evacuation Index",
+    "desc": "Real-time Garmin inReach satellite SOS telemetry and direct high-altitude heli medevac links."
+  },
+  {
+    "id": "leave-no-trace",
+    "icon": "HeartHandshake",
+    "stat": "100%",
+    "title": "Leave No Trace Stewardship",
+    "desc": "Pack-in pack-out environmental ethics protecting glacial meltwater and mountain habitats."
+  },
+  {
+    "id": "expedition-legacy",
+    "icon": "Compass",
+    "stat": "35+ Years",
+    "title": "Karakoram Expedition Legacy",
+    "desc": "Decades of pioneering logistics across Baltoro, Concordia, and eight-thousander base camps."
+  }
+]

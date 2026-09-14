@@ -1,0 +1,287 @@
+/* ==========================================================================
+   FAMILY EXPEDITION OFFERS — Full-Width Visual Promotional Showcase
+   ========================================================================== */
+
+.family-offers-section {
+  padding: 5rem 0;
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border);
+}
+
+.family-fullwidth-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.family-promo-hero {
+  position: relative;
+  min-height: 520px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: flex-end;
+}
+
+.family-hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.family-promo-hero:hover .family-hero-bg-img {
+  transform: scale(1.03);
+}
+
+.family-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.2) 0%,
+    rgba(15, 23, 42, 0.65) 45%,
+    rgba(15, 23, 42, 0.95) 100%
+  );
+}
+
+.family-hero-floating-content {
+  position: relative;
+  z-index: 5;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.family-hero-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.family-promo-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(212, 175, 55, 0.2);
+  border: 1px solid var(--accent-gold);
+  color: #fbbf24;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  backdrop-filter: blur(8px);
+}
+
+.family-age-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+}
+
+.family-hero-headline {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.family-hero-location {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--accent-light, #38bdf8);
+  margin: 0;
+}
+
+.family-hero-message {
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+  color: #e2e8f0;
+  line-height: 1.6;
+  max-width: 820px;
+  margin: 0;
+}
+
+/* Inclusions Bar */
+.family-inclusions-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.family-inc-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.family-inc-item strong {
+  display: block;
+  font-size: 0.78rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-mono);
+}
+
+.family-inc-item span {
+  display: block;
+  font-size: 0.88rem;
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Actions */
+.family-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.family-primary-cta {
+  padding: 0.85rem 2rem;
+  font-size: 0.92rem;
+}
+
+.family-price-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.family-price-from {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-family: var(--font-mono);
+}
+
+.family-price-val {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fbbf24;
+}
+
+.family-price-val small {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+/* Bottom Selector Bar */
+.family-route-selector-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-card-solid, #ffffff);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.family-selector-label {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.family-selector-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.family-tab-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.family-tab-strip .tab-num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.family-tab-strip .tab-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.family-tab-strip .tab-disc {
+  font-size: 0.7rem;
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.family-tab-strip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.family-tab-strip.active .tab-num,
+.family-tab-strip.active .tab-name {
+  color: #ffffff;
+}
+
+.family-tab-strip.active .tab-disc {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .family-promo-hero {
+    min-height: auto;
+  }
+  .family-inclusions-bar {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  .family-price-badge {
+    align-items: flex-start;
+  }
+}

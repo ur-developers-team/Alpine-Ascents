@@ -1,0 +1,52 @@
+[
+  {
+    "id": "shelter-basic-camp",
+    "name": "Wilderness Alpine Tent Camp",
+    "tier": "Basic",
+    "altitudeRange": "2,000m - 5,200m",
+    "pricePerNight": 35,
+    "description": "Durable 3-season double-wall dome tents pitched on designated alpine campsites with foam insulation sleeping pads.",
+    "features": ["Waterproof nylon shell", "Insulated ground pad", "Shared mess dining tent", "Pack-in pack-out eco hygiene kit"],
+    "badge": "Adventure Pure"
+  },
+  {
+    "id": "shelter-geodesic-pro",
+    "name": "4-Season Geodesic Expedition Base Camp",
+    "tier": "Standard / Expedition",
+    "altitudeRange": "3,500m - 7,000m",
+    "pricePerNight": 75,
+    "description": "High-strength North Face / Mountain Hardwear geodesic dome engineered for 130 km/h blizzard winds with thick thermal subfloors.",
+    "features": ["Hurricane wind dispersal frame", "Thermal subfloor insulation", "Solar lantern charging station", "Spacious double vestibule for gear"],
+    "badge": "High Altitude Tested"
+  },
+  {
+    "id": "shelter-alpine-hut",
+    "name": "Stone Mountain Refuge & Alpine Hut",
+    "tier": "Comfort",
+    "altitudeRange": "2,400m - 4,200m",
+    "pricePerNight": 110,
+    "description": "Traditional thick stone-masonry refuge with cast-iron wood-burning stoves, shared pine bunk rooms, and warm hearth dining.",
+    "features": ["Wood-burning cast iron heater", "Warm wool blankets & thick mattresses", "Hot tea hearth counter", "Drying room for mountaineering boots"],
+    "badge": "Cozy Shelter"
+  },
+  {
+    "id": "shelter-glamping-dome",
+    "name": "Panoramic Heated Glacial Glamping Dome",
+    "tier": "Premium",
+    "altitudeRange": "2,000m - 3,500m",
+    "pricePerNight": 210,
+    "description": "Geodesic luxury sphere with floor-to-ceiling panoramic thermo-glass facing glacial peaks, private en-suite bathroom, and heated blankets.",
+    "features": ["Heated king-size bed", "Private en-suite toilet & hot shower", "Panoramic stargazing ceiling", "Espresso machine & private deck"],
+    "badge": "Luxury Alpine"
+  },
+  {
+    "id": "shelter-heritage-fort",
+    "name": "Centuries-Old Royal Silk Road Fort Palace",
+    "tier": "Royal Heritage",
+    "altitudeRange": "2,200m - 2,500m",
+    "pricePerNight": 340,
+    "description": "Restored 400-year-old Tibetan/Balti timber and stone palace suites (Serena Shigar / Khaplu / Baltit) with museum-grade antiques.",
+    "features": ["Hand-carved cedarwood suites", "Private royal garden balcony", "Museum access & private historical curator", "Fine mountain gastronomy"],
+    "badge": "5-Star Heritage"
+  }
+]

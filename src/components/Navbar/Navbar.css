@@ -30,16 +30,17 @@
   box-shadow: var(--shadow-md);
 }
 
-/* 2. Responsive Inner Container (Fluid with max-width limit) */
+/* 2. Responsive Inner Container (Respects real viewport width) */
 .navbar-container {
-  width: min(100% - clamp(24px, 4vw, 56px), 1440px);
+  width: 100%;
+  max-width: 100%;
+  padding-inline: clamp(16px, 2.5vw, 40px);
   height: 100%;
   margin-inline: auto;
-  padding: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(12px, 1.8vw, 28px);
+  gap: clamp(10px, 1.4vw, 24px);
   box-sizing: border-box;
 }
 
@@ -484,21 +485,27 @@
    SMART RESPONSIVE BREAKPOINTS (Zero clipping at any viewport width)
    ========================================================================== */
 
-/* 1. Intermediate Laptop Adaptations (1180px - 1320px) */
-@media (max-width: 1320px) {
+/* 1. Intermediate Laptop Adaptations (1220px - 1380px) */
+@media (max-width: 1380px) {
   .navbar-container {
     gap: 12px;
+    padding-inline: 16px;
   }
   .navbar-nav-list {
-    gap: clamp(6px, 0.8vw, 12px);
+    gap: clamp(6px, 0.75vw, 12px);
   }
   .navbar-nav-link {
-    font-size: 13px;
+    font-size: 12.5px;
+    padding: 0.3rem 0.1rem;
+  }
+  .ambient-audio-widget,
+  .nav-voice-btn {
+    display: none !important;
   }
 }
 
-/* 2. Switch to Hamburger at 1180px (When desktop row would start cramping) */
-@media (max-width: 1180px) {
+/* 2. Switch to Hamburger at 1220px (When desktop row would start cramping) */
+@media (max-width: 1220px) {
   .navbar-desktop-nav {
     display: none !important;
   }

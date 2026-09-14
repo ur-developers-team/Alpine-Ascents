@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './CinematicLoader.css';
 
-export default function CinematicLoader({ minDuration = 1400, onComplete }) {
+export default function CinematicLoader({ minDuration = 650, onComplete }) {
   const [fading, setFading] = useState(false);
   const [removed, setRemoved] = useState(false);
 

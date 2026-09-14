@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import packagesData from '../../data/packages.json';
 import destinationsData from '../../data/destinations.json';
+import advisorQuestionsData from '../../data/advisorQuestions.json';
 import { Compass, Sparkles, Check, ArrowRight, RotateCcw } from 'lucide-react';
 import './ExpeditionAdvisor.css';
 
@@ -14,46 +15,7 @@ export default function ExpeditionAdvisor({ onSelectPackage, onSelectDestination
   });
   const [showResults, setShowResults] = useState(false);
 
-  const questions = [
-    {
-      id: 'adventureType',
-      title: 'What kind of mountain experience calls to you?',
-      options: [
-        { label: 'High Glacial Siege & 8000m Basins', val: 'glacier' },
-        { label: 'Ancient Silk Road Valleys & Forts', val: 'cultural' },
-        { label: 'Turquoise Lakes & Alpine Pastures', val: 'pastures' },
-        { label: 'Classic Technical Alpine Ascents', val: 'technical' }
-      ]
-    },
-    {
-      id: 'duration',
-      title: 'How many days do you have available?',
-      options: [
-        { label: '5 to 7 Days (Short Intensive)', val: 'short' },
-        { label: '8 to 14 Days (Balanced Classic)', val: 'medium' },
-        { label: '15 to 25 Days (Full High Expedition)', val: 'long' }
-      ]
-    },
-    {
-      id: 'difficulty',
-      title: 'What is your comfortable physical & technical threshold?',
-      options: [
-        { label: 'Moderate (Trail walks & day hikes)', val: 'Moderate' },
-        { label: 'Challenging (Glacier moraines & passes)', val: 'Challenging' },
-        { label: 'Advanced Alpinist (Steep ice & ropework)', val: 'Advanced' }
-      ]
-    },
-    {
-      id: 'travelStyle',
-      title: 'Which expedition tier suits your travel style?',
-      options: [
-        { label: 'Explorer (Authentic & Budget-Minded)', val: 'EXPLORER' },
-        { label: 'Comfort (Paced with Alpine Chalets)', val: 'COMFORT' },
-        { label: 'Premium (Luxury Heritage & Palaces)', val: 'PREMIUM' },
-        { label: 'Expedition Pro (High Glacial Focus)', val: 'EXPEDITION PRO' }
-      ]
-    }
-  ];
+  const questions = advisorQuestionsData;
 
   const handleSelectOption = (key, val) => {
     const updated = { ...answers, [key]: val };

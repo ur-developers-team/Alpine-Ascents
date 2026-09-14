@@ -1,0 +1,69 @@
+{
+  "destinations": [
+    { "id": "gb-hunza", "name": "Hunza Valley & Passu", "region": "Gilgit-Baltistan", "basePrice": 450, "desc": "Silk Road kingdom, ancient forts, Passu Cones" },
+    { "id": "gb-skardu-k2", "name": "Skardu & K2 Concordia", "region": "Gilgit-Baltistan", "basePrice": 950, "desc": "Baltoro glacier siege, Trango Towers, K2 basecamp" },
+    { "id": "gb-fairy-meadows", "name": "Nanga Parbat & Fairy Meadows", "region": "Gilgit-Baltistan", "basePrice": 420, "desc": "Raikot face, alpine pine cabins, Beyal glacier" },
+    { "id": "gb-deosai", "name": "Deosai National Park", "region": "Baltistan Plateau", "basePrice": 480, "desc": "High wildflower plateau & brown bear sanctuary" },
+    { "id": "gb-naltar", "name": "Naltar Valley & Lakes", "region": "Karakoram Pines", "basePrice": 380, "desc": "Rainbow emerald lakes and mountain ski slopes" },
+    { "id": "np-everest", "name": "Everest Base Camp & Khumbu", "region": "Himalayas, Nepal", "basePrice": 850, "desc": "Sherpa teahouses, Tengboche monastery, Kala Patthar" },
+    { "id": "fr-mont-blanc", "name": "Mont Blanc & Chamonix", "region": "Alps, France/Italy", "basePrice": 780, "desc": "Classic alpine crest, Gouter ridge, cable car skywalk" }
+  ],
+  "durations": [
+    { "days": 5, "label": "5 Days (Express)", "multiplier": 0.8 },
+    { "days": 7, "label": "7 Days (Standard Route)", "multiplier": 1.0 },
+    { "days": 12, "label": "12 Days (Deep Exploration)", "multiplier": 1.55 },
+    { "days": 18, "label": "18 Days (High Glacial Siege)", "multiplier": 2.2 },
+    { "days": 24, "label": "24 Days (Peak Summit Push)", "multiplier": 2.8 }
+  ],
+  "groupSizes": [
+    { "id": "solo", "label": "Solo Climber", "multiplier": 1.25, "count": 1 },
+    { "id": "duo", "label": "2 Travelers (Duo)", "multiplier": 1.0, "count": 2 },
+    { "id": "small", "label": "3 - 4 Climbers (Rope Team)", "multiplier": 0.9, "count": 4 },
+    { "id": "large", "label": "5 - 8 Climbers (Group Rate)", "multiplier": 0.82, "count": 6 }
+  ],
+  "shelters": [
+    { "id": "basic-camp", "name": "Wilderness Tent Camp", "tier": "Basic", "price": 60, "desc": "3-season double-wall tents pitched on designated wilderness high camps" },
+    { "id": "geodesic-pro", "name": "4-Season Geodesic Base Camp", "tier": "Standard", "price": 120, "desc": "High-strength windproof dome tents with thermal insulated sleeping mats" },
+    { "id": "stone-refuge", "name": "Stone Alpine Mountain Refuge", "tier": "Comfort", "price": 180, "desc": "Thick masonry timber hut with cast-iron wood heater & drying lockers" },
+    { "id": "glamping-dome", "name": "Lakeview Heated Glamping Dome", "tier": "Premium", "price": 320, "desc": "Panoramic thermo-glass dome with heated blankets and private ensuite" },
+    { "id": "heritage-palace", "name": "Royal Silk Road Fort Palace", "tier": "Royal", "price": 540, "desc": "Centuries-old restored Tibetan timber royal suites with butler service" }
+  ],
+  "foodPlans": [
+    { "id": "standard", "name": "Standard Mountain Rations", "price": 40, "desc": "High-calorie expedition porridge, lentil dhal, high-protein trail mix" },
+    { "id": "vegetarian", "name": "Organic Vegetarian Farm Plan", "price": 55, "desc": "Locally grown valley produce, apricot and walnut specialties, fresh breads" },
+    { "id": "local-cuisine", "name": "Authentic Regional Gastronomy", "price": 75, "desc": "Fresh glacial river trout, traditional Chapshuro, yak butter teas" },
+    { "id": "premium-chef", "name": "Private Mountain Chef Roster", "price": 130, "desc": "Bespoke high-altitude culinary specialist, warm breakfasts, fresh espresso" }
+  ],
+  "transports": [
+    { "id": "shared-4x4", "name": "Shared Expedition 4x4 Jeep", "price": 110, "desc": "Comfortable shared seating in rugged Toyota mountain cruiser" },
+    { "id": "private-prado", "name": "Dedicated Private 4x4 Prado / Hilux", "price": 280, "desc": "Private chauffeur-driven with off-road snorkel and rooftop luggage rack" },
+    { "id": "flight-4x4", "name": "Scenic Domestic Flight + Private 4x4", "price": 490, "desc": "Aerial flight over Nanga Parbat plus dedicated ground SUV in valley" },
+    { "id": "heli-charter", "name": "Helicopter High-Altitude Shuttle", "price": 1250, "desc": "Direct turbine helicopter transfer into high glacial base points" }
+  ],
+  "guides": [
+    { "id": "certified-lead", "name": "Certified Alpine Lead Sirdar", "price": 150, "desc": "Local Karakoram/Himalayan high-altitude mountaineer with 10+ seasons" },
+    { "id": "uiagm-senior", "name": "Senior UIAGM/IFMGA International Guide", "price": 340, "desc": "Highest global mountain guiding credential with 1:2 safety client ratio" },
+    { "id": "specialist-photo", "name": "Alpine Photography & Wildlife Specialist", "price": 210, "desc": "Expert in location scouting, drone routes, and low-light summit captures" },
+    { "id": "cultural-historian", "name": "Silk Road Cultural & Heritage Host", "price": 120, "desc": "Fluent in Wakhi/Balti dialects, folklore and ancient archaeological lore" }
+  ],
+  "activities": [
+    { "id": "glacier-trek", "name": "Glacial Moraine Trekking", "price": 90, "desc": "Guided crossing of active glacial ice sheets with rope team support" },
+    { "id": "ice-climbing", "name": "Waterfall & Serac Ice Climbing", "price": 180, "desc": "Technical vertical ice instruction using dual ice axes and crampons" },
+    { "id": "astrophotography", "name": "Alpine Astrophotography Night", "price": 80, "desc": "Guided zero light-pollution Milky Way workshop at 3,500m+" },
+    { "id": "fort-exploration", "name": "Ancient Royal Forts Exploration", "price": 70, "desc": "Private historian access to 800-year-old Baltit and Altit palaces" },
+    { "id": "lake-boating", "name": "Cyan Glacial Lake Boat Cruise", "price": 60, "desc": "Private wooden boat journey across turquoise Attabad waters" },
+    { "id": "high-bivouac", "name": "High-Altitude Wilderness Bivouac", "price": 140, "desc": "Unassisted overnight sleeping ridge camp above the cloud line" }
+  ],
+  "equipment": [
+    { "id": "gear-basic", "name": "Trekking Poles & Thermal Gaiters Pack", "price": 45, "desc": "Carbon-fiber adjustable poles, waterproof snow gaiters" },
+    { "id": "gear-ice", "name": "Crampons, Harness & Technical Ice Axe", "price": 95, "desc": "Petzl 12-point steel crampons, alpine harness, curved ice axe" },
+    { "id": "gear-pro", "name": "Full B3 High-Altitude Triple Boot Rental", "price": 160, "desc": "La Sportiva Olympus Mons double-thermal high altitude boots" },
+    { "id": "gear-sat", "name": "Garmin inReach SOS Satellite Messenger", "price": 85, "desc": "2-way satellite messaging with 24/7 GEOS emergency dispatch" }
+  ],
+  "extras": [
+    { "id": "extra-drone", "name": "Civil Aviation Drone Flight Permit", "price": 95, "desc": "Government airspace authorization for aerial cinematography" },
+    { "id": "extra-sat-wifi", "name": "Unlimited Basecamp Satellite WiFi", "price": 120, "desc": "High-speed Starlink / Inmarsat terminal connection" },
+    { "id": "extra-o2-bottle", "name": "Emergency Supplemental Medical O2", "price": 150, "desc": "4L carbon-fiber oxygen cylinder and alpine delivery mask" },
+    { "id": "extra-private-porter", "name": "Personal High-Altitude Porter Support", "price": 180, "desc": "Dedicated expedition porter transporting up to 20kg kit" }
+  ]
+}

@@ -1,186 +1,561 @@
+/* ==========================================================================
+   EXPEDITION BUILDER — Step-by-Step Horizontal Visual Selectors
+   Strictly no cards. Sticky Dynamic Summary with Live Formula Calculation.
+   ========================================================================== */
+
 .builder-section {
-  position: relative;
+  padding: 5.5rem 0;
   background: var(--bg-primary);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  position: relative;
 }
 
-.builder-wrapper {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
+.builder-studio-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
 }
 
-.builder-header {
-  padding: 2.5rem 2.5rem 1.5rem;
+/* Steps Column */
+.builder-steps-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.builder-step-panel {
   background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.85rem 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease;
+}
+
+.builder-step-panel:hover {
+  border-color: var(--border-hover, rgba(0, 102, 204, 0.3));
+}
+
+.step-panel-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  align-items: flex-start;
   gap: 1rem;
-}
-
-/* Step Progress Indicator */
-.builder-steps-nav {
-  display: flex;
-  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid var(--border);
-  background: var(--bg-tertiary);
-  scrollbar-width: none;
 }
 
-.builder-steps-nav::-webkit-scrollbar {
-  display: none;
-}
-
-.builder-step-tab {
-  flex: 1;
-  min-width: 120px;
-  padding: 0.9rem 1rem;
-  font-family: 'Space Mono', monospace;
+.step-index-badge {
   font-size: 0.72rem;
-  color: var(--text-muted);
-  border-right: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  background: transparent;
-  transition: all 0.2s ease;
-  text-align: left;
+  font-weight: 800;
+  font-family: var(--font-mono, monospace);
+  background: var(--accent);
+  color: #ffffff;
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
 }
 
-.builder-step-tab.active {
-  background: var(--bg-card-solid);
-  color: var(--accent);
-  border-bottom: 2px solid var(--accent);
+.step-heading {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  margin: 0 0 0.25rem 0;
+  font-family: var(--font-heading);
 }
 
-.builder-step-tab.completed {
-  color: #10b981;
-}
-
-.builder-step-num {
-  font-weight: 700;
-  font-size: 0.65rem;
-}
-
-/* Main Interactive Grid */
-.builder-content-grid {
-  display: grid;
-  grid-template-columns: 1.8fr 1fr;
-  min-height: 520px;
-}
-
-.builder-step-pane {
-  padding: 2.5rem;
-  overflow-y: auto;
-}
-
-.builder-options-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.builder-option-card {
-  padding: 1.25rem;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--bg-tertiary);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: left;
-}
-
-.builder-option-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-}
-
-.builder-option-card.selected {
-  border-color: var(--accent);
-  background: var(--accent-subtle);
-  box-shadow: 0 0 16px var(--accent-glow);
-}
-
-.builder-option-card h4 {
-  font-size: 1.05rem;
-  margin-bottom: 0.35rem;
-}
-
-.builder-option-card p {
-  font-size: 0.8rem;
+.step-desc {
+  font-size: 0.84rem;
   color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.45;
 }
 
-.builder-option-price {
-  font-family: 'Space Mono', monospace;
-  font-size: 0.85rem;
-  color: var(--accent);
-  font-weight: 700;
-  margin-top: 0.75rem;
-}
-
-/* Live Dynamic Price Summary Pane */
-.builder-summary-pane {
-  background: var(--bg-secondary);
-  border-left: 1px solid var(--border);
-  padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.summary-calc-list {
+/* Horizontal Selector Rows Stack */
+.builder-horizontal-selectors-stack {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  margin: 1.5rem 0;
-  font-size: 0.88rem;
 }
 
-.summary-calc-row {
+.builder-selector-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.15rem;
+  align-items: center;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 8px);
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.builder-selector-row:hover {
+  border-color: var(--accent);
+  background: rgba(0, 102, 204, 0.02);
+  transform: translateX(3px);
+}
+
+.builder-selector-row.is-selected {
+  border-color: var(--accent);
+  background: var(--badge-bg, rgba(0, 102, 204, 0.05));
+  box-shadow: 0 2px 8px rgba(0, 102, 204, 0.08);
+}
+
+/* Radio & Checkbox Indicators */
+.selector-radio {
   display: flex;
-  justify-content: space-between;
-  color: var(--text-secondary);
+  align-items: center;
+  justify-content: center;
 }
 
-.summary-calc-row.total {
-  border-top: 1px solid var(--border);
-  padding-top: 0.85rem;
-  margin-top: 0.5rem;
-  font-size: 1.15rem;
-  font-weight: 800;
+.radio-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.radio-dot.active {
+  border-color: var(--accent);
+}
+
+.radio-dot.active::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.selector-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-box {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid var(--border);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.checkbox-box.active {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+/* Selector Info */
+.selector-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.selector-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.selector-name {
+  font-size: 0.95rem;
+  font-weight: 700;
   color: var(--text-primary);
 }
 
-.summary-save-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.75rem;
-  border-radius: 6px;
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  color: #34d399;
-  font-size: 0.8rem;
+.selector-tag,
+.selector-tier-tag {
+  font-size: 0.68rem;
   font-weight: 700;
-  margin-top: 0.5rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--badge-bg, rgba(0, 102, 204, 0.08));
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
 }
 
-@media (max-width: 960px) {
-  .builder-content-grid {
+.selector-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Selector Price Tag */
+.selector-price {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.selector-price .p-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.selector-price .p-val {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+}
+
+/* Subcontrols Row (Duration & Travelers) */
+.builder-subcontrols-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.subcontrol-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.subcontrol-col label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.builder-select-field {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 6px);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.builder-select-field:focus {
+  border-color: var(--accent);
+}
+
+/* Step 9 Review Matrix */
+.builder-review-matrix {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.review-matrix-cell {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 8px);
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.review-matrix-cell .r-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.review-matrix-cell .r-val {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   Sticky Live Calculation Manifest
+   ========================================================================== */
+
+.builder-sticky-summary-wrap {
+  position: sticky;
+  top: 95px;
+  z-index: 10;
+}
+
+.builder-sticky-summary-card {
+  background: var(--bg-card-solid, #ffffff);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg, 12px);
+  padding: 1.85rem 1.75rem;
+  box-shadow: var(--shadow-md);
+}
+
+.summary-header {
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.summary-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0 0 0.35rem 0;
+  font-family: var(--font-heading);
+}
+
+.summary-subtitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.summary-subtitle .sep {
+  color: var(--border);
+}
+
+/* Formula Callout Box */
+.formula-callout-box {
+  background: var(--bg-secondary);
+  border: 1px dashed var(--accent);
+  border-radius: var(--radius-sm, 6px);
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.formula-title {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.formula-text {
+  font-size: 0.76rem;
+  font-weight: 800;
+  font-family: var(--font-mono, monospace);
+  color: var(--text-primary);
+}
+
+/* Itemized Calculation List */
+.summary-calc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.calc-row .calc-label {
+  font-weight: 500;
+}
+
+.calc-row .calc-val {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-mono, monospace);
+}
+
+.calc-row.discount-row {
+  color: #10b981;
+}
+
+.calc-row.discount-row .calc-val {
+  color: #10b981;
+}
+
+/* Totals Display */
+.summary-totals-display {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 8px);
+  padding: 1rem 1.15rem;
+  margin-bottom: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.totals-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.total-lead {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.total-amount {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+}
+
+.total-amount small {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.totals-party-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  padding-top: 0.5rem;
+}
+
+.totals-party-line strong {
+  color: var(--text-primary);
+}
+
+/* Summary Actions Stack */
+.summary-actions-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.summary-book-btn {
+  width: 100%;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.summary-sub-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.summary-sub-actions .btn {
+  flex: 1;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  padding: 0.55rem;
+}
+
+.btn-secondary.saved {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: #10b981;
+  color: #10b981;
+}
+
+/* Disclaimer */
+.summary-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.summary-disclaimer svg {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1080px) {
+  .builder-studio-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
-  .builder-summary-pane {
-    border-left: none;
-    border-top: 1px solid var(--border);
+
+  .builder-sticky-summary-wrap {
+    position: static;
+  }
+}
+
+@media (max-width: 680px) {
+  .builder-step-panel {
+    padding: 1.25rem 1rem;
+  }
+
+  .builder-selector-row {
+    grid-template-columns: auto 1fr;
+    gap: 0.75rem;
+  }
+
+  .selector-price {
+    grid-column: span 2;
+    text-align: left;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.5rem;
+    border-top: 1px dashed var(--border);
+    padding-top: 0.45rem;
+  }
+
+  .builder-subcontrols-row {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .builder-review-matrix {
+    grid-template-columns: 1fr;
   }
 }

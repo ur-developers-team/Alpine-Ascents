@@ -1,0 +1,140 @@
+/* ==========================================================================
+   QUICK SEARCH DOCK — Premium Glacial Dock Floating Experience
+   ========================================================================== */
+
+.quick-search-dock-wrapper {
+  position: relative;
+  z-index: 30;
+  margin-top: -3.5rem;
+  padding: 0 1rem 2rem;
+}
+
+.quick-search-dock-card {
+  background: var(--bg-card-solid, #ffffff);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08), 0 2px 8px rgba(15, 23, 42, 0.04);
+  display: flex;
+  align-items: center;
+  padding: 0.85rem 1.25rem;
+  gap: 1rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.dock-field {
+  flex: 1;
+  min-width: 140px;
+}
+
+.dock-field-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.dock-select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  outline: none;
+  cursor: pointer;
+  padding: 0.2rem 0;
+  font-family: var(--font-body);
+}
+
+.dock-select option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.dock-divider {
+  width: 1px;
+  height: 42px;
+  background: var(--border);
+}
+
+.dock-action-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dock-submit-btn {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.35rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.dock-submit-btn:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 4px 16px var(--accent-glow);
+  transform: translateY(-1px);
+}
+
+.dock-plan-custom-btn {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.dock-plan-custom-btn:hover {
+  background: var(--border-subtle);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+@media (max-width: 980px) {
+  .quick-search-dock-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+    padding: 1.25rem;
+  }
+
+  .dock-divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .dock-action-cell {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .dock-submit-btn,
+  .dock-plan-custom-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}

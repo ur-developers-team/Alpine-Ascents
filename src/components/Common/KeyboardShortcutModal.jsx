@@ -1,28 +1,12 @@
 import React from 'react';
 import { Command, X, Navigation, Search, HelpCircle } from 'lucide-react';
+import keyboardShortcutsData from '../../data/keyboardShortcuts.json';
 import './KeyboardShortcutModal.css';
 
 export default function KeyboardShortcutModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
-  const navigationShortcuts = [
-    { label: 'Jump to Home / Hero', keys: ['G', 'H'] },
-    { label: 'Jump to Expeditions & Packages', keys: ['G', 'E'] },
-    { label: 'Jump to Mountain Finder', keys: ['G', 'M'] },
-    { label: 'Jump to Alpine Tools Suite', keys: ['G', 'T'] },
-    { label: 'Jump to Places Ecosystem', keys: ['G', 'P'] },
-    { label: 'Jump to Expedition Cinema', keys: ['G', 'V'] },
-    { label: 'Jump to Photo Gallery', keys: ['G', 'G'] },
-    { label: 'Jump to Mountaineering Knowledge', keys: ['G', 'K'] },
-    { label: 'Lost Climber 404 Rescue Game', keys: ['G', '4'] }
-  ];
-
-  const generalShortcuts = [
-    { label: 'Focus / Open Global Search', keys: ['/'] },
-    { label: 'Quick Global Search', keys: ['Ctrl', 'K'] },
-    { label: 'Show Keyboard Shortcuts', keys: ['?'] },
-    { label: 'Close Active Modals & Dialogs', keys: ['Esc'] }
-  ];
+  const { navigationShortcuts = [], generalShortcuts = [] } = keyboardShortcutsData;
 
   return (
     <div className="modal-overlay" onClick={onClose} role="dialog" aria-modal="true">

@@ -8,7 +8,7 @@ export default function GalleryExplorer() {
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [activeLightboxIndex, setActiveLightboxIndex] = useState(null);
 
-  const categories = ['ALL', 'Mountains', 'Lakes', 'Expeditions', 'Camping', 'Guides', 'Landscapes', 'Culture'];
+  const categories = ['ALL', ...Array.from(new Set(galleryData.map(g => g.category).filter(Boolean)))];
 
   const filteredItems = selectedCategory === 'ALL'
     ? galleryData

@@ -6,7 +6,7 @@ import '../FoodAndTransport/FoodAndTransport.css';
 export default function AccommodationExplorer() {
   const [selectedType, setSelectedType] = useState('ALL');
 
-  const types = ['ALL', 'Heritage Palace Hotel', 'Lakeside Glamping & Chalet Resort', 'Alpine Wood Chalets', 'Expedition Base Camp Shelter', 'High Mountain Refuge'];
+  const types = ['ALL', ...Array.from(new Set(accommodationsData.map(a => a.type).filter(Boolean)))];
 
   const filtered = selectedType === 'ALL'
     ? accommodationsData

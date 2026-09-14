@@ -189,13 +189,14 @@ export default function Navbar({
               <User size={16} />
             </button>
 
-            {/* Primary Desktop CTA: Plan Your Climb */}
+            {/* Primary Desktop CTA: Book Now */}
             <button
               className="btn btn-primary btn-sm navbar-cta"
               onClick={onOpenTripBuilder}
+              id="navbar-book-now-btn"
             >
               <Compass size={14} />
-              <span>{t('nav', 'bookTrip') || 'Plan Your Climb'}</span>
+              <span>BOOK NOW</span>
             </button>
 
             {/* Mobile / Tablet Menu Hamburger Toggle */}
@@ -352,7 +353,7 @@ export default function Navbar({
               }}
             >
               <Compass size={16} />
-              <span>{t('nav', 'bookTrip') || 'Plan Your Climb'}</span>
+              <span>BOOK NOW</span>
             </button>
           </div>
         </div>

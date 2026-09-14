@@ -1,158 +1,391 @@
-import React from 'react';
-import { X, MapPin, Mountain, Calendar, Compass, Shield, Heart, Check, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import {
+  X, MapPin, Mountain, Calendar, Compass, Shield, Heart,
+  Check, ArrowRight, ChevronDown, ChevronUp, Droplet, Utensils,
+  Home, Truck, AlertTriangle, CloudSun, Sparkles
+} from 'lucide-react';
 import { useWishlist } from '../../context/WishlistContext';
+import './DestinationDetailModal.css';
 
-export default function DestinationDetailModal({ destination, isOpen, onClose, onOpenTripBuilder, onSelectPackage }) {
+export default function DestinationDetailModal({ destination, isOpen, onClose, onOpenTripBuilder }) {
   const { toggleWishlist, isWishlisted } = useWishlist();
+  const [expandedSections, setExpandedSections] = useState({
+    mountains: true,
+    lakes: false,
+    shelters: false,
+    food: false,
+    activities: false,
+    transport: false,
+    accommodation: false,
+    safety: false,
+    weather: false,
+    nearby: false
+  });
 
   if (!isOpen || !destination) return null;
 
+  const toggleSection = (key) => {
+    setExpandedSections(prev => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  const isSaved = isWishlisted(destination.id);
+
   return (
-    <div className="modal-overlay" onClick={onClose} role="dialog" aria-modal="true">
-      <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '960px' }}>
+    <div className="modal-overlay dest-modal-overlay" onClick={onClose} role="dialog" aria-modal="true">
+      <div className="modal-content dest-modal-content" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close-btn" onClick={onClose} aria-label="Close details">
           <X size={18} />
         </button>
 
-        {/* Hero Image */}
+        {/* Cinematic Full-Bleed Media Header */}
         <div className="dest-detail-hero">
           <img
             src={destination.image}
             alt={destination.name}
             className="dest-detail-hero-img"
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(7,12,18,0.3) 0%, rgba(7,12,18,0.9) 100%)' }} />
+          <div className="dest-detail-hero-overlay" />
 
-          <div style={{ position: 'absolute', bottom: '2rem', left: '2.5rem', right: '2.5rem', zIndex: 2, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-            <div>
-              <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                <span className="hud-tag">
-                  <Mountain size={11} />
-                  <span>{destination.altitude}</span>
-                </span>
-                <span className="hud-tag" style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#34d399', borderColor: '#059669' }}>
-                  <Shield size={11} />
-                  <span>{destination.difficulty}</span>
-                </span>
-              </div>
-              <h2 style={{ fontSize: '2.4rem', color: '#ffffff', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-                {destination.name}
-              </h2>
-              <p style={{ color: 'rgba(255,255,255,0.85)', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.95rem' }}>
-                <MapPin size={15} color="var(--accent)" />
-                <span>{destination.region}, {destination.country}</span>
-              </p>
+          <div className="dest-detail-hero-caption">
+            <div className="dest-hero-badges">
+              <span className="dest-hud-pill">
+                <Mountain size={12} />
+                <span>{destination.altitude}</span>
+              </span>
+              <span className="dest-hud-pill pill-difficulty">
+                <Shield size={12} />
+                <span>{destination.difficulty}</span>
+              </span>
+              <span className="dest-hud-pill pill-season">
+                <Calendar size={12} />
+                <span>{destination.bestSeason}</span>
+              </span>
             </div>
 
-            <button
-              className={`btn-save ${isWishlisted(destination.id) ? 'active' : ''}`}
-              onClick={() => toggleWishlist(destination, 'destination')}
-              title="Save to Wishlist"
-              aria-label="Save"
-            >
-              <Heart size={20} fill={isWishlisted(destination.id) ? '#f43f5e' : 'none'} />
-            </button>
-          </div>
-        </div>
-
-        {/* Detail Content */}
-        <div className="dest-detail-body">
-          {/* Overview */}
-          <div className="dest-detail-section-block">
-            <span className="section-eyebrow">GEOGRAPHICAL OVERVIEW</span>
-            <p style={{ fontSize: '1.05rem', lineHeight: '1.8' }}>
-              {destination.overview}
+            <h1 className="dest-hero-title">{destination.name}</h1>
+            <p className="dest-hero-location">
+              <MapPin size={15} color="var(--accent)" />
+              <span>{destination.region}, {destination.country}</span>
             </p>
           </div>
 
-          {/* Key Facts Grid */}
-          <div className="dest-detail-section-block">
-            <div className="gb-meta-grid" style={{ margin: 0 }}>
-              <div className="gb-meta-item">
-                <span className="gb-meta-label">PEAK SEASON / WINDOW</span>
-                <span className="gb-meta-value">{destination.bestSeason}</span>
-              </div>
-              <div className="gb-meta-item">
-                <span className="gb-meta-label">STANDARD DURATION</span>
-                <span className="gb-meta-value">{destination.duration}</span>
-              </div>
-              <div className="gb-meta-item">
-                <span className="gb-meta-label">ESTIMATED BASE COST</span>
-                <span className="gb-meta-value" style={{ color: 'var(--accent)' }}>${destination.startingPrice} (Sample Demo)</span>
-              </div>
-              <div className="gb-meta-item">
-                <span className="gb-meta-label">TOPOGRAPHIC ELEVATION</span>
-                <span className="gb-meta-value">{destination.altitude} Above Sea Level</span>
-              </div>
-            </div>
-          </div>
+          <button
+            className={`btn-save dest-hero-wishlist-btn ${isSaved ? 'active' : ''}`}
+            onClick={() => toggleWishlist(destination, 'destination')}
+            title="Save Destination to Passport"
+            aria-label="Save to Wishlist"
+          >
+            <Heart size={20} fill={isSaved ? '#f43f5e' : 'none'} color={isSaved ? '#f43f5e' : '#ffffff'} />
+          </button>
+        </div>
 
-          {/* Activities */}
-          <div className="dest-detail-section-block">
-            <span className="section-eyebrow">SIGNATURE ACTIVITIES & EXPERIENCES</span>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem', marginTop: '0.75rem' }}>
-              {destination.activities.map((act, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.65rem 0.85rem', background: 'var(--bg-tertiary)', borderRadius: '6px', border: '1px solid var(--border)', fontSize: '0.9rem' }}>
-                  <Check size={16} color="var(--accent)" />
-                  <span>{act}</span>
+        {/* Quick Facts Strip (No Long Walls of Text) */}
+        <div className="dest-quick-facts-strip">
+          <div className="quick-fact-cell">
+            <span className="fact-label">ALTITUDE</span>
+            <span className="fact-val">{destination.altitude}</span>
+          </div>
+          <div className="fact-divider" />
+          <div className="quick-fact-cell">
+            <span className="fact-label">BEST SEASON</span>
+            <span className="fact-val">{destination.bestSeason}</span>
+          </div>
+          <div className="fact-divider" />
+          <div className="quick-fact-cell">
+            <span className="fact-label">DIFFICULTY</span>
+            <span className="fact-val">{destination.difficulty}</span>
+          </div>
+          <div className="fact-divider" />
+          <div className="quick-fact-cell">
+            <span className="fact-label">DURATION</span>
+            <span className="fact-val">{destination.duration}</span>
+          </div>
+          <div className="fact-divider" />
+          <div className="quick-fact-cell">
+            <span className="fact-label">STARTING FROM</span>
+            <span className="fact-val highlight">${destination.startingPrice}</span>
+          </div>
+        </div>
+
+        {/* Short Editorial Overview */}
+        <div className="dest-summary-callout">
+          <p>{destination.overview}</p>
+        </div>
+
+        {/* Progressive Expandable Accordions */}
+        <div className="dest-accordion-container">
+          <h3 className="dest-accordion-header-title">EXPLORE DESTINATION PROFILE</h3>
+          <p className="dest-accordion-sub">Click any category (+) to reveal technical alpine specifics:</p>
+
+          {/* 1. Mountains & Summits */}
+          <div className="dest-accordion-item">
+            <button
+              className="dest-accordion-trigger"
+              onClick={() => toggleSection('mountains')}
+              aria-expanded={expandedSections.mountains}
+            >
+              <div className="trigger-left">
+                <Mountain size={17} color="var(--accent)" />
+                <span>Mountains & Peaks</span>
+              </div>
+              {expandedSections.mountains ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
+            {expandedSections.mountains && (
+              <div className="dest-accordion-panel animate-fade-in">
+                <p>Dominant summits towering over this domain include {destination.landmarks ? destination.landmarks.slice(0, 3).join(', ') : 'major Karakoram spires'}. Surrounding peaks range from 6,000m to 8,000m with vertical granite faces and hanging glaciers.</p>
+                <div className="badge-tag-cloud">
+                  <span className="alpine-pill-tag">Primary Apex: {destination.altitude}</span>
+                  <span className="alpine-pill-tag">Glacial Moraines</span>
+                  <span className="alpine-pill-tag">Alpine Ridge Lines</span>
                 </div>
-              ))}
-            </div>
+              </div>
+            )}
           </div>
 
-          {/* Stay, Food & Transport */}
-          <div className="dest-detail-section-block">
-            <div className="dashboard-grid-2">
-              <div className="pref-card">
-                <span className="gb-meta-label">WHERE TO STAY</span>
-                <ul style={{ listStyle: 'none', marginTop: '0.5rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
-                  {destination.stayTypes.map((s, idx) => (
-                    <li key={idx} style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>• {s}</li>
-                  ))}
-                </ul>
+          {/* 2. Lakes & Waters */}
+          <div className="dest-accordion-item">
+            <button
+              className="dest-accordion-trigger"
+              onClick={() => toggleSection('lakes')}
+              aria-expanded={expandedSections.lakes}
+            >
+              <div className="trigger-left">
+                <Droplet size={17} color="var(--accent)" />
+                <span>Glacial Lakes & Waters</span>
               </div>
-              <div className="pref-card">
-                <span className="gb-meta-label">LOCAL CUISINE & NOURISHMENT</span>
-                <ul style={{ listStyle: 'none', marginTop: '0.5rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
-                  {destination.localFood.map((f, idx) => (
-                    <li key={idx} style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>• {f}</li>
-                  ))}
-                </ul>
+              {expandedSections.lakes ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
+            {expandedSections.lakes && (
+              <div className="dest-accordion-panel animate-fade-in">
+                <p>Fed by sub-polar glaciers, water bodies here feature iridescent cyan and turquoise minerals. Key waters include Attabad Lake, Borith Lake, and upper glacial melt streams suitable for kayaking and boating.</p>
               </div>
-            </div>
-            <div className="pref-card" style={{ marginTop: '1rem' }}>
-              <span className="gb-meta-label">TRANSPORT LOGISTICS & ACCESS</span>
-              <ul style={{ listStyle: 'none', marginTop: '0.5rem', display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
-                {destination.transportOptions.map((t, idx) => (
-                  <li key={idx} style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>• {t}</li>
-                ))}
-              </ul>
-            </div>
+            )}
           </div>
 
-          {/* CTA Footer */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', paddingTop: '1rem' }}>
-            <div>
-              <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Nearby Alpine Centers:</span>
-              <div style={{ display: 'flex', gap: '0.4rem', marginTop: '0.2rem' }}>
-                {destination.nearbyDestinations.map((nb, i) => (
-                  <span key={i} className="gb-landmark-tag">{nb}</span>
-                ))}
+          {/* 3. Shelters & Camps */}
+          <div className="dest-accordion-item">
+            <button
+              className="dest-accordion-trigger"
+              onClick={() => toggleSection('shelters')}
+              aria-expanded={expandedSections.shelters}
+            >
+              <div className="trigger-left">
+                <Home size={17} color="var(--accent)" />
+                <span>High Shelters & Base Camps</span>
               </div>
-            </div>
+              {expandedSections.shelters ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
+            {expandedSections.shelters && (
+              <div className="dest-accordion-panel animate-fade-in">
+                <p>Available shelters include 4-season geodesic expedition domes, stone shepherd bivouacs, and high-altitude mountain huts with wood-burning heating.</p>
+                <div className="dest-bullet-list">
+                  <div>• 4-Season Geodesic Camps (Askole, Concordia, Tagaphari)</div>
+                  <div>• Stone Alpine Shepherd Huts for weather contingencies</div>
+                  <div>• Dedicated mess tents with hot water heating</div>
+                </div>
+              </div>
+            )}
+          </div>
 
-            <div style={{ display: 'flex', gap: '0.75rem' }}>
-              <button
-                className="btn btn-primary"
-                onClick={() => {
-                  onClose();
-                  onOpenTripBuilder && onOpenTripBuilder(destination.id);
-                }}
-              >
-                <Compass size={16} />
-                <span>BUILD CUSTOM EXPEDITION HERE</span>
-              </button>
-            </div>
+          {/* 4. Food & Local Cuisine */}
+          <div className="dest-accordion-item">
+            <button
+              className="dest-accordion-trigger"
+              onClick={() => toggleSection('food')}
+              aria-expanded={expandedSections.food}
+            >
+              <div className="trigger-left">
+                <Utensils size={17} color="var(--accent)" />
+                <span>Local Gastronomy & Trail Rations</span>
+              </div>
+              {expandedSections.food ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
+            {expandedSections.food && (
+              <div className="dest-accordion-panel animate-fade-in">
+                <p>Enjoy nutrient-dense traditional fare and specialized high-altitude expedition chef provisions:</p>
+                <div className="dest-bullet-list">
+                  {destination.localFood ? (
+                    destination.localFood.map((food, i) => (
+                      <div key={i}>• {food}</div>
+                    ))
+                  ) : (
+                    <>
+                      <div>• Fresh Char & Trout caught in cold streams</div>
+                      <div>• Chapshuro (Organic minced meat pie)</div>
+                      <div>• Apricot walnut cakes & Tumuro herbal mountain tea</div>
+                    </>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* 5. Activities */}
+          <div className="dest-accordion-item">
+            <button
+              className="dest-accordion-trigger"
+              onClick={() => toggleSection('activities')}
+              aria-expanded={expandedSections.activities}
+            >
+              <div className="trigger-left">
+                <Compass size={17} color="var(--accent)" />
+                <span>Signature Activities & Adventures</span>
+              </div>
+              {expandedSections.activities ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
+            {expandedSections.activities && (
+              <div className="dest-accordion-panel animate-fade-in">
+                <div className="activities-pill-grid">
+                  {destination.activities && destination.activities.map((act, i) => (
+                    <div key={i} className="act-chip">
+                      <Check size={14} color="var(--accent)" />
+                      <span>{act}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* 6. Transport & Mountain Jeeps */}
+          <div className="dest-accordion-item">
+            <button
+              className="dest-accordion-trigger"
+              onClick={() => toggleSection('transport')}
+              aria-expanded={expandedSections.transport}
+            >
+              <div className="trigger-left">
+                <Truck size={17} color="var(--accent)" />
+                <span>Transport & Mountain Jeeps</span>
+              </div>
+              {expandedSections.transport ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
+            {expandedSections.transport && (
+              <div className="dest-accordion-panel animate-fade-in">
+                <p>{destination.transportOptions ? destination.transportOptions.join(' • ') : 'Dedicated 4x4 Land Cruiser Mountain Jeeps with high clearance and experienced local drivers.'}</p>
+              </div>
+            )}
+          </div>
+
+          {/* 7. Accommodation */}
+          <div className="dest-accordion-item">
+            <button
+              className="dest-accordion-trigger"
+              onClick={() => toggleSection('accommodation')}
+              aria-expanded={expandedSections.accommodation}
+            >
+              <div className="trigger-left">
+                <Sparkles size={17} color="var(--accent)" />
+                <span>Accommodations & Lodges</span>
+              </div>
+              {expandedSections.accommodation ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
+            {expandedSections.accommodation && (
+              <div className="dest-accordion-panel animate-fade-in">
+                <p>Ranging from luxury restored palaces to lakeside glamping domes:</p>
+                <div className="dest-bullet-list">
+                  {destination.stayTypes ? (
+                    destination.stayTypes.map((stay, i) => (
+                      <div key={i}>• {stay}</div>
+                    ))
+                  ) : (
+                    <div>• 5-Star Heritage Royal Forts, Boutique Chalets, and Luxury Geodesic Domes.</div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* 8. Safety & Altitude */}
+          <div className="dest-accordion-item">
+            <button
+              className="dest-accordion-trigger"
+              onClick={() => toggleSection('safety')}
+              aria-expanded={expandedSections.safety}
+            >
+              <div className="trigger-left">
+                <AlertTriangle size={17} color="var(--accent-gold)" />
+                <span>Safety & Altitude Protocols</span>
+              </div>
+              {expandedSections.safety ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
+            {expandedSections.safety && (
+              <div className="dest-accordion-panel animate-fade-in">
+                <p>Elevation is {destination.altitude}. All itineraries incorporate structured rest stages and daily blood oxygen pulse oximeter telemetry. Emergency satellite messengers (Garmin inReach) and altitude medical kits with Diamox are provided on all departures.</p>
+              </div>
+            )}
+          </div>
+
+          {/* 9. Weather & Climate */}
+          <div className="dest-accordion-item">
+            <button
+              className="dest-accordion-trigger"
+              onClick={() => toggleSection('weather')}
+              aria-expanded={expandedSections.weather}
+            >
+              <div className="trigger-left">
+                <CloudSun size={17} color="var(--accent)" />
+                <span>Weather & Seasonality</span>
+              </div>
+              {expandedSections.weather ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
+            {expandedSections.weather && (
+              <div className="dest-accordion-panel animate-fade-in">
+                <p>Optimal season is {destination.bestSeason}. Daytime temperatures average +22°C to +26°C in summer valleys, while high nights can drop to near 0°C. Mountain weather is dynamic; layered GORE-TEX and fleece are essential.</p>
+              </div>
+            )}
+          </div>
+
+          {/* 10. Nearby Places */}
+          <div className="dest-accordion-item">
+            <button
+              className="dest-accordion-trigger"
+              onClick={() => toggleSection('nearby')}
+              aria-expanded={expandedSections.nearby}
+            >
+              <div className="trigger-left">
+                <MapPin size={17} color="var(--accent)" />
+                <span>Nearby Destinations & Extensions</span>
+              </div>
+              {expandedSections.nearby ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
+            {expandedSections.nearby && (
+              <div className="dest-accordion-panel animate-fade-in">
+                <p>Easily linked to other crown locations in Gilgit-Baltistan:</p>
+                <div className="badge-tag-cloud">
+                  {destination.nearbyDestinations ? (
+                    destination.nearbyDestinations.map((place, i) => (
+                      <span key={i} className="alpine-pill-tag">{place}</span>
+                    ))
+                  ) : (
+                    <span className="alpine-pill-tag">Hunza, Skardu, Fairy Meadows, Deosai</span>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Modal Bottom Sticky CTA */}
+        <div className="dest-detail-footer">
+          <div className="footer-price-col">
+            <span className="footer-price-sub">Starting Expedition Cost</span>
+            <span className="footer-price-val">${destination.startingPrice} <small>/ traveler</small></span>
+          </div>
+
+          <div className="footer-action-col">
+            <button
+              className="btn btn-primary"
+              onClick={() => {
+                onClose();
+                if (onOpenTripBuilder) {
+                  onOpenTripBuilder(destination.id);
+                }
+              }}
+            >
+              <span>Build Expedition Here</span>
+              <ArrowRight size={16} />
+            </button>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import hazardScenarios from '../../data/miniGames.json';
 import { useGamification } from '../../context/GamificationContext';
-import { AlertTriangle, Timer, CheckCircle2, XCircle, RotateCcw, ShieldAlert, BookOpen } from 'lucide-react';
+import { Timer, CheckCircle2, XCircle, RotateCcw, ShieldAlert, BookOpen } from 'lucide-react';
 import './HazardReactionGame.css';
 
 export default function HazardReactionGame() {
@@ -19,12 +19,15 @@ export default function HazardReactionGame() {
   useEffect(() => {
     if (gameStatus === 'active' && timeLeft > 0) {
       timerRef.current = setTimeout(() => {
-        setTimeLeft(prev => prev - 1);
+        setTimeLeft(prev => {
+          if (prev <= 1) {
+            setGameStatus('answered');
+            setSelectedOption({ isCorrect: false, feedback: 'Time Expired! In alpine emergencies, hesitation is fatal.' });
+            return 0;
+          }
+          return prev - 1;
+        });
       }, 1000);
-    } else if (gameStatus === 'active' && timeLeft === 0) {
-      // Time ran out!
-      setGameStatus('answered');
-      setSelectedOption({ isCorrect: false, feedback: 'Time Expired! In alpine emergencies, hesitation is fatal.' });
     }
 
     return () => clearTimeout(timerRef.current);

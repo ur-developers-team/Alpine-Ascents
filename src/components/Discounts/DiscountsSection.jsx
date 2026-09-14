@@ -1,57 +1,82 @@
 import React, { useState } from 'react';
 import discountsData from '../../data/discounts.json';
-import { Tag, Sparkles, Check, Copy } from 'lucide-react';
+import { Tag, Sparkles, Check, Copy, Gift, Clock, ArrowRight, ShieldCheck } from 'lucide-react';
+import './DiscountsSection.css';
 
-export default function DiscountsSection() {
+export default function DiscountsSection({ onOpenLuckyDraw, onSelectDiscount }) {
   const [copiedCode, setCopiedCode] = useState(null);
 
   const handleCopy = (code) => {
     if (navigator.clipboard) {
-      navigator.clipboard.writeText(code);
-      setCopiedCode(code);
-      setTimeout(() => setCopiedCode(null), 2500);
+      navigator.clipboard.writeText(code).then(() => {
+        setCopiedCode(code);
+        setTimeout(() => setCopiedCode(null), 2500);
+      });
     }
   };
 
   return (
-    <section id="offers" className="section" style={{ background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border)' }}>
-      <div className="container">
+    <section id="offers" className="section discounts-section" aria-label="Special Expedition Offers">
+      <div className="site-container">
         {/* Section Header */}
         <div className="section-header">
           <div className="section-eyebrow">
             <Tag size={14} />
-            <span>SEASONAL INCENTIVES</span>
+            <span>SEASONAL INCENTIVES & EXPEDITION PRIVILEGES</span>
           </div>
-          <h2 className="section-title">EXPEDITION PRIVILEGES & OFFERS</h2>
+          <h2 className="section-title">SPECIAL EXPEDITION OFFERS</h2>
           <p className="section-subtitle">
-            Transparent group concessions and early planning privileges. Copy code to apply during your custom expedition request.
+            Transparent group concessions and early planning privileges. Claim voucher codes directly into your expedition blueprint.
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
-          {discountsData.map(d => (
-            <div key={d.id} className="card" style={{ padding: '2.25rem', display: 'flex', flexDirection: 'column', position: 'relative' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                <span className="hud-tag" style={{ background: 'rgba(217, 119, 6, 0.2)', color: '#fbbf24', borderColor: '#d97706' }}>
-                  {d.badge}
-                </span>
-                <span style={{ fontSize: '1.4rem', fontWeight: 900, color: 'var(--accent)' }}>{d.discount}</span>
+        {/* Interactive Lucky Draw Campaign Strip */}
+        <div className="lucky-campaign-banner">
+          <div className="lucky-banner-content">
+            <div className="lucky-banner-badge">
+              <Gift size={14} />
+              <span>INTERACTIVE COMPASS REWARD</span>
+            </div>
+            <h3 className="lucky-banner-title">WIN YOUR NEXT MOUNTAIN PRIVILEGE</h3>
+            <p className="lucky-banner-sub">
+              Spin our interactive expedition compass simulator to reveal exclusive discount vouchers, complimentary equipment rental packs, or luxury palace upgrades.
+            </p>
+          </div>
+          <button
+            className="btn btn-primary btn-lg lucky-launch-btn"
+            onClick={onOpenLuckyDraw}
+          >
+            <Sparkles size={18} />
+            <span>SPIN EXPEDITION COMPASS</span>
+          </button>
+        </div>
+
+        {/* Large Horizontal Offer Strips (No Repetitive Cards) */}
+        <div className="horizontal-offers-stack">
+          {discountsData.map((d) => (
+            <div key={d.id} className="offer-horizontal-strip">
+              <div className="strip-left-accent">
+                <span className="strip-badge">{d.badge}</span>
+                <span className="strip-discount-val">{d.discount}</span>
               </div>
 
-              <h3 style={{ fontSize: '1.35rem', marginBottom: '0.4rem' }}>{d.title}</h3>
-              <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', marginBottom: '1.25rem' }}>{d.description}</p>
-
-              <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>
-                <strong>Eligibility:</strong> {d.eligibility}
+              <div className="strip-main-info">
+                <h3 className="strip-title">{d.title}</h3>
+                <p className="strip-desc">{d.description}</p>
+                <div className="strip-eligibility">
+                  <Clock size={13} color="var(--accent)" />
+                  <span>{d.eligibility}</span>
+                </div>
               </div>
 
-              <div style={{ marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '0.9rem', fontWeight: 700, padding: '0.35rem 0.65rem', background: 'var(--bg-tertiary)', borderRadius: '4px', border: '1px dashed var(--border)' }}>
-                  {d.code}
+              <div className="strip-action-col">
+                <div className="strip-code-badge">
+                  <span>Code:</span>
+                  <code>{d.code}</code>
                 </div>
 
                 <button
-                  className="btn btn-outline btn-sm"
+                  className="btn btn-outline btn-sm strip-claim-btn"
                   onClick={() => handleCopy(d.code)}
                 >
                   {copiedCode === d.code ? (
@@ -62,7 +87,7 @@ export default function DiscountsSection() {
                   ) : (
                     <>
                       <Copy size={14} />
-                      <span>Copy Code</span>
+                      <span>CLAIM VOUCHER</span>
                     </>
                   )}
                 </button>

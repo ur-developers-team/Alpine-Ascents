@@ -1,0 +1,61 @@
+{
+  "campaignTitle": "WIN YOUR NEXT MOUNTAIN ADVENTURE",
+  "tagline": "Spin the Alpine Compass & Reveal Your Expedition Privilege",
+  "disclaimer": "Demo Campaign / Promotional Experience: All vouchers and discount codes generated in this simulator represent non-commercial interactive incentives for trial planning within the Alpine Ascents platform.",
+  "prizes": [
+    {
+      "id": "prize-disc-20",
+      "name": "20% Alpine Expedition Voucher",
+      "code": "SUMMIT-SPIN-20",
+      "category": "Discount",
+      "description": "Unlock 20% savings on any Karakoram or Himalayan guided expedition for 2026/2027.",
+      "icon": "Percent",
+      "color": "#0284c7"
+    },
+    {
+      "id": "prize-gear-voucher",
+      "name": "Free High-Altitude Gear Rental Pack",
+      "code": "GEAR-PRO-FREE",
+      "category": "Equipment",
+      "description": "Complimentary rental of La Sportiva G2 boots, crampons, and Grivel ice axe worth $280.",
+      "icon": "Shield",
+      "color": "#10b981"
+    },
+    {
+      "id": "prize-shigar-upgrade",
+      "name": "Free Luxury Heritage Room Upgrade",
+      "code": "SERENA-UPGRADE",
+      "category": "Accommodation",
+      "description": "Complimentary room upgrade to Royal Suite at Serena Shigar or Khaplu Palace.",
+      "icon": "Sparkles",
+      "color": "#d4af37"
+    },
+    {
+      "id": "prize-heli-voucher",
+      "name": "$250 Scenic Flight Credit",
+      "code": "AERO-BALTORO",
+      "category": "Transport",
+      "description": "A $250 credit applied towards domestic scenic flights over Nanga Parbat.",
+      "icon": "Compass",
+      "color": "#8b5cf6"
+    },
+    {
+      "id": "prize-disc-15",
+      "name": "15% Early Bird Permit Credit",
+      "code": "EXPEDITION-15",
+      "category": "Discount",
+      "description": "15% deduction on all peak liaison and national park permit administrative fees.",
+      "icon": "Award",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "prize-photo-session",
+      "name": "Complimentary Drone Photography Package",
+      "code": "AERIAL-4K",
+      "category": "Media",
+      "description": "Our expedition media lead will capture 4K aerial footage and a personalized expedition recap reel.",
+      "icon": "Camera",
+      "color": "#ec4899"
+    }
+  ]
+}

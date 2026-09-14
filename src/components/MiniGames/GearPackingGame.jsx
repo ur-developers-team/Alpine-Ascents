@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import gearData from '../../data/gearGame.json';
 import { useGamification } from '../../context/GamificationContext';
-import { Briefcase, Check, AlertTriangle, RefreshCw, Trophy, Info, Sparkles } from 'lucide-react';
+import { Briefcase, Check, AlertTriangle, RefreshCw, Info, Sparkles } from 'lucide-react';
 import './GearPackingGame.css';
 
 export default function GearPackingGame() {
-  const { completeMiniGame, state } = useGamification();
+  const { completeMiniGame } = useGamification();
   const [packedIds, setPackedIds] = useState([]);
   const [feedback, setFeedback] = useState({ text: 'Drag items or tap to pack your 8,000m rucksack.', type: 'info' });
   const [isDone, setIsDone] = useState(false);

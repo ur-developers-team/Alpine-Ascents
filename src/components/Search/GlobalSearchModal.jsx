@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, X, Mountain, MapPin, Compass, BookOpen, Users, ArrowRight, Mic, MicOff } from 'lucide-react';
+import { Search, X, Mountain, MapPin, Compass, BookOpen, Users, ArrowRight, Mic, MicOff, Film } from 'lucide-react';
 import mountainsData from '../../data/mountains.json';
 import destinationsData from '../../data/destinations.json';
 import packagesData from '../../data/packages.json';
 import guidesData from '../../data/guides.json';
 import journalData from '../../data/journal.json';
+import videosData from '../../data/videos.json';
 import './GlobalSearchModal.css';
 
 export default function GlobalSearchModal({ isOpen, onClose, onSelectItem }) {
@@ -112,7 +113,11 @@ export default function GlobalSearchModal({ isOpen, onClose, onSelectItem }) {
     ? journalData.filter(j => j.title.toLowerCase().includes(q) || j.excerpt.toLowerCase().includes(q) || j.tags.some(t => t.toLowerCase().includes(q)))
     : [];
 
-  const totalResults = filteredMountains.length + filteredDestinations.length + filteredPackages.length + filteredGuides.length + filteredArticles.length;
+  const filteredVideos = q
+    ? videosData.filter(v => v.title.toLowerCase().includes(q) || v.location.toLowerCase().includes(q) || v.category.toLowerCase().includes(q))
+    : [];
+
+  const totalResults = filteredMountains.length + filteredDestinations.length + filteredPackages.length + filteredGuides.length + filteredArticles.length + filteredVideos.length;
 
   return (
     <div className="modal-overlay" onClick={onClose} role="dialog" aria-modal="true">
@@ -292,6 +297,32 @@ export default function GlobalSearchModal({ isOpen, onClose, onSelectItem }) {
                         <div className="search-result-info">
                           <h4>{a.title}</h4>
                           <p>{a.category} · {a.readTime}</p>
+                        </div>
+                      </div>
+                      <ArrowRight size={14} color="var(--text-muted)" />
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {filteredVideos.length > 0 && (
+                <div className="search-category-group">
+                  <div className="search-category-title">EXPEDITION CINEMA ({filteredVideos.length})</div>
+                  {filteredVideos.map(v => (
+                    <button
+                      key={v.id}
+                      className="search-result-item"
+                      onClick={() => {
+                        onClose();
+                        const el = document.querySelector('#videos');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                    >
+                      <div className="search-result-main">
+                        <Film size={18} color="var(--accent)" />
+                        <div className="search-result-info">
+                          <h4>{v.title}</h4>
+                          <p>{v.category} · {v.duration} · {v.location}</p>
                         </div>
                       </div>
                       <ArrowRight size={14} color="var(--text-muted)" />

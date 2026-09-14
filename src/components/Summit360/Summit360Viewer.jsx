@@ -3,32 +3,9 @@ import * as THREE from 'three';
 import { Eye, RotateCw, ZoomIn, ZoomOut, Compass, Mountain, Maximize2 } from 'lucide-react';
 import './Summit360Viewer.css';
 
-const SUMMIT_VIEWS = [
-  {
-    id: 'k2',
-    name: 'K2 Godwin-Austen Crest',
-    elevation: '8,611m',
-    range: 'Karakoram, Gilgit-Baltistan',
-    textureUrl: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=2000&q=80',
-    description: '360° view looking southwest across Broad Peak, Gasherbrum, and the vast snow basins.'
-  },
-  {
-    id: 'concordia',
-    name: 'Concordia Throne Room',
-    elevation: '4,691m',
-    range: 'Baltoro Glacier Junction',
-    textureUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=2000&q=80',
-    description: 'Surrounded in 360 degrees by four 8,000m summits and granite monoliths.'
-  },
-  {
-    id: 'mont-blanc',
-    name: 'Mont Blanc Dome',
-    elevation: '4,808m',
-    range: 'Graian Alps, France/Italy',
-    textureUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=80',
-    description: 'Clear panoramic snow dome overlooking Chamonix valley and the Italian Val Veny.'
-  }
-];
+import summitViewsData from '../../data/summitViews.json';
+
+const SUMMIT_VIEWS = summitViewsData;
 
 export default function Summit360Viewer() {
   const mountRef = useRef(null);

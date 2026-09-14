@@ -12,16 +12,16 @@
     "path": "#expeditions"
   },
   {
-    "id": "places",
-    "label": "Places",
+    "id": "destinations",
+    "label": "Destinations",
     "labelUrdu": "مقامات",
-    "path": "#places"
+    "path": "#destinations"
   },
   {
     "id": "mountains",
     "label": "Mountains",
     "labelUrdu": "چوٹیاں",
-    "path": "#mountain-finder"
+    "path": "#mountains"
   },
   {
     "id": "experiences",
@@ -50,7 +50,7 @@
   {
     "id": "about",
     "label": "About",
-    "labelUrdu": "تعارف",
-    "path": "#knowledge"
+    "labelUrdu": "ہمارے بارے میں",
+    "path": "#about"
   }
 ]

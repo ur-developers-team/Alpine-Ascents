@@ -1,0 +1,80 @@
+[
+  {
+    "id": "fam-hunza-wonderland",
+    "title": "Hunza Royal Valley Family Discovery",
+    "destinationId": "hunza-valley",
+    "destinationName": "Hunza & Attabad Lake",
+    "duration": "6 Days / 5 Nights",
+    "familySize": "2 Adults + 2 Children (Age 5-16)",
+    "price": 1450,
+    "originalPrice": 1850,
+    "discount": "22% Family Privilege",
+    "discountCode": "FAMILY-HUNZA22",
+    "childFriendlyRating": "5/5 — Highly Child Friendly",
+    "minAge": 5,
+    "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1000&q=80",
+    "highlights": [
+      "Gentle orchard strolls & apricot picking in Karimabad",
+      "Serena Royal Fort family suite with heated mountain chalets",
+      "Private turquoise boat safari on Attabad Lake with life jackets",
+      "Kid-safe interactive Wakhi folk music and baking session"
+    ],
+    "includedMeals": "Full Board: Kid-friendly breakfast, fresh fruit, organic soups, and traditional feast",
+    "transport": "Dedicated High-Roof Toyota Prado 4x4 with child safety booster seats",
+    "accommodation": "Serena Hunza Inn / Luxus Hunza Attabad Chalets",
+    "activities": ["Attabad Boating", "Baltit Fort Historic Tour", "Apricot Blossom Walk", "Stargazing Astronomy Hour"],
+    "safetyPerks": "Certified Pediatric First Responder Guide + Oximeter + 24/7 Satellite link"
+  },
+  {
+    "id": "fam-skardu-shigar-retreat",
+    "title": "Skardu Lakes & Shigar Royal Palace Family Retreat",
+    "destinationId": "skardu-baltoro",
+    "destinationName": "Skardu, Upper Kachura & Shigar",
+    "duration": "7 Days / 6 Nights",
+    "familySize": "Family of 3-5 Members",
+    "price": 1890,
+    "originalPrice": 2350,
+    "discount": "20% OFF",
+    "discountCode": "FAMILY-SKARDU20",
+    "childFriendlyRating": "4.8/5 — Safe & Relaxed Pace",
+    "minAge": 6,
+    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80",
+    "highlights": [
+      "Staying in the authentic 400-year-old Serena Shigar Fort palace",
+      "Calm trout-lake boat paddle at Shangrila & Upper Kachura Lake",
+      "Soft golden sandboarding on the high-altitude Cold Desert dunes",
+      "Organic Balti cooking class designed for parents and teens"
+    ],
+    "includedMeals": "Breakfast buffet, gourmet riverside picnics, wood-fired dinners",
+    "transport": "Private Luxury 4x4 SUV with climate control and panoramic sunroof",
+    "accommodation": "Serena Shigar Fort & Shangrila Lake Resort",
+    "activities": ["Cold Desert Sunset", "Lake Paddle Boating", "Palace Museum Tour", "Riverside Campfire Stories"],
+    "safetyPerks": "Gradual elevation acclimatization schedule with doctor on standby"
+  },
+  {
+    "id": "fam-fairy-meadows-safari",
+    "title": "Fairy Meadows & Nanga Parbat Family Pine Cabin Safari",
+    "destinationId": "fairy-meadows",
+    "destinationName": "Fairy Meadows & Raikot Face",
+    "duration": "5 Days / 4 Nights",
+    "familySize": "Families with Teens (Age 10+)",
+    "price": 1280,
+    "originalPrice": 1580,
+    "discount": "19% OFF",
+    "discountCode": "TEEN-ALPINE19",
+    "childFriendlyRating": "4.2/5 — Active Family Adventure",
+    "minAge": 10,
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80",
+    "highlights": [
+      "Waking up in cozy cedar log cabins facing the 8,126m Killer Mountain",
+      "Optional gentle horseback riding up the alpine trail for children",
+      "Roasting marshmallows around pine-needle campfires under the Milky Way",
+      "Wildlife spotting for Golden Marmots and Himalayan Ibex"
+    ],
+    "includedMeals": "Hearty mountain breakfasts, hot noodle bowls, freshly baked naan, Kashmiri chai",
+    "transport": "Mountain 4x4 Jeep transfer + gentle trail ponies for younger adventurers",
+    "accommodation": "Raikot Sarai Private Wooden Alpine Cabins",
+    "activities": ["Reflection Lake Walk", "Pony Trekking", "Stargazing Telescope Workshop", "Base Camp Viewpoint Walk"],
+    "safetyPerks": "Dedicated alpine wrangler + satellite messenger + medical altitude kit"
+  }
+]

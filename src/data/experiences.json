@@ -1,0 +1,87 @@
+{
+  "experiences": [
+    {
+      "id": "trekking",
+      "title": "TREKKING",
+      "tagline": "Glacial traverses & dramatic high-altitude cols",
+      "filterKey": "TREKKING",
+      "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+      "description": "Cross the legendary Baltoro glacier to Concordia and Gondogoro La pass (5,585m) under the sheer granite spires of Trango Towers.",
+      "highlights": ["Baltoro Glacier", "Concordia (4,700m)", "Fairy Meadows Trail"],
+      "icon": "Footprints",
+      "badge": "Classic Karakoram"
+    },
+    {
+      "id": "mountaineering",
+      "title": "MOUNTAINEERING",
+      "tagline": "Eight-thousanders & technical alpine ascents",
+      "filterKey": "EXPEDITION PRO",
+      "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+      "description": "World-standard technical expeditions to K2, Broad Peak, Spantik, and Mont Blanc with fixed-rope rigging, oxygen logistics, and UIAGM leadership.",
+      "highlights": ["K2 (8,611m)", "Broad Peak", "Spantik Golden Peak"],
+      "icon": "Mountain",
+      "badge": "Peak Expeditions"
+    },
+    {
+      "id": "camping",
+      "title": "CAMPING",
+      "tagline": "Wilderness under dark-sky constellations",
+      "filterKey": "CAMPING",
+      "image": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80",
+      "description": "Engineered four-season dome camps on the 4,114m Deosai plateau and moraines of Fairy Meadows with heated mess tents and solar power.",
+      "highlights": ["Deosai Wilderness", "Sheosar Lake", "Nanga Parbat Base"],
+      "icon": "Tent",
+      "badge": "Starlit Wilderness"
+    },
+    {
+      "id": "photography",
+      "title": "PHOTOGRAPHY",
+      "tagline": "Golden hour foliage & mirrored glacial lakes",
+      "filterKey": "PHOTOGRAPHY",
+      "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+      "description": "Curated itineraries timed for peak apricot blossom and golden autumn reflections at Attabad Lake, Passu Cathedral, and Katpana dunes.",
+      "highlights": ["Attabad Lake", "Passu Cones", "Katpana Cold Desert"],
+      "icon": "Camera",
+      "badge": "Visual Storytelling"
+    },
+    {
+      "id": "family-escape",
+      "title": "FAMILY ESCAPE",
+      "tagline": "Safe, paced mountain wonder for all generations",
+      "filterKey": "FAMILY",
+      "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80",
+      "description": "Gentle acclimatization profiles, five-star Serena heritage palaces, kid-safe day hikes, private 4x4 vehicles, and Silk Road folklore.",
+      "highlights": ["Hunza Valley", "Skardu Shigar", "Altit Royal Fort"],
+      "icon": "Users",
+      "badge": "Multi-Generation Safe"
+    },
+    {
+      "id": "luxury-travel",
+      "title": "LUXURY MOUNTAIN TRAVEL",
+      "tagline": "Private heli-charters & royal palace suites",
+      "filterKey": "COUPLE / LUXURY",
+      "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80",
+      "description": "Helicopter transfers over the Karakoram giants, presidential suites in 400-year-old restored royal forts, private chefs, and bespoke itineraries.",
+      "highlights": ["Serena Shigar Fort", "Khaplu Palace", "Heli Charters"],
+      "icon": "Crown",
+      "badge": "Exclusive Heritage"
+    },
+    {
+      "id": "cultural-journey",
+      "title": "CULTURAL JOURNEY",
+      "tagline": "Silk Road heritage, Balti craft & Wakhi melodies",
+      "filterKey": "SEASONAL",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+      "description": "Explore UNESCO heritage restoration sites, ancient Buddhist petroglyphs in Gilgit, centuries-old water channels, and organic apricot cuisine.",
+      "highlights": ["Baltit Fort", "Silk Road Caravans", "Chilas Rock Art"],
+      "icon": "Compass",
+      "badge": "Ancient Traditions"
+    }
+  ],
+  "subTabs": [
+    { "id": "stays", "label": "WHERE WILL YOU STAY?", "icon": "Home" },
+    { "id": "dining", "label": "WHAT WILL YOU EAT?", "icon": "Utensils" },
+    { "id": "transport", "label": "HOW WILL YOU TRAVEL?", "icon": "Truck" },
+    { "id": "regions", "label": "GILGIT-BALTISTAN ECOSYSTEM", "icon": "MapPin" }
+  ]
+}

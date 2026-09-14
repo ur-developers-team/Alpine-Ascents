@@ -1,0 +1,30 @@
+{
+  "globalOrigins": [
+    { "name": "Islamabad, Pakistan", "lat": 33.6844, "lng": 73.0479 },
+    { "name": "Geneva, Switzerland (Alps HQ)", "lat": 46.2044, "lng": 6.1432 },
+    { "name": "London, United Kingdom", "lat": 51.5074, "lng": -0.1278 },
+    { "name": "Dubai, UAE", "lat": 25.2048, "lng": 55.2708 },
+    { "name": "New York City, USA", "lat": 40.7128, "lng": -74.006 },
+    { "name": "Tokyo, Japan", "lat": 35.6762, "lng": 139.6503 }
+  ],
+  "alpineTargets": [
+    { "name": "K2 (8,611m)", "lat": 35.8825, "lng": 76.5133, "type": "Mountain", "region": "Karakoram" },
+    { "name": "Mount Everest (8,848m)", "lat": 27.9881, "lng": 86.925, "type": "Mountain", "region": "Himalayas" },
+    { "name": "Nanga Parbat (8,126m)", "lat": 35.2372, "lng": 74.5892, "type": "Mountain", "region": "Himalayas" },
+    { "name": "Broad Peak (8,051m)", "lat": 35.8117, "lng": 76.5678, "type": "Mountain", "region": "Karakoram" },
+    { "name": "Mont Blanc (4,808m)", "lat": 45.8326, "lng": 6.8652, "type": "Mountain", "region": "Alps" },
+    { "name": "Hunza Valley (Karimabad)", "lat": 36.3167, "lng": 74.65, "type": "Hub", "region": "Gilgit-Baltistan" },
+    { "name": "Skardu Gateway Hub", "lat": 35.2971, "lng": 75.6333, "type": "Hub", "region": "Gilgit-Baltistan" },
+    { "name": "Fairy Meadows", "lat": 35.3853, "lng": 74.5778, "type": "Hub", "region": "Gilgit-Baltistan" }
+  ],
+  "altitudeBenchmarks": [
+    { "name": "Sea Level", "meters": 0, "feet": 0 },
+    { "name": "Skardu Gateway", "meters": 2228, "feet": 7310 },
+    { "name": "Fairy Meadows", "meters": 3300, "feet": 10827 },
+    { "name": "Mont Blanc", "meters": 4808, "feet": 15774 },
+    { "name": "K2 Base Camp", "meters": 5150, "feet": 16896 },
+    { "name": "Camp 4 (Death Zone)", "meters": 7900, "feet": 25919 },
+    { "name": "K2 Summit", "meters": 8611, "feet": 28251 },
+    { "name": "Everest Summit", "meters": 8848, "feet": 29032 }
+  ]
+}

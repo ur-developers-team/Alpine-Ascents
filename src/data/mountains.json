@@ -15,6 +15,7 @@
     "bestSeason": "Late June - Early August",
     "duration": "50 - 65 Days",
     "expeditionType": "High-Altitude Siege or Super-Alpine",
+    "featured": true,
     "summary": "Earth's second-highest and undisputed most dangerous technical mountain. Known as 'The Savage Mountain' that tries to kill you, K2 offers zero easy walking routes to its summit."
   },
   {
@@ -33,6 +34,7 @@
     "bestSeason": "June - August",
     "duration": "45 - 55 Days",
     "expeditionType": "High-Altitude Technical",
+    "featured": true,
     "summary": "The western terminus of the Himalayan chain. Renowned for its sheer scale, volatile weather, avalanche-prone couloirs, and Hermann Buhl's legendary solo summit push on Pervitin."
   },
   {
@@ -51,6 +53,7 @@
     "bestSeason": "June - August",
     "duration": "40 - 50 Days",
     "expeditionType": "High-Altitude Expedition",
+    "featured": true,
     "summary": "Situated directly across the Godwin-Austen glacier from K2. Historically climbed in pure lightweight alpine style by Hermann Buhl's team in 1957 without porters or supplemental oxygen."
   },
   {
@@ -87,6 +90,7 @@
     "bestSeason": "Late April - Late May",
     "duration": "55 - 65 Days",
     "expeditionType": "Commercial Siege Expedition",
+    "featured": true,
     "summary": "The highest pinnacle of Earth. Climbed primarily via the Southeast Ridge from Nepal or the North Ridge from Tibet."
   },
   {
@@ -105,6 +109,7 @@
     "bestSeason": "June - September",
     "duration": "4 - 7 Days",
     "expeditionType": "Classic Alpine Ascent",
+    "featured": true,
     "summary": "The monarch of Western Europe, offering high-altitude glacial terrain easily accessible from the world-class climbing center of Chamonix."
   },
   {
@@ -141,6 +146,7 @@
     "bestSeason": "July - August",
     "duration": "30 - 45 Days",
     "expeditionType": "Capsule Big Wall Aid & Free Climbing",
+    "featured": true,
     "summary": "The ultimate big wall climbing test in the world. Requires portaledge camping hanging in mid-air over thousands of feet of exposure."
   },
   {
@@ -159,6 +165,7 @@
     "bestSeason": "June - September",
     "duration": "35 - 45 Days",
     "expeditionType": "Technical High-Altitude Alpine",
+    "featured": true,
     "summary": "One of the most visually dominant and sheer mountains on Earth when viewed directly from the Karakoram Highway near Karimabad."
   },
   {

@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
 import { Mountain, ArrowLeftRight, Wind, AlertCircle, CheckCircle2, ShieldAlert } from 'lucide-react';
 
-const BENCHMARKS = [
-  { name: 'Sea Level', meters: 0, feet: 0 },
-  { name: 'Skardu Gateway', meters: 2228, feet: 7310 },
-  { name: 'Fairy Meadows', meters: 3300, feet: 10827 },
-  { name: 'Mont Blanc', meters: 4808, feet: 15774 },
-  { name: 'K2 Base Camp', meters: 5150, feet: 16896 },
-  { name: 'Camp 4 (Death Zone)', meters: 7900, feet: 25919 },
-  { name: 'K2 Summit', meters: 8611, feet: 28251 },
-  { name: 'Everest Summit', meters: 8848, feet: 29032 }
-];
+import toolsData from '../../data/toolsData.json';
+
+const BENCHMARKS = toolsData.altitudeBenchmarks;
 
 export default function AltitudeConverter() {
   const [meters, setMeters] = useState(5150); // Default to K2 Base Camp

@@ -1,0 +1,20 @@
+{
+  "regions": [
+    { "id": "KARAKORAM", "label": "KARAKORAM", "lat": 35.8, "lon": 75.8, "zoom": 3.2, "desc": "Crown of Eight-Thousanders: K2, Broad Peak, Trango Towers" },
+    { "id": "PAKISTAN", "label": "ALL PAKISTAN", "lat": 33.5, "lon": 73.0, "zoom": 3.8, "desc": "Northern Hubs: Hunza, Skardu, Gilgit, Deosai, Fairy Meadows" },
+    { "id": "HIMALAYAS", "label": "HIMALAYAS", "lat": 28.5, "lon": 84.0, "zoom": 3.4, "desc": "Roof of the World: Everest, Annapurna, Nanga Parbat" },
+    { "id": "HINDUKUSH", "label": "HINDU KUSH", "lat": 36.2, "lon": 71.8, "zoom": 3.4, "desc": "Wild western ramparts: Tirich Mir, Swat, Chitral" }
+  ],
+  "globeMarkers": [
+    { "id": "k2", "name": "K2 Apex", "alt": "8,611m", "lat": 35.88, "lon": 76.51, "region": "Karakoram", "destId": "skardu-baltoro", "desc": "The Savage Mountain — second highest on Earth." },
+    { "id": "hunza", "name": "Hunza Valley", "alt": "2,438m", "lat": 36.32, "lon": 74.65, "region": "Karakoram", "destId": "hunza-valley", "desc": "Silk Road kingdom flanked by Rakaposhi & Passu." },
+    { "id": "skardu", "name": "Skardu & Baltoro", "alt": "2,228m", "lat": 35.30, "lon": 75.63, "region": "Baltistan", "destId": "skardu-baltoro", "desc": "Gateway to Concordia and high glaciers." },
+    { "id": "nanga-parbat", "name": "Nanga Parbat", "alt": "8,126m", "lat": 35.24, "lon": 74.59, "region": "Himalaya", "destId": "fairy-meadows", "desc": "The sheer 4,600m Rupal & Raikot faces." },
+    { "id": "fairy-meadows", "name": "Fairy Meadows", "alt": "3,300m", "lat": 35.38, "lon": 74.58, "region": "Himalaya", "destId": "fairy-meadows", "desc": "Alpine pine forest facing Nanga Parbat." },
+    { "id": "deosai", "name": "Deosai Plateau", "alt": "4,114m", "lat": 35.05, "lon": 75.48, "region": "Baltistan", "destId": "deosai-plateau", "desc": "High wildflower plateau & brown bear sanctuary." },
+    { "id": "gilgit", "name": "Gilgit City Hub", "alt": "1,500m", "lat": 35.92, "lon": 74.31, "region": "Gilgit", "destId": "gilgit-baltistan", "desc": "Historic crossroads of the Karakoram Highway." },
+    { "id": "naltar", "name": "Naltar Valley", "alt": "3,000m", "lat": 36.13, "lon": 74.19, "region": "Karakoram", "destId": "naltar-valley", "desc": "Rainbow emerald lakes and mountain ski slopes." },
+    { "id": "everest", "name": "Mount Everest", "alt": "8,848m", "lat": 27.98, "lon": 86.92, "region": "Himalaya", "destId": "himalayas-nepal", "desc": "Chomolungma — highest peak on Earth." },
+    { "id": "mont-blanc", "name": "Mont Blanc", "alt": "4,808m", "lat": 45.83, "lon": 6.86, "region": "European Alps", "destId": "alps-chamonix", "desc": "The monarch of the European Alps." }
+  ]
+}

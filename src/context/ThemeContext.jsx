@@ -4,20 +4,20 @@ const ThemeContext = createContext();
 
 export const THEMES = [
   {
+    id: 'alpine-day',
+    name: 'Alpine Day',
+    tagline: 'White Snow & Sky Editorial',
+    accent: '#0284c7',
+    bg: '#f8fafc',
+    description: 'Pristine white snow, sky blue and crisp granite textures inspired by real mountain expeditions.'
+  },
+  {
     id: 'summit-night',
     name: 'Summit Night',
     tagline: 'Nocturnal Glacier & Slate',
     accent: '#38bdf8',
     bg: '#070c12',
     description: 'High-altitude nocturnal atmosphere with obsidian rock and luminescent ice-blue highlights.'
-  },
-  {
-    id: 'alpine-day',
-    name: 'Alpine Day',
-    tagline: 'Clean Glacial Editorial',
-    accent: '#0284c7',
-    bg: '#f8fafc',
-    description: 'Pristine bright mountain atmosphere with crisp granite textures and editorial typography.'
   },
   {
     id: 'expedition',
@@ -51,7 +51,7 @@ export function ThemeProvider({ children }) {
     } catch {
       // fallback
     }
-    return 'summit-night';
+    return 'alpine-day';
   });
 
   useEffect(() => {

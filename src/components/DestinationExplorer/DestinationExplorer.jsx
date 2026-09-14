@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import destinationsData from '../../data/destinations.json';
 import { useWishlist } from '../../context/WishlistContext';
 import { useUserProfile } from '../../context/UserProfileContext';
-import { MapPin, Mountain, Calendar, Compass, Heart, ArrowRight } from 'lucide-react';
+import { MapPin, Mountain, Calendar, Compass, Heart, ArrowRight, Shield, Check, Sparkles } from 'lucide-react';
 import './DestinationExplorer.css';
 
 export default function DestinationExplorer({ onSelectDestination, onOpenTripBuilder }) {
@@ -27,115 +27,161 @@ export default function DestinationExplorer({ onSelectDestination, onOpenTripBui
     return true;
   });
 
-  const handleCardClick = (dest) => {
+  const handleOpenDetail = (dest) => {
     addRecentlyViewed(dest, 'destination');
-    onSelectDestination && onSelectDestination(dest);
+    if (onSelectDestination) {
+      onSelectDestination(dest);
+    }
   };
 
   return (
     <section id="destinations" className="section dest-explorer-section">
-      <div className="container">
-        {/* Section Header */}
+      <div className="site-container">
+        {/* Editorial Section Header */}
         <div className="section-header">
           <div className="section-eyebrow">
             <Compass size={14} />
-            <span>GLOBAL MOUNTAIN DOMAINS</span>
+            <span>GLOBAL HIGH-MOUNTAIN DOMAINS</span>
           </div>
           <h2 className="section-title">DESTINATION EXPLORER</h2>
           <p className="section-subtitle">
-            From the colossal granite pinnacles of the Karakoram to the ancient alpine passes of the Alps and Patagonia, discover pristine high-altitude frontiers.
+            Immerse yourself in full-bleed landscape journeys across the Karakoram, Western Himalaya, and international seven summits. No generic lists — every valley is an expedition theatre.
           </p>
         </div>
 
-        {/* Region Filter Bar */}
+        {/* Region Filter Pills */}
         <div className="dest-filter-bar" role="tablist">
           {categories.map(cat => (
             <button
               key={cat.key}
-              className={`btn btn-sm ${selectedRegion === cat.key ? 'btn-primary' : 'btn-outline'}`}
+              className={`dest-filter-chip ${selectedRegion === cat.key ? 'active' : ''}`}
               onClick={() => setSelectedRegion(cat.key)}
               role="tab"
               aria-selected={selectedRegion === cat.key}
             >
-              {cat.label}
+              <span>{cat.label}</span>
             </button>
           ))}
         </div>
 
-        {/* Destinations Grid */}
-        <div className="dest-grid">
-          {filteredDestinations.map(dest => (
-            <div key={dest.id} className="dest-card">
-              {/* Media Header */}
-              <div className="dest-card-media" onClick={() => handleCardClick(dest)} style={{ cursor: 'pointer' }}>
-                <img
-                  src={dest.image}
-                  alt={dest.name}
-                  className="dest-card-img"
-                  loading="lazy"
-                />
-                <div className="dest-card-badges">
-                  <span className="hud-tag">
-                    <Mountain size={11} />
-                    <span>{dest.altitude}</span>
-                  </span>
-                  <span className="hud-tag" style={{ background: 'rgba(16, 185, 129, 0.2)', color: '#34d399', borderColor: '#059669' }}>
-                    {dest.difficulty}
-                  </span>
-                </div>
+        {/* Full-Width Visual Destination Showcase Strips (No Boring Card Grid) */}
+        <div className="dest-immersive-stack">
+          {filteredDestinations.map((dest, index) => {
+            const isSaved = isWishlisted(dest.id);
+            const isReverse = index % 2 === 1;
 
-                <div className="dest-card-save" onClick={(e) => e.stopPropagation()}>
-                  <button
-                    className={`btn-save ${isWishlisted(dest.id) ? 'active' : ''}`}
-                    onClick={() => toggleWishlist(dest, 'destination')}
-                    title="Save to Wishlist"
-                    aria-label="Save"
-                  >
-                    <Heart size={16} fill={isWishlisted(dest.id) ? '#f43f5e' : 'none'} />
-                  </button>
-                </div>
-              </div>
+            return (
+              <div
+                key={dest.id}
+                className={`dest-wide-strip ${isReverse ? 'is-reverse' : ''}`}
+                id={`dest-strip-${dest.id}`}
+              >
+                {/* Large Editorial Landscape Canvas */}
+                <div
+                  className="dest-strip-media"
+                  onClick={() => handleOpenDetail(dest)}
+                >
+                  <img
+                    src={dest.image}
+                    alt={dest.name}
+                    className="dest-strip-image"
+                    loading="lazy"
+                  />
+                  <div className="dest-strip-media-overlay" />
 
-              {/* Card Body */}
-              <div className="dest-card-body">
-                <span className="section-eyebrow" style={{ fontSize: '0.72rem', textAlign: 'left', marginBottom: '0.2rem' }}>
-                  {dest.region}, {dest.country}
-                </span>
-                <h4 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', cursor: 'pointer' }} onClick={() => handleCardClick(dest)}>
-                  {dest.name}
-                </h4>
-                <p style={{ fontSize: '0.88rem', lineClamp: 2, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                  {dest.overview}
-                </p>
-
-                {/* Metadata Row */}
-                <div className="dest-card-meta">
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                    <Calendar size={13} color="var(--accent)" />
-                    <span>{dest.bestSeason}</span>
-                  </span>
-                  <span>{dest.duration}</span>
-                </div>
-
-                {/* Card Footer */}
-                <div className="dest-card-footer">
-                  <div>
-                    <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', display: 'block' }}>Starting from</span>
-                    <span className="dest-card-price">${dest.startingPrice}</span>
-                    <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}> (Sample Demo)</span>
+                  {/* Overlaid Badges */}
+                  <div className="dest-strip-badges">
+                    <span className="dest-tag-alt">
+                      <Mountain size={12} />
+                      <span>{dest.altitude}</span>
+                    </span>
+                    <span className="dest-tag-diff">
+                      <Shield size={12} />
+                      <span>{dest.difficulty}</span>
+                    </span>
                   </div>
 
                   <button
-                    className="btn btn-secondary btn-sm"
-                    onClick={() => handleCardClick(dest)}
+                    className={`btn-save dest-strip-save-btn ${isSaved ? 'active' : ''}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleWishlist(dest, 'destination');
+                    }}
+                    title="Save to Alpine Passport"
+                    aria-label="Save"
                   >
-                    <span>View Dossier</span>
-                    <ArrowRight size={14} />
+                    <Heart size={18} fill={isSaved ? '#f43f5e' : 'none'} color={isSaved ? '#f43f5e' : '#ffffff'} />
                   </button>
                 </div>
+
+                {/* Editorial Content Column */}
+                <div className="dest-strip-content">
+                  <div className="dest-strip-meta-top">
+                    <span className="dest-strip-region-tag">{dest.region} • {dest.country}</span>
+                    <span className="dest-strip-season-tag">Window: {dest.bestSeason}</span>
+                  </div>
+
+                  <h3 className="dest-strip-title" onClick={() => handleOpenDetail(dest)}>
+                    {dest.name}
+                  </h3>
+
+                  <p className="dest-strip-overview">
+                    {dest.overview}
+                  </p>
+
+                  {/* Key Indicator Metrics */}
+                  <div className="dest-metrics-grid">
+                    <div className="metric-box">
+                      <span className="metric-label">Elevation</span>
+                      <span className="metric-val">{dest.altitude}</span>
+                    </div>
+                    <div className="metric-box">
+                      <span className="metric-label">Standard Window</span>
+                      <span className="metric-val">{dest.duration}</span>
+                    </div>
+                    <div className="metric-box">
+                      <span className="metric-label">Starting From</span>
+                      <span className="metric-val highlight">${dest.startingPrice}</span>
+                    </div>
+                  </div>
+
+                  {/* Feature Highlights Pills */}
+                  {dest.activities && (
+                    <div className="dest-chips-row">
+                      {dest.activities.slice(0, 3).map((act, i) => (
+                        <span key={i} className="dest-chip-item">
+                          <Check size={12} color="var(--accent)" />
+                          <span>{act}</span>
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Action Row */}
+                  <div className="dest-strip-actions">
+                    <button
+                      className="btn btn-primary"
+                      onClick={() => handleOpenDetail(dest)}
+                    >
+                      <span>Explore {dest.name}</span>
+                      <ArrowRight size={15} />
+                    </button>
+                    <button
+                      className="btn btn-outline"
+                      onClick={() => {
+                        if (onOpenTripBuilder) {
+                          onOpenTripBuilder(dest.id);
+                        }
+                      }}
+                    >
+                      <Sparkles size={14} />
+                      <span>Custom Package</span>
+                    </button>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
