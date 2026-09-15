@@ -1,54 +1,35 @@
-const CACHE_NAME = 'alpine-ascents-v1';
-const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/favicon.svg',
-  '/manifest.webmanifest'
-];
+// Alpine Ascents — Service Worker Cleanup & Cache Eviction Script
+// Safely evicts all legacy CacheStorage keys and unregisters obsolete service workers
+// to prevent stale HTML from pointing to superseded Vite-hashed assets.
 
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(ASSETS_TO_CACHE);
-    })
-  );
+self.addEventListener('install', () => {
+  // Force new service worker to activate immediately without waiting
   self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) => {
-      return Promise.all(
-        keys.map((key) => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
-          }
-        })
-      );
-    })
+    caches.keys()
+      .then((cacheNames) => {
+        return Promise.all(
+          cacheNames.map((cacheName) => {
+            console.log('[SW] Purging obsolete cache:', cacheName);
+            return caches.delete(cacheName);
+          })
+        );
+      })
+      .then(() => {
+        // Unregister this service worker from the client browser
+        return self.registration.unregister();
+      })
+      .then(() => {
+        return self.clients.claim();
+      })
   );
-  self.clients.claim();
 });
 
 self.addEventListener('fetch', (event) => {
-  // Pass through non-GET and external API calls like open-meteo without blocking
-  if (event.request.method !== 'GET' || event.request.url.includes('api.open-meteo.com')) {
-    return;
-  }
-
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(event.request).then((networkResponse) => {
-        return networkResponse;
-      }).catch(() => {
-        // Fallback to cache index if HTML request fails
-        if (event.request.headers.get('accept')?.includes('text/html')) {
-          return caches.match('/index.html');
-        }
-      });
-    })
-  );
+  // Navigation / HTML requests MUST always fetch fresh from network
+  // Never serve cached index.html which could reference stale asset hashes
+  event.respondWith(fetch(event.request));
 });

@@ -23,16 +23,38 @@
 
     <!-- Urdu Font Support -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Cache-Control Meta Tags: Prevent stale index.html caching across browser sessions -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script>
-      if ('serviceWorker' in navigator && window.location.protocol === 'https:') {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').catch(err => {
-            console.log('SW registration skipped or error:', err);
-          });
+      // Actively unregister any legacy service workers and clear stale CacheStorage
+      // to eliminate 404 white screens on refresh caused by outdated asset hashes
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+          for (const registration of registrations) {
+            registration.unregister().then((success) => {
+              if (success) console.log('[SW] Legacy service worker unregistered');
+            });
+          }
+        }).catch((err) => {
+          console.warn('[SW] Service worker cleanup error:', err);
+        });
+      }
+      if ('caches' in window) {
+        caches.keys().then((keys) => {
+          for (const key of keys) {
+            caches.delete(key).then(() => {
+              console.log('[Cache] Purged legacy cache:', key);
+            });
+          }
+        }).catch((err) => {
+          console.warn('[Cache] Cache purge error:', err);
         });
       }
     </script>
