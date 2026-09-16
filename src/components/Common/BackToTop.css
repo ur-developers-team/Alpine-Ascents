@@ -1,0 +1,33 @@
+.back-to-top-btn {
+  position: fixed;
+  bottom: calc(112px + env(safe-area-inset-bottom, 0px));
+  right: max(20px, env(safe-area-inset-right, 0px));
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--bg-card-solid);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  z-index: 800;
+  transition: all 0.25s ease;
+}
+
+.back-to-top-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 640px) {
+  .back-to-top-btn {
+    bottom: calc(102px + env(safe-area-inset-bottom, 0px));
+    right: max(12px, env(safe-area-inset-right, 0px));
+    width: 40px;
+    height: 40px;
+  }
+}

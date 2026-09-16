@@ -4,7 +4,7 @@
   padding: 5rem 0 3rem;
   position: relative;
   z-index: 1;
-  margin-bottom: 38px; /* space for sticky ticker */
+  margin-bottom: calc(38px + env(safe-area-inset-bottom, 0px)); /* space for sticky ticker */
 }
 
 .footer-grid {

@@ -138,3 +138,22 @@
     justify-content: center;
   }
 }
+
+@media (max-width: 480px) {
+  .quick-search-dock-wrapper {
+    margin-top: -2rem;
+    padding: 0 0.25rem 1.25rem;
+  }
+  .quick-search-dock-card {
+    padding: 1rem 0.85rem;
+  }
+  .dock-action-cell {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .dock-submit-btn,
+  .dock-plan-custom-btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+}

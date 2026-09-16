@@ -44,9 +44,23 @@ export default function MountainExplorer() {
   };
 
   return (
-    <div className="mountain-explorer-wrap">
-      {/* Mountain Switcher Tabs */}
-      <div className="mountain-switcher-bar" role="tablist" aria-label="Select Mountain Summit">
+    <section id="mountains" className="section mountain-explorer-section" aria-label="Mountain Summits Showcase">
+      <div className="site-container">
+        {/* Editorial Section Header */}
+        <div className="section-header">
+          <div className="section-eyebrow">
+            <Mountain size={14} />
+            <span>GLOBAL APEX SUMMITS</span>
+          </div>
+          <h2 className="section-title">THE EIGHT-THOUSANDERS & ICONIC PEAKS</h2>
+          <p className="section-subtitle">
+            Explore legendary apexes of the Karakoram and Himalaya with verified technical ascent beta, real-time elevation telemetry, and route difficulty analysis.
+          </p>
+        </div>
+
+        <div className="mountain-explorer-wrap">
+          {/* Mountain Switcher Tabs */}
+          <div className="mountain-switcher-bar" role="tablist" aria-label="Select Mountain Summit">
         {featuredPeaks.map(peak => (
           <button
             key={peak.id}
@@ -194,6 +208,9 @@ export default function MountainExplorer() {
         </div>
       </div>
 
+        </div>
+      </div>
+
       {/* Comparison Modal */}
       {comparisonModalOpen && (
         <MountainComparisonModal
@@ -202,6 +219,6 @@ export default function MountainExplorer() {
           onRemove={(id) => setCompareList(prev => prev.filter(m => m.id !== id))}
         />
       )}
-    </div>
+    </section>
   );
 }

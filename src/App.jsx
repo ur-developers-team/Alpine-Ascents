@@ -294,6 +294,11 @@ export default function App() {
                   <SuccessStories />
                   <JournalExplorer />
                   <GalleryExplorer />
+
+                  {/* High-Altitude Mini-Games, Glaciology & Community Modules */}
+                  <MiniGamesHub />
+                  <GlacierSlider />
+                  <CommunityPoll />
                 </main>
 
                 {/* Multi-column Footer */}

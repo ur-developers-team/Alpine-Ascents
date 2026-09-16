@@ -165,3 +165,17 @@
   font-size: 0.72rem;
   color: var(--text-muted, #94a3b8);
 }
+
+@media (max-width: 600px) {
+  .poll-card-container {
+    padding: 1.25rem 1rem;
+    border-radius: 12px;
+  }
+  .poll-title {
+    font-size: 1.25rem;
+  }
+  .poll-option-row {
+    padding: 0.85rem 1rem;
+  }
+}
+

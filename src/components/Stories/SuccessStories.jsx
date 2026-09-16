@@ -1,6 +1,7 @@
 import React from 'react';
 import storiesData from '../../data/successStories.json';
 import { Award, Mountain, Clock, Check, Sparkles } from 'lucide-react';
+import './SuccessStories.css';
 
 export default function SuccessStories() {
   return (
@@ -18,9 +19,9 @@ export default function SuccessStories() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '2rem' }}>
+        <div className="stories-grid">
           {storiesData.map(story => (
-            <div key={story.id} className="card" style={{ display: 'flex', flexDirection: 'column' }}>
+            <div key={story.id} className="card stories-card">
               <div style={{ height: '240px', position: 'relative', overflow: 'hidden' }}>
                 <img src={story.image} alt={story.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
                 <div style={{ position: 'absolute', top: '1rem', left: '1rem' }}>
@@ -31,7 +32,7 @@ export default function SuccessStories() {
                 </div>
               </div>
 
-              <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+              <div className="stories-card-body">
                 <span className="section-eyebrow" style={{ fontSize: '0.72rem', textAlign: 'left', marginBottom: '0.2rem' }}>
                   {story.region}
                 </span>

@@ -16,7 +16,7 @@ export default function PackageDetailModal({ pkg, isOpen, onClose, onRequestExpe
         </button>
 
         {/* Hero Header */}
-        <div style={{ padding: '2.5rem 2.5rem 1.75rem', background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border)' }}>
+        <div className="pkg-modal-header">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', flexWrap: 'wrap' }}>
             <div>
               <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem' }}>
@@ -29,7 +29,7 @@ export default function PackageDetailModal({ pkg, isOpen, onClose, onRequestExpe
                   <span>{pkg.difficulty}</span>
                 </span>
               </div>
-              <h2 style={{ fontSize: '2.2rem', marginBottom: '0.4rem' }}>{pkg.name}</h2>
+              <h2 className="pkg-modal-title">{pkg.name}</h2>
               <p style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', color: 'var(--text-secondary)' }}>
                 <MapPin size={15} color="var(--accent)" />
                 <span>{pkg.destinationName} · <strong>{pkg.duration}</strong></span>
@@ -60,7 +60,7 @@ export default function PackageDetailModal({ pkg, isOpen, onClose, onRequestExpe
         </div>
 
         {/* Modal Body */}
-        <div style={{ padding: '2.5rem' }}>
+        <div className="pkg-modal-body">
           {/* Overview */}
           <div className="dest-detail-section-block">
             <span className="section-eyebrow">EXPEDITION OVERVIEW</span>

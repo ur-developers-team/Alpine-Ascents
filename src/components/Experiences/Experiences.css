@@ -50,6 +50,13 @@
 }
 
 /* Mountain Explorer Styling */
+.mountain-explorer-section {
+  padding: clamp(3.5rem, 6vw, 6rem) 0;
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border);
+  position: relative;
+}
+
 .mountain-explorer-wrap {
   width: 100%;
 }
@@ -215,6 +222,42 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+@media (max-width: 640px) {
+  .mountain-hero-media {
+    min-height: 280px;
+  }
+  .mountain-hero-intel {
+    padding: 1.25rem 1rem;
+  }
+  .mountain-metrics-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .mountain-metric-cell {
+    padding: 0.5rem 0.75rem;
+  }
+  .mountain-hero-actions {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 0.5rem !important;
+  }
+  .mountain-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .mountain-altitude-watermark {
+    font-size: clamp(2.5rem, 12vw, 3.8rem);
+    top: 0.75rem;
+    left: 1rem;
+  }
+  .mountain-hero-caption {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+  }
 }
 
 .mountain-metrics-grid {
@@ -939,7 +982,10 @@
 }
 
 .adventure-select-btn {
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
+  max-width: 100%;
 }
 
 @media (max-width: 1024px) {
@@ -953,6 +999,18 @@
   }
   .adventure-strip-footer {
     justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .adventure-strip-footer {
+    width: 100%;
+  }
+  .adventure-select-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.65rem 1rem;
   }
 }
 

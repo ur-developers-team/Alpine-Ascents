@@ -187,3 +187,25 @@
     width: 100%;
   }
 }
+
+@media (max-width: 540px) {
+  .offer-horizontal-strip {
+    padding: 1.25rem 1rem;
+  }
+  .strip-action-col {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .strip-code-badge {
+    align-items: flex-start;
+  }
+  .strip-claim-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .lucky-launch-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

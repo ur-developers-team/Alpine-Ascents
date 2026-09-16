@@ -602,4 +602,10 @@
     width: 24px;
     height: 24px;
   }
+  .mobile-drawer {
+    width: min(92vw, 320px);
+  }
+  .mobile-drawer-inner {
+    padding: 1rem 0.85rem;
+  }
 }

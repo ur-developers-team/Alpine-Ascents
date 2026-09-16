@@ -656,3 +656,37 @@
     justify-content: center;
   }
 }
+
+/* Package Detail Modal Classes */
+.pkg-modal-header {
+  padding: clamp(1.25rem, 4vw, 2.25rem) clamp(1rem, 4vw, 2.25rem) 1.25rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.pkg-modal-title {
+  font-size: clamp(1.35rem, 3vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+  overflow-wrap: anywhere;
+}
+
+.pkg-modal-body {
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+  overflow-y: auto;
+}
+
+@media (max-width: 600px) {
+  .pkg-modal-header {
+    padding: 1.25rem 1rem 1rem;
+  }
+  .pkg-modal-body {
+    padding: 1.25rem 1rem;
+  }
+  .gb-meta-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+}

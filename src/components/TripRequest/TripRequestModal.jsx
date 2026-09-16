@@ -41,17 +41,17 @@ export default function TripRequestModal({ initialTrip, isOpen, onClose }) {
           <X size={18} />
         </button>
 
-        <div style={{ padding: '2rem 2.5rem', background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border)' }}>
+        <div style={{ padding: 'clamp(1.25rem, 4vw, 2rem) clamp(1rem, 4vw, 2.5rem)', background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border)' }}>
           <span className="section-eyebrow" style={{ textAlign: 'left', marginBottom: '0.2rem' }}>
             OFFICIAL MANIFEST REQUEST
           </span>
-          <h3 style={{ fontSize: '1.6rem' }}>REQUEST AN EXPEDITION DOSSIER</h3>
+          <h3 style={{ fontSize: 'clamp(1.25rem, 4.5vw, 1.6rem)' }}>REQUEST AN EXPEDITION DOSSIER</h3>
           <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
             Submit your parameters to receive an expedition itinerary, equipment guidelines, and guide roster.
           </p>
         </div>
 
-        <div style={{ padding: '2rem 2.5rem' }}>
+        <div style={{ padding: 'clamp(1.25rem, 4vw, 2rem) clamp(1rem, 4vw, 2.5rem)' }}>
           {submitted ? (
             <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
               <CheckCircle2 size={54} color="#10b981" style={{ margin: '0 auto 1rem' }} />

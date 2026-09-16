@@ -285,3 +285,30 @@
     align-items: flex-start;
   }
 }
+
+@media (max-width: 640px) {
+  .family-hero-floating-content {
+    padding: 1.5rem 1rem;
+  }
+  .family-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .family-primary-cta {
+    width: 100%;
+    justify-content: center;
+  }
+  .family-price-badge {
+    align-items: flex-start;
+  }
+  .family-route-selector-bar {
+    padding: 0.75rem 1rem;
+  }
+  .family-selector-tabs {
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 0.25rem;
+    scrollbar-width: thin;
+  }
+}

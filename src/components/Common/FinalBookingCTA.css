@@ -137,6 +137,18 @@
     padding: 4rem 1rem;
   }
 
+  .final-cta-actions {
+    width: 100%;
+  }
+
+  .final-cta-main-btn {
+    width: 100%;
+    max-width: 360px;
+    padding: 0.95rem 1.25rem;
+    font-size: 0.92rem;
+    justify-content: center;
+  }
+
   .final-cta-guarantees {
     flex-direction: column;
     align-items: center;
