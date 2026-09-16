@@ -510,8 +510,8 @@
 @media (max-width: 640px) {
   .sherpa-floating-btn {
     bottom: calc(44px + env(safe-area-inset-bottom, 0px));
-    right: max(12px, env(safe-area-inset-right, 0px));
-    padding: 8px 14px 8px 10px;
+    right: max(10px, env(safe-area-inset-right, 0px));
+    padding: 8px 12px 8px 10px;
   }
   .sherpa-chat-window {
     bottom: 0;
@@ -523,6 +523,34 @@
     max-height: 85dvh;
     border-radius: 20px 20px 0 0;
     padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+}
+
+@media (max-width: 480px) {
+  .sherpa-floating-btn {
+    bottom: calc(44px + env(safe-area-inset-bottom, 0px));
+    right: max(8px, env(safe-area-inset-right, 0px));
+    padding: 6px 10px 6px 8px;
+    gap: 6px;
+  }
+  .sherpa-btn-subtitle {
+    display: none;
+  }
+  .sherpa-btn-title {
+    font-size: 0.74rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .sherpa-floating-btn {
+    padding: 6px;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    justify-content: center;
+  }
+  .sherpa-btn-text {
+    display: none;
   }
 }
 
