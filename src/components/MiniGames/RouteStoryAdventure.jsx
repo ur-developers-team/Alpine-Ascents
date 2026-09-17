@@ -51,7 +51,7 @@ export default function RouteStoryAdventure() {
         {/* Stage Indicator Bar */}
         <div className="story-stage-bar">
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <MapPin size={16} color="var(--accent, #d4af37)" />
+            <MapPin size={16} color="var(--accent, #0284c7)" />
             <strong>{currentScene.stage || currentScene.title}</strong>
           </div>
           {currentScene.altitude && (
@@ -70,15 +70,15 @@ export default function RouteStoryAdventure() {
             <div className="ending-badge-row">
               <div className="ending-icon">
                 {currentScene.outcome === 'VICTORY' ? (
-                  <Trophy size={32} color="#d4af37" />
+                  <Trophy size={32} color="#0284c7" />
                 ) : (
-                  <Award size={32} color="#38bdf8" />
+                  <Award size={32} color="#0284c7" />
                 )}
               </div>
               <div>
                 <span className="ending-status-tag">{currentScene.outcome}</span>
                 <h4>{currentScene.title}</h4>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary, #334155)' }}>
                   Climber Score: <strong>{currentScene.score} / 100</strong> · Badge Awarded: <strong>{currentScene.badge}</strong>
                 </div>
               </div>

@@ -104,7 +104,7 @@ export default function HazardReactionGame() {
           <div className="hazard-meta-strip">
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <span className="hazard-danger-tag">⚠ {currentScenario.hazardType}</span>
-              <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{currentScenario.altitude}</span>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-muted, #475569)' }}>{currentScenario.altitude}</span>
             </div>
 
             {/* Countdown timer */}
@@ -166,7 +166,7 @@ export default function HazardReactionGame() {
       {gameStatus === 'complete' && (
         <div className="hazard-complete-banner">
           <div className="hazard-complete-trophy">
-            <ShieldAlert size={36} color="#d4af37" />
+            <ShieldAlert size={36} color="#0284c7" />
           </div>
           <h4>Simulation Complete: Final Score {score} / 100</h4>
           <p>

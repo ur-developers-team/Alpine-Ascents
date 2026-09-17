@@ -132,7 +132,7 @@ export default function OxygenStaminaChallenge() {
           <span className="metric-tag">HEART RATE</span>
           <div className="metric-val heart-pulse font-mono">
             <Heart size={20} color="#ef4444" style={{ display: 'inline', marginRight: '0.4rem' }} />
-            {heartRate} <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>BPM</span>
+            {heartRate} <span style={{ fontSize: '0.8rem', color: 'var(--text-muted, #475569)' }}>BPM</span>
           </div>
           <span className="metric-note">{heartRate > 165 ? 'Elevated cardiovascular load' : 'Stable cadence'}</span>
         </div>

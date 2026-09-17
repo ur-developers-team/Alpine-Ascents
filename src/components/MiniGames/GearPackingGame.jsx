@@ -117,7 +117,7 @@ export default function GearPackingGame() {
         <div className="gear-locker-panel">
           <div className="gear-panel-title">
             <span>EXPEDITION EQUIPMENT DEPOT</span>
-            <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Tap or drag to pack</span>
+            <span style={{ fontSize: '0.72rem', color: 'var(--text-muted, #475569)' }}>Tap or drag to pack</span>
           </div>
 
           <div className="gear-items-grid">
@@ -154,11 +154,11 @@ export default function GearPackingGame() {
         >
           <div className="rucksack-visual-header">
             <div className="rucksack-icon-box">
-              <Briefcase size={28} color="var(--accent, #d4af37)" />
+              <Briefcase size={28} color="var(--accent, #0284c7)" />
             </div>
             <div>
               <h4>Expedition 85L Pack</h4>
-              <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-muted, #475569)' }}>
                 Target Capacity: {MAX_CAPACITY_KG} kg Max
               </span>
             </div>

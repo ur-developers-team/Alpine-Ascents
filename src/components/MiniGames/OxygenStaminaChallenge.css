@@ -1,10 +1,11 @@
 .oxygen-challenge-container {
-  background: var(--bg-secondary, #0f172a);
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: var(--bg-secondary, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
   border-radius: 16px;
   padding: 1.75rem;
-  color: var(--text-primary, #f8fafc);
+  color: #172033;
   margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
 }
 
 .challenge-header {
@@ -16,13 +17,27 @@
 
 .challenge-header h3 {
   font-size: 1.35rem;
-  color: #fff;
+  color: #172033;
   margin-bottom: 0.25rem;
+  font-weight: 800;
 }
 
 .challenge-header p {
   font-size: 0.85rem;
-  color: var(--text-muted, #94a3b8);
+  color: #334155;
+}
+
+.challenge-header .btn-outline {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #172033;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.challenge-header .btn-outline:hover {
+  background: #f0f9ff;
+  border-color: #0284c7;
+  color: #0284c7;
 }
 
 .challenge-dashboard-grid {
@@ -33,8 +48,8 @@
 }
 
 .challenge-metric-box {
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 1rem;
   display: flex;
@@ -45,7 +60,7 @@
   font-size: 0.65rem;
   font-weight: 800;
   letter-spacing: 0.8px;
-  color: var(--text-muted, #94a3b8);
+  color: #475569;
   margin-bottom: 0.4rem;
 }
 
@@ -59,26 +74,28 @@
 .metric-percent {
   font-family: var(--font-mono, monospace);
   font-size: 0.82rem;
-  color: var(--accent, #d4af37);
+  color: #0284c7;
   font-weight: 700;
 }
 
 .metric-val {
   font-size: 1.6rem;
   font-weight: 900;
-  color: #ffffff;
+  color: #172033;
   margin: 0.2rem 0;
 }
 
 .metric-target {
   font-size: 0.72rem;
-  color: var(--text-muted, #94a3b8);
+  color: #475569;
+  font-weight: 500;
 }
 
 .metric-note {
   font-size: 0.72rem;
-  color: var(--text-muted, #94a3b8);
+  color: #475569;
   margin-top: 0.4rem;
+  font-weight: 500;
 }
 
 .heart-pulse {
@@ -98,27 +115,27 @@
 
 .challenge-status-bar.ready,
 .challenge-status-bar.resting {
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  color: #38bdf8;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  color: #0369a1;
 }
 
 .challenge-status-bar.climbing {
-  background: rgba(245, 158, 11, 0.12);
-  border: 1px solid rgba(245, 158, 11, 0.35);
-  color: #f59e0b;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #b45309;
 }
 
 .challenge-status-bar.exhausted {
-  background: rgba(239, 68, 68, 0.15);
-  border: 1px solid rgba(239, 68, 68, 0.4);
-  color: #ef4444;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
 }
 
 .challenge-status-bar.success {
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.4);
-  color: #10b981;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #047857;
 }
 
 .challenge-controls-row {
@@ -133,14 +150,76 @@
   padding: 0.9rem;
 }
 
+.challenge-controls-row .btn-primary {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.challenge-controls-row .btn-primary:hover:not(:disabled) {
+  background: #0369a1;
+  color: #ffffff;
+}
+
+.challenge-controls-row .btn-primary:disabled {
+  background: #cbd5e1;
+  color: #64748b;
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+.challenge-controls-row .btn-outline {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #172033;
+}
+
+.challenge-controls-row .btn-outline:hover:not(:disabled) {
+  background: #f0f9ff;
+  border-color: #0284c7;
+  color: #0284c7;
+}
+
+.challenge-controls-row .btn-outline:disabled {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #94a3b8;
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+.meter-track {
+  width: 100%;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  transition: width 300ms ease;
+}
+
+.meter-fill.danger {
+  background: #dc2626;
+}
+
+.meter-fill.success {
+  background: #16a34a;
+}
+
 .challenge-lesson-callout {
-  background: rgba(212, 175, 55, 0.08);
-  border-left: 3px solid var(--accent, #d4af37);
+  background: #f0f9ff;
+  border-left: 3px solid #0284c7;
   border-radius: 6px;
   padding: 0.85rem 1rem;
   font-size: 0.8rem;
-  color: var(--text-secondary, #cbd5e1);
+  color: #334155;
   line-height: 1.5;
+}
+
+.challenge-lesson-callout strong {
+  color: #172033;
 }
 
 @media (max-width: 600px) {
@@ -159,3 +238,4 @@
     flex-direction: column;
   }
 }
+

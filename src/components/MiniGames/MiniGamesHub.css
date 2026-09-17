@@ -1,17 +1,92 @@
 .mini-games-section {
-  background: var(--bg-tertiary, #0b111e);
-  border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
-  border-bottom: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  --text-primary: #172033;
+  --text-secondary: #334155;
+  --text-muted: #475569;
+  --bg-card: #ffffff;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f8fafc;
+  --border-color: #e2e8f0;
+  --accent: #0284c7;
+  --accent-hover: #0369a1;
+
+  background: var(--bg-tertiary, #f8fafc);
+  border-top: 1px solid var(--border-color, #e2e8f0);
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
   position: relative;
   overflow: hidden;
+  color: #172033;
 }
 
+/* Section Header Typography Contrast */
+.mini-games-section .section-eyebrow {
+  color: #0284c7;
+  font-weight: 700;
+}
+
+.mini-games-section .section-title {
+  color: #172033;
+  font-weight: 800;
+}
+
+.mini-games-section .section-subtitle {
+  color: #334155;
+  font-weight: 400;
+  opacity: 1;
+}
+
+/* Tab Navigation Contrast & States */
 .games-nav-tab-bar {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 2rem;
+}
+
+.games-nav-tab-bar .btn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 6px;
+  transition: all 180ms ease;
+}
+
+.games-nav-tab-bar .btn-outline {
+  background: #ffffff;
+  color: #172033;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.games-nav-tab-bar .btn-outline svg {
+  color: #0284c7;
+}
+
+.games-nav-tab-bar .btn-outline:hover {
+  background: #f0f9ff;
+  border-color: #0284c7;
+  color: #0284c7;
+}
+
+.games-nav-tab-bar .btn-outline:hover svg {
+  color: #0284c7;
+}
+
+.games-nav-tab-bar .btn-primary {
+  background: #0284c7;
+  color: #ffffff;
+  border: 1px solid #0284c7;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
+}
+
+.games-nav-tab-bar .btn-primary svg {
+  color: #ffffff;
+}
+
+.games-nav-tab-bar .btn-primary:hover {
+  background: #0369a1;
+  color: #ffffff;
+  border-color: #0369a1;
 }
 
 .games-panes-wrapper {
@@ -30,3 +105,4 @@
     padding-bottom: 0.5rem;
   }
 }
+

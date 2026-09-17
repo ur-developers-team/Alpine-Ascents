@@ -1,10 +1,11 @@
 .hazard-game-container {
-  background: var(--bg-secondary, #0f172a);
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: var(--bg-secondary, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
   border-radius: 16px;
   padding: 1.75rem;
-  color: var(--text-primary, #f8fafc);
+  color: #172033;
   margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
 }
 
 .hazard-game-header {
@@ -16,32 +17,46 @@
 
 .hazard-game-header h3 {
   font-size: 1.35rem;
-  color: #fff;
+  color: #172033;
   margin-bottom: 0.25rem;
+  font-weight: 800;
 }
 
 .hazard-game-header p {
   font-size: 0.85rem;
-  color: var(--text-muted, #94a3b8);
+  color: #334155;
+}
+
+.hazard-game-header .btn-outline {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #172033;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+.hazard-game-header .btn-outline:hover {
+  background: #f0f9ff;
+  border-color: #0284c7;
+  color: #0284c7;
 }
 
 .hazard-score-badge {
   font-family: var(--font-mono, monospace);
   font-size: 0.85rem;
   font-weight: 800;
-  color: var(--accent, #d4af37);
-  background: rgba(212, 175, 55, 0.12);
+  color: #0284c7;
+  background: #f0f9ff;
   padding: 0.35rem 0.75rem;
   border-radius: 20px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid #bae6fd;
 }
 
 .hazard-start-banner,
 .hazard-complete-banner {
   text-align: center;
   padding: 2.5rem 1.5rem;
-  background: rgba(15, 23, 42, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
 }
 
@@ -50,32 +65,40 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: rgba(239, 68, 68, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
 }
 
+.hazard-start-icon {
+  background: #fee2e2;
+}
+
+.hazard-complete-trophy {
+  background: #e0f2fe;
+}
+
 .hazard-start-banner h4,
 .hazard-complete-banner h4 {
   font-size: 1.25rem;
-  color: #fff;
+  font-weight: 800;
+  color: #172033;
   margin-bottom: 0.5rem;
 }
 
 .hazard-start-banner p,
 .hazard-complete-banner p {
   font-size: 0.88rem;
-  color: var(--text-secondary, #cbd5e1);
+  color: #334155;
   max-width: 520px;
   margin: 0 auto 1.5rem;
   line-height: 1.55;
 }
 
 .hazard-scenario-card {
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 1.5rem;
 }
@@ -88,9 +111,9 @@
 }
 
 .hazard-danger-tag {
-  background: rgba(239, 68, 68, 0.18);
-  border: 1px solid rgba(239, 68, 68, 0.4);
-  color: #ef4444;
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
   font-size: 0.72rem;
   font-weight: 800;
   padding: 0.25rem 0.6rem;
@@ -98,35 +121,43 @@
   text-transform: uppercase;
 }
 
+.hazard-meta-strip span {
+  color: #475569;
+  font-weight: 500;
+}
+
 .hazard-timer-box {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
   padding: 0.35rem 0.75rem;
   border-radius: 20px;
   font-family: var(--font-mono, monospace);
   font-size: 0.95rem;
   font-weight: 900;
-  color: #ffffff;
+  color: #172033;
 }
 
 .hazard-timer-box.critical {
-  background: rgba(239, 68, 68, 0.25);
-  color: #ef4444;
+  background: #fee2e2;
+  border-color: #f87171;
+  color: #dc2626;
   animation: pulse 600ms infinite;
 }
 
 .hazard-scenario-title {
   font-size: 1.25rem;
-  color: #fff;
+  font-weight: 800;
+  color: #172033;
   margin-bottom: 0.5rem;
 }
 
 .hazard-scenario-prompt {
   font-size: 0.92rem;
   line-height: 1.6;
-  color: var(--text-secondary, #cbd5e1);
+  color: #334155;
   margin-bottom: 1.5rem;
 }
 
@@ -142,25 +173,29 @@
   align-items: center;
   gap: 1rem;
   padding: 0.9rem 1.1rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
   border-radius: 10px;
-  color: var(--text-primary, #f8fafc);
+  color: #172033;
   cursor: pointer;
   text-align: left;
   transition: all 180ms ease;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 }
 
 .hazard-opt-btn:hover:not(:disabled) {
-  background: rgba(212, 175, 55, 0.1);
-  border-color: rgba(212, 175, 55, 0.4);
+  background: #f0f9ff;
+  border-color: #0284c7;
+  color: #172033;
 }
 
 .opt-letter {
   width: 28px;
   height: 28px;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.08);
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #172033;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,17 +208,43 @@
 .opt-text {
   font-size: 0.88rem;
   line-height: 1.4;
+  color: #172033;
+  font-weight: 500;
   flex-grow: 1;
 }
 
 .hazard-opt-btn.correct {
-  background: rgba(16, 185, 129, 0.15);
+  background: #ecfdf5;
   border-color: #10b981;
+  color: #065f46;
+}
+
+.hazard-opt-btn.correct .opt-letter {
+  background: #d1fae5;
+  border-color: #10b981;
+  color: #065f46;
+}
+
+.hazard-opt-btn.correct .opt-text {
+  color: #065f46;
+  font-weight: 600;
 }
 
 .hazard-opt-btn.wrong {
-  background: rgba(239, 68, 68, 0.15);
+  background: #fef2f2;
   border-color: #ef4444;
+  color: #991b1b;
+}
+
+.hazard-opt-btn.wrong .opt-letter {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #991b1b;
+}
+
+.hazard-opt-btn.wrong .opt-text {
+  color: #991b1b;
+  font-weight: 600;
 }
 
 .hazard-debrief-box {
@@ -195,21 +256,35 @@
 }
 
 .hazard-debrief-box.pass {
-  background: rgba(16, 185, 129, 0.1);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
 }
 
 .hazard-debrief-box.fail {
-  background: rgba(239, 68, 68, 0.1);
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+.hazard-debrief-box strong {
+  color: #172033;
+}
+
+.hazard-debrief-box p {
+  color: #334155;
 }
 
 .hazard-official-protocol {
   margin-top: 0.65rem;
   padding-top: 0.65rem;
-  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  border-top: 1px dashed #cbd5e1;
   font-size: 0.8rem;
-  color: var(--accent, #d4af37);
+  color: #0369a1;
+}
+
+.hazard-official-protocol strong {
+  color: #0284c7;
 }
 
 @media (max-width: 600px) {
@@ -232,3 +307,4 @@
     font-size: 0.82rem;
   }
 }
+
