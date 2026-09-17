@@ -2,11 +2,12 @@
    ALPINE ASCENTS — PROFESSIONAL RESPONSIVE NAVBAR & HEADER
    ========================================================================== */
 
-/* 1. Full-Width Outer Header (Sticky, Zero Layout Shift) */
+/* 1. Full-Width Outer Header (Fixed at top: 0, Zero Layout Shift) */
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
   max-width: 100%;
   height: calc(74px + env(safe-area-inset-top, 0px));

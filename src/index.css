@@ -61,6 +61,15 @@
   --sar: env(safe-area-inset-right, 0px);
   --sab: env(safe-area-inset-bottom, 0px);
   --sal: env(safe-area-inset-left, 0px);
+
+  /* Navigation Sizing Token & Content Offset */
+  --nav-height: calc(74px + env(safe-area-inset-top, 0px));
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: calc(64px + env(safe-area-inset-top, 0px));
+  }
 }
 
 [data-theme="summit-night"] {
@@ -199,11 +208,12 @@ h1, h2, h3, h4, h5, h6, p, span, a, label, button {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color-scheme: dark;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100vw;
 }
 
@@ -218,7 +228,7 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   min-height: 100dvh;
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100vw;
   width: 100%;
   transition: background-color 0.25s ease, color 0.25s ease;
@@ -226,10 +236,15 @@ body {
 }
 
 #root {
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100vw;
   width: 100%;
   position: relative;
+}
+
+/* Content Offset for Fixed Top Navbar so page is never covered */
+main {
+  padding-top: var(--nav-height);
 }
 
 /* Smooth Theme Switching Transitions on Core Surfaces */
@@ -780,7 +795,7 @@ section[id] {
 /* --------------------------------------------------------------------------
    11. Strict Overflow Shield & Bilingual Urdu Styling
    -------------------------------------------------------------------------- */
-html, body {
+html, body, #root {
   overflow-x: clip;
   max-width: 100vw;
 }
