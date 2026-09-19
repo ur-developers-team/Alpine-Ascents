@@ -34,14 +34,14 @@
 /* 2. Responsive Inner Container (Respects real viewport width) */
 .navbar-container {
   width: 100%;
-  max-width: 100%;
-  padding-inline: clamp(16px, 2.5vw, 40px);
+  max-width: 1920px;
+  padding-inline: clamp(14px, 1.8vw, 36px);
   height: 100%;
   margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(10px, 1.4vw, 24px);
+  gap: clamp(10px, 1.2vw, 24px);
   box-sizing: border-box;
 }
 
@@ -49,7 +49,7 @@
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.6rem;
   text-decoration: none;
   flex-shrink: 0;
   box-sizing: border-box;
@@ -106,60 +106,71 @@
   opacity: 0.95;
 }
 
-/* 4. Desktop Navigation (Center, Flexible, Never Overflows) */
+/* 4. Desktop Navigation (Spacious, Crisp, Zero Cramping) */
 .navbar-desktop-nav {
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1 1 auto;
   min-width: 0;
   box-sizing: border-box;
+  padding: 0 0.25rem;
 }
 
 .navbar-nav-list {
   display: flex;
   align-items: center;
+  justify-content: center;
   list-style: none;
-  gap: clamp(8px, 1.1vw, 18px);
+  gap: clamp(4px, 0.65vw, 14px);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  flex-wrap: nowrap;
 }
 
 .navbar-nav-item {
   position: relative;
   display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .navbar-nav-link {
   font-family: var(--font-body);
-  font-size: clamp(12.5px, 0.85vw, 14.5px);
+  font-size: clamp(12px, 0.78vw, 13.5px);
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
   color: var(--text-secondary);
   text-decoration: none;
-  padding: 0.35rem 0;
+  padding: 0.38rem clamp(6px, 0.55vw, 11px);
+  border-radius: 6px;
   position: relative;
   white-space: nowrap;
-  transition: color var(--transition-fast);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.navbar-nav-link:hover,
+.navbar-nav-link:hover {
+  color: var(--accent-gold);
+  background: rgba(212, 175, 55, 0.09);
+}
+
 .navbar-nav-link.active {
   color: var(--accent-gold);
+  background: rgba(212, 175, 55, 0.07);
 }
 
 .navbar-nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  bottom: 0px;
+  left: clamp(6px, 0.55vw, 11px);
+  right: clamp(6px, 0.55vw, 11px);
   height: 2px;
   background: var(--accent-gold);
   border-radius: 2px;
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: center;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -172,7 +183,7 @@
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: clamp(5px, 0.7vw, 9px);
+  gap: clamp(4px, 0.5vw, 9px);
   flex-shrink: 0;
   box-sizing: border-box;
 }
@@ -180,18 +191,19 @@
 .nav-action-pill-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.35rem 0.65rem;
+  gap: 0.3rem;
+  padding: 0.32rem 0.55rem;
   border-radius: 999px;
   background: var(--bg-tertiary);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 600;
   cursor: pointer;
   transition: var(--transition-fast);
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-action-pill-btn:hover {
@@ -199,25 +211,49 @@
   color: var(--accent-gold);
 }
 
-.nav-action-icon-btn {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-color);
-  color: var(--text-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.nav-action-icon-btn,
+.ambient-toggle-btn,
+.nav-voice-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50% !important;
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   cursor: pointer;
   position: relative;
   transition: var(--transition-fast);
   flex-shrink: 0;
+  padding: 0 !important;
+  box-sizing: border-box;
 }
 
-.nav-action-icon-btn:hover {
-  border-color: var(--accent-gold);
-  color: var(--accent-gold);
+.ambient-toggle-btn {
+  gap: 0 !important;
+}
+
+.ambient-toggle-btn svg:last-child {
+  display: none !important;
+}
+
+.ambient-toggle-btn.active {
+  border-color: var(--accent-gold) !important;
+  color: var(--accent-gold) !important;
+  background: rgba(212, 175, 55, 0.12) !important;
+}
+
+.nav-voice-btn span {
+  display: none !important;
+}
+
+.nav-action-icon-btn:hover,
+.ambient-toggle-btn:hover,
+.nav-voice-btn:hover {
+  border-color: var(--accent-gold) !important;
+  color: var(--accent-gold) !important;
   transform: translateY(-1px);
 }
 
@@ -242,11 +278,14 @@
 .navbar-cta {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: clamp(0.74rem, 0.8vw, 0.82rem);
-  padding: clamp(0.42rem, 0.5vw, 0.5rem) clamp(0.75rem, 0.9vw, 1.1rem);
+  gap: 0.45rem;
+  font-size: clamp(0.74rem, 0.78vw, 0.8rem);
+  padding: 0.46rem 1.05rem;
   white-space: nowrap;
   flex-shrink: 0;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-left: 2px;
 }
 
 /* 6. Hamburger Menu Button */
@@ -486,26 +525,18 @@
    SMART RESPONSIVE BREAKPOINTS (Zero clipping at any viewport width)
    ========================================================================== */
 
-/* 1. Intermediate Laptop Adaptations (1220px - 1380px) */
-@media (max-width: 1380px) {
-  .navbar-container {
-    gap: 12px;
-    padding-inline: 16px;
-  }
-  .navbar-nav-list {
-    gap: clamp(6px, 0.75vw, 12px);
-  }
-  .navbar-nav-link {
-    font-size: 12.5px;
-    padding: 0.3rem 0.1rem;
-  }
+/* 1. Large Desktops & Laptops (< 1500px) */
+@media (max-width: 1500px) {
   .ambient-audio-widget,
   .nav-voice-btn {
     display: none !important;
   }
+  .navbar-brand-tagline {
+    display: none !important;
+  }
 }
 
-/* 2. Switch to Hamburger at 1220px (When desktop row would start cramping) */
+/* 2. Switch to Hamburger at 1220px (To preserve generous tab spacing and prevent congestion) */
 @media (max-width: 1220px) {
   .navbar-desktop-nav {
     display: none !important;

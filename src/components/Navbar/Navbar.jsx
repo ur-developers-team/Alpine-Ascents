@@ -14,8 +14,7 @@ export default function Navbar({
   onOpenWishlist,
   onOpenProfile,
   onOpenTripBuilder,
-  onOpenQuiz,
-  activeSection
+  onOpenQuiz
 }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,6 +22,28 @@ export default function Navbar({
   const { profile } = useUserProfile();
   const { language, toggleLanguage, t } = useLanguage();
   const drawerRef = useRef(null);
+
+  // Active navigation section ID ('home', 'destinations', 'mountains', etc.)
+  const [activeNavId, setActiveNavId] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const path = (window.location.pathname || '/').toLowerCase().replace(/\/+$/, '') || '/';
+      if (path === '/' || path === '/home' || path === '/index.html') {
+        const hash = (window.location.hash || '').toLowerCase().replace(/^#\/?/, '');
+        if (hash) {
+          const match = navigationData.find((item) => item.id.toLowerCase() === hash);
+          if (match) return match.id;
+        }
+        return 'home';
+      }
+      const segment = path.replace(/^\/+/, '').split('/')[0].replace(/\.html$/, '');
+      const match = navigationData.find((item) => item.id.toLowerCase() === segment);
+      return match ? match.id : 'home';
+    }
+    return 'home';
+  });
+
+  const isProgrammaticScroll = useRef(false);
+  const scrollTimeoutRef = useRef(null);
 
   // SRS Visitor counter
   const [visitorCount, setVisitorCount] = useState(() => {
@@ -48,14 +69,129 @@ export default function Navbar({
     }
   }, []);
 
-  // Scroll listener for compact sticky navbar
+  // Listen to browser Back / Forward buttons & URL changes
   useEffect(() => {
+    const handlePopState = () => {
+      const path = (window.location.pathname || '/').toLowerCase().replace(/\/+$/, '') || '/';
+      if (path === '/' || path === '/home' || path === '/index.html') {
+        const hash = (window.location.hash || '').toLowerCase().replace(/^#\/?/, '');
+        if (hash) {
+          const match = navigationData.find((item) => item.id.toLowerCase() === hash);
+          if (match) {
+            setActiveNavId(match.id);
+            return;
+          }
+        }
+        setActiveNavId('home');
+        return;
+      }
+      const segment = path.replace(/^\/+/, '').split('/')[0].replace(/\.html$/, '');
+      const match = navigationData.find((item) => item.id.toLowerCase() === segment);
+      if (match) {
+        setActiveNavId(match.id);
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    window.addEventListener('hashchange', handlePopState);
+
+    // If directly landing on a sub-route (e.g. /destinations), scroll to section
+    const currentNorm = (window.location.pathname || '/').toLowerCase().replace(/\/+$/, '') || '/';
+    if (currentNorm !== '/' && currentNorm !== '/home' && currentNorm !== '/index.html') {
+      const sectionId = currentNorm.replace(/^\/+/, '').split('/')[0].replace(/\.html$/, '');
+      const timer = setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 150);
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener('popstate', handlePopState);
+        window.removeEventListener('hashchange', handlePopState);
+      };
+    }
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener('hashchange', handlePopState);
+    };
+  }, []);
+
+  // ScrollSpy: dynamically tracks which section is on the screen and updates active underline
+  useEffect(() => {
+    const sectionIds = navigationData.map((item) => item.id).filter((id) => id !== 'home');
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
+
+      // Do not recalculate active section if smooth programmatic scroll is animating
+      if (isProgrammaticScroll.current) return;
+
+      // At top of page -> Home is active
+      if (window.scrollY < 180) {
+        if (activeNavId !== 'home') {
+          setActiveNavId('home');
+          if (window.location.pathname !== '/') {
+            window.history.replaceState(null, '', '/');
+          }
+        }
+        return;
+      }
+
+      // Check if user reached bottom of page -> activate last navigation item
+      const scrollBottom = window.scrollY + window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      if (scrollBottom >= docHeight - 60) {
+        const lastSection = sectionIds[sectionIds.length - 1];
+        if (lastSection && activeNavId !== lastSection) {
+          setActiveNavId(lastSection);
+          const targetPath = `/${lastSection}`;
+          if (window.location.pathname !== targetPath) {
+            window.history.replaceState(null, '', targetPath);
+          }
+        }
+        return;
+      }
+
+      // Find all present sections, sort by their vertical position in DOM
+      const sections = sectionIds
+        .map((id) => {
+          const el = document.getElementById(id);
+          if (!el) return null;
+          const rect = el.getBoundingClientRect();
+          return { id, top: rect.top, absoluteTop: rect.top + window.scrollY };
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.absoluteTop - b.absoluteTop);
+
+      // Header offset line: navbar height + threshold
+      const headerOffset = 180;
+      let matchedId = null;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].top <= headerOffset) {
+          matchedId = sections[i].id;
+          break;
+        }
+      }
+
+      if (!matchedId && sections.length > 0 && sections[0].top < window.innerHeight * 0.7) {
+        matchedId = sections[0].id;
+      }
+
+      if (matchedId && matchedId !== activeNavId) {
+        setActiveNavId(matchedId);
+        const targetPath = `/${matchedId}`;
+        if (window.location.pathname !== targetPath) {
+          window.history.replaceState(null, '', targetPath);
+        }
+      }
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [activeNavId]);
 
   // Keyboard Escape listener & body scroll lock for mobile menu
   useEffect(() => {
@@ -76,15 +212,33 @@ export default function Navbar({
     };
   }, [mobileMenuOpen]);
 
-  const scrollTo = (id) => {
+  const handleNavigate = (item) => {
     setMobileMenuOpen(false);
-    if (!id || id === '#') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
+    const targetId = item.id;
+    const targetRoute = targetId === 'home' ? '/' : `/${targetId}`;
+
+    setActiveNavId(targetId);
+
+    if (window.location.pathname !== targetRoute) {
+      window.history.pushState(null, '', targetRoute);
     }
-    const element = document.querySelector(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+
+    // Temporarily lock scrollspy during smooth scroll animation
+    isProgrammaticScroll.current = true;
+    if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+    scrollTimeoutRef.current = setTimeout(() => {
+      isProgrammaticScroll.current = false;
+    }, 850);
+
+    if (targetId === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const section =
+        document.getElementById(targetId) ||
+        (item.path && item.path.startsWith('#') ? document.querySelector(item.path) : null);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -94,11 +248,11 @@ export default function Navbar({
         <div className="navbar-container">
           {/* 1. BRAND LOGO (Complete Brand & Tagline with Zero Clipping) */}
           <a
-            href="#"
+            href="/"
             className="navbar-brand"
             onClick={(e) => {
               e.preventDefault();
-              scrollTo('#');
+              handleNavigate({ id: 'home', path: '/' });
             }}
             aria-label="Alpine Ascents Home"
           >
@@ -115,7 +269,7 @@ export default function Navbar({
           <nav aria-label="Main Navigation" className="navbar-desktop-nav">
             <ul className="navbar-nav-list">
               {navigationData.map((item) => {
-                const isActive = activeSection === item.id || (item.id === 'home' && (!activeSection || activeSection === 'hero'));
+                const isActive = activeNavId === item.id;
                 const labelText = language === 'ur' && item.labelUrdu ? item.labelUrdu : item.label;
 
                 return (
@@ -125,7 +279,7 @@ export default function Navbar({
                       className={`navbar-nav-link ${isActive ? 'active' : ''}`}
                       onClick={(e) => {
                         e.preventDefault();
-                        scrollTo(item.path);
+                        handleNavigate(item);
                       }}
                     >
                       {labelText}
@@ -149,8 +303,8 @@ export default function Navbar({
               <span>{language === 'en' ? 'اردو' : 'EN'}</span>
             </button>
 
-            {/* Adaptive Atmosphere Theme Switcher (Full on desktop, compact on tablet/mobile) */}
-            <ThemeSwitcher compact={false} />
+            {/* Adaptive Atmosphere Theme Switcher */}
+            <ThemeSwitcher compact={true} />
 
             {/* Optional Ambient Mountain Wind Sound (User Opt-in) */}
             <AmbientAudioPlayer />
@@ -281,7 +435,7 @@ export default function Navbar({
             <ul className="mobile-nav-list">
               {navigationData.map((item) => {
                 const labelText = language === 'ur' && item.labelUrdu ? item.labelUrdu : item.label;
-                const isActive = activeSection === item.id || (item.id === 'home' && (!activeSection || activeSection === 'hero'));
+                const isActive = activeNavId === item.id;
 
                 return (
                   <li key={item.id} className="mobile-nav-item">
@@ -290,7 +444,7 @@ export default function Navbar({
                       className={`mobile-nav-link ${isActive ? 'active' : ''}`}
                       onClick={(e) => {
                         e.preventDefault();
-                        scrollTo(item.path);
+                        handleNavigate(item);
                       }}
                     >
                       <span>{labelText}</span>

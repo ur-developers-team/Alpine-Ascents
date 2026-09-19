@@ -3,54 +3,54 @@
     "id": "home",
     "label": "Home",
     "labelUrdu": "مرکز",
-    "path": "#"
+    "path": "/"
   },
   {
     "id": "expeditions",
     "label": "Expeditions",
     "labelUrdu": "مہمات",
-    "path": "#expeditions"
+    "path": "/expeditions"
   },
   {
     "id": "destinations",
     "label": "Destinations",
     "labelUrdu": "مقامات",
-    "path": "#destinations"
+    "path": "/destinations"
   },
   {
     "id": "mountains",
     "label": "Mountains",
     "labelUrdu": "چوٹیاں",
-    "path": "#mountains"
+    "path": "/mountains"
   },
   {
     "id": "experiences",
     "label": "Experiences",
     "labelUrdu": "تجربات",
-    "path": "#experiences"
+    "path": "/experiences"
   },
   {
     "id": "guides",
     "label": "Guides",
     "labelUrdu": "رہنما",
-    "path": "#guides"
+    "path": "/guides"
   },
   {
     "id": "journal",
     "label": "Journal",
     "labelUrdu": "جرنل",
-    "path": "#journal"
+    "path": "/journal"
   },
   {
     "id": "gallery",
     "label": "Gallery",
     "labelUrdu": "گیلری",
-    "path": "#gallery"
+    "path": "/gallery"
   },
   {
     "id": "about",
     "label": "About",
     "labelUrdu": "ہمارے بارے میں",
-    "path": "#about"
+    "path": "/about"
   }
 ]

@@ -104,9 +104,6 @@ export default function App() {
     }
   });
 
-  // Active section for navbar underline
-  const [activeSection, setActiveSection] = useState('destinations');
-
   // Listen for Ctrl+K shortcut globally
   useEffect(() => {
     const handleGlobalKeyDown = (e) => {
@@ -192,7 +189,6 @@ export default function App() {
                   onOpenProfile={() => setProfileModalOpen(true)}
                   onOpenTripBuilder={() => setPlanModalOpen(true)}
                   onOpenQuiz={() => setQuizModalOpen(true)}
-                  activeSection={activeSection}
                 />
 
                 {/* Interactive Summit Climb Progress HUD (Discrete Collapsed Pill) */}
