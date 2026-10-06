@@ -79,16 +79,36 @@ export default function Navbar({
           const match = navigationData.find((item) => item.id.toLowerCase() === hash);
           if (match) {
             setActiveNavId(match.id);
+            isProgrammaticScroll.current = true;
+            const el = document.getElementById(match.id);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+            if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+            scrollTimeoutRef.current = setTimeout(() => {
+              isProgrammaticScroll.current = false;
+            }, 850);
             return;
           }
         }
         setActiveNavId('home');
+        isProgrammaticScroll.current = true;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+        scrollTimeoutRef.current = setTimeout(() => {
+          isProgrammaticScroll.current = false;
+        }, 850);
         return;
       }
       const segment = path.replace(/^\/+/, '').split('/')[0].replace(/\.html$/, '');
       const match = navigationData.find((item) => item.id.toLowerCase() === segment);
       if (match) {
         setActiveNavId(match.id);
+        isProgrammaticScroll.current = true;
+        const el = document.getElementById(match.id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+        scrollTimeoutRef.current = setTimeout(() => {
+          isProgrammaticScroll.current = false;
+        }, 850);
       }
     };
 
@@ -99,14 +119,21 @@ export default function Navbar({
     const currentNorm = (window.location.pathname || '/').toLowerCase().replace(/\/+$/, '') || '/';
     if (currentNorm !== '/' && currentNorm !== '/home' && currentNorm !== '/index.html') {
       const sectionId = currentNorm.replace(/^\/+/, '').split('/')[0].replace(/\.html$/, '');
+      isProgrammaticScroll.current = true;
       const timer = setTimeout(() => {
         const el = document.getElementById(sectionId);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 150);
+        if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
+        scrollTimeoutRef.current = setTimeout(() => {
+          isProgrammaticScroll.current = false;
+        }, 850);
+      }, 200);
+
       return () => {
         clearTimeout(timer);
+        if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
         window.removeEventListener('popstate', handlePopState);
         window.removeEventListener('hashchange', handlePopState);
       };

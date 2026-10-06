@@ -141,7 +141,7 @@ export default function WhyAlpineAscents({ onOpenPlanModal }) {
 
           {/* TAB 2: GUIDES DIRECTORY */}
           {activeTab === 'guides' && (
-            <div className="guides-cards-stack animate-fade-in" id="guides">
+            <div className="guides-cards-stack animate-fade-in">
               {guidesData.map(guide => (
                 <div key={guide.id} className="guide-showcase-card">
                   <div className="guide-card-media">

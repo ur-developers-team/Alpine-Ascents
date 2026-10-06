@@ -81,7 +81,7 @@ export default function Hero({ onOpenPlanModal, onExploreClick }) {
   const contentOpacity = isReduced ? 1 : Math.max(0, 1 - clampedScroll / 600);
 
   return (
-    <section className="hero-section" aria-label="Alpine Ascents Hero Showcase">
+    <section id="home" className="hero-section" aria-label="Alpine Ascents Hero Showcase">
       {/* Real Full-Bleed Video Background */}
       <div className="hero-media-container">
         {!videoError && (

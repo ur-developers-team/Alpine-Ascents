@@ -21,7 +21,7 @@ export default function VideoDetailModal({ video, isOpen, onClose, onSelectVideo
 
   const videoRef = useRef(null);
   const playerContainerRef = useRef(null);
-  const videoSourceUrl = video?.video || (video?.id ? `/videos/${video.id}.mp4` : '/videos/hunza.mp4');
+  const videoSourceUrl = video?.source || video?.videoUrl || video?.video || (video?.id ? `/videos/${video.id}.mp4` : '/videos/hunza.mp4');
 
   // Find index for Previous / Next controls
   const currentIndex = videosData.findIndex(v => v.id === video?.id);
@@ -145,8 +145,6 @@ export default function VideoDetailModal({ video, isOpen, onClose, onSelectVideo
     const s = Math.floor(sec % 60);
     return `${m}:${s < 10 ? '0' : ''}${s}`;
   };
-
-  const videoSourceUrl = video.source || video.videoUrl;
 
   return (
     <div className="video-modal-backdrop" onClick={onClose} role="dialog" aria-modal="true" aria-label={video.title}>

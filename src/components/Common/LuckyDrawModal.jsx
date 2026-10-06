@@ -7,7 +7,8 @@ import './LuckyDrawModal.css';
 
 export default function LuckyDrawModal({ isOpen, onClose, onApplyReward }) {
   const { profile, addAchievement } = useUserProfile();
-  const { showToast } = useToast ? useToast() : { showToast: () => {} };
+  const toast = useToast();
+  const showToast = toast?.showToast || (() => {});
 
   const [name, setName] = useState(profile.name || '');
   const [email, setEmail] = useState(profile.email || '');

@@ -589,6 +589,7 @@ section[id] {
   max-height: 90vh;
   max-height: 90dvh;
   overflow-y: auto;
+  overflow-x: hidden;
   box-shadow: var(--shadow-xl);
   position: relative;
   animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -631,6 +632,20 @@ section[id] {
     right: 0.75rem;
     width: 36px;
     height: 36px;
+  }
+}
+
+/* Common 2-Column Responsive Form & Dashboard Grid */
+.dashboard-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .dashboard-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 

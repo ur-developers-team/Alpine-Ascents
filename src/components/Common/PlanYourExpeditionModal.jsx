@@ -24,7 +24,8 @@ const {
 
 export default function PlanYourExpeditionModal({ isOpen, onClose, onOpenCustomBuilder, onRequestManifest }) {
   const { saveTrip } = useUserProfile();
-  const { showToast } = useToast ? useToast() : { showToast: () => {} };
+  const toast = useToast();
+  const showToast = toast?.showToast || (() => {});
 
   // 8 steps + Review (9) + Submitted confirmation (10)
   const [step, setStep] = useState(1);

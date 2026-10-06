@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useUserProfile } from '../../context/UserProfileContext';
 import { X, Send, Compass, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
@@ -6,29 +6,64 @@ export default function TripRequestModal({ initialTrip, isOpen, onClose }) {
   const { profile, saveTrip } = useUserProfile();
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
-    name: profile.name || '',
-    email: profile.email || '',
+    name: profile?.name || '',
+    email: profile?.email || '',
     destination: initialTrip?.destinationName || initialTrip?.destination || 'Hunza Valley & Passu',
     packageType: initialTrip?.type || initialTrip?.travelStyle || 'Explorer',
-    travelDates: 'June 2027 Window',
+    travelDates: initialTrip?.departureDate || 'June 2027 Window',
     groupSize: initialTrip?.groupSize || '2-4 Climbers',
-    notes: 'Inquiring regarding high-altitude acclimatization schedule and gear rental availability.'
+    notes: initialTrip?.specialNotes || 'Inquiring regarding high-altitude acclimatization schedule and gear rental availability.'
   });
+
+  // Re-synchronize state whenever modal opens or initialTrip / profile changes
+  useEffect(() => {
+    if (isOpen) {
+      setSubmitted(false);
+      setFormData({
+        name: profile?.name || '',
+        email: profile?.email || '',
+        destination: initialTrip?.destinationName || initialTrip?.destination || 'Hunza Valley & Passu',
+        packageType: initialTrip?.type || initialTrip?.travelStyle || 'Explorer',
+        travelDates: initialTrip?.departureDate || 'June 2027 Window',
+        groupSize: initialTrip?.groupSize || '2-4 Climbers',
+        notes: initialTrip?.specialNotes || 'Inquiring regarding high-altitude acclimatization schedule and gear rental availability.'
+      });
+    }
+  }, [isOpen, initialTrip, profile]);
 
   if (!isOpen) return null;
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const finalEstimatedTotal = initialTrip?.estimatedTotal ?? initialTrip?.price ?? 890;
+    const finalPerPerson = initialTrip?.price ?? finalEstimatedTotal;
+    const basePrice = initialTrip?.basePrice ?? initialTrip?.breakdown?.basePrice;
+    const optionsPrice = initialTrip?.optionsPrice ?? initialTrip?.breakdown?.optionsPrice;
+    const discount = initialTrip?.discount ?? initialTrip?.breakdown?.discount;
+
     // Save to user profile "My Trips"
     saveTrip({
       ...initialTrip,
+      id: initialTrip?.id || `request-${Date.now()}`,
+      name: initialTrip?.name || `Custom Expedition: ${formData.destination}`,
       destinationName: formData.destination,
       travelStyle: formData.packageType,
       groupSize: formData.groupSize,
       travelDates: formData.travelDates,
       requesterName: formData.name,
       requesterEmail: formData.email,
-      estimatedTotal: initialTrip?.price || initialTrip?.estimatedTotal || 890,
+      specialNotes: formData.notes,
+      basePrice,
+      optionsPrice,
+      discount,
+      price: finalPerPerson,
+      estimatedTotal: finalEstimatedTotal,
+      breakdown: initialTrip?.breakdown ?? (basePrice !== undefined ? {
+        basePrice,
+        optionsPrice,
+        discount,
+        total: finalEstimatedTotal
+      } : undefined),
       status: 'Request Manifest Prepared'
     });
     setSubmitted(true);
@@ -70,17 +105,41 @@ export default function TripRequestModal({ initialTrip, isOpen, onClose }) {
             <form onSubmit={handleSubmit}>
               {/* Manifest Summary Bar */}
               {initialTrip && (
-                <div style={{ padding: '1rem', background: 'var(--bg-tertiary)', borderRadius: '8px', border: '1px solid var(--border)', marginBottom: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <div>
-                    <span className="hud-tag" style={{ marginBottom: '0.2rem' }}>{initialTrip.type || initialTrip.travelStyle || 'Expedition'}</span>
-                    <h5 style={{ fontSize: '1.05rem', margin: 0 }}>{initialTrip.name || initialTrip.destinationName}</h5>
+                <div style={{ padding: '1rem', background: 'var(--bg-tertiary)', borderRadius: '8px', border: '1px solid var(--border)', marginBottom: '1.5rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.75rem' }}>
+                    <div>
+                      <span className="hud-tag" style={{ marginBottom: '0.2rem' }}>{initialTrip.type || initialTrip.travelStyle || 'Expedition'}</span>
+                      <h5 style={{ fontSize: '1.05rem', margin: 0 }}>{initialTrip.name || initialTrip.destinationName}</h5>
+                      {initialTrip.groupSize && (
+                        <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', display: 'block', marginTop: '0.25rem' }}>
+                          Party: {initialTrip.groupSize}
+                        </span>
+                      )}
+                    </div>
+                    <div style={{ textAlign: 'right', minWidth: '130px' }}>
+                      <span style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--accent)', display: 'block' }}>
+                        ${(initialTrip.estimatedTotal ?? initialTrip.price ?? 890).toLocaleString()}
+                      </span>
+                      <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', display: 'block' }}>
+                        {initialTrip.estimatedTotal !== undefined && initialTrip.price !== undefined && initialTrip.estimatedTotal !== initialTrip.price
+                          ? 'Estimated Total Party'
+                          : 'Estimated Demo Total'}
+                      </span>
+                      {initialTrip.estimatedTotal !== undefined && initialTrip.price !== undefined && initialTrip.estimatedTotal !== initialTrip.price && (
+                        <span style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', display: 'block', marginTop: '0.15rem' }}>
+                          (${initialTrip.price.toLocaleString()} / person)
+                        </span>
+                      )}
+                    </div>
                   </div>
-                  <div style={{ textAlign: 'right' }}>
-                    <span style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--accent)' }}>
-                      ${initialTrip.price || initialTrip.estimatedTotal || 890}
-                    </span>
-                    <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', display: 'block' }}>Estimated Demo Total</span>
-                  </div>
+
+                  {initialTrip.breakdown && (
+                    <div style={{ marginTop: '0.75rem', paddingTop: '0.75rem', borderTop: '1px dashed var(--border)', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.5rem', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                      <span>Base: <strong>${initialTrip.breakdown.basePrice?.toLocaleString()}</strong></span>
+                      <span>Options: <strong>${initialTrip.breakdown.optionsPrice?.toLocaleString()}</strong></span>
+                      <span style={{ color: '#10b981' }}>Privilege Discount: <strong>-${initialTrip.breakdown.discount?.toLocaleString()}</strong></span>
+                    </div>
+                  )}
                 </div>
               )}
 

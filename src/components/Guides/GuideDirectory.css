@@ -81,3 +81,25 @@
   border: 1px solid var(--border);
   color: var(--text-secondary);
 }
+
+/* Guide Detail Modal Responsive Styles */
+.guide-modal-header-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.guide-modal-photo-wrap {
+  height: 320px;
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .guide-modal-header-grid {
+    grid-template-columns: 1fr;
+  }
+  .guide-modal-photo-wrap {
+    height: 240px;
+  }
+}

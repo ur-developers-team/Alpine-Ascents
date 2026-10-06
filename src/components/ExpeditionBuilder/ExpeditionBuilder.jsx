@@ -119,6 +119,12 @@ export default function ExpeditionBuilder({ initialDestinationId, onRequestExped
       discount: discountAmount,
       price: estimatedTotalPerPerson,
       estimatedTotal: estimatedTotalParty,
+      breakdown: {
+        basePrice,
+        optionsPrice: totalOptionsPrice,
+        discount: discountAmount,
+        total: estimatedTotalParty
+      },
       status: 'Custom Blueprint Saved'
     };
 
@@ -141,6 +147,9 @@ export default function ExpeditionBuilder({ initialDestinationId, onRequestExped
       transport: transport.name,
       guide: guide.name,
       groupSize: groupSize.label,
+      basePrice,
+      optionsPrice: totalOptionsPrice,
+      discount: discountAmount,
       price: estimatedTotalPerPerson,
       estimatedTotal: estimatedTotalParty,
       breakdown: {

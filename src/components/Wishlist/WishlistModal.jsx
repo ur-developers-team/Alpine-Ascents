@@ -153,7 +153,7 @@ export default function WishlistModal({ isOpen, onClose, onSelectItem }) {
         </div>
 
         {wishlist.length > 0 && (
-          <div style={{ padding: '1rem 2rem', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div style={{ padding: '1rem clamp(1rem, 3vw, 2rem)', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
             <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
               Tip: Shared URLs encode your selection into a portable state link.
             </span>

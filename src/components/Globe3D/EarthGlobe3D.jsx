@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import { Globe, Compass, Navigation } from 'lucide-react';
+import { Globe, Compass, Navigation, ArrowRight } from 'lucide-react';
 import destinationsData from '../../data/destinations.json';
 import './EarthGlobe3D.css';
 
